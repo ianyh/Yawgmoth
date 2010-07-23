@@ -38,7 +38,7 @@
 - (IBAction)updateFilter:(id)sender
 {
 	[cardDatabase updateFilter:[allCardsSearchField stringValue]];
-	[allCardsTable setNeedsDisplay:YES];
+	[allCardsTable reloadData];
 }
 
 @end

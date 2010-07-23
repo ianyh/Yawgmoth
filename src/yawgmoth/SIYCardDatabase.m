@@ -25,7 +25,8 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
-	return (NSInteger) [db intForQuery:[self queryWithSelection:@"count(*)" singleSelection:NO]];
+	NSInteger numberOfRows = (NSInteger) [db intForQuery:[self queryWithSelection:@"count(*)" singleSelection:NO]];
+	return numberOfRows;
 }
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
@@ -74,10 +75,9 @@
 - (NSString *)queryWithSelection:(NSString *)selectStatement singleSelection:(BOOL)isSingleSelection
 {
 	NSString *query = [NSString stringWithFormat:@"SELECT %@ FROM y_cards ", selectStatement];
-	/*
-	if (filterString != nil) {
-		query = [query stringByAppendingFormat:@"WHERE name LIKE %%%@%% OR expansion LIKE %%%@%% ", filterString, filterString];
-	}*/
+	if (filterString != nil && ![filterString isEqualToString:@""]) {
+		query = [query stringByAppendingFormat:@"WHERE name LIKE '%%%@%%' OR expansion LIKE '%%%@%%' ", filterString, filterString];
+	}
 	if (isSingleSelection) {
 		query = [query stringByAppendingString:@"ORDER BY expansion LIMIT 1 OFFSET ?"];
 	}
