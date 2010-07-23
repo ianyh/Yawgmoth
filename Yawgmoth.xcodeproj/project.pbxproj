@@ -7,15 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C1E538111F61CA1001FB0BF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */; };
-		3C1E538611F61CB2001FB0BF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		3C1E539A11F620F9001FB0BF /* SIYController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539811F620F9001FB0BF /* SIYController.m */; };
 		3C1E539B11F620F9001FB0BF /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */; };
 		3C1E539D11F6212E001FB0BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
-		3C1E53AC11F621D2001FB0BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E53AB11F621D2001FB0BF /* main.m */; };
-		3C1E53B511F622C4001FB0BF /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E53A311F62199001FB0BF /* FMDatabase.m */; };
-		3C1E53B611F622C4001FB0BF /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E53A511F62199001FB0BF /* FMDatabaseAdditions.m */; };
-		3C1E53B711F622C4001FB0BF /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E53A711F62199001FB0BF /* FMResultSet.m */; };
 		3C897EC411F8DB0700AABCEE /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E53A311F62199001FB0BF /* FMDatabase.m */; };
 		3C897EC611F8DB0700AABCEE /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E53A511F62199001FB0BF /* FMDatabaseAdditions.m */; };
 		3C897EC811F8DB0700AABCEE /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E53A711F62199001FB0BF /* FMResultSet.m */; };
@@ -34,7 +28,6 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Yawgmoth_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yawgmoth_Prefix.pch; sourceTree = "<group>"; };
-		3C1E537C11F61C66001FB0BF /* YawgmothImporter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = YawgmothImporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C1E539711F620F9001FB0BF /* SIYController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYController.h; path = src/yawgmoth/SIYController.h; sourceTree = "<group>"; };
 		3C1E539811F620F9001FB0BF /* SIYController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYController.m; path = src/yawgmoth/SIYController.m; sourceTree = "<group>"; };
 		3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; fileEncoding = 4; name = SIYDataModel.xcdatamodel; path = src/yawgmoth/SIYDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -45,7 +38,6 @@
 		3C1E53A511F62199001FB0BF /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
 		3C1E53A611F62199001FB0BF /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = src/fmdb/FMResultSet.h; sourceTree = "<group>"; };
 		3C1E53A711F62199001FB0BF /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb/FMResultSet.m; sourceTree = "<group>"; };
-		3C1E53AB11F621D2001FB0BF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/importer/main.m; sourceTree = "<group>"; };
 		3C8980C711F9206B00AABCEE /* cards.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.db; sourceTree = "<group>"; };
 		3C89838811F9698F00AABCEE /* SIYCardDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYCardDatabase.h; path = src/yawgmoth/SIYCardDatabase.h; sourceTree = "<group>"; };
 		3C89838911F9698F00AABCEE /* SIYCardDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYCardDatabase.m; path = src/yawgmoth/SIYCardDatabase.m; sourceTree = "<group>"; };
@@ -56,15 +48,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3C1E537A11F61C66001FB0BF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3C1E538611F61CB2001FB0BF /* Cocoa.framework in Frameworks */,
-				3C1E538111F61CA1001FB0BF /* libsqlite3.dylib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8D11072E0486CEB800E47090 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -112,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* Yawgmoth.app */,
-				3C1E537C11F61C66001FB0BF /* YawgmothImporter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,7 +102,6 @@
 		29B97314FDCFA39411CA2CEA /* Yawgmoth */ = {
 			isa = PBXGroup;
 			children = (
-				3C1E539211F61ECE001FB0BF /* YawgmothImporter */,
 				3C1E539111F61E8B001FB0BF /* Yawgmoth */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -168,22 +149,6 @@
 			name = Yawgmoth;
 			sourceTree = "<group>";
 		};
-		3C1E539211F61ECE001FB0BF /* YawgmothImporter */ = {
-			isa = PBXGroup;
-			children = (
-				3C1E53A011F6215F001FB0BF /* Other Sources */,
-			);
-			name = YawgmothImporter;
-			sourceTree = "<group>";
-		};
-		3C1E53A011F6215F001FB0BF /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				3C1E53AB11F621D2001FB0BF /* main.m */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
 		3C1E53A111F62186001FB0BF /* fmdb */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,22 +165,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3C1E537B11F61C66001FB0BF /* YawgmothImporter */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3C1E538011F61C85001FB0BF /* Build configuration list for PBXNativeTarget "YawgmothImporter" */;
-			buildPhases = (
-				3C1E537911F61C66001FB0BF /* Sources */,
-				3C1E537A11F61C66001FB0BF /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = YawgmothImporter;
-			productName = YawgmothImporter;
-			productReference = 3C1E537C11F61C66001FB0BF /* YawgmothImporter */;
-			productType = "com.apple.product-type.tool";
-		};
 		8D1107260486CEB800E47090 /* Yawgmoth */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Yawgmoth" */;
@@ -247,7 +196,6 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Yawgmoth */,
-				3C1E537B11F61C66001FB0BF /* YawgmothImporter */,
 			);
 		};
 /* End PBXProject section */
@@ -266,17 +214,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3C1E537911F61C66001FB0BF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3C1E53B511F622C4001FB0BF /* FMDatabase.m in Sources */,
-				3C1E53B611F622C4001FB0BF /* FMDatabaseAdditions.m in Sources */,
-				3C1E53B711F622C4001FB0BF /* FMResultSet.m in Sources */,
-				3C1E53AC11F621D2001FB0BF /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,52 +250,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3C1E537E11F61C67001FB0BF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INSTALL_PATH = /usr/local/bin;
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = YawgmothImporter;
-			};
-			name = Debug;
-		};
-		3C1E537F11F61C67001FB0BF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INSTALL_PATH = /usr/local/bin;
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = YawgmothImporter;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -426,15 +317,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3C1E538011F61C85001FB0BF /* Build configuration list for PBXNativeTarget "YawgmothImporter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3C1E537E11F61C67001FB0BF /* Debug */,
-				3C1E537F11F61C67001FB0BF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Yawgmoth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
