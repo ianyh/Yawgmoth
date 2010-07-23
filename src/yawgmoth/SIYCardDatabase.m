@@ -17,6 +17,7 @@
 
 - (void)release
 {
+	[filterString release];
 	[db close];
 	[db release];
 	
@@ -25,15 +26,14 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
-	NSInteger numberOfRows = (NSInteger) [db intForQuery:[self queryWithSelection:@"count(*)" singleSelection:NO]];
-	return numberOfRows;
+	return (NSInteger) [db intForQuery:[self queryWithSelection:@"count(*)" singleSelection:NO]];
 }
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
 {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	NSString *value;
 	NSString *valueType = [aTableColumn identifier];
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	value = [[self cardValueType:valueType fromDBAtIndex:rowIndex] retain];
 	[pool release];
 	
@@ -45,7 +45,8 @@
 	NSString *value;
 	FMResultSet *resultSet;
 	if ([type isEqualToString:@"name"]) {
-		resultSet = [db executeQuery:[self queryWithSelection:@"name" singleSelection:YES], [NSNumber numberWithInt:rowIndex]];
+		NSString *query = [self queryWithSelection:@"name" singleSelection:YES];
+		resultSet = [db executeQuery:query, [NSNumber numberWithInt:rowIndex]];
 	} else if ([type isEqualToString:@"set"]) {
 		resultSet = [db executeQuery:[self queryWithSelection:@"expansion" singleSelection:YES], [NSNumber numberWithInt:rowIndex]];
 	}
@@ -87,7 +88,7 @@
 
 - (void)updateFilter:(NSString *)newFilterString
 {
-	filterString = newFilterString;
+	filterString = [[newFilterString copy] retain];
 }
 
 @end
