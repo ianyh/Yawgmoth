@@ -25,7 +25,7 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
-	return (NSInteger) [db intForQuery:@"select count(*) from y_cards"];
+	return (NSInteger) [db intForQuery:[self queryWithSelection:@"count(*)" singleSelection:NO]];
 }
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
@@ -44,9 +44,9 @@
 	NSString *value;
 	FMResultSet *resultSet;
 	if ([type isEqualToString:@"name"]) {
-		resultSet = [db executeQuery:[self queryWithSelection:@"name"], [NSNumber numberWithInt:rowIndex]];
+		resultSet = [db executeQuery:[self queryWithSelection:@"name" singleSelection:YES], [NSNumber numberWithInt:rowIndex]];
 	} else if ([type isEqualToString:@"set"]) {
-		resultSet = [db executeQuery:[self queryWithSelection:@"expansion"], [NSNumber numberWithInt:rowIndex]];
+		resultSet = [db executeQuery:[self queryWithSelection:@"expansion" singleSelection:YES], [NSNumber numberWithInt:rowIndex]];
 	}
 	
 	if (![resultSet next]) {
@@ -71,14 +71,16 @@
 	return;
 }
 
-- (NSString *)queryWithSelection:(NSString *)selectStatement
+- (NSString *)queryWithSelection:(NSString *)selectStatement singleSelection:(BOOL)isSingleSelection
 {
 	NSString *query = [NSString stringWithFormat:@"SELECT %@ FROM y_cards ", selectStatement];
 	/*
 	if (filterString != nil) {
 		query = [query stringByAppendingFormat:@"WHERE name LIKE %%%@%% OR expansion LIKE %%%@%% ", filterString, filterString];
 	}*/
-	query = [query stringByAppendingString:@"ORDER BY expansion LIMIT 1 OFFSET ?"];
+	if (isSingleSelection) {
+		query = [query stringByAppendingString:@"ORDER BY expansion LIMIT 1 OFFSET ?"];
+	}
 	
 	return query;
 }
