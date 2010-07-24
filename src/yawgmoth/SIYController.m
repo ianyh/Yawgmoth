@@ -11,6 +11,31 @@
 
 - (IBAction)addCardToLibraryAddTable:(id)sender
 {
+	NSString *name = [cardDatabase cardValueType:@"name" fromDBAtIndex:[allCardsTable selectedRow]];
+	NSString *set = [cardDatabase cardValueType:@"expansion" fromDBAtIndex:[allCardsTable selectedRow]];
+	
+	NSEntityDescription *tempCardEntityDescription = [NSEntityDescription entityForName:@"TempCard" inManagedObjectContext:[self managedObjectContext]];
+	NSFetchRequest *existenceCheckFetchRequest = [[NSFetchRequest alloc] init];
+	[existenceCheckFetchRequest setEntity:tempCardEntityDescription];
+	
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name = %@) AND (set = %@)", name, set];
+	[existenceCheckFetchRequest setPredicate:predicate];
+	
+	NSError *error;
+	NSArray *checkResults = [[self managedObjectContext] executeFetchRequest:existenceCheckFetchRequest error:&error];
+	if (checkResults == nil) {
+		// TODO: do something with error
+	}
+	
+	if ([checkResults count] > 0) {
+		NSManagedObject *card = [checkResults objectAtIndex:0];
+		card.quantity = [NSNumber numberWithInt:[card.quantity intValue]+1];
+	} else {
+		NSManagedObject *newCard = [NSEntityDescription insertNewObjectForEntityForName:@"TempCard" inManagedObjectContext:[self managedObjectContext]];
+		[cardDatabase populateCard:newCard withRowIndex:[allCardsTable selectedRow]];
+	}
+	
+	[self save];
 }
 
 - (IBAction)addToLibrary:(id)sender
@@ -105,6 +130,19 @@
 
 - (void)performCardSelection
 {
+}
+
+- (void)save
+{
+    NSError *error = nil;
+    
+    if (![[self managedObjectContext] commitEditing]) {
+        NSLog(@"%@:%s unable to commit editing before saving", [self class], _cmd);
+    }
+	
+    if (![[self managedObjectContext] save:&error]) {
+        [[NSApplication sharedApplication] presentError:error];
+    }	
 }
 
 - (IBAction)updateFilter:(id)sender

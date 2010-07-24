@@ -15,41 +15,10 @@
 	return [super init];
 }
 
-- (void)release
-{
-	[filterString release];
-	[db close];
-	[db release];
-	
-	[super release];
-}
-
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
-{
-	return (NSInteger) [db intForQuery:[self queryWithSelection:@"count(*)" singleSelection:NO]];
-}
-
-- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
-{
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	NSString *value;
-	NSString *valueType = [aTableColumn identifier];
-	value = [[self cardValueType:valueType fromDBAtIndex:rowIndex] retain];
-	[pool release];
-	
-	return value;
-}
-
 - (NSString *)cardValueType:(NSString *)type fromDBAtIndex:(NSInteger)rowIndex
 {
 	NSString *value;
-	FMResultSet *resultSet;
-	if ([type isEqualToString:@"name"]) {
-		NSString *query = [self queryWithSelection:@"name" singleSelection:YES];
-		resultSet = [db executeQuery:query, [NSNumber numberWithInt:rowIndex]];
-	} else if ([type isEqualToString:@"set"]) {
-		resultSet = [db executeQuery:[self queryWithSelection:@"expansion" singleSelection:YES], [NSNumber numberWithInt:rowIndex]];
-	}
+	FMResultSet *resultSet = [db executeQuery:[self queryWithSelection:type singleSelection:YES], [NSNumber numberWithInt:rowIndex]];
 	
 	if (![resultSet next]) {
 		NSLog(@"no results found; rowIndex (%d) might be out of bound", rowIndex);
@@ -57,20 +26,37 @@
 		return @"";
 	}
 	
-	if ([type isEqualToString:@"name"]) {
-		value = [resultSet stringForColumn:@"name"];
-	} else if ([type isEqualToString:@"set"]) {
-		value = [resultSet stringForColumn:@"expansion"];
-	}
-	
+	value = [resultSet stringForColumn:type];
 	[resultSet close];
 	
 	return value;
 }
 
-- (void)tableView:(NSTableView *)aTableView setObjectValue:(id)anObject forTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
-	return;
+	return (NSInteger) [db intForQuery:[self queryWithSelection:@"count(*)" singleSelection:NO]];
+}
+
+- (void)populateCard:(NSManagedObject *)card withRowIndex:(NSInteger)rowIndex
+{
+	FMResultSet *resultSet = [db executeQuery:[self queryWithSelection:@"*" singleSelection:YES], [NSNumber numberWithInt:rowIndex]];
+	
+	if (![resultSet next]) {
+		NSLog(@"failed to populate card at row %d", rowIndex);
+	}
+	
+	card.manaCost = [resultSet stringForColumn:@"mana"];
+	card.name = [resultSet stringForColumn:@"name"];
+	card.quantity = [NSNumber numberWithInt:1];
+	card.set = [resultSet stringForColumn:@"expansion"];
+	card.text = [resultSet stringForColumn:@"text"];
+	
+	card.power = [NSNumber numberWithInt:[resultSet intForColumn:@"power"]];
+	card.toughness = [NSNumber numberWithInt:[resultSet intForColumn:@"toughness"]];
+	
+	NSString *type = [resultSet stringForColumn:@"type"];
+	card.superType = [self superTypeFromType:type];
+	card.type = type;
 }
 
 - (NSString *)queryWithSelection:(NSString *)selectStatement singleSelection:(BOOL)isSingleSelection
@@ -84,6 +70,37 @@
 	}
 	
 	return query;
+}
+
+- (NSString *)superTypeFromType:(NSString *)type
+{
+	// TODO: run a regex on type to determine super type
+	return @"";
+}
+
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	NSString *value;
+	NSString *valueType = [aTableColumn identifier];
+	value = [[self cardValueType:valueType fromDBAtIndex:rowIndex] retain];
+	[pool release];
+	
+	return value;
+}
+
+- (void)tableView:(NSTableView *)aTableView setObjectValue:(id)anObject forTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex
+{
+	return;
+}
+
+- (void)release
+{
+	[filterString release];
+	[db close];
+	[db release];
+	
+	[super release];
 }
 
 - (void)updateFilter:(NSString *)newFilterString

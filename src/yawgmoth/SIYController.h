@@ -30,6 +30,7 @@
 - (IBAction)cancelAddToLibrary:(id)sender;
 - (IBAction)openAddToLibraryWindow:(id)sender;
 - (IBAction)removeCardFromLibraryAddTable:(id)sender;
+- (void)save;
 - (IBAction)updateFilter:(id)sender;
 
 @end

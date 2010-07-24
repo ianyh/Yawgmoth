@@ -43,6 +43,7 @@
 		3C89838911F9698F00AABCEE /* SIYCardDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYCardDatabase.m; path = src/yawgmoth/SIYCardDatabase.m; sourceTree = "<group>"; };
 		3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3C8EED8711ED2E07003E7D9F /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/DeckEditorWindow.nib; sourceTree = "<group>"; };
+		3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDataModelManagedObjects.h; path = src/yawgmoth/SIYDataModelManagedObjects.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Yawgmoth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawgmoth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -63,6 +64,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */,
 				3C89838811F9698F00AABCEE /* SIYCardDatabase.h */,
 				3C89838911F9698F00AABCEE /* SIYCardDatabase.m */,
 				3C1E539711F620F9001FB0BF /* SIYController.h */,
