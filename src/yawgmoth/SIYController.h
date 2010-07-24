@@ -15,7 +15,15 @@
 	IBOutlet NSSearchField *allCardsSearchField;
 	IBOutlet NSTableView *cardsToAddToLibraryTable;
 	
+	NSPersistentStoreCoordinator *persistentStoreCoordinator;
+    NSManagedObjectModel *managedObjectModel;
+    NSManagedObjectContext *managedObjectContext;
+	
 }
+
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)addCardToLibraryAddTable:(id)sender;
 - (IBAction)addToLibrary:(id)sender;

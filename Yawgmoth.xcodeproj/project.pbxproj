@@ -67,7 +67,6 @@
 				3C89838911F9698F00AABCEE /* SIYCardDatabase.m */,
 				3C1E539711F620F9001FB0BF /* SIYController.h */,
 				3C1E539811F620F9001FB0BF /* SIYController.m */,
-				3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -142,6 +141,7 @@
 		3C1E539111F61E8B001FB0BF /* Yawgmoth */ = {
 			isa = PBXGroup;
 			children = (
+				3C9586B711FB7DE200E0F11E /* Models */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -160,6 +160,14 @@
 				3C1E53A711F62199001FB0BF /* FMResultSet.m */,
 			);
 			name = fmdb;
+			sourceTree = "<group>";
+		};
+		3C9586B711FB7DE200E0F11E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
