@@ -80,7 +80,25 @@
 
 - (IBAction)createNewDeck:(id)sender
 {
+	[NSApp beginSheet:newDeckPanel modalForWindow:deckEditingWindow modalDelegate:self didEndSelector:@selector(createNewDeckDidEnd: returnCode: contextInfo:) contextInfo:nil];
+}
+
+- (IBAction)createNewDeckDidEnd:(id)sender
+{
+	if (sender == newDeckCreateButton) {
+		NSString *deckName = [newDeckNameField stringValue];
+		NSManagedObject *newDeck = [NSEntityDescription insertNewObjectForEntityForName:@"Deck" inManagedObjectContext:[self managedObjectContext]];
+		newDeck.name = deckName;
+		[self save];
+	}
 	
+	[newDeckPanel orderOut:nil];
+	[NSApp endSheet:newDeckPanel];
+}
+
+- (void)createNewDeckDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
+{
+	NSLog(@"%d", returnCode);
 }
 
 - (NSManagedObject *)managedCardWithName:(NSString *)name andSet:(NSString *)set existsInEntityWithName:(NSString *)entityName

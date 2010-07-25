@@ -19,6 +19,11 @@
 	IBOutlet NSSearchField *allCardsSearchField;
 	IBOutlet NSTableView *cardsToAddToLibraryTable;
 	
+	IBOutlet NSPanel *newDeckPanel;
+	IBOutlet NSTextField *newDeckNameField;
+	IBOutlet NSButton *newDeckCreateButton;
+	IBOutlet NSButton *newDeckCancelButton;
+	
 	NSPersistentStoreCoordinator *persistentStoreCoordinator;
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;
@@ -33,6 +38,8 @@
 - (IBAction)addToLibrary:(id)sender;
 - (IBAction)cancelAddToLibrary:(id)sender;
 - (IBAction)createNewDeck:(id)sender;
+- (IBAction)createNewDeckDidEnd:(id)sender;
+- (void)createNewDeckDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo;
 - (NSManagedObject *)managedCardWithName:(NSString *)name andSet:(NSString *)set existsInEntityWithName:(NSString *)entityName;
 - (IBAction)moveToDeck:(id)sender;
 - (IBAction)moveToLibrary:(id)sender;
