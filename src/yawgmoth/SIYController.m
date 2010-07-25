@@ -218,6 +218,9 @@
 - (IBAction)moveToDeck:(id)sender
 {
 	NSManagedObject *deck = [self managedDeckWithName:[[deckSelectionButton selectedItem] title]];
+	if (deck == nil) {
+		return;
+	}
 	NSArray *array = [libraryController selectedObjects];
 	NSManagedObject *libraryCard;
 	NSManagedObject *card;
@@ -253,7 +256,6 @@
 
 - (IBAction)moveToLibrary:(id)sender
 {
-//	NSManagedObject *deck = [self managedDeckWithName:[deckSelectionButton titleOfSelectedItem]];
 	NSArray *array = [deckCardsController selectedObjects];
 	NSManagedObject *libraryCard;
 	NSManagedObject *card;
@@ -265,6 +267,10 @@
 
 		libraryCard = [self managedLibraryCardWithName:card.name];
 		libraryCard.quantity = [NSNumber numberWithInt:[libraryCard.quantity intValue]+1];
+
+		if ([card.quantity intValue] == 0) {
+			[[self managedObjectContext] deleteObject:card];
+		}		
 	}
 	
 	[self save];
