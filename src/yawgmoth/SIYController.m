@@ -22,13 +22,12 @@
 		[cardDatabase populateCard:card withRowIndex:[allCardsTable selectedRow]];
 	}
 	
-	[self save];
+//	[self save];
 }
 
 - (IBAction)addToLibrary:(id)sender
 {
 	NSEntityDescription *tempCardEntityDescription = [NSEntityDescription entityForName:@"TempCard" inManagedObjectContext:[self managedObjectContext]];
-//	NSEntityDescription *cardEntityDescription = [NSEntityDescription entityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
 	NSFetchRequest *allTempCardsFetchRequest = [[NSFetchRequest alloc] init];
 	[allTempCardsFetchRequest setEntity:tempCardEntityDescription];
 	
@@ -46,6 +45,7 @@
 			card.manaCost = tempCard.manaCost;
 			card.name = tempCard.name;
 			card.quantity = tempCard.quantity;
+			card.rarity = tempCard.rarity;
 			card.set = tempCard.set;
 			card.text = tempCard.text;
 			
@@ -76,6 +76,11 @@
 - (IBAction)cancelAddToLibrary:(id)sender
 {
 	[libraryAddingWindow close];
+}
+
+- (IBAction)createNewDeck:(id)sender
+{
+	
 }
 
 - (NSManagedObject *)managedCardWithName:(NSString *)name andSet:(NSString *)set existsInEntityWithName:(NSString *)entityName
@@ -126,6 +131,14 @@
 	
     managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
     return managedObjectModel;
+}
+
+- (IBAction)moveToDeck:(id)sender
+{
+}
+
+- (IBAction)moveToLibrary:(id)sender
+{
 }
 
 - (IBAction)openAddToLibraryWindow:(id)sender

@@ -48,6 +48,7 @@
 	card.manaCost = [resultSet stringForColumn:@"mana"];
 	card.name = [resultSet stringForColumn:@"name"];
 	card.quantity = [NSNumber numberWithInt:1];
+	card.rarity = [resultSet stringForColumn:@"rarity"];
 	card.set = [resultSet stringForColumn:@"expansion"];
 	card.text = [resultSet stringForColumn:@"text"];
 	

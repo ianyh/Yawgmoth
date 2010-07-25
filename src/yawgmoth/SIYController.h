@@ -7,10 +7,14 @@
 	SIYCardDatabase *cardDatabase;
 	
 	IBOutlet NSWindow *deckEditingWindow;
+	IBOutlet NSTableView *libraryTableView;
+	IBOutlet NSTableView *deckTableView;
+	IBOutlet NSPopUpButton *deckSelectionButton;
+	IBOutlet NSButton *moveToDeckButton;
+	IBOutlet NSButton *moveToLibraryButton;
+	
 	IBOutlet NSWindow *libraryAddingWindow;
-	
 	IBOutlet NSButton *addToLibraryButton;
-	
 	IBOutlet NSTableView *allCardsTable;
 	IBOutlet NSSearchField *allCardsSearchField;
 	IBOutlet NSTableView *cardsToAddToLibraryTable;
@@ -28,7 +32,10 @@
 - (IBAction)addCardToLibraryAddTable:(id)sender;
 - (IBAction)addToLibrary:(id)sender;
 - (IBAction)cancelAddToLibrary:(id)sender;
+- (IBAction)createNewDeck:(id)sender;
 - (NSManagedObject *)managedCardWithName:(NSString *)name andSet:(NSString *)set existsInEntityWithName:(NSString *)entityName;
+- (IBAction)moveToDeck:(id)sender;
+- (IBAction)moveToLibrary:(id)sender;
 - (IBAction)openAddToLibraryWindow:(id)sender;
 - (IBAction)removeCardFromLibraryAddTable:(id)sender;
 - (void)save;

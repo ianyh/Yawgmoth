@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * power;
 @property (nonatomic, retain) NSNumber * quantity;
+@property (nonatomic, retain) NSString * rarity;
 @property (nonatomic, retain) NSString * set;
 @property (nonatomic, retain) NSString * superType;
 @property (nonatomic, retain) NSString * text;
@@ -31,6 +32,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * power;
 @property (nonatomic, retain) NSNumber * quantity;
+@property (nonatomic, retain) NSString * rarity;
 @property (nonatomic, retain) NSString * set;
 @property (nonatomic, retain) NSString * superType;
 @property (nonatomic, retain) NSString * text;
