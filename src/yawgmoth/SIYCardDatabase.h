@@ -4,6 +4,7 @@
 
 @interface SIYCardDatabase : NSObject {
 	FMDatabase *db;
+	id cache;
 	
 	NSString *filterString;
 }

@@ -12,6 +12,13 @@
 	}
 	[db setShouldCacheStatements:YES];
 	
+	id cacheClass = NSClassFromString(@"NSCache");
+	if (cacheClass == nil) {
+		cache = [[[NSMutableDictionary alloc] init] retain];
+	} else {
+		cache = [[[cacheClass alloc] init] retain];
+	}
+	
 	return [super init];
 }
 

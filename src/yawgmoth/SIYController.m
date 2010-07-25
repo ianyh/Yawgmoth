@@ -30,6 +30,7 @@
 	
 	NSError *error;
 	NSArray *tempCards = [[self managedObjectContext] executeFetchRequest:allTempCardsFetchRequest error:&error];
+	[allTempCardsFetchRequest release];
 	NSManagedObject *tempCard;
 	NSManagedObject *libraryCard;
 	int i;
@@ -107,6 +108,7 @@
 	
 	NSError *error;
 	NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+	[fetchRequest release];
 	if (results == nil) {
 		// TODO: present error
 		return nil;
@@ -130,6 +132,7 @@
 	
 	NSError *error;
 	NSArray *checkResults = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+	[fetchRequest release];
 	if (checkResults == nil) {
 		// TODO: do something with error
 		return nil;
@@ -153,6 +156,7 @@
 	
 	NSError *error;
 	NSArray *checkResults = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+	[fetchRequest release];
 	if (checkResults == nil) {
 		// TODO: do something with error
 		return nil;
@@ -176,6 +180,7 @@
 	
 	NSError *error;
 	NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+	[fetchRequest release];
 	if (results == nil) {
 		// TODO: do something with error
 		return nil;
@@ -252,6 +257,7 @@
 	}
 	
 	[self save];
+	[array release];
 }
 
 - (IBAction)moveToLibrary:(id)sender
@@ -274,6 +280,7 @@
 	}
 	
 	[self save];
+	[array release];
 }
 
 - (IBAction)openAddToLibraryWindow:(id)sender
