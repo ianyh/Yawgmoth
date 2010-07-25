@@ -335,10 +335,6 @@
 	}
 }
 
-- (void)performCardSelection
-{
-}
-
 - (void)save
 {
     NSError *error;
