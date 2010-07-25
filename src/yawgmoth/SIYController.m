@@ -221,7 +221,7 @@
 	if (deck == nil) {
 		return;
 	}
-	NSArray *array = [libraryController selectedObjects];
+	NSArray *array = [[libraryController selectedObjects] copy];
 	NSManagedObject *libraryCard;
 	NSManagedObject *card;
 	int i;
@@ -256,7 +256,7 @@
 
 - (IBAction)moveToLibrary:(id)sender
 {
-	NSArray *array = [deckCardsController selectedObjects];
+	NSArray *array = [[deckCardsController selectedObjects] copy];
 	NSManagedObject *libraryCard;
 	NSManagedObject *card;
 	int i;
