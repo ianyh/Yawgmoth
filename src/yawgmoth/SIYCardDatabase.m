@@ -74,8 +74,8 @@
 
 - (NSString *)superTypeFromType:(NSString *)type
 {
-	NSArray *superTypeRegexStrings = [NSArray arrayWithObjects:@".*Instant.*", @".*Sorcery.*", @".*Artifact Creature.*", @".*Artifact Land.*", @".*Creature.*", @".*Artifact.*", @".*Land.*", @".*Enchantment.*", nil];
-	NSArray *superTypes = [NSArray arrayWithObjects:@"Instant", @"Sorcery", @"Artifact Creature", @"Artifact Land", @"Creature", @"Artifact", @"Land", @"Enchantment", nil];
+	NSArray *superTypeRegexStrings = [NSArray arrayWithObjects:@".*Instant.*", @".*Sorcery.*", @".*Artifact Creature.*", @".*Artifact Land.*", @".*Creature.*", @".*Artifact.*", @".*Land.*", @".*Enchantment.*", @".*Planeswalker.*", nil];
+	NSArray *superTypes = [NSArray arrayWithObjects:@"Instant", @"Sorcery", @"Artifact Creature", @"Artifact Land", @"Creature", @"Artifact", @"Land", @"Enchantment", @"Planeswalker", nil];
 	int i;
 	
 	for (i = 0; i < [superTypes count]; i++) {
