@@ -12,7 +12,7 @@
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<integer value="57"/>
-			<integer value="266"/>
+			<integer value="265"/>
 			<integer value="213"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -3672,6 +3672,14 @@
 					</object>
 					<int key="connectionID">828</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">tempCardsController</string>
+						<reference key="source" ref="900151345"/>
+						<reference key="destination" ref="981681964"/>
+					</object>
+					<int key="connectionID">829</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -5088,7 +5096,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">828</int>
+			<int key="maxID">829</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -5125,6 +5133,7 @@
 						<string key="newDeckCreateButton">NSButton</string>
 						<string key="newDeckNameField">NSTextField</string>
 						<string key="newDeckPanel">NSPanel</string>
+						<string key="tempCardsController">NSArrayController</string>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>

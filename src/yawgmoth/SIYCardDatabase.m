@@ -10,7 +10,7 @@
 	if (![db open]) {
 		NSLog(@"failed to open cards.db");
 	}
-//	[db setShouldCacheStatements:YES];
+	[db setShouldCacheStatements:YES];
 	
 	return [super init];
 }

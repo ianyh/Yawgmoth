@@ -321,6 +321,18 @@
 
 - (IBAction)removeCardFromLibraryAddTable:(id)sender
 {
+	NSArray *array = [tempCardsController selectedObjects];
+	NSManagedObject *tempCard;
+	int i;
+	
+	for (i = 0; i < [array count]; i++) {
+		tempCard = [array objectAtIndex:i];
+		if ([tempCard.quantity intValue] == 1) {
+			[[self managedObjectContext] deleteObject:tempCard];
+		} else {
+			tempCard.quantity = [NSNumber numberWithInt:[tempCard.quantity intValue]-1];
+		}
+	}
 }
 
 - (void)performCardSelection
