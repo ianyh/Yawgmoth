@@ -74,7 +74,17 @@
 
 - (NSString *)superTypeFromType:(NSString *)type
 {
-	// TODO: run a regex on type to determine super type
+	NSArray *superTypeRegexStrings = [NSArray arrayWithObjects:@".*Instant.*", @".*Sorcery.*", @".*Artifact Creature.*", @".*Artifact Land.*", @".*Creature.*", @".*Artifact.*", @".*Land.*", @".*Enchantment.*", nil];
+	NSArray *superTypes = [NSArray arrayWithObjects:@"Instant", @"Sorcery", @"Artifact Creature", @"Artifact Land", @"Creature", @"Artifact", @"Land", @"Enchantment", nil];
+	int i;
+	
+	for (i = 0; i < [superTypes count]; i++) {
+		NSPredicate *superTypeRegex = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", [superTypeRegexStrings objectAtIndex:i]];
+		if ([superTypeRegex evaluateWithObject:type]) {
+			return [superTypes objectAtIndex:i];
+		}
+	}
+	
 	return @"";
 }
 
