@@ -13,7 +13,7 @@
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<integer value="57"/>
 			<integer value="212"/>
-			<integer value="422"/>
+			<integer value="471"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1115,7 +1115,7 @@
 															</object>
 															<array class="NSMutableArray" key="NSTableColumns">
 																<object class="NSTableColumn" id="79636193">
-																	<double key="NSWidth">81.59912109375</double>
+																	<double key="NSWidth">159.59912109375</double>
 																	<double key="NSMinWidth">34.59912109375</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -1141,7 +1141,7 @@
 																	<reference key="NSTableView" ref="930857381"/>
 																</object>
 																<object class="NSTableColumn" id="91638957">
-																	<double key="NSWidth">104.0205078125</double>
+																	<double key="NSWidth">61.0205078125</double>
 																	<double key="NSMinWidth">60.0205078125</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -1167,7 +1167,7 @@
 																	<reference key="NSTableView" ref="930857381"/>
 																</object>
 																<object class="NSTableColumn" id="516477638">
-																	<double key="NSWidth">104.53857421875</double>
+																	<double key="NSWidth">66.53857421875</double>
 																	<double key="NSMinWidth">63.53857421875</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -1193,7 +1193,7 @@
 																	<reference key="NSTableView" ref="930857381"/>
 																</object>
 																<object class="NSTableColumn" id="36944481">
-																	<double key="NSWidth">70.75439453125</double>
+																	<double key="NSWidth">116.75439453125</double>
 																	<double key="NSMinWidth">29.75439453125</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -1219,7 +1219,7 @@
 																	<reference key="NSTableView" ref="930857381"/>
 																</object>
 																<object class="NSTableColumn" id="460342770">
-																	<double key="NSWidth">76.94189453125</double>
+																	<double key="NSWidth">35.94189453125</double>
 																	<double key="NSMinWidth">35.94189453125</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -1290,7 +1290,7 @@
 																	<reference key="NSTableView" ref="930857381"/>
 																</object>
 																<object class="NSTableColumn" id="395556902">
-																	<double key="NSWidth">111.39453125</double>
+																	<double key="NSWidth">62.39453125</double>
 																	<double key="NSMinWidth">62.39453125</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -1354,7 +1354,7 @@
 																	<reference key="NSTableView" ref="930857381"/>
 																</object>
 																<object class="NSTableColumn" id="815145211">
-																	<double key="NSWidth">60.1669921875</double>
+																	<double key="NSWidth">110.1669921875</double>
 																	<double key="NSMinWidth">20.1669921875</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -1380,13 +1380,13 @@
 																	<reference key="NSTableView" ref="930857381"/>
 																</object>
 																<object class="NSTableColumn" id="577248734">
-																	<double key="NSWidth">103.98046875</double>
+																	<double key="NSWidth">100.98046875</double>
 																	<double key="NSMinWidth">56.98046875</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
 																		<int key="NSCellFlags">75628096</int>
 																		<int key="NSCellFlags2">2048</int>
-																		<string key="NSContents">Main Text</string>
+																		<string key="NSContents">Text</string>
 																		<reference key="NSSupport" ref="26"/>
 																		<reference key="NSBackgroundColor" ref="107192460"/>
 																		<reference key="NSTextColor" ref="4142371"/>
@@ -1444,7 +1444,7 @@
 													<int key="NSsFlags">1</int>
 													<reference key="NSTarget" ref="136538110"/>
 													<string key="NSAction">_doScroller:</string>
-													<double key="NSPercent">0.98711340206185572</double>
+													<double key="NSPercent">0.99327052489905787</double>
 												</object>
 												<object class="NSClipView" id="512552782">
 													<reference key="NSNextResponder" ref="136538110"/>
@@ -1624,7 +1624,7 @@
 															</object>
 															<array class="NSMutableArray" key="NSTableColumns">
 																<object class="NSTableColumn" id="746158634">
-																	<double key="NSWidth">76.59912109375</double>
+																	<double key="NSWidth">160.59912109375</double>
 																	<double key="NSMinWidth">34.59912109375</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -1650,7 +1650,7 @@
 																	<reference key="NSTableView" ref="440892625"/>
 																</object>
 																<object class="NSTableColumn" id="842645348">
-																	<double key="NSWidth">107.0205078125</double>
+																	<double key="NSWidth">64.0205078125</double>
 																	<double key="NSMinWidth">60.0205078125</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -1676,7 +1676,7 @@
 																	<reference key="NSTableView" ref="440892625"/>
 																</object>
 																<object class="NSTableColumn" id="466021471">
-																	<double key="NSWidth">107.53857421875</double>
+																	<double key="NSWidth">63.53857421875</double>
 																	<double key="NSMinWidth">63.53857421875</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -1702,7 +1702,7 @@
 																	<reference key="NSTableView" ref="440892625"/>
 																</object>
 																<object class="NSTableColumn" id="731773737">
-																	<double key="NSWidth">71.75439453125</double>
+																	<double key="NSWidth">115.75439453125</double>
 																	<double key="NSMinWidth">29.75439453125</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -1728,7 +1728,7 @@
 																	<reference key="NSTableView" ref="440892625"/>
 																</object>
 																<object class="NSTableColumn" id="805789427">
-																	<double key="NSWidth">78.94189453125</double>
+																	<double key="NSWidth">35.94189453125</double>
 																	<double key="NSMinWidth">35.94189453125</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -1792,7 +1792,7 @@
 																	<reference key="NSTableView" ref="440892625"/>
 																</object>
 																<object class="NSTableColumn" id="763293919">
-																	<double key="NSWidth">99.39453125</double>
+																	<double key="NSWidth">65.39453125</double>
 																	<double key="NSMinWidth">62.39453125</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -1855,19 +1855,19 @@
 																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="440892625"/>
 																</object>
-																<object class="NSTableColumn" id="60487073">
-																	<double key="NSWidth">94.98046875</double>
-																	<double key="NSMinWidth">56.98046875</double>
+																<object class="NSTableColumn" id="784633498">
+																	<double key="NSWidth">105.1669921875</double>
+																	<double key="NSMinWidth">20.1669921875</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
 																		<int key="NSCellFlags">75628096</int>
 																		<int key="NSCellFlags2">2048</int>
-																		<string key="NSContents">Main Text</string>
+																		<string key="NSContents">Set</string>
 																		<reference key="NSSupport" ref="26"/>
 																		<reference key="NSBackgroundColor" ref="107192460"/>
 																		<reference key="NSTextColor" ref="4142371"/>
 																	</object>
-																	<object class="NSTextFieldCell" key="NSDataCell" id="407075453">
+																	<object class="NSTextFieldCell" key="NSDataCell" id="407488144">
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Field</string>
@@ -1881,19 +1881,19 @@
 																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="440892625"/>
 																</object>
-																<object class="NSTableColumn" id="784633498">
-																	<double key="NSWidth">64.1669921875</double>
-																	<double key="NSMinWidth">20.1669921875</double>
+																<object class="NSTableColumn" id="60487073">
+																	<double key="NSWidth">89.98046875</double>
+																	<double key="NSMinWidth">56.98046875</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
 																		<int key="NSCellFlags">75628096</int>
 																		<int key="NSCellFlags2">2048</int>
-																		<string key="NSContents">Set</string>
+																		<string key="NSContents">Text</string>
 																		<reference key="NSSupport" ref="26"/>
 																		<reference key="NSBackgroundColor" ref="107192460"/>
 																		<reference key="NSTextColor" ref="4142371"/>
 																	</object>
-																	<object class="NSTextFieldCell" key="NSDataCell" id="407488144">
+																	<object class="NSTextFieldCell" key="NSDataCell" id="407075453">
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Field</string>
@@ -1946,7 +1946,7 @@
 													<int key="NSsFlags">1</int>
 													<reference key="NSTarget" ref="1028791854"/>
 													<string key="NSAction">_doScroller:</string>
-													<double key="NSPercent">0.98711340206185572</double>
+													<double key="NSPercent">0.99315068493150682</double>
 												</object>
 												<object class="NSClipView" id="433275996">
 													<reference key="NSNextResponder" ref="1028791854"/>
@@ -2134,6 +2134,7 @@
 					<string>toughness</string>
 					<string>cardws</string>
 					<string>cards</string>
+					<string>text</string>
 				</array>
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy">
@@ -2156,6 +2157,7 @@
 					<string>type</string>
 					<string>name</string>
 					<string>toughness</string>
+					<string>text</string>
 				</array>
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy">
@@ -2294,22 +2296,6 @@
 						</object>
 					</object>
 					<int key="connectionID">418</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: arrangedObjects.mainText</string>
-						<reference key="source" ref="577248734"/>
-						<reference key="destination" ref="1014534729"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="577248734"/>
-							<reference key="NSDestination" ref="1014534729"/>
-							<string key="NSLabel">value: arrangedObjects.mainText</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">arrangedObjects.mainText</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">426</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -2651,22 +2637,6 @@
 						</object>
 					</object>
 					<int key="connectionID">466</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: arrangedObjects.mainText</string>
-						<reference key="source" ref="60487073"/>
-						<reference key="destination" ref="947128634"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="60487073"/>
-							<reference key="NSDestination" ref="947128634"/>
-							<string key="NSLabel">value: arrangedObjects.mainText</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">arrangedObjects.mainText</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">474</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -3244,6 +3214,38 @@
 						</object>
 					</object>
 					<int key="connectionID">612</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: arrangedObjects.text</string>
+						<reference key="source" ref="577248734"/>
+						<reference key="destination" ref="1014534729"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="577248734"/>
+							<reference key="NSDestination" ref="1014534729"/>
+							<string key="NSLabel">value: arrangedObjects.text</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">arrangedObjects.text</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">613</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: arrangedObjects.text</string>
+						<reference key="source" ref="60487073"/>
+						<reference key="destination" ref="947128634"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="60487073"/>
+							<reference key="NSDestination" ref="947128634"/>
+							<string key="NSLabel">value: arrangedObjects.text</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">arrangedObjects.text</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">614</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3851,7 +3853,6 @@
 						<int key="objectID">422</int>
 						<reference key="object" ref="930857381"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="577248734"/>
 							<reference ref="91638957"/>
 							<reference ref="815145211"/>
 							<reference ref="516477638"/>
@@ -3859,6 +3860,7 @@
 							<reference ref="36944481"/>
 							<reference ref="79636193"/>
 							<reference ref="395556902"/>
+							<reference ref="577248734"/>
 						</array>
 						<reference key="parent" ref="136538110"/>
 					</object>
@@ -3866,19 +3868,6 @@
 						<int key="objectID">423</int>
 						<reference key="object" ref="1012972727"/>
 						<reference key="parent" ref="136538110"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">424</int>
-						<reference key="object" ref="577248734"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="107479954"/>
-						</array>
-						<reference key="parent" ref="930857381"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">425</int>
-						<reference key="object" ref="107479954"/>
-						<reference key="parent" ref="577248734"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">427</int>
@@ -4055,7 +4044,6 @@
 						<int key="objectID">470</int>
 						<reference key="object" ref="440892625"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="60487073"/>
 							<reference ref="842645348"/>
 							<reference ref="784633498"/>
 							<reference ref="466021471"/>
@@ -4063,6 +4051,7 @@
 							<reference ref="731773737"/>
 							<reference ref="746158634"/>
 							<reference ref="763293919"/>
+							<reference ref="60487073"/>
 						</array>
 						<reference key="parent" ref="1028791854"/>
 					</object>
@@ -4309,6 +4298,19 @@
 						<reference key="parent" ref="0"/>
 						<string key="objectName">TempCardController</string>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">424</int>
+						<reference key="object" ref="577248734"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="107479954"/>
+						</array>
+						<reference key="parent" ref="930857381"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">425</int>
+						<reference key="object" ref="107479954"/>
+						<reference key="parent" ref="577248734"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -4526,7 +4528,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">612</int>
+			<int key="maxID">614</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
