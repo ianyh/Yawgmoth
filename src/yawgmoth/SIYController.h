@@ -6,6 +6,7 @@
 	
 	SIYCardDatabase *cardDatabase;
 	IBOutlet NSArrayController *libraryController;
+	IBOutlet NSArrayController *deckCardsController;
 	
 	IBOutlet NSWindow *deckEditingWindow;
 	IBOutlet NSTableView *libraryTableView;

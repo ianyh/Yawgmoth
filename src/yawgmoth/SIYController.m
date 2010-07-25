@@ -253,6 +253,21 @@
 
 - (IBAction)moveToLibrary:(id)sender
 {
+//	NSManagedObject *deck = [self managedDeckWithName:[deckSelectionButton titleOfSelectedItem]];
+	NSArray *array = [deckCardsController selectedObjects];
+	NSManagedObject *libraryCard;
+	NSManagedObject *card;
+	int i;
+	
+	for (i = 0; i < [array count]; i++) {
+		card = [array objectAtIndex:i];
+		card.quantity = [NSNumber numberWithInt:[card.quantity intValue]-1];
+
+		libraryCard = [self managedLibraryCardWithName:card.name];
+		libraryCard.quantity = [NSNumber numberWithInt:[libraryCard.quantity intValue]+1];
+	}
+	
+	[self save];
 }
 
 - (IBAction)openAddToLibraryWindow:(id)sender
