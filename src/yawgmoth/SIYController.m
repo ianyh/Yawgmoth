@@ -12,8 +12,7 @@
 - (IBAction)addCardToLibraryAddTable:(id)sender
 {
 	NSString *name = [cardDatabase cardValueType:@"name" fromDBAtIndex:[allCardsTable selectedRow]];
-	NSString *set = [cardDatabase cardValueType:@"expansion" fromDBAtIndex:[allCardsTable selectedRow]];
-	NSManagedObject *card = [self managedCardWithName:name andSet:set existsInEntityWithName:@"TempCard"];
+	NSManagedObject *card = [self managedTempCardWithName:name];
 
 	if (card != nil) {
 		card.quantity = [NSNumber numberWithInt:[card.quantity intValue]+1];
@@ -32,30 +31,30 @@
 	NSError *error;
 	NSArray *tempCards = [[self managedObjectContext] executeFetchRequest:allTempCardsFetchRequest error:&error];
 	NSManagedObject *tempCard;
-	NSManagedObject *card;
+	NSManagedObject *libraryCard;
 	int i;
 	
 	for (i = 0; i < [tempCards count]; i++) {
 		tempCard = [tempCards objectAtIndex:i];
-		card = [self managedCardWithName:tempCard.name andSet:tempCard.set existsInEntityWithName:@"Card"];
-		if (card == nil) {
-			card = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
-			card.manaCost = tempCard.manaCost;
-			card.name = tempCard.name;
-			card.quantity = tempCard.quantity;
-			card.rarity = tempCard.rarity;
-			card.set = tempCard.set;
-			card.text = tempCard.text;
+		libraryCard = [self managedLibraryCardWithName:tempCard.name];
+		if (libraryCard == nil) {
+			libraryCard = [NSEntityDescription insertNewObjectForEntityForName:@"LibraryCard" inManagedObjectContext:[self managedObjectContext]];
+			libraryCard.manaCost = tempCard.manaCost;
+			libraryCard.name = tempCard.name;
+			libraryCard.quantity = tempCard.quantity;
+			libraryCard.rarity = tempCard.rarity;
+			libraryCard.quantity = tempCard.quantity;
+			libraryCard.text = tempCard.text;
 			
-			card.power = tempCard.power;
-			card.toughness = tempCard.toughness;
+			libraryCard.power = tempCard.power;
+			libraryCard.toughness = tempCard.toughness;
 			
-			card.superType = tempCard.superType;
-			card.type = tempCard.type;			
+			libraryCard.superType = tempCard.superType;
+			libraryCard.type = tempCard.type;			
 		} else {
-			card.quantity = [NSNumber numberWithInt:[card.quantity intValue]+[tempCard.quantity intValue]];
+			libraryCard.quantity = [NSNumber numberWithInt:[libraryCard.quantity intValue]+[tempCard.quantity intValue]];
 		}
-				
+		
 		[[self managedObjectContext] deleteObject:tempCard];
 	}
 	
@@ -97,6 +96,29 @@
 	[NSApp endSheet:newDeckPanel];
 }
 
+- (NSManagedObject *)managedCardWithName:(NSString *)name inDeck:(NSManagedObject *)deck
+{
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	[fetchRequest setEntity:entityDescription];
+	
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name = %@) AND (deck = %@)", name, deck];
+	[fetchRequest setPredicate:predicate];
+	
+	NSError *error;
+	NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+	if (results == nil) {
+		// TODO: present error
+		return nil;
+	}
+	
+	if ([results count] > 0) {
+		return (NSManagedObject *) [results objectAtIndex:0];
+	}
+	
+	return nil;
+}
+
 - (NSManagedObject *)managedDeckWithName:(NSString *)name
 {
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Deck" inManagedObjectContext:[self managedObjectContext]];
@@ -120,13 +142,13 @@
 	return nil;
 }
 
-- (NSManagedObject *)managedCardWithName:(NSString *)name andSet:(NSString *)set existsInEntityWithName:(NSString *)entityName
+- (NSManagedObject *)managedLibraryCardWithName:(NSString *)name
 {
-	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:[self managedObjectContext]];
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"LibraryCard" inManagedObjectContext:[self managedObjectContext]];
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:entityDescription];
 	
-	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name = %@) AND (set = %@)", name, set];
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
 	[fetchRequest setPredicate:predicate];
 	
 	NSError *error;
@@ -138,6 +160,29 @@
 	
 	if ([checkResults count] > 0) {
 		return (NSManagedObject *) [checkResults objectAtIndex:0];
+	}
+	
+	return nil;
+}
+
+- (NSManagedObject *)managedTempCardWithName:(NSString *)name
+{
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"TempCard" inManagedObjectContext:[self managedObjectContext]];
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	[fetchRequest setEntity:entityDescription];
+	
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
+	[fetchRequest setPredicate:predicate];
+	
+	NSError *error;
+	NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+	if (results == nil) {
+		// TODO: do something with error
+		return nil;
+	}
+	
+	if ([results count] > 0) {
+		return (NSManagedObject *) [results objectAtIndex:0];
 	}
 	
 	return nil;
@@ -172,7 +217,38 @@
 
 - (IBAction)moveToDeck:(id)sender
 {
-	NSString *deckName = [[deckSelectionButton selectedItem] title];
+	NSManagedObject *deck = [self managedDeckWithName:[[deckSelectionButton selectedItem] title]];
+	NSArray *array = [libraryController selectedObjects];
+	NSManagedObject *libraryCard;
+	NSManagedObject *card;
+	int i;
+	
+	for (i = 0; i < [array count]; i++) {
+		libraryCard = [array objectAtIndex:i];
+		libraryCard.quantity = [NSNumber numberWithInt:[libraryCard.quantity intValue]-1];
+		
+		card = [self managedCardWithName:libraryCard.name inDeck:deck];
+		if (card == nil) {
+			card = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
+			card.manaCost = libraryCard.manaCost;
+			card.name = libraryCard.name;
+			card.quantity = [NSNumber numberWithInt:1];
+			card.rarity = libraryCard.rarity;
+			card.text = libraryCard.text;
+			
+			card.power = libraryCard.power;
+			card.toughness = libraryCard.toughness;
+			
+			card.superType = libraryCard.superType;
+			card.type = libraryCard.type;
+			card.deck = deck;
+			[deck addCardsObject:card];
+		} else {
+			card.quantity = [NSNumber numberWithInt:[card.quantity intValue]+1];
+		}
+	}
+	
+	[self save];
 }
 
 - (IBAction)moveToLibrary:(id)sender
@@ -232,7 +308,7 @@
 
 - (void)save
 {
-    NSError *error = nil;
+    NSError *error;
     
     if (![[self managedObjectContext] commitEditing]) {
         NSLog(@"%@:%s unable to commit editing before saving", [self class], _cmd);

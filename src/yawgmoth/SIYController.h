@@ -5,6 +5,7 @@
 @interface SIYController : NSObject {
 	
 	SIYCardDatabase *cardDatabase;
+	IBOutlet NSArrayController *libraryController;
 	
 	IBOutlet NSWindow *deckEditingWindow;
 	IBOutlet NSTableView *libraryTableView;
@@ -39,8 +40,10 @@
 - (IBAction)cancelAddToLibrary:(id)sender;
 - (IBAction)createNewDeck:(id)sender;
 - (IBAction)createNewDeckDidEnd:(id)sender;
+- (NSManagedObject *)managedCardWithName:(NSString *)name inDeck:(NSManagedObject *)deck;
 - (NSManagedObject *)managedDeckWithName:(NSString *)name;
-- (NSManagedObject *)managedCardWithName:(NSString *)name andSet:(NSString *)set existsInEntityWithName:(NSString *)entityName;
+- (NSManagedObject *)managedLibraryCardWithName:(NSString *)name;
+- (NSManagedObject *)managedTempCardWithName:(NSString *)name;
 - (IBAction)moveToDeck:(id)sender;
 - (IBAction)moveToLibrary:(id)sender;
 - (IBAction)openAddToLibraryWindow:(id)sender;

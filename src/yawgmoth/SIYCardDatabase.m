@@ -49,7 +49,6 @@
 	card.name = [resultSet stringForColumn:@"name"];
 	card.quantity = [NSNumber numberWithInt:1];
 	card.rarity = [resultSet stringForColumn:@"rarity"];
-	card.set = [resultSet stringForColumn:@"expansion"];
 	card.text = [resultSet stringForColumn:@"text"];
 	
 	card.power = [NSNumber numberWithInt:[resultSet intForColumn:@"power"]];

@@ -16,12 +16,26 @@
 @property (nonatomic, retain) NSNumber * power;
 @property (nonatomic, retain) NSNumber * quantity;
 @property (nonatomic, retain) NSString * rarity;
-@property (nonatomic, retain) NSString * set;
 @property (nonatomic, retain) NSString * superType;
 @property (nonatomic, retain) NSString * text;
 @property (nonatomic, retain) NSNumber * toughness;
 @property (nonatomic, retain) NSString * type;
 @property (nonatomic, retain) NSManagedObject * deck;
+
+@end
+
+@interface NSManagedObject (LibraryCard)
+
+@property (nonatomic, retain) NSNumber * convertedManaCost;
+@property (nonatomic, retain) NSString * manaCost;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * power;
+@property (nonatomic, retain) NSNumber * quantity;
+@property (nonatomic, retain) NSString * rarity;
+@property (nonatomic, retain) NSString * superType;
+@property (nonatomic, retain) NSString * text;
+@property (nonatomic, retain) NSNumber * toughness;
+@property (nonatomic, retain) NSString * type;
 
 @end
 
@@ -33,7 +47,6 @@
 @property (nonatomic, retain) NSNumber * power;
 @property (nonatomic, retain) NSNumber * quantity;
 @property (nonatomic, retain) NSString * rarity;
-@property (nonatomic, retain) NSString * set;
 @property (nonatomic, retain) NSString * superType;
 @property (nonatomic, retain) NSString * text;
 @property (nonatomic, retain) NSNumber * toughness;
