@@ -21,8 +21,6 @@
 		card = [NSEntityDescription insertNewObjectForEntityForName:@"TempCard" inManagedObjectContext:[self managedObjectContext]];
 		[cardDatabase populateCard:card withRowIndex:[allCardsTable selectedRow]];
 	}
-	
-//	[self save];
 }
 
 - (IBAction)addToLibrary:(id)sender
@@ -80,25 +78,46 @@
 
 - (IBAction)createNewDeck:(id)sender
 {
-	[NSApp beginSheet:newDeckPanel modalForWindow:deckEditingWindow modalDelegate:self didEndSelector:@selector(createNewDeckDidEnd: returnCode: contextInfo:) contextInfo:nil];
+	[NSApp beginSheet:newDeckPanel modalForWindow:deckEditingWindow modalDelegate:self didEndSelector:NULL contextInfo:nil];
 }
 
 - (IBAction)createNewDeckDidEnd:(id)sender
 {
 	if (sender == newDeckCreateButton) {
 		NSString *deckName = [newDeckNameField stringValue];
-		NSManagedObject *newDeck = [NSEntityDescription insertNewObjectForEntityForName:@"Deck" inManagedObjectContext:[self managedObjectContext]];
-		newDeck.name = deckName;
-		[self save];
+		NSManagedObject *deck = [self managedDeckWithName:deckName];
+		if (deck == nil) {
+			deck = [NSEntityDescription insertNewObjectForEntityForName:@"Deck" inManagedObjectContext:[self managedObjectContext]];
+			deck.name = deckName;
+			[self save];
+		}
 	}
 	
 	[newDeckPanel orderOut:nil];
 	[NSApp endSheet:newDeckPanel];
 }
 
-- (void)createNewDeckDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
+- (NSManagedObject *)managedDeckWithName:(NSString *)name
 {
-	NSLog(@"%d", returnCode);
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Deck" inManagedObjectContext:[self managedObjectContext]];
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	[fetchRequest setEntity:entityDescription];
+	
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
+	[fetchRequest setPredicate:predicate];
+	
+	NSError *error;
+	NSArray *checkResults = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+	if (checkResults == nil) {
+		// TODO: do something with error
+		return nil;
+	}
+	
+	if ([checkResults count] > 0) {
+		return (NSManagedObject *) [checkResults objectAtIndex:0];
+	}
+	
+	return nil;
 }
 
 - (NSManagedObject *)managedCardWithName:(NSString *)name andSet:(NSString *)set existsInEntityWithName:(NSString *)entityName
@@ -153,6 +172,7 @@
 
 - (IBAction)moveToDeck:(id)sender
 {
+	NSString *deckName = [[deckSelectionButton selectedItem] title];
 }
 
 - (IBAction)moveToLibrary:(id)sender
