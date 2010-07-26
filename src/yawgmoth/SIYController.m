@@ -10,6 +10,8 @@
 	[allCardsTable setAction:@selector(allCardsSelectionAction)];
 	[allCardsTable setDataSource:cardDatabase];
 	[allCardsTable setTarget:self];
+	
+	imageManager = [[[SIYCardImageManager alloc] initWithApplicationSupportDirectory:[self applicationSupportDirectory]] retain];
 }
 
 - (IBAction)addCardToLibraryAddTable:(id)sender
