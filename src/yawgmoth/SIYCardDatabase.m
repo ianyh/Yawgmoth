@@ -36,12 +36,12 @@
 - (void)cache
 {
 	while(1) {
-		if (nextRowToCache - lastRequestedRow < 1000) {
+		if (nextRowToCache - lastRequestedRow < 200) {
 			[cacheLock lock];
 			NSString *value = [nameCache objectForKey:[NSNumber	numberWithInt:nextRowToCache]];
 			while (value != nil) {
 				[cacheLock unlock];
-				[NSThread sleepForTimeInterval:1];
+				[NSThread sleepForTimeInterval:50.0/(nextRowToCache - lastRequestedRow + 1)];
 				[cacheLock lock];
 				
 				nextRowToCache++;
@@ -53,7 +53,7 @@
 			
 			[cacheLock unlock];
 		}
-		[NSThread sleepForTimeInterval:1];
+		[NSThread sleepForTimeInterval:50.0/(nextRowToCache - lastRequestedRow + 1)];
 	}
 }
 
