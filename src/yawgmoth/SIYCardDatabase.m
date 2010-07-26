@@ -24,10 +24,42 @@
 	}
 	
 	numberOfRows = -1;
+	nextRowToCache = 0;
+	lastRequestedRow = -1;
+	
+	cachingThread = [[[NSThread alloc] initWithTarget:self selector:@selector(cache) object:nil] retain];
+	cacheLock = [[[NSLock alloc] init] retain];
 	
 	return [super init];
 }
 
+- (void)cache
+{
+	while(1) {
+		if (nextRowToCache - lastRequestedRow < 1000) {
+			[cacheLock lock];
+			NSString *value = [nameCache objectForKey:[NSNumber	numberWithInt:nextRowToCache]];
+			while (value != nil) {
+				[cacheLock unlock];
+				[NSThread sleepForTimeInterval:1];
+				[cacheLock lock];
+				
+				nextRowToCache++;
+				value = [nameCache objectForKey:[NSNumber numberWithInt:nextRowToCache]];
+			}
+			
+			[nameCache setObject:[self cardValueType:@"name" fromDBAtIndex:nextRowToCache] forKey:[NSNumber numberWithInt:nextRowToCache]];
+			[setCache setObject:[self cardValueType:@"expansion" fromDBAtIndex:nextRowToCache] forKey:[NSNumber numberWithInt:nextRowToCache]];
+			
+			[cacheLock unlock];
+		}
+		[NSThread sleepForTimeInterval:1];
+	}
+}
+
+/**
+ * must acquire cacheLock before calling
+ */
 - (NSString *)cardValueType:(NSString *)type fromDBAtIndex:(NSInteger)rowIndex
 {
 	NSString *value;
@@ -103,6 +135,11 @@
 	return query;
 }
 
+- (void)startCachingThread
+{
+	[cachingThread start];
+}
+
 - (NSString *)superTypeFromType:(NSString *)type
 {
 	NSArray *superTypeRegexStrings = [NSArray arrayWithObjects:@".*Instant.*", @".*Sorcery.*", @".*Artifact Creature.*", @".*Artifact Land.*", @".*Creature.*", @".*Artifact.*", @".*Land.*", @".*Enchantment.*", @".*Planeswalker.*", nil];
@@ -124,7 +161,13 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	NSString *value;
 	NSString *valueType = [aTableColumn identifier];
+	[cacheLock lock];
 	value = [[self cardValueType:valueType fromDBAtIndex:rowIndex] retain];
+	lastRequestedRow = rowIndex;
+	if (lastRequestedRow > nextRowToCache) {
+		nextRowToCache = lastRequestedRow;
+	}
+	[cacheLock unlock];
 	[pool release];
 	
 	return value;
@@ -146,8 +189,10 @@
 
 - (void)updateFilter:(NSString *)newFilterString
 {
+	numberOfRows = -1;
 	[nameCache removeAllObjects];
 	[setCache removeAllObjects];
+	nextRowToCache = 0;
 	filterString = [[newFilterString copy] retain];
 }
 

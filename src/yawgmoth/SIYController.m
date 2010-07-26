@@ -6,6 +6,7 @@
 - (void)awakeFromNib
 {
 	cardDatabase = [[[SIYCardDatabase alloc] init] retain];
+	[cardDatabase startCachingThread];
 	[allCardsTable setDataSource:cardDatabase];
 }
 
