@@ -29,6 +29,10 @@
 		3C8980C811F9206B00AABCEE /* cards.db in Resources */ = {isa = PBXBuildFile; fileRef = 3C8980C711F9206B00AABCEE /* cards.db */; };
 		3C89838A11F9698F00AABCEE /* SIYCardDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89838911F9698F00AABCEE /* SIYCardDatabase.m */; };
 		3C8EED8811ED2E07003E7D9F /* DeckEditorWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */; };
+		3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
+		3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
+		3CBD2D4511FE2E9200DE9543 /* SIYCardImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D4411FE2E9200DE9543 /* SIYCardImageDownloader.m */; };
+		3CBD2D4611FE2E9200DE9543 /* SIYCardImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D4411FE2E9200DE9543 /* SIYCardImageDownloader.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +63,10 @@
 		3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3C8EED8711ED2E07003E7D9F /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/DeckEditorWindow.nib; sourceTree = "<group>"; };
 		3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDataModelManagedObjects.h; path = src/yawgmoth/SIYDataModelManagedObjects.h; sourceTree = "<group>"; };
+		3CBD2D3911FE2E5300DE9543 /* SIYCardImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYCardImageManager.h; path = src/yawgmoth/SIYCardImageManager.h; sourceTree = "<group>"; };
+		3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYCardImageManager.m; path = src/yawgmoth/SIYCardImageManager.m; sourceTree = "<group>"; };
+		3CBD2D4311FE2E9200DE9543 /* SIYCardImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYCardImageDownloader.h; path = src/yawgmoth/SIYCardImageDownloader.h; sourceTree = "<group>"; };
+		3CBD2D4411FE2E9200DE9543 /* SIYCardImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYCardImageDownloader.m; path = src/yawgmoth/SIYCardImageDownloader.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Yawgmoth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawgmoth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -88,11 +96,15 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3CBD2D3911FE2E5300DE9543 /* SIYCardImageManager.h */,
+				3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */,
 				3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */,
 				3C89838811F9698F00AABCEE /* SIYCardDatabase.h */,
 				3C89838911F9698F00AABCEE /* SIYCardDatabase.m */,
 				3C1E539711F620F9001FB0BF /* SIYController.h */,
 				3C1E539811F620F9001FB0BF /* SIYController.m */,
+				3CBD2D4311FE2E9200DE9543 /* SIYCardImageDownloader.h */,
+				3CBD2D4411FE2E9200DE9543 /* SIYCardImageDownloader.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -291,6 +303,8 @@
 				3C0F865111FD00300043D7DD /* FMDatabase.m in Sources */,
 				3C0F865211FD00300043D7DD /* FMDatabaseAdditions.m in Sources */,
 				3C0F865311FD00300043D7DD /* FMResultSet.m in Sources */,
+				3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */,
+				3CBD2D4611FE2E9200DE9543 /* SIYCardImageDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +319,8 @@
 				3C0F85BE11FCDF3C0043D7DD /* FMDatabase.m in Sources */,
 				3C0F85BF11FCDF3C0043D7DD /* FMDatabaseAdditions.m in Sources */,
 				3C0F85C011FCDF3C0043D7DD /* FMResultSet.m in Sources */,
+				3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */,
+				3CBD2D4511FE2E9200DE9543 /* SIYCardImageDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
