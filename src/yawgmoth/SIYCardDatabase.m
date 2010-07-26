@@ -14,10 +14,16 @@
 	
 	id cacheClass = NSClassFromString(@"NSCache");
 	if (cacheClass == nil) {
-		cache = [[[NSMutableDictionary alloc] init] retain];
+		nameCache = [[NSMutableDictionary dictionaryWithCapacity:1000] retain];
+		setCache = [[NSMutableDictionary dictionaryWithCapacity:1000] retain];
 	} else {
-		cache = [[[cacheClass alloc] init] retain];
+		nameCache = [[[cacheClass alloc] init] retain];
+		setCache = [[[cacheClass alloc] init] retain];
+		[nameCache setCountLimit:1000];
+		[setCache setCountLimit:1000];
 	}
+	
+	numberOfRows = -1;
 	
 	return [super init];
 }
@@ -25,23 +31,41 @@
 - (NSString *)cardValueType:(NSString *)type fromDBAtIndex:(NSInteger)rowIndex
 {
 	NSString *value;
-	FMResultSet *resultSet = [db executeQuery:[self queryWithSelection:type singleSelection:YES], [NSNumber numberWithInt:rowIndex]];
+	id cache;
 	
-	if (![resultSet next]) {
-		NSLog(@"no results found; rowIndex (%d) might be out of bound", rowIndex);
-		[resultSet close];
-		return @"";
+	if ([type isEqualToString:@"name"]) {
+		cache = nameCache;
+	} else {
+		cache = setCache;
 	}
 	
-	value = [resultSet stringForColumn:type];
-	[resultSet close];
+	value = [cache objectForKey:[NSNumber numberWithInt:rowIndex]];	
+	
+	if (value == nil) {
+		FMResultSet *resultSet = [db executeQuery:[self queryWithSelection:type singleSelection:YES], [NSNumber numberWithInt:rowIndex]];
+		
+		if (![resultSet next]) {
+			NSLog(@"no results found; rowIndex (%d) might be out of bound", rowIndex);
+			[resultSet close];
+			return @"";
+		}
+		
+		value = [resultSet stringForColumn:type];
+		[resultSet close];
+		
+		[cache setObject:value forKey:[NSNumber numberWithInt:rowIndex]];
+	}
 	
 	return value;
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
-	return (NSInteger) [db intForQuery:[self queryWithSelection:@"count(*)" singleSelection:NO]];
+	if (numberOfRows < 0) {
+		numberOfRows = (NSInteger) [db intForQuery:[self queryWithSelection:@"count(*)" singleSelection:NO]];
+	}
+	
+	return numberOfRows;
 }
 
 - (void)populateCard:(NSManagedObject *)card withRowIndex:(NSInteger)rowIndex
@@ -122,6 +146,8 @@
 
 - (void)updateFilter:(NSString *)newFilterString
 {
+	[nameCache removeAllObjects];
+	[setCache removeAllObjects];
 	filterString = [[newFilterString copy] retain];
 }
 

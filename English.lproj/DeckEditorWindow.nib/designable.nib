@@ -12,8 +12,8 @@
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<integer value="57"/>
-			<integer value="265"/>
-			<integer value="213"/>
+			<integer value="414"/>
+			<integer value="587"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -893,7 +893,7 @@
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSSearchFieldCell" key="NSCell" id="788136248">
 								<int key="NSCellFlags">343014976</int>
-								<int key="NSCellFlags2">268436544</int>
+								<int key="NSCellFlags2">272630848</int>
 								<string key="NSContents"/>
 								<reference key="NSSupport" ref="465319721"/>
 								<string key="NSPlaceholderString">Search all cards...</string>
@@ -935,7 +935,6 @@
 									<int key="NSPeriodicInterval">75</int>
 								</object>
 								<int key="NSMaximumRecents">255</int>
-								<bytes key="NSSearchFieldFlags">CAAAAA</bytes>
 							</object>
 						</object>
 					</array>
@@ -961,7 +960,7 @@
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSImageView" id="720032181">
 							<reference key="NSNextResponder" ref="343233240"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">283</int>
 							<set class="NSMutableSet" key="NSDragTypes">
 								<string>Apple PDF pasteboard type</string>
 								<string>Apple PICT pasteboard type</string>
@@ -1495,7 +1494,7 @@
 													<int key="NSsFlags">1</int>
 													<reference key="NSTarget" ref="698011360"/>
 													<string key="NSAction">_doScroller:</string>
-													<double key="NSCurValue">1</double>
+													<double key="NSCurValue">0.01490514905149054</double>
 													<double key="NSPercent">0.97877984084880632</double>
 												</object>
 												<object class="NSClipView" id="523309443">
@@ -4921,9 +4920,9 @@
 				<string key="220.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="221.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="222.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="265.IBEditorWindowLastContentRect">{{385, 28}, {1055, 790}}</string>
+				<string key="265.IBEditorWindowLastContentRect">{{310, 58}, {1055, 790}}</string>
 				<string key="265.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="265.IBWindowTemplateEditedContentRect">{{385, 28}, {1055, 790}}</string>
+				<string key="265.IBWindowTemplateEditedContentRect">{{310, 58}, {1055, 790}}</string>
 				<integer value="1" key="265.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="265.editorWindowContentRectSynchronizationRect">{{33, 99}, {480, 360}}</string>
 				<boolean value="YES" key="265.windowTemplate.hasMinSize"/>

@@ -4,8 +4,10 @@
 
 @interface SIYCardDatabase : NSObject {
 	FMDatabase *db;
-	id cache;
+	id nameCache;
+	id setCache;
 	
+	NSInteger numberOfRows;
 	NSString *filterString;
 }
 
