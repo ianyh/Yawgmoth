@@ -6,7 +6,8 @@
 	NSMutableDictionary *cardImageDownloaders;
 }
 
-- (NSImage *)imageForCardWithName:(NSString *)cardName;
+- (NSImage *)imageForCardWithName:(NSString *)cardName withAction:(SEL)action withTarget:(id)target;
 - (BOOL)mainDownloadingCardIsDownloading;
+- (NSString *)mainDownloadingCardName;
 
 @end

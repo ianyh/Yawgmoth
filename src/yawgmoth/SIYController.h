@@ -23,6 +23,7 @@
 	IBOutlet NSTableView *allCardsTable;
 	IBOutlet NSSearchField *allCardsSearchField;
 	IBOutlet NSTableView *cardsToAddToLibraryTable;
+	IBOutlet NSImageView *libraryAddingCardImageView;
 	
 	IBOutlet NSPanel *newDeckPanel;
 	IBOutlet NSTextField *newDeckNameField;
@@ -56,5 +57,6 @@
 - (IBAction)removeCardFromLibraryAddTable:(id)sender;
 - (void)save;
 - (IBAction)updateFilter:(id)sender;
+- (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
 
 @end

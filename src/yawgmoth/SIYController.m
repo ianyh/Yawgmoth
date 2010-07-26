@@ -74,7 +74,10 @@
 
 - (void)allCardsSelectionAction
 {
-
+	NSString *selectedCardName = [cardDatabase cardValueType:@"name" fromDBAtIndex:[allCardsTable selectedRow]];
+	[libraryAddingCardImageView setImage:[imageManager imageForCardWithName:selectedCardName 
+																 withAction:@selector(updateLibraryAddImage:forCardWithName:) 
+																 withTarget:self]];
 }
 
 - (NSString *)applicationSupportDirectory {
@@ -372,6 +375,14 @@
 {
 	[cardDatabase updateFilter:[allCardsSearchField stringValue]];
 	[allCardsTable reloadData];
+}
+
+- (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName
+{
+	if ([cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
+		[libraryAddingCardImageView setImage:cardImage];
+	}
+	NSLog(@"Update image for card with name %@", cardName);
 }
 
 @end
