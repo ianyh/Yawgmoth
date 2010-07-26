@@ -7,7 +7,9 @@
 {
 	cardDatabase = [[[SIYCardDatabase alloc] init] retain];
 	[cardDatabase startCachingThread];
+	[allCardsTable setAction:@selector(allCardsSelectionAction)];
 	[allCardsTable setDataSource:cardDatabase];
+	[allCardsTable setTarget:self];
 }
 
 - (IBAction)addCardToLibraryAddTable:(id)sender
@@ -63,6 +65,16 @@
 	[self save];
 	
 	[libraryAddingWindow close];
+}
+
+- (BOOL)allCardsSelectionDownloading
+{
+	return [imageManager mainDownloadingCardIsDownloading];
+}
+
+- (void)allCardsSelectionAction
+{
+
 }
 
 - (NSString *)applicationSupportDirectory {

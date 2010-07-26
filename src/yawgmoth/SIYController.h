@@ -1,10 +1,12 @@
 #import <Cocoa/Cocoa.h>
 #import "SIYCardDatabase.h"
+#import "SIYCardImageManager.h"
 
 
 @interface SIYController : NSObject {
 	
 	SIYCardDatabase *cardDatabase;
+	SIYCardImageManager *imageManager;
 	IBOutlet NSArrayController *libraryController;
 	IBOutlet NSArrayController *deckCardsController;
 	IBOutlet NSArrayController *tempCardsController;
@@ -39,6 +41,8 @@
 
 - (IBAction)addCardToLibraryAddTable:(id)sender;
 - (IBAction)addToLibrary:(id)sender;
+- (BOOL)allCardsSelectionDownloading;
+- (void)allCardsSelectionAction;
 - (IBAction)cancelAddToLibrary:(id)sender;
 - (IBAction)createNewDeck:(id)sender;
 - (IBAction)createNewDeckDidEnd:(id)sender;
