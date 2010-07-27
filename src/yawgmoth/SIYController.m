@@ -424,6 +424,19 @@
 	}
 }
 
+- (IBAction)removeFromLibrary:(id)sender
+{
+	NSArray *array = [[libraryController selectedObjects] copy];
+	NSManagedObject *libraryCard;
+	int i;
+	
+	for (i = 0; i < [array count]; i++) {
+		libraryCard = [array objectAtIndex:i];
+		libraryCard.quantity = [NSNumber numberWithInt:[libraryCard.quantity intValue]-1];
+	}
+	[self save];
+}
+
 - (void)save
 {
     NSError *error;

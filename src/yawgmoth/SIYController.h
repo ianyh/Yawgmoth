@@ -21,6 +21,7 @@
 	IBOutlet NSButton *moveToLibraryButton;
 	IBOutlet NSImageView *deckEditingCardImageView;
 	IBOutlet NSProgressIndicator *deckEditingCardImageProgress;
+	IBOutlet NSButton *removeFromLibraryButton;
 	
 	IBOutlet NSWindow *libraryAddingWindow;
 	IBOutlet NSButton *addToLibraryButton;
@@ -62,6 +63,7 @@
 - (IBAction)moveToLibrary:(id)sender;
 - (IBAction)openAddToLibraryWindow:(id)sender;
 - (IBAction)removeCardFromLibraryAddTable:(id)sender;
+- (IBAction)removeFromLibrary:(id)sender;
 - (void)save;
 - (IBAction)updateFilter:(id)sender;
 - (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
