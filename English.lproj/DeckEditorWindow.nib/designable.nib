@@ -12,7 +12,7 @@
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<integer value="57"/>
-			<integer value="191"/>
+			<integer value="192"/>
 			<integer value="414"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -341,7 +341,7 @@
 			<object class="NSWindowTemplate" id="88537734">
 				<int key="NSWindowStyleMask">271</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{196, -133}, {871, 643}}</string>
+				<string key="NSWindowRect">{{196, -133}, {886, 643}}</string>
 				<int key="NSWTFlags">1886912512</int>
 				<string key="NSWindowTitle">Window</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -753,7 +753,7 @@
 									<reference key="NSSuperview" ref="12038763"/>
 								</object>
 							</array>
-							<string key="NSFrame">{{530, 56}, {324, 567}}</string>
+							<string key="NSFrame">{{545, 56}, {324, 567}}</string>
 							<reference key="NSSuperview" ref="421791908"/>
 							<string key="NSOffsets">{0, 0}</string>
 							<object class="NSTextFieldCell" key="NSTitleCell">
@@ -776,7 +776,7 @@
 						<object class="NSButton" id="961258661">
 							<reference key="NSNextResponder" ref="421791908"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{352, 201}, {80, 23}}</string>
+							<string key="NSFrame">{{359, 201}, {80, 23}}</string>
 							<reference key="NSSuperview" ref="421791908"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="834420804">
@@ -800,7 +800,7 @@
 						<object class="NSButton" id="436608706">
 							<reference key="NSNextResponder" ref="421791908"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{439, 201}, {80, 23}}</string>
+							<string key="NSFrame">{{446, 201}, {80, 23}}</string>
 							<reference key="NSSuperview" ref="421791908"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="205024608">
@@ -832,11 +832,11 @@
 								<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
 								<string>NeXT TIFF v4.0 pasteboard type</string>
 							</set>
-							<string key="NSFrame">{{343, 228}, {185, 256}}</string>
+							<string key="NSFrame">{{343, 228}, {200, 285}}</string>
 							<reference key="NSSuperview" ref="421791908"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="178316192">
-								<int key="NSCellFlags">130560</int>
+								<int key="NSCellFlags">654848</int>
 								<int key="NSCellFlags2">33554432</int>
 								<int key="NSAlign">0</int>
 								<int key="NSScale">0</int>
@@ -848,7 +848,7 @@
 						<object class="NSButton" id="522857437">
 							<reference key="NSNextResponder" ref="421791908"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{627, 12}, {134, 32}}</string>
+							<string key="NSFrame">{{642, 12}, {134, 32}}</string>
 							<reference key="NSSuperview" ref="421791908"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="374422563">
@@ -868,7 +868,7 @@
 						<object class="NSButton" id="990221670">
 							<reference key="NSNextResponder" ref="421791908"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{761, 12}, {96, 32}}</string>
+							<string key="NSFrame">{{776, 12}, {96, 32}}</string>
 							<reference key="NSSuperview" ref="421791908"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="1025636708">
@@ -937,17 +937,17 @@
 								<int key="NSMaximumRecents">255</int>
 							</object>
 						</object>
-						<object class="NSProgressIndicator" id="602825158">
+						<object class="NSProgressIndicator" id="494444816">
 							<reference key="NSNextResponder" ref="421791908"/>
 							<int key="NSvFlags">1292</int>
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
-							<string key="NSFrame">{{419, 340}, {32, 32}}</string>
+							<string key="NSFrame">{{427, 354}, {32, 32}}</string>
 							<reference key="NSSuperview" ref="421791908"/>
 							<int key="NSpiFlags">28682</int>
 							<double key="NSMaxValue">100</double>
 						</object>
 					</array>
-					<string key="NSFrameSize">{871, 643}</string>
+					<string key="NSFrameSize">{886, 643}</string>
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
@@ -3691,10 +3691,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">animate: allCardsSelectionDownloading</string>
-						<reference key="source" ref="602825158"/>
+						<reference key="source" ref="494444816"/>
 						<reference key="destination" ref="900151345"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="602825158"/>
+							<reference key="NSSource" ref="494444816"/>
 							<reference key="NSDestination" ref="900151345"/>
 							<string key="NSLabel">animate: allCardsSelectionDownloading</string>
 							<string key="NSBinding">animate</string>
@@ -3703,6 +3703,14 @@
 						</object>
 					</object>
 					<int key="connectionID">833</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">libraryAddingCardImageView</string>
+						<reference key="source" ref="900151345"/>
+						<reference key="destination" ref="639797843"/>
+					</object>
+					<int key="connectionID">835</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3987,15 +3995,15 @@
 						<int key="objectID">192</int>
 						<reference key="object" ref="421791908"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="522857437"/>
-							<reference ref="990221670"/>
-							<reference ref="639797843"/>
-							<reference ref="436608706"/>
-							<reference ref="961258661"/>
-							<reference ref="12038763"/>
 							<reference ref="937099974"/>
 							<reference ref="595647324"/>
-							<reference ref="602825158"/>
+							<reference ref="639797843"/>
+							<reference ref="12038763"/>
+							<reference ref="990221670"/>
+							<reference ref="522857437"/>
+							<reference ref="961258661"/>
+							<reference ref="436608706"/>
+							<reference ref="494444816"/>
 						</array>
 						<reference key="parent" ref="88537734"/>
 					</object>
@@ -4887,7 +4895,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">830</int>
-						<reference key="object" ref="602825158"/>
+						<reference key="object" ref="494444816"/>
 						<reference key="parent" ref="421791908"/>
 					</object>
 				</array>
@@ -4915,9 +4923,9 @@
 				<string key="130.editorWindowContentRectSynchronizationRect">{{475, 832}, {234, 43}}</string>
 				<string key="131.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="132.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="191.IBEditorWindowLastContentRect">{{327, 150}, {871, 643}}</string>
+				<string key="191.IBEditorWindowLastContentRect">{{327, 150}, {886, 643}}</string>
 				<string key="191.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="191.IBWindowTemplateEditedContentRect">{{327, 150}, {871, 643}}</string>
+				<string key="191.IBWindowTemplateEditedContentRect">{{327, 150}, {886, 643}}</string>
 				<boolean value="NO" key="191.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="191.WindowOrigin">{196, 240}</string>
 				<string key="191.editorWindowContentRectSynchronizationRect">{{357, 418}, {480, 270}}</string>
@@ -5127,7 +5135,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">833</int>
+			<int key="maxID">835</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -5155,6 +5163,7 @@
 						<string key="deckEditingWindow">NSWindow</string>
 						<string key="deckSelectionButton">NSPopUpButton</string>
 						<string key="deckTableView">NSTableView</string>
+						<string key="libraryAddingCardImageView">NSImageView</string>
 						<string key="libraryAddingWindow">NSWindow</string>
 						<string key="libraryController">NSArrayController</string>
 						<string key="libraryTableView">NSTableView</string>
