@@ -48,8 +48,10 @@
 				value = [nameCache objectForKey:[NSNumber numberWithInt:nextRowToCache]];
 			}
 			
+			NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 			[nameCache setObject:[self cardValueType:@"name" fromDBAtIndex:nextRowToCache] forKey:[NSNumber numberWithInt:nextRowToCache]];
 			[setCache setObject:[self cardValueType:@"expansion" fromDBAtIndex:nextRowToCache] forKey:[NSNumber numberWithInt:nextRowToCache]];
+			[pool release];
 			
 			[cacheLock unlock];
 		}
