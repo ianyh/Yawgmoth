@@ -445,20 +445,18 @@
 
 - (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName
 {
-	if ([cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
-		[libraryAddingCardImageProgress stopAnimation:self];
+	if (cardName != nil && [cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
 		[libraryAddingCardImageView setImage:cardImage];
 	}
-	NSLog(@"Update image for card with name %@", cardName);
+	[libraryAddingCardImageProgress stopAnimation:self];
 }
 
 - (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName
 {
-	if ([cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
-		[deckEditingCardImageProgress startAnimation:self];
+	if (cardName != nil && [cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
 		[deckEditingCardImageView setImage:cardImage];
 	}
-	NSLog(@"Update image for card with name %@", cardName);
+	[deckEditingCardImageProgress stopAnimation:self];	
 }
 
 @end

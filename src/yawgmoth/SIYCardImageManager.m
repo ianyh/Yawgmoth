@@ -27,7 +27,13 @@
 
 - (void)download:(NSURLDownload *)download didFailWithError:(NSError *)error
 {
-	NSLog(@"download failed");
+	while ([[cardImageDownloaders allKeysForObject:download] count] == 0) {
+		[NSThread sleepForTimeInterval:0.01];
+	}
+	
+	NSString *cardName = [[cardImageDownloaders allKeysForObject:download] objectAtIndex:0];	
+	[downloadFinishTarget performSelector:downloadFinishAction withObject:nil withObject:nil];
+	[cardImageDownloaders removeObjectForKey:cardName];
 }
 
 - (void)downloadDidFinish:(NSURLDownload *)download

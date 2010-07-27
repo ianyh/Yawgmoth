@@ -12,7 +12,7 @@
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<integer value="57"/>
-			<integer value="198"/>
+			<integer value="192"/>
 			<integer value="266"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -840,7 +840,7 @@
 								<int key="NSCellFlags2">33554432</int>
 								<int key="NSAlign">0</int>
 								<int key="NSScale">0</int>
-								<int key="NSStyle">3</int>
+								<int key="NSStyle">0</int>
 								<bool key="NSAnimates">NO</bool>
 							</object>
 							<bool key="NSEditable">YES</bool>
@@ -987,7 +987,7 @@
 								<int key="NSCellFlags2">33554432</int>
 								<int key="NSAlign">0</int>
 								<int key="NSScale">3</int>
-								<int key="NSStyle">3</int>
+								<int key="NSStyle">0</int>
 								<bool key="NSAnimates">NO</bool>
 							</object>
 							<bool key="NSEditable">YES</bool>
@@ -2240,13 +2240,13 @@
 							<int key="NSTitlePosition">2</int>
 							<bool key="NSTransparent">NO</bool>
 						</object>
-						<object class="NSProgressIndicator" id="936731502">
+						<object class="NSProgressIndicator" id="195253596">
 							<reference key="NSNextResponder" ref="343233240"/>
 							<int key="NSvFlags">1292</int>
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
 							<string key="NSFrame">{{905, 583}, {32, 32}}</string>
 							<reference key="NSSuperview" ref="343233240"/>
-							<int key="NSpiFlags">20490</int>
+							<int key="NSpiFlags">28682</int>
 							<double key="NSMaxValue">100</double>
 						</object>
 					</array>
@@ -3742,7 +3742,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">deckEditingCardImageProgress</string>
 						<reference key="source" ref="900151345"/>
-						<reference key="destination" ref="936731502"/>
+						<reference key="destination" ref="195253596"/>
 					</object>
 					<int key="connectionID">842</int>
 				</object>
@@ -4255,7 +4255,7 @@
 							<reference ref="528368911"/>
 							<reference ref="970797844"/>
 							<reference ref="333287099"/>
-							<reference ref="936731502"/>
+							<reference ref="195253596"/>
 						</array>
 						<reference key="parent" ref="234478896"/>
 					</object>
@@ -4935,7 +4935,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">841</int>
-						<reference key="object" ref="936731502"/>
+						<reference key="object" ref="195253596"/>
 						<reference key="parent" ref="343233240"/>
 					</object>
 				</array>
