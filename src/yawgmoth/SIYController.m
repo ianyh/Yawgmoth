@@ -77,9 +77,12 @@
 - (void)allCardsSelectionAction
 {
 	NSString *selectedCardName = [cardDatabase cardValueType:@"name" fromDBAtIndex:[allCardsTable selectedRow]];
-	[libraryAddingCardImageView setImage:[imageManager imageForCardWithName:selectedCardName 
-																 withAction:@selector(updateLibraryAddImage:forCardWithName:) 
-																 withTarget:self]];
+	NSImage *cardImage = [imageManager imageFileNameFromCardName:selectedCardName 
+													  withAction:@selector(updateLibraryAddImage:forCardWithName:) 
+													  withTarget:self];
+	if (cardImage != nil) {
+		[libraryAddingCardImageView setImage:cardImage];
+	}
 }
 
 - (NSString *)applicationSupportDirectory {
