@@ -14,10 +14,10 @@
 
 - (id)initWithApplicationSupportDirectory:(NSString *)applicationSupportDirectory;
 
-- (NSString *)imageFileNameFromCardName:(NSString *)cardName;
-- (NSImage *)imageForCardWithName:(NSString *)cardName withAction:(SEL)action withTarget:(id)target;
-- (NSImage *)imageForCardWithName:(NSString *)cardName;
-- (BOOL)mainDownloadingCardIsDownloading;
+- (void)download:(NSURLDownload *)download didFailWithError:(NSError *)error;
+- (void)downloadDidFinish:(NSURLDownload *)download;
+- (NSString *)imageFileNameForCardName:(NSString *)cardName;
+- (NSImage *)imageForCardName:(NSString *)cardName shouldDownloadIfMissing:(BOOL)shouldDownload withAction:(SEL)action withTarget:(id)target;
 - (NSString *)mainDownloadingCardName;
 
 @end

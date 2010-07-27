@@ -82,17 +82,14 @@
 	}
 }
 
-- (BOOL)allCardsSelectionDownloading
-{
-	return [imageManager mainDownloadingCardIsDownloading];
-}
-
 - (void)allCardsSelectionAction
 {
 	NSString *selectedCardName = [cardDatabase cardValueType:@"name" fromDBAtIndex:[allCardsTable selectedRow]];
-	NSImage *cardImage = [imageManager imageForCardWithName:selectedCardName 
-													  withAction:@selector(updateLibraryAddImage:forCardWithName:) 
-													  withTarget:self];
+	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
+											 shouldDownloadIfMissing:YES 
+											 withAction:@selector(updateLibraryAddImage:forCardWithName:) 
+											 withTarget:self];
+
 	if (cardImage != nil) {
 		[libraryAddingCardImageProgress stopAnimation:self];
 		[libraryAddingCardImageView setImage:cardImage];
@@ -111,7 +108,8 @@
 	}
 	
 	NSString *selectedCardName = ((NSManagedObject *) [array objectAtIndex:0]).name;
-	NSImage *cardImage = [imageManager imageForCardWithName:selectedCardName 
+	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
+												 shouldDownloadIfMissing:YES
 												 withAction:@selector(updateDeckEditingImage:forCardWithName:) 
 												 withTarget:self];
 	
@@ -133,7 +131,8 @@
 	}
 	
 	NSString *selectedCardName = ((NSManagedObject *) [array objectAtIndex:0]).name;
-	NSImage *cardImage = [imageManager imageForCardWithName:selectedCardName 
+	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
+												 shouldDownloadIfMissing:YES
 												 withAction:@selector(updateDeckEditingImage:forCardWithName:) 
 												 withTarget:self];
 	
@@ -434,6 +433,8 @@
 		libraryCard = [array objectAtIndex:i];
 		libraryCard.quantity = [NSNumber numberWithInt:[libraryCard.quantity intValue]-1];
 	}
+	
+	[array release];
 	[self save];
 }
 

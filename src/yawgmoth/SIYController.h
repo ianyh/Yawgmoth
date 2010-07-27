@@ -48,7 +48,6 @@
 
 - (IBAction)addCardToLibraryAddTable:(id)sender;
 - (IBAction)addToLibrary:(id)sender;
-- (BOOL)allCardsSelectionDownloading;
 - (void)allCardsSelectionAction;
 - (void)libraryTableSelectionAction;
 - (void)deckCardsTableSelectionAction;

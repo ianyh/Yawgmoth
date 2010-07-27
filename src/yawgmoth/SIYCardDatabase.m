@@ -164,7 +164,7 @@
 	NSString *value;
 	NSString *valueType = [aTableColumn identifier];
 	[cacheLock lock];
-	value = [[self cardValueType:valueType fromDBAtIndex:rowIndex] retain];
+	value = [self cardValueType:valueType fromDBAtIndex:rowIndex];
 	lastRequestedRow = rowIndex;
 	if (lastRequestedRow > nextRowToCache) {
 		nextRowToCache = lastRequestedRow;

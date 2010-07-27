@@ -104,7 +104,6 @@
 		3C0F85BB11FCDF3C0043D7DD /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = src/fmdb.git/src/FMDatabaseAdditions.m; sourceTree = "<group>"; };
 		3C0F85BC11FCDF3C0043D7DD /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = src/fmdb.git/src/FMResultSet.h; sourceTree = "<group>"; };
 		3C0F85BD11FCDF3C0043D7DD /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb.git/src/FMResultSet.m; sourceTree = "<group>"; };
-		3C0F862F11FCFF8C0043D7DD /* Yawgmoth-10.6-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Yawgmoth-10.6-Info.plist"; sourceTree = "<group>"; };
 		3C0F865A11FD00300043D7DD /* Yawgmoth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawgmoth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C0F865C11FD00300043D7DD /* Info-10.6.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-10.6.plist"; sourceTree = "<group>"; };
 		3C180E3D11FE918A00235976 /* cards.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = cards.db; path = res/cards.db; sourceTree = "<group>"; };
@@ -222,7 +221,6 @@
 				3C1E539111F61E8B001FB0BF /* Yawgmoth */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				3C0F862F11FCFF8C0043D7DD /* Yawgmoth-10.6-Info.plist */,
 			);
 			name = Yawgmoth;
 			sourceTree = "<group>";
