@@ -65,7 +65,7 @@
 				 stringByReplacingOccurrencesOfString:@"'" withString:@""] 
 			    stringByReplacingOccurrencesOfString:@"," withString:@""] 
 			   stringByReplacingOccurrencesOfString:@" " withString:@"_"] 
-			  stringByReplacingOccurrencesOfString:@":" withString:@"_"] 
+			  stringByReplacingOccurrencesOfString:@"-" withString:@"_"] 
 			 stringByAppendingString:@".jpg"]
 			lowercaseString];
 }
