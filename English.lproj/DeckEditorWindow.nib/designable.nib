@@ -11,9 +11,9 @@
 			<string key="NS.object.0">762</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="266"/>
 			<integer value="57"/>
 			<integer value="192"/>
+			<integer value="724"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1470,7 +1470,7 @@
 															<reference key="NSBackgroundColor" ref="253235583"/>
 															<reference key="NSGridColor" ref="593907243"/>
 															<double key="NSRowHeight">17</double>
-															<int key="NSTvFlags">-96436224</int>
+															<int key="NSTvFlags">-767524864</int>
 															<reference key="NSDelegate"/>
 															<reference key="NSDataSource"/>
 															<int key="NSColumnAutoresizingStyle">1</int>
@@ -2152,7 +2152,7 @@
 															<reference key="NSBackgroundColor" ref="253235583"/>
 															<reference key="NSGridColor" ref="593907243"/>
 															<double key="NSRowHeight">17</double>
-															<int key="NSTvFlags">-96436224</int>
+															<int key="NSTvFlags">-230653952</int>
 															<reference key="NSDelegate"/>
 															<reference key="NSDataSource"/>
 															<int key="NSColumnAutoresizingStyle">1</int>
@@ -3712,6 +3712,30 @@
 					</object>
 					<int key="connectionID">835</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">libraryCardNameTableColumn</string>
+						<reference key="source" ref="900151345"/>
+						<reference key="destination" ref="132385969"/>
+					</object>
+					<int key="connectionID">836</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">deckCardNameTableColumn</string>
+						<reference key="source" ref="900151345"/>
+						<reference key="destination" ref="59915846"/>
+					</object>
+					<int key="connectionID">837</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">deckEditingCardImageView</string>
+						<reference key="source" ref="900151345"/>
+						<reference key="destination" ref="720032181"/>
+					</object>
+					<int key="connectionID">838</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -5135,7 +5159,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">835</int>
+			<int key="maxID">838</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -5159,12 +5183,15 @@
 						<string key="allCardsSearchField">NSSearchField</string>
 						<string key="allCardsTable">NSTableView</string>
 						<string key="cardsToAddToLibraryTable">NSTableView</string>
+						<string key="deckCardNameTableColumn">NSTableColumn</string>
 						<string key="deckCardsController">NSArrayController</string>
+						<string key="deckEditingCardImageView">NSImageView</string>
 						<string key="deckEditingWindow">NSWindow</string>
 						<string key="deckSelectionButton">NSPopUpButton</string>
 						<string key="deckTableView">NSTableView</string>
 						<string key="libraryAddingCardImageView">NSImageView</string>
 						<string key="libraryAddingWindow">NSWindow</string>
+						<string key="libraryCardNameTableColumn">NSTableColumn</string>
 						<string key="libraryController">NSArrayController</string>
 						<string key="libraryTableView">NSTableView</string>
 						<string key="moveToDeckButton">NSButton</string>

@@ -14,9 +14,12 @@
 	IBOutlet NSWindow *deckEditingWindow;
 	IBOutlet NSTableView *libraryTableView;
 	IBOutlet NSTableView *deckTableView;
+	IBOutlet NSTableColumn *libraryCardNameTableColumn;
+	IBOutlet NSTableColumn *deckCardNameTableColumn;
 	IBOutlet NSPopUpButton *deckSelectionButton;
 	IBOutlet NSButton *moveToDeckButton;
 	IBOutlet NSButton *moveToLibraryButton;
+	IBOutlet NSImageView *deckEditingCardImageView;
 	
 	IBOutlet NSWindow *libraryAddingWindow;
 	IBOutlet NSButton *addToLibraryButton;
@@ -44,6 +47,8 @@
 - (IBAction)addToLibrary:(id)sender;
 - (BOOL)allCardsSelectionDownloading;
 - (void)allCardsSelectionAction;
+- (void)libraryTableSelectionAction;
+- (void)deckCardsTableSelectionAction;
 - (IBAction)cancelAddToLibrary:(id)sender;
 - (IBAction)createNewDeck:(id)sender;
 - (IBAction)createNewDeckDidEnd:(id)sender;
@@ -57,6 +62,7 @@
 - (IBAction)removeCardFromLibraryAddTable:(id)sender;
 - (void)save;
 - (IBAction)updateFilter:(id)sender;
+- (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
 - (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
 
 @end

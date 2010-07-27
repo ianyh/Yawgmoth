@@ -11,6 +11,11 @@
 	[allCardsTable setDataSource:cardDatabase];
 	[allCardsTable setTarget:self];
 	
+	[libraryTableView setAction:@selector(libraryTableSelectionAction)];
+	[libraryTableView setTarget:self];
+	[deckTableView setAction:@selector(deckCardsTableSelectionAction)];
+	[deckTableView setTarget:self];
+	
 	imageManager = [[[SIYCardImageManager alloc] initWithApplicationSupportDirectory:[self applicationSupportDirectory]] retain];
 }
 
@@ -85,6 +90,46 @@
 	} else {
 		[libraryAddingCardImageView setImage:NULL];
 	}
+}
+	 
+- (void)libraryTableSelectionAction
+{
+	NSArray *array = [libraryController selectedObjects];
+	if ([array count] == 0) {
+		[deckEditingCardImageView setImage:NULL];
+		return;
+	}
+	
+	NSString *selectedCardName = ((NSManagedObject *) [array objectAtIndex:0]).name;
+	NSImage *cardImage = [imageManager imageForCardWithName:selectedCardName 
+												 withAction:@selector(updateDeckEditingImage:forCardWithName:) 
+												 withTarget:self];
+	
+	if (cardImage != nil) {
+		[deckEditingCardImageView setImage:cardImage];
+	} else {
+		[deckEditingCardImageView setImage:NULL];
+	}
+}
+
+- (void)deckCardsTableSelectionAction
+{
+	NSArray *array = [deckCardsController selectedObjects];
+	if ([array count] == 0) {
+		[deckEditingCardImageView setImage:NULL];
+		return;
+	}
+	
+	NSString *selectedCardName = ((NSManagedObject *) [array objectAtIndex:0]).name;
+	NSImage *cardImage = [imageManager imageForCardWithName:selectedCardName 
+												 withAction:@selector(updateDeckEditingImage:forCardWithName:) 
+												 withTarget:self];
+	
+	if (cardImage != nil) {
+		[deckEditingCardImageView setImage:cardImage];
+	} else {
+		[deckEditingCardImageView setImage:NULL];
+	}	
 }
 
 - (NSString *)applicationSupportDirectory {
@@ -388,6 +433,14 @@
 {
 	if ([cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
 		[libraryAddingCardImageView setImage:cardImage];
+	}
+	NSLog(@"Update image for card with name %@", cardName);
+}
+
+- (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName
+{
+	if ([cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
+		[deckEditingCardImageView setImage:cardImage];
 	}
 	NSLog(@"Update image for card with name %@", cardName);
 }
