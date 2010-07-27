@@ -12,7 +12,6 @@
 		3C0F85C011FCDF3C0043D7DD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F85BD11FCDF3C0043D7DD /* FMResultSet.m */; };
 		3C0F864911FD00300043D7DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		3C0F864A11FD00300043D7DD /* DeckEditorWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */; };
-		3C0F864B11FD00300043D7DD /* cards.db in Resources */ = {isa = PBXBuildFile; fileRef = 3C8980C711F9206B00AABCEE /* cards.db */; };
 		3C0F864D11FD00300043D7DD /* SIYController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539811F620F9001FB0BF /* SIYController.m */; };
 		3C0F864E11FD00300043D7DD /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */; };
 		3C0F864F11FD00300043D7DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
@@ -22,17 +21,99 @@
 		3C0F865311FD00300043D7DD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F85BD11FCDF3C0043D7DD /* FMResultSet.m */; };
 		3C0F865511FD00300043D7DD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */; };
 		3C0F865611FD00300043D7DD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		3C180E3E11FE918A00235976 /* cards.db in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E3D11FE918A00235976 /* cards.db */; };
+		3C180E3F11FE918A00235976 /* cards.db in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E3D11FE918A00235976 /* cards.db */; };
+		3C180E4211FEA00D00235976 /* TSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C180E4111FEA00D00235976 /* TSVParser.m */; };
+		3C180E4311FEA00D00235976 /* TSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C180E4111FEA00D00235976 /* TSVParser.m */; };
+		3C180EB511FEA65000235976 /* card-pictures_a.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E7F11FEA65000235976 /* card-pictures_a.txt */; };
+		3C180EB611FEA65000235976 /* card-pictures_b.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8011FEA65000235976 /* card-pictures_b.txt */; };
+		3C180EB711FEA65000235976 /* card-pictures_c.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8111FEA65000235976 /* card-pictures_c.txt */; };
+		3C180EB811FEA65000235976 /* card-pictures_d.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8211FEA65000235976 /* card-pictures_d.txt */; };
+		3C180EB911FEA65000235976 /* card-pictures_e.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8311FEA65000235976 /* card-pictures_e.txt */; };
+		3C180EBA11FEA65000235976 /* card-pictures_f.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8411FEA65000235976 /* card-pictures_f.txt */; };
+		3C180EBB11FEA65000235976 /* card-pictures_g.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8511FEA65000235976 /* card-pictures_g.txt */; };
+		3C180EBC11FEA65000235976 /* card-pictures_h.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8611FEA65000235976 /* card-pictures_h.txt */; };
+		3C180EBD11FEA65000235976 /* card-pictures_i.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8711FEA65000235976 /* card-pictures_i.txt */; };
+		3C180EBE11FEA65000235976 /* card-pictures_j.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8811FEA65000235976 /* card-pictures_j.txt */; };
+		3C180EBF11FEA65000235976 /* card-pictures_k.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8911FEA65000235976 /* card-pictures_k.txt */; };
+		3C180EC011FEA65000235976 /* card-pictures_l.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8A11FEA65000235976 /* card-pictures_l.txt */; };
+		3C180EC111FEA65000235976 /* card-pictures_m.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8B11FEA65000235976 /* card-pictures_m.txt */; };
+		3C180EC211FEA65000235976 /* card-pictures_n.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8C11FEA65000235976 /* card-pictures_n.txt */; };
+		3C180EC311FEA65000235976 /* card-pictures_o.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8D11FEA65000235976 /* card-pictures_o.txt */; };
+		3C180EC411FEA65000235976 /* card-pictures_other.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8E11FEA65000235976 /* card-pictures_other.txt */; };
+		3C180EC511FEA65000235976 /* card-pictures_p.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8F11FEA65000235976 /* card-pictures_p.txt */; };
+		3C180EC611FEA65000235976 /* card-pictures_q.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E9011FEA65000235976 /* card-pictures_q.txt */; };
+		3C180EC711FEA65000235976 /* card-pictures_r.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E9111FEA65000235976 /* card-pictures_r.txt */; };
+		3C180EC811FEA65000235976 /* card-pictures_s.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E9211FEA65000235976 /* card-pictures_s.txt */; };
+		3C180EC911FEA65000235976 /* card-pictures_t.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E9311FEA65000235976 /* card-pictures_t.txt */; };
+		3C180ECA11FEA65000235976 /* card-pictures_u.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E9411FEA65000235976 /* card-pictures_u.txt */; };
+		3C180ECB11FEA65000235976 /* card-pictures_v.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E9511FEA65000235976 /* card-pictures_v.txt */; };
+		3C180ECC11FEA65000235976 /* card-pictures_w.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E9611FEA65000235976 /* card-pictures_w.txt */; };
+		3C180ECD11FEA65000235976 /* card-pictures_x.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E9711FEA65000235976 /* card-pictures_x.txt */; };
+		3C180ECE11FEA65000235976 /* card-pictures_y.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E9811FEA65000235976 /* card-pictures_y.txt */; };
+		3C180ECF11FEA65000235976 /* card-pictures_z.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E9911FEA65000235976 /* card-pictures_z.txt */; };
+		3C180EFA11FEA79300235976 /* card-pictures_a.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EDF11FEA79300235976 /* card-pictures_a.txt */; };
+		3C180EFB11FEA79300235976 /* card-pictures_b.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE011FEA79300235976 /* card-pictures_b.txt */; };
+		3C180EFC11FEA79300235976 /* card-pictures_c.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE111FEA79300235976 /* card-pictures_c.txt */; };
+		3C180EFD11FEA79300235976 /* card-pictures_d.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE211FEA79300235976 /* card-pictures_d.txt */; };
+		3C180EFE11FEA79300235976 /* card-pictures_e.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE311FEA79300235976 /* card-pictures_e.txt */; };
+		3C180EFF11FEA79300235976 /* card-pictures_f.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE411FEA79300235976 /* card-pictures_f.txt */; };
+		3C180F0011FEA79300235976 /* card-pictures_g.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE511FEA79300235976 /* card-pictures_g.txt */; };
+		3C180F0111FEA79300235976 /* card-pictures_h.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE611FEA79300235976 /* card-pictures_h.txt */; };
+		3C180F0211FEA79300235976 /* card-pictures_i.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE711FEA79300235976 /* card-pictures_i.txt */; };
+		3C180F0311FEA79300235976 /* card-pictures_j.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE811FEA79300235976 /* card-pictures_j.txt */; };
+		3C180F0411FEA79300235976 /* card-pictures_k.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE911FEA79300235976 /* card-pictures_k.txt */; };
+		3C180F0511FEA79300235976 /* card-pictures_l.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EEA11FEA79300235976 /* card-pictures_l.txt */; };
+		3C180F0611FEA79300235976 /* card-pictures_m.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EEB11FEA79300235976 /* card-pictures_m.txt */; };
+		3C180F0711FEA79300235976 /* card-pictures_n.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EEC11FEA79300235976 /* card-pictures_n.txt */; };
+		3C180F0811FEA79300235976 /* card-pictures_o.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EED11FEA79300235976 /* card-pictures_o.txt */; };
+		3C180F0911FEA79300235976 /* card-pictures_other.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EEE11FEA79300235976 /* card-pictures_other.txt */; };
+		3C180F0A11FEA79300235976 /* card-pictures_p.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EEF11FEA79300235976 /* card-pictures_p.txt */; };
+		3C180F0B11FEA79300235976 /* card-pictures_q.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF011FEA79300235976 /* card-pictures_q.txt */; };
+		3C180F0C11FEA79300235976 /* card-pictures_r.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF111FEA79300235976 /* card-pictures_r.txt */; };
+		3C180F0D11FEA79300235976 /* card-pictures_s.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF211FEA79300235976 /* card-pictures_s.txt */; };
+		3C180F0E11FEA79300235976 /* card-pictures_t.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF311FEA79300235976 /* card-pictures_t.txt */; };
+		3C180F0F11FEA79300235976 /* card-pictures_u.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF411FEA79300235976 /* card-pictures_u.txt */; };
+		3C180F1011FEA79300235976 /* card-pictures_v.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF511FEA79300235976 /* card-pictures_v.txt */; };
+		3C180F1111FEA79300235976 /* card-pictures_w.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF611FEA79300235976 /* card-pictures_w.txt */; };
+		3C180F1211FEA79300235976 /* card-pictures_x.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF711FEA79300235976 /* card-pictures_x.txt */; };
+		3C180F1311FEA79300235976 /* card-pictures_y.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF811FEA79300235976 /* card-pictures_y.txt */; };
+		3C180F1411FEA79300235976 /* card-pictures_z.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF911FEA79300235976 /* card-pictures_z.txt */; };
+		3C180F1511FEA79300235976 /* card-pictures_a.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EDF11FEA79300235976 /* card-pictures_a.txt */; };
+		3C180F1611FEA79300235976 /* card-pictures_b.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE011FEA79300235976 /* card-pictures_b.txt */; };
+		3C180F1711FEA79300235976 /* card-pictures_c.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE111FEA79300235976 /* card-pictures_c.txt */; };
+		3C180F1811FEA79300235976 /* card-pictures_d.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE211FEA79300235976 /* card-pictures_d.txt */; };
+		3C180F1911FEA79300235976 /* card-pictures_e.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE311FEA79300235976 /* card-pictures_e.txt */; };
+		3C180F1A11FEA79300235976 /* card-pictures_f.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE411FEA79300235976 /* card-pictures_f.txt */; };
+		3C180F1B11FEA79300235976 /* card-pictures_g.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE511FEA79300235976 /* card-pictures_g.txt */; };
+		3C180F1C11FEA79300235976 /* card-pictures_h.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE611FEA79300235976 /* card-pictures_h.txt */; };
+		3C180F1D11FEA79300235976 /* card-pictures_i.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE711FEA79300235976 /* card-pictures_i.txt */; };
+		3C180F1E11FEA79300235976 /* card-pictures_j.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE811FEA79300235976 /* card-pictures_j.txt */; };
+		3C180F1F11FEA79300235976 /* card-pictures_k.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EE911FEA79300235976 /* card-pictures_k.txt */; };
+		3C180F2011FEA79300235976 /* card-pictures_l.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EEA11FEA79300235976 /* card-pictures_l.txt */; };
+		3C180F2111FEA79300235976 /* card-pictures_m.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EEB11FEA79300235976 /* card-pictures_m.txt */; };
+		3C180F2211FEA79300235976 /* card-pictures_n.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EEC11FEA79300235976 /* card-pictures_n.txt */; };
+		3C180F2311FEA79300235976 /* card-pictures_o.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EED11FEA79300235976 /* card-pictures_o.txt */; };
+		3C180F2411FEA79300235976 /* card-pictures_other.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EEE11FEA79300235976 /* card-pictures_other.txt */; };
+		3C180F2511FEA79300235976 /* card-pictures_p.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EEF11FEA79300235976 /* card-pictures_p.txt */; };
+		3C180F2611FEA79300235976 /* card-pictures_q.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF011FEA79300235976 /* card-pictures_q.txt */; };
+		3C180F2711FEA79300235976 /* card-pictures_r.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF111FEA79300235976 /* card-pictures_r.txt */; };
+		3C180F2811FEA79300235976 /* card-pictures_s.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF211FEA79300235976 /* card-pictures_s.txt */; };
+		3C180F2911FEA79300235976 /* card-pictures_t.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF311FEA79300235976 /* card-pictures_t.txt */; };
+		3C180F2A11FEA79300235976 /* card-pictures_u.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF411FEA79300235976 /* card-pictures_u.txt */; };
+		3C180F2B11FEA79300235976 /* card-pictures_v.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF511FEA79300235976 /* card-pictures_v.txt */; };
+		3C180F2C11FEA79300235976 /* card-pictures_w.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF611FEA79300235976 /* card-pictures_w.txt */; };
+		3C180F2D11FEA79300235976 /* card-pictures_x.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF711FEA79300235976 /* card-pictures_x.txt */; };
+		3C180F2E11FEA79300235976 /* card-pictures_y.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF811FEA79300235976 /* card-pictures_y.txt */; };
+		3C180F2F11FEA79300235976 /* card-pictures_z.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180EF911FEA79300235976 /* card-pictures_z.txt */; };
 		3C1E539A11F620F9001FB0BF /* SIYController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539811F620F9001FB0BF /* SIYController.m */; };
 		3C1E539B11F620F9001FB0BF /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */; };
 		3C1E539D11F6212E001FB0BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
 		3C897ECB11F8DB1300AABCEE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */; };
-		3C8980C811F9206B00AABCEE /* cards.db in Resources */ = {isa = PBXBuildFile; fileRef = 3C8980C711F9206B00AABCEE /* cards.db */; };
 		3C89838A11F9698F00AABCEE /* SIYCardDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89838911F9698F00AABCEE /* SIYCardDatabase.m */; };
 		3C8EED8811ED2E07003E7D9F /* DeckEditorWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */; };
 		3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
 		3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
-		3CBD2D4511FE2E9200DE9543 /* SIYCardImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D4411FE2E9200DE9543 /* SIYCardImageDownloader.m */; };
-		3CBD2D4611FE2E9200DE9543 /* SIYCardImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D4411FE2E9200DE9543 /* SIYCardImageDownloader.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -53,11 +134,67 @@
 		3C0F862F11FCFF8C0043D7DD /* Yawgmoth-10.6-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Yawgmoth-10.6-Info.plist"; sourceTree = "<group>"; };
 		3C0F865A11FD00300043D7DD /* Yawgmoth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawgmoth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C0F865C11FD00300043D7DD /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info copy.plist"; sourceTree = "<group>"; };
+		3C180E3D11FE918A00235976 /* cards.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = cards.db; path = res/cards.db; sourceTree = "<group>"; };
+		3C180E4011FEA00D00235976 /* TSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSVParser.h; path = src/TSVParser.h; sourceTree = "<group>"; };
+		3C180E4111FEA00D00235976 /* TSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSVParser.m; path = src/TSVParser.m; sourceTree = "<group>"; };
+		3C180E7F11FEA65000235976 /* card-pictures_a.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_a.txt"; sourceTree = "<group>"; };
+		3C180E8011FEA65000235976 /* card-pictures_b.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_b.txt"; sourceTree = "<group>"; };
+		3C180E8111FEA65000235976 /* card-pictures_c.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_c.txt"; sourceTree = "<group>"; };
+		3C180E8211FEA65000235976 /* card-pictures_d.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_d.txt"; sourceTree = "<group>"; };
+		3C180E8311FEA65000235976 /* card-pictures_e.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_e.txt"; sourceTree = "<group>"; };
+		3C180E8411FEA65000235976 /* card-pictures_f.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_f.txt"; sourceTree = "<group>"; };
+		3C180E8511FEA65000235976 /* card-pictures_g.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_g.txt"; sourceTree = "<group>"; };
+		3C180E8611FEA65000235976 /* card-pictures_h.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_h.txt"; sourceTree = "<group>"; };
+		3C180E8711FEA65000235976 /* card-pictures_i.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_i.txt"; sourceTree = "<group>"; };
+		3C180E8811FEA65000235976 /* card-pictures_j.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_j.txt"; sourceTree = "<group>"; };
+		3C180E8911FEA65000235976 /* card-pictures_k.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_k.txt"; sourceTree = "<group>"; };
+		3C180E8A11FEA65000235976 /* card-pictures_l.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_l.txt"; sourceTree = "<group>"; };
+		3C180E8B11FEA65000235976 /* card-pictures_m.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_m.txt"; sourceTree = "<group>"; };
+		3C180E8C11FEA65000235976 /* card-pictures_n.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_n.txt"; sourceTree = "<group>"; };
+		3C180E8D11FEA65000235976 /* card-pictures_o.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_o.txt"; sourceTree = "<group>"; };
+		3C180E8E11FEA65000235976 /* card-pictures_other.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_other.txt"; sourceTree = "<group>"; };
+		3C180E8F11FEA65000235976 /* card-pictures_p.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_p.txt"; sourceTree = "<group>"; };
+		3C180E9011FEA65000235976 /* card-pictures_q.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_q.txt"; sourceTree = "<group>"; };
+		3C180E9111FEA65000235976 /* card-pictures_r.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_r.txt"; sourceTree = "<group>"; };
+		3C180E9211FEA65000235976 /* card-pictures_s.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_s.txt"; sourceTree = "<group>"; };
+		3C180E9311FEA65000235976 /* card-pictures_t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_t.txt"; sourceTree = "<group>"; };
+		3C180E9411FEA65000235976 /* card-pictures_u.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_u.txt"; sourceTree = "<group>"; };
+		3C180E9511FEA65000235976 /* card-pictures_v.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_v.txt"; sourceTree = "<group>"; };
+		3C180E9611FEA65000235976 /* card-pictures_w.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_w.txt"; sourceTree = "<group>"; };
+		3C180E9711FEA65000235976 /* card-pictures_x.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_x.txt"; sourceTree = "<group>"; };
+		3C180E9811FEA65000235976 /* card-pictures_y.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_y.txt"; sourceTree = "<group>"; };
+		3C180E9911FEA65000235976 /* card-pictures_z.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_z.txt"; sourceTree = "<group>"; };
+		3C180EDF11FEA79300235976 /* card-pictures_a.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_a.txt"; sourceTree = "<group>"; };
+		3C180EE011FEA79300235976 /* card-pictures_b.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_b.txt"; sourceTree = "<group>"; };
+		3C180EE111FEA79300235976 /* card-pictures_c.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_c.txt"; sourceTree = "<group>"; };
+		3C180EE211FEA79300235976 /* card-pictures_d.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_d.txt"; sourceTree = "<group>"; };
+		3C180EE311FEA79300235976 /* card-pictures_e.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_e.txt"; sourceTree = "<group>"; };
+		3C180EE411FEA79300235976 /* card-pictures_f.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_f.txt"; sourceTree = "<group>"; };
+		3C180EE511FEA79300235976 /* card-pictures_g.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_g.txt"; sourceTree = "<group>"; };
+		3C180EE611FEA79300235976 /* card-pictures_h.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_h.txt"; sourceTree = "<group>"; };
+		3C180EE711FEA79300235976 /* card-pictures_i.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_i.txt"; sourceTree = "<group>"; };
+		3C180EE811FEA79300235976 /* card-pictures_j.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_j.txt"; sourceTree = "<group>"; };
+		3C180EE911FEA79300235976 /* card-pictures_k.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_k.txt"; sourceTree = "<group>"; };
+		3C180EEA11FEA79300235976 /* card-pictures_l.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_l.txt"; sourceTree = "<group>"; };
+		3C180EEB11FEA79300235976 /* card-pictures_m.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_m.txt"; sourceTree = "<group>"; };
+		3C180EEC11FEA79300235976 /* card-pictures_n.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_n.txt"; sourceTree = "<group>"; };
+		3C180EED11FEA79300235976 /* card-pictures_o.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_o.txt"; sourceTree = "<group>"; };
+		3C180EEE11FEA79300235976 /* card-pictures_other.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_other.txt"; sourceTree = "<group>"; };
+		3C180EEF11FEA79300235976 /* card-pictures_p.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_p.txt"; sourceTree = "<group>"; };
+		3C180EF011FEA79300235976 /* card-pictures_q.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_q.txt"; sourceTree = "<group>"; };
+		3C180EF111FEA79300235976 /* card-pictures_r.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_r.txt"; sourceTree = "<group>"; };
+		3C180EF211FEA79300235976 /* card-pictures_s.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_s.txt"; sourceTree = "<group>"; };
+		3C180EF311FEA79300235976 /* card-pictures_t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_t.txt"; sourceTree = "<group>"; };
+		3C180EF411FEA79300235976 /* card-pictures_u.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_u.txt"; sourceTree = "<group>"; };
+		3C180EF511FEA79300235976 /* card-pictures_v.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_v.txt"; sourceTree = "<group>"; };
+		3C180EF611FEA79300235976 /* card-pictures_w.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_w.txt"; sourceTree = "<group>"; };
+		3C180EF711FEA79300235976 /* card-pictures_x.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_x.txt"; sourceTree = "<group>"; };
+		3C180EF811FEA79300235976 /* card-pictures_y.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_y.txt"; sourceTree = "<group>"; };
+		3C180EF911FEA79300235976 /* card-pictures_z.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_z.txt"; sourceTree = "<group>"; };
 		3C1E539711F620F9001FB0BF /* SIYController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYController.h; path = src/yawgmoth/SIYController.h; sourceTree = "<group>"; };
 		3C1E539811F620F9001FB0BF /* SIYController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYController.m; path = src/yawgmoth/SIYController.m; sourceTree = "<group>"; };
 		3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; fileEncoding = 4; name = SIYDataModel.xcdatamodel; path = src/yawgmoth/SIYDataModel.xcdatamodel; sourceTree = "<group>"; };
 		3C1E539C11F6212E001FB0BF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/yawgmoth/main.m; sourceTree = "<group>"; };
-		3C8980C711F9206B00AABCEE /* cards.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.db; sourceTree = "<group>"; };
 		3C89838811F9698F00AABCEE /* SIYCardDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYCardDatabase.h; path = src/yawgmoth/SIYCardDatabase.h; sourceTree = "<group>"; };
 		3C89838911F9698F00AABCEE /* SIYCardDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYCardDatabase.m; path = src/yawgmoth/SIYCardDatabase.m; sourceTree = "<group>"; };
 		3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -65,8 +202,6 @@
 		3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDataModelManagedObjects.h; path = src/yawgmoth/SIYDataModelManagedObjects.h; sourceTree = "<group>"; };
 		3CBD2D3911FE2E5300DE9543 /* SIYCardImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYCardImageManager.h; path = src/yawgmoth/SIYCardImageManager.h; sourceTree = "<group>"; };
 		3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYCardImageManager.m; path = src/yawgmoth/SIYCardImageManager.m; sourceTree = "<group>"; };
-		3CBD2D4311FE2E9200DE9543 /* SIYCardImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYCardImageDownloader.h; path = src/yawgmoth/SIYCardImageDownloader.h; sourceTree = "<group>"; };
-		3CBD2D4411FE2E9200DE9543 /* SIYCardImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYCardImageDownloader.m; path = src/yawgmoth/SIYCardImageDownloader.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Yawgmoth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawgmoth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -103,8 +238,6 @@
 				3C89838911F9698F00AABCEE /* SIYCardDatabase.m */,
 				3C1E539711F620F9001FB0BF /* SIYController.h */,
 				3C1E539811F620F9001FB0BF /* SIYController.m */,
-				3CBD2D4311FE2E9200DE9543 /* SIYCardImageDownloader.h */,
-				3CBD2D4411FE2E9200DE9543 /* SIYCardImageDownloader.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -140,6 +273,7 @@
 		29B97314FDCFA39411CA2CEA /* Yawgmoth */ = {
 			isa = PBXGroup;
 			children = (
+				3C180EDE11FEA79300235976 /* cardimgs */,
 				3C1E539111F61E8B001FB0BF /* Yawgmoth */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -153,6 +287,8 @@
 			children = (
 				3C1E539C11F6212E001FB0BF /* main.m */,
 				32CA4F630368D1EE00C91783 /* Yawgmoth_Prefix.pch */,
+				3C180E4011FEA00D00235976 /* TSVParser.h */,
+				3C180E4111FEA00D00235976 /* TSVParser.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -160,7 +296,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3C8980C711F9206B00AABCEE /* cards.db */,
+				3C180E7E11FEA65000235976 /* cardimgs */,
+				3C180E3D11FE918A00235976 /* cards.db */,
 				3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -177,6 +314,76 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3C180E7E11FEA65000235976 /* cardimgs */ = {
+			isa = PBXGroup;
+			children = (
+				3C180E7F11FEA65000235976 /* card-pictures_a.txt */,
+				3C180E8011FEA65000235976 /* card-pictures_b.txt */,
+				3C180E8111FEA65000235976 /* card-pictures_c.txt */,
+				3C180E8211FEA65000235976 /* card-pictures_d.txt */,
+				3C180E8311FEA65000235976 /* card-pictures_e.txt */,
+				3C180E8411FEA65000235976 /* card-pictures_f.txt */,
+				3C180E8511FEA65000235976 /* card-pictures_g.txt */,
+				3C180E8611FEA65000235976 /* card-pictures_h.txt */,
+				3C180E8711FEA65000235976 /* card-pictures_i.txt */,
+				3C180E8811FEA65000235976 /* card-pictures_j.txt */,
+				3C180E8911FEA65000235976 /* card-pictures_k.txt */,
+				3C180E8A11FEA65000235976 /* card-pictures_l.txt */,
+				3C180E8B11FEA65000235976 /* card-pictures_m.txt */,
+				3C180E8C11FEA65000235976 /* card-pictures_n.txt */,
+				3C180E8D11FEA65000235976 /* card-pictures_o.txt */,
+				3C180E8E11FEA65000235976 /* card-pictures_other.txt */,
+				3C180E8F11FEA65000235976 /* card-pictures_p.txt */,
+				3C180E9011FEA65000235976 /* card-pictures_q.txt */,
+				3C180E9111FEA65000235976 /* card-pictures_r.txt */,
+				3C180E9211FEA65000235976 /* card-pictures_s.txt */,
+				3C180E9311FEA65000235976 /* card-pictures_t.txt */,
+				3C180E9411FEA65000235976 /* card-pictures_u.txt */,
+				3C180E9511FEA65000235976 /* card-pictures_v.txt */,
+				3C180E9611FEA65000235976 /* card-pictures_w.txt */,
+				3C180E9711FEA65000235976 /* card-pictures_x.txt */,
+				3C180E9811FEA65000235976 /* card-pictures_y.txt */,
+				3C180E9911FEA65000235976 /* card-pictures_z.txt */,
+			);
+			name = cardimgs;
+			path = res/cardimgs;
+			sourceTree = "<group>";
+		};
+		3C180EDE11FEA79300235976 /* cardimgs */ = {
+			isa = PBXGroup;
+			children = (
+				3C180EDF11FEA79300235976 /* card-pictures_a.txt */,
+				3C180EE011FEA79300235976 /* card-pictures_b.txt */,
+				3C180EE111FEA79300235976 /* card-pictures_c.txt */,
+				3C180EE211FEA79300235976 /* card-pictures_d.txt */,
+				3C180EE311FEA79300235976 /* card-pictures_e.txt */,
+				3C180EE411FEA79300235976 /* card-pictures_f.txt */,
+				3C180EE511FEA79300235976 /* card-pictures_g.txt */,
+				3C180EE611FEA79300235976 /* card-pictures_h.txt */,
+				3C180EE711FEA79300235976 /* card-pictures_i.txt */,
+				3C180EE811FEA79300235976 /* card-pictures_j.txt */,
+				3C180EE911FEA79300235976 /* card-pictures_k.txt */,
+				3C180EEA11FEA79300235976 /* card-pictures_l.txt */,
+				3C180EEB11FEA79300235976 /* card-pictures_m.txt */,
+				3C180EEC11FEA79300235976 /* card-pictures_n.txt */,
+				3C180EED11FEA79300235976 /* card-pictures_o.txt */,
+				3C180EEE11FEA79300235976 /* card-pictures_other.txt */,
+				3C180EEF11FEA79300235976 /* card-pictures_p.txt */,
+				3C180EF011FEA79300235976 /* card-pictures_q.txt */,
+				3C180EF111FEA79300235976 /* card-pictures_r.txt */,
+				3C180EF211FEA79300235976 /* card-pictures_s.txt */,
+				3C180EF311FEA79300235976 /* card-pictures_t.txt */,
+				3C180EF411FEA79300235976 /* card-pictures_u.txt */,
+				3C180EF511FEA79300235976 /* card-pictures_v.txt */,
+				3C180EF611FEA79300235976 /* card-pictures_w.txt */,
+				3C180EF711FEA79300235976 /* card-pictures_x.txt */,
+				3C180EF811FEA79300235976 /* card-pictures_y.txt */,
+				3C180EF911FEA79300235976 /* card-pictures_z.txt */,
+			);
+			name = cardimgs;
+			path = res/cardimgs;
 			sourceTree = "<group>";
 		};
 		3C1E539111F61E8B001FB0BF /* Yawgmoth */ = {
@@ -275,7 +482,61 @@
 			files = (
 				3C0F864911FD00300043D7DD /* InfoPlist.strings in Resources */,
 				3C0F864A11FD00300043D7DD /* DeckEditorWindow.nib in Resources */,
-				3C0F864B11FD00300043D7DD /* cards.db in Resources */,
+				3C180E3F11FE918A00235976 /* cards.db in Resources */,
+				3C180EB511FEA65000235976 /* card-pictures_a.txt in Resources */,
+				3C180EB611FEA65000235976 /* card-pictures_b.txt in Resources */,
+				3C180EB711FEA65000235976 /* card-pictures_c.txt in Resources */,
+				3C180EB811FEA65000235976 /* card-pictures_d.txt in Resources */,
+				3C180EB911FEA65000235976 /* card-pictures_e.txt in Resources */,
+				3C180EBA11FEA65000235976 /* card-pictures_f.txt in Resources */,
+				3C180EBB11FEA65000235976 /* card-pictures_g.txt in Resources */,
+				3C180EBC11FEA65000235976 /* card-pictures_h.txt in Resources */,
+				3C180EBD11FEA65000235976 /* card-pictures_i.txt in Resources */,
+				3C180EBE11FEA65000235976 /* card-pictures_j.txt in Resources */,
+				3C180EBF11FEA65000235976 /* card-pictures_k.txt in Resources */,
+				3C180EC011FEA65000235976 /* card-pictures_l.txt in Resources */,
+				3C180EC111FEA65000235976 /* card-pictures_m.txt in Resources */,
+				3C180EC211FEA65000235976 /* card-pictures_n.txt in Resources */,
+				3C180EC311FEA65000235976 /* card-pictures_o.txt in Resources */,
+				3C180EC411FEA65000235976 /* card-pictures_other.txt in Resources */,
+				3C180EC511FEA65000235976 /* card-pictures_p.txt in Resources */,
+				3C180EC611FEA65000235976 /* card-pictures_q.txt in Resources */,
+				3C180EC711FEA65000235976 /* card-pictures_r.txt in Resources */,
+				3C180EC811FEA65000235976 /* card-pictures_s.txt in Resources */,
+				3C180EC911FEA65000235976 /* card-pictures_t.txt in Resources */,
+				3C180ECA11FEA65000235976 /* card-pictures_u.txt in Resources */,
+				3C180ECB11FEA65000235976 /* card-pictures_v.txt in Resources */,
+				3C180ECC11FEA65000235976 /* card-pictures_w.txt in Resources */,
+				3C180ECD11FEA65000235976 /* card-pictures_x.txt in Resources */,
+				3C180ECE11FEA65000235976 /* card-pictures_y.txt in Resources */,
+				3C180ECF11FEA65000235976 /* card-pictures_z.txt in Resources */,
+				3C180F1511FEA79300235976 /* card-pictures_a.txt in Resources */,
+				3C180F1611FEA79300235976 /* card-pictures_b.txt in Resources */,
+				3C180F1711FEA79300235976 /* card-pictures_c.txt in Resources */,
+				3C180F1811FEA79300235976 /* card-pictures_d.txt in Resources */,
+				3C180F1911FEA79300235976 /* card-pictures_e.txt in Resources */,
+				3C180F1A11FEA79300235976 /* card-pictures_f.txt in Resources */,
+				3C180F1B11FEA79300235976 /* card-pictures_g.txt in Resources */,
+				3C180F1C11FEA79300235976 /* card-pictures_h.txt in Resources */,
+				3C180F1D11FEA79300235976 /* card-pictures_i.txt in Resources */,
+				3C180F1E11FEA79300235976 /* card-pictures_j.txt in Resources */,
+				3C180F1F11FEA79300235976 /* card-pictures_k.txt in Resources */,
+				3C180F2011FEA79300235976 /* card-pictures_l.txt in Resources */,
+				3C180F2111FEA79300235976 /* card-pictures_m.txt in Resources */,
+				3C180F2211FEA79300235976 /* card-pictures_n.txt in Resources */,
+				3C180F2311FEA79300235976 /* card-pictures_o.txt in Resources */,
+				3C180F2411FEA79300235976 /* card-pictures_other.txt in Resources */,
+				3C180F2511FEA79300235976 /* card-pictures_p.txt in Resources */,
+				3C180F2611FEA79300235976 /* card-pictures_q.txt in Resources */,
+				3C180F2711FEA79300235976 /* card-pictures_r.txt in Resources */,
+				3C180F2811FEA79300235976 /* card-pictures_s.txt in Resources */,
+				3C180F2911FEA79300235976 /* card-pictures_t.txt in Resources */,
+				3C180F2A11FEA79300235976 /* card-pictures_u.txt in Resources */,
+				3C180F2B11FEA79300235976 /* card-pictures_v.txt in Resources */,
+				3C180F2C11FEA79300235976 /* card-pictures_w.txt in Resources */,
+				3C180F2D11FEA79300235976 /* card-pictures_x.txt in Resources */,
+				3C180F2E11FEA79300235976 /* card-pictures_y.txt in Resources */,
+				3C180F2F11FEA79300235976 /* card-pictures_z.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +546,34 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				3C8EED8811ED2E07003E7D9F /* DeckEditorWindow.nib in Resources */,
-				3C8980C811F9206B00AABCEE /* cards.db in Resources */,
+				3C180E3E11FE918A00235976 /* cards.db in Resources */,
+				3C180EFA11FEA79300235976 /* card-pictures_a.txt in Resources */,
+				3C180EFB11FEA79300235976 /* card-pictures_b.txt in Resources */,
+				3C180EFC11FEA79300235976 /* card-pictures_c.txt in Resources */,
+				3C180EFD11FEA79300235976 /* card-pictures_d.txt in Resources */,
+				3C180EFE11FEA79300235976 /* card-pictures_e.txt in Resources */,
+				3C180EFF11FEA79300235976 /* card-pictures_f.txt in Resources */,
+				3C180F0011FEA79300235976 /* card-pictures_g.txt in Resources */,
+				3C180F0111FEA79300235976 /* card-pictures_h.txt in Resources */,
+				3C180F0211FEA79300235976 /* card-pictures_i.txt in Resources */,
+				3C180F0311FEA79300235976 /* card-pictures_j.txt in Resources */,
+				3C180F0411FEA79300235976 /* card-pictures_k.txt in Resources */,
+				3C180F0511FEA79300235976 /* card-pictures_l.txt in Resources */,
+				3C180F0611FEA79300235976 /* card-pictures_m.txt in Resources */,
+				3C180F0711FEA79300235976 /* card-pictures_n.txt in Resources */,
+				3C180F0811FEA79300235976 /* card-pictures_o.txt in Resources */,
+				3C180F0911FEA79300235976 /* card-pictures_other.txt in Resources */,
+				3C180F0A11FEA79300235976 /* card-pictures_p.txt in Resources */,
+				3C180F0B11FEA79300235976 /* card-pictures_q.txt in Resources */,
+				3C180F0C11FEA79300235976 /* card-pictures_r.txt in Resources */,
+				3C180F0D11FEA79300235976 /* card-pictures_s.txt in Resources */,
+				3C180F0E11FEA79300235976 /* card-pictures_t.txt in Resources */,
+				3C180F0F11FEA79300235976 /* card-pictures_u.txt in Resources */,
+				3C180F1011FEA79300235976 /* card-pictures_v.txt in Resources */,
+				3C180F1111FEA79300235976 /* card-pictures_w.txt in Resources */,
+				3C180F1211FEA79300235976 /* card-pictures_x.txt in Resources */,
+				3C180F1311FEA79300235976 /* card-pictures_y.txt in Resources */,
+				3C180F1411FEA79300235976 /* card-pictures_z.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +592,7 @@
 				3C0F865211FD00300043D7DD /* FMDatabaseAdditions.m in Sources */,
 				3C0F865311FD00300043D7DD /* FMResultSet.m in Sources */,
 				3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */,
-				3CBD2D4611FE2E9200DE9543 /* SIYCardImageDownloader.m in Sources */,
+				3C180E4311FEA00D00235976 /* TSVParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +608,7 @@
 				3C0F85BF11FCDF3C0043D7DD /* FMDatabaseAdditions.m in Sources */,
 				3C0F85C011FCDF3C0043D7DD /* FMResultSet.m in Sources */,
 				3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */,
-				3CBD2D4511FE2E9200DE9543 /* SIYCardImageDownloader.m in Sources */,
+				3C180E4211FEA00D00235976 /* TSVParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
