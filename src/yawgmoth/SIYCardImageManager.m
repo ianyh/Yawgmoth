@@ -44,10 +44,10 @@
 
 - (NSString *)imageFileNameFromCardName:(NSString *)cardName
 {
-	return [[[[[[[cardName stringByReplacingOccurrencesOfString:@" " withString:@"_"] 
-				 stringByReplacingOccurrencesOfString:@"." withString:@"_"] 
-			    stringByReplacingOccurrencesOfString:@"," withString:@"_"] 
-			   stringByReplacingOccurrencesOfString:@"/" withString:@"_"] 
+	return [[[[[[[cardName stringByReplacingOccurrencesOfString:@" // " withString:@"_"] 
+				 stringByReplacingOccurrencesOfString:@"'" withString:@""] 
+			    stringByReplacingOccurrencesOfString:@"," withString:@""] 
+			   stringByReplacingOccurrencesOfString:@" " withString:@"_"] 
 			  stringByReplacingOccurrencesOfString:@":" withString:@"_"] 
 			 stringByAppendingString:@".jpg"]
 			lowercaseString];

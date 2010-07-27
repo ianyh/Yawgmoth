@@ -12,8 +12,8 @@
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<integer value="57"/>
-			<integer value="192"/>
-			<integer value="724"/>
+			<integer value="198"/>
+			<integer value="266"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -943,6 +943,7 @@
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
 							<string key="NSFrame">{{427, 354}, {32, 32}}</string>
 							<reference key="NSSuperview" ref="421791908"/>
+							<bool key="NSViewCanDrawConcurrently">YES</bool>
 							<int key="NSpiFlags">28682</int>
 							<double key="NSMaxValue">100</double>
 						</object>
@@ -2238,6 +2239,15 @@
 							<int key="NSBoxType">0</int>
 							<int key="NSTitlePosition">2</int>
 							<bool key="NSTransparent">NO</bool>
+						</object>
+						<object class="NSProgressIndicator" id="936731502">
+							<reference key="NSNextResponder" ref="343233240"/>
+							<int key="NSvFlags">1292</int>
+							<object class="NSPSMatrix" key="NSDrawMatrix"/>
+							<string key="NSFrame">{{905, 583}, {32, 32}}</string>
+							<reference key="NSSuperview" ref="343233240"/>
+							<int key="NSpiFlags">20490</int>
+							<double key="NSMaxValue">100</double>
 						</object>
 					</array>
 					<string key="NSFrameSize">{1051, 790}</string>
@@ -3689,22 +3699,6 @@
 					<int key="connectionID">829</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">animate: allCardsSelectionDownloading</string>
-						<reference key="source" ref="494444816"/>
-						<reference key="destination" ref="900151345"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="494444816"/>
-							<reference key="NSDestination" ref="900151345"/>
-							<string key="NSLabel">animate: allCardsSelectionDownloading</string>
-							<string key="NSBinding">animate</string>
-							<string key="NSKeyPath">allCardsSelectionDownloading</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">833</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">libraryAddingCardImageView</string>
 						<reference key="source" ref="900151345"/>
@@ -3735,6 +3729,22 @@
 						<reference key="destination" ref="720032181"/>
 					</object>
 					<int key="connectionID">838</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">libraryAddingCardImageProgress</string>
+						<reference key="source" ref="900151345"/>
+						<reference key="destination" ref="494444816"/>
+					</object>
+					<int key="connectionID">840</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">deckEditingCardImageProgress</string>
+						<reference key="source" ref="900151345"/>
+						<reference key="destination" ref="936731502"/>
+					</object>
+					<int key="connectionID">842</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -4245,6 +4255,7 @@
 							<reference ref="528368911"/>
 							<reference ref="970797844"/>
 							<reference ref="333287099"/>
+							<reference ref="936731502"/>
 						</array>
 						<reference key="parent" ref="234478896"/>
 					</object>
@@ -4922,6 +4933,11 @@
 						<reference key="object" ref="494444816"/>
 						<reference key="parent" ref="421791908"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">841</int>
+						<reference key="object" ref="936731502"/>
+						<reference key="parent" ref="343233240"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -5154,12 +5170,13 @@
 				<string key="83.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="83.ImportedFromIB2"/>
 				<string key="830.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="841.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">838</int>
+			<int key="maxID">842</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -5185,10 +5202,12 @@
 						<string key="cardsToAddToLibraryTable">NSTableView</string>
 						<string key="deckCardNameTableColumn">NSTableColumn</string>
 						<string key="deckCardsController">NSArrayController</string>
+						<string key="deckEditingCardImageProgress">NSProgressIndicator</string>
 						<string key="deckEditingCardImageView">NSImageView</string>
 						<string key="deckEditingWindow">NSWindow</string>
 						<string key="deckSelectionButton">NSPopUpButton</string>
 						<string key="deckTableView">NSTableView</string>
+						<string key="libraryAddingCardImageProgress">NSProgressIndicator</string>
 						<string key="libraryAddingCardImageView">NSImageView</string>
 						<string key="libraryAddingWindow">NSWindow</string>
 						<string key="libraryCardNameTableColumn">NSTableColumn</string>

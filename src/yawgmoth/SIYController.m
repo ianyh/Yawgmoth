@@ -94,8 +94,10 @@
 													  withAction:@selector(updateLibraryAddImage:forCardWithName:) 
 													  withTarget:self];
 	if (cardImage != nil) {
+		[libraryAddingCardImageProgress stopAnimation:self];
 		[libraryAddingCardImageView setImage:cardImage];
 	} else {
+		[libraryAddingCardImageProgress startAnimation:self];
 		[libraryAddingCardImageView setImage:NULL];
 	}
 }
@@ -114,8 +116,10 @@
 												 withTarget:self];
 	
 	if (cardImage != nil) {
+		[deckEditingCardImageProgress stopAnimation:self];
 		[deckEditingCardImageView setImage:cardImage];
 	} else {
+		[deckEditingCardImageProgress startAnimation:self];
 		[deckEditingCardImageView setImage:NULL];
 	}
 }
@@ -134,8 +138,10 @@
 												 withTarget:self];
 	
 	if (cardImage != nil) {
+		[deckEditingCardImageProgress stopAnimation:self];		
 		[deckEditingCardImageView setImage:cardImage];
 	} else {
+		[deckEditingCardImageProgress startAnimation:self];		
 		[deckEditingCardImageView setImage:NULL];
 	}	
 }
@@ -440,6 +446,7 @@
 - (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName
 {
 	if ([cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
+		[libraryAddingCardImageProgress stopAnimation:self];
 		[libraryAddingCardImageView setImage:cardImage];
 	}
 	NSLog(@"Update image for card with name %@", cardName);
@@ -448,6 +455,7 @@
 - (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName
 {
 	if ([cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
+		[deckEditingCardImageProgress startAnimation:self];
 		[deckEditingCardImageView setImage:cardImage];
 	}
 	NSLog(@"Update image for card with name %@", cardName);

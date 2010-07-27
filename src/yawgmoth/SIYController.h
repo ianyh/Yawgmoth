@@ -20,6 +20,7 @@
 	IBOutlet NSButton *moveToDeckButton;
 	IBOutlet NSButton *moveToLibraryButton;
 	IBOutlet NSImageView *deckEditingCardImageView;
+	IBOutlet NSProgressIndicator *deckEditingCardImageProgress;
 	
 	IBOutlet NSWindow *libraryAddingWindow;
 	IBOutlet NSButton *addToLibraryButton;
@@ -27,6 +28,7 @@
 	IBOutlet NSSearchField *allCardsSearchField;
 	IBOutlet NSTableView *cardsToAddToLibraryTable;
 	IBOutlet NSImageView *libraryAddingCardImageView;
+	IBOutlet NSProgressIndicator *libraryAddingCardImageProgress;
 	
 	IBOutlet NSPanel *newDeckPanel;
 	IBOutlet NSTextField *newDeckNameField;
