@@ -133,7 +133,7 @@
 		3C0F85BD11FCDF3C0043D7DD /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb.git/src/FMResultSet.m; sourceTree = "<group>"; };
 		3C0F862F11FCFF8C0043D7DD /* Yawgmoth-10.6-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Yawgmoth-10.6-Info.plist"; sourceTree = "<group>"; };
 		3C0F865A11FD00300043D7DD /* Yawgmoth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawgmoth.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C0F865C11FD00300043D7DD /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info copy.plist"; sourceTree = "<group>"; };
+		3C0F865C11FD00300043D7DD /* Info-10.6.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-10.6.plist"; sourceTree = "<group>"; };
 		3C180E3D11FE918A00235976 /* cards.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = cards.db; path = res/cards.db; sourceTree = "<group>"; };
 		3C180E4011FEA00D00235976 /* TSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSVParser.h; path = src/TSVParser.h; sourceTree = "<group>"; };
 		3C180E4111FEA00D00235976 /* TSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSVParser.m; path = src/TSVParser.m; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 		3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDataModelManagedObjects.h; path = src/yawgmoth/SIYDataModelManagedObjects.h; sourceTree = "<group>"; };
 		3CBD2D3911FE2E5300DE9543 /* SIYCardImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYCardImageManager.h; path = src/yawgmoth/SIYCardImageManager.h; sourceTree = "<group>"; };
 		3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYCardImageManager.m; path = src/yawgmoth/SIYCardImageManager.m; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info-10.5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-10.5.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Yawgmoth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawgmoth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -299,9 +299,9 @@
 				3C180E7E11FEA65000235976 /* cardimgs */,
 				3C180E3D11FE918A00235976 /* cards.db */,
 				3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */,
-				8D1107310486CEB800E47090 /* Info.plist */,
+				8D1107310486CEB800E47090 /* Info-10.5.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				3C0F865C11FD00300043D7DD /* Info copy.plist */,
+				3C0F865C11FD00300043D7DD /* Info-10.6.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -439,9 +439,9 @@
 			productReference = 3C0F865A11FD00300043D7DD /* Yawgmoth.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8D1107260486CEB800E47090 /* Yawgmoth */ = {
+		8D1107260486CEB800E47090 /* Yawgmoth-10.5 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Yawgmoth" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Yawgmoth-10.5" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -451,7 +451,7 @@
 			);
 			dependencies = (
 			);
-			name = Yawgmoth;
+			name = "Yawgmoth-10.5";
 			productInstallPath = "$(HOME)/Applications";
 			productName = Yawgmoth;
 			productReference = 8D1107320486CEB800E47090 /* Yawgmoth.app */;
@@ -469,7 +469,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* Yawgmoth */,
+				8D1107260486CEB800E47090 /* Yawgmoth-10.5 */,
 				3C0F864711FD00300043D7DD /* Yawgmoth-10.6 */,
 			);
 		};
@@ -648,7 +648,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Yawgmoth_Prefix.pch;
-				INFOPLIST_FILE = "Info copy.plist";
+				INFOPLIST_FILE = "Info-10.6.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Yawgmoth;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
@@ -668,9 +668,10 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Yawgmoth_Prefix.pch;
-				INFOPLIST_FILE = "Info copy.plist";
+				INFOPLIST_FILE = "Info-10.6.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Yawgmoth;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -689,7 +690,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Yawgmoth_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = "Info-10.5.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Yawgmoth;
 				WRAPPER_EXTENSION = app;
@@ -708,7 +709,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Yawgmoth_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = "Info-10.5.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Yawgmoth;
 				WRAPPER_EXTENSION = app;
@@ -751,7 +752,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Yawgmoth" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Yawgmoth-10.5" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
