@@ -5,18 +5,15 @@
 
 - (void)awakeFromNib
 {
+	imageManager = [[[SIYCardImageManager alloc] initWithApplicationSupportDirectory:[self applicationSupportDirectory]] retain];	
 	cardDatabase = [[[SIYCardDatabase alloc] init] retain];
 	[cardDatabase startCachingThread];
-	[allCardsTable setAction:@selector(allCardsSelectionAction)];
 	[allCardsTable setDataSource:cardDatabase];
-	[allCardsTable setTarget:self];
 	
-	[libraryTableView setAction:@selector(libraryTableSelectionAction)];
-	[libraryTableView setTarget:self];
-	[deckTableView setAction:@selector(deckCardsTableSelectionAction)];
-	[deckTableView setTarget:self];
-	
-	imageManager = [[[SIYCardImageManager alloc] initWithApplicationSupportDirectory:[self applicationSupportDirectory]] retain];
+	[allCardsTable setDelegate:self];
+	[cardsToAddToLibraryTable setDelegate:self];
+	[libraryTableView setDelegate:self];
+	[deckTableView setDelegate:self];
 }
 
 - (IBAction)addCardToLibraryAddTable:(id)sender
@@ -72,6 +69,17 @@
 	[self save];
 	
 	[libraryAddingWindow close];
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)notification
+{
+	if ([notification object] == allCardsTable) {
+		[self allCardsSelectionAction];
+	} else if ([notification object] == deckTableView) {
+		[self deckCardsTableSelectionAction];
+	} else if ([notification object] == libraryTableView) {
+		[self libraryTableSelectionAction];
+	}
 }
 
 - (BOOL)allCardsSelectionDownloading
