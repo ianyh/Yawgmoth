@@ -7,22 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C0F85BE11FCDF3C0043D7DD /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F85B911FCDF3C0043D7DD /* FMDatabase.m */; };
-		3C0F85BF11FCDF3C0043D7DD /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F85BB11FCDF3C0043D7DD /* FMDatabaseAdditions.m */; };
-		3C0F85C011FCDF3C0043D7DD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F85BD11FCDF3C0043D7DD /* FMResultSet.m */; };
+		3C006A9211FF894800C5C084 /* cards.db in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E3D11FE918A00235976 /* cards.db */; };
+		3C006A9311FF896700C5C084 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */; };
+		3C006AA111FF899800C5C084 /* SIYCardDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89838911F9698F00AABCEE /* SIYCardDatabase.m */; };
+		3C006AA411FF89BD00C5C084 /* SIYImportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C006AA311FF89BD00C5C084 /* SIYImportController.m */; };
+		3C006AA611FF89DD00C5C084 /* Importer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C006AA511FF89DD00C5C084 /* Importer.xib */; };
+		3C006ABE11FF914B00C5C084 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		3C006ADF11FF922E00C5C084 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F85B911FCDF3C0043D7DD /* FMDatabase.m */; };
+		3C006AE011FF922E00C5C084 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F85BB11FCDF3C0043D7DD /* FMDatabaseAdditions.m */; };
+		3C006AE111FF922E00C5C084 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F85BD11FCDF3C0043D7DD /* FMResultSet.m */; };
+		3C006AE511FF925200C5C084 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
+		3C006B0811FF931B00C5C084 /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */; };
+		3C006B7A11FFC4BB00C5C084 /* storedata in Resources */ = {isa = PBXBuildFile; fileRef = 3C006B7911FFC4BB00C5C084 /* storedata */; };
+		3C006B7B11FFC4BB00C5C084 /* storedata in Resources */ = {isa = PBXBuildFile; fileRef = 3C006B7911FFC4BB00C5C084 /* storedata */; };
 		3C0F864911FD00300043D7DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		3C0F864A11FD00300043D7DD /* DeckEditorWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */; };
 		3C0F864D11FD00300043D7DD /* SIYController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539811F620F9001FB0BF /* SIYController.m */; };
 		3C0F864E11FD00300043D7DD /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */; };
 		3C0F864F11FD00300043D7DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
-		3C0F865011FD00300043D7DD /* SIYCardDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89838911F9698F00AABCEE /* SIYCardDatabase.m */; };
-		3C0F865111FD00300043D7DD /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F85B911FCDF3C0043D7DD /* FMDatabase.m */; };
-		3C0F865211FD00300043D7DD /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F85BB11FCDF3C0043D7DD /* FMDatabaseAdditions.m */; };
-		3C0F865311FD00300043D7DD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F85BD11FCDF3C0043D7DD /* FMResultSet.m */; };
 		3C0F865511FD00300043D7DD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */; };
 		3C0F865611FD00300043D7DD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		3C180E3E11FE918A00235976 /* cards.db in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E3D11FE918A00235976 /* cards.db */; };
-		3C180E3F11FE918A00235976 /* cards.db in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E3D11FE918A00235976 /* cards.db */; };
 		3C180E4211FEA00D00235976 /* TSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C180E4111FEA00D00235976 /* TSVParser.m */; };
 		3C180E4311FEA00D00235976 /* TSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C180E4111FEA00D00235976 /* TSVParser.m */; };
 		3C180EB511FEA65000235976 /* card-pictures_a.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E7F11FEA65000235976 /* card-pictures_a.txt */; };
@@ -55,8 +59,6 @@
 		3C1E539A11F620F9001FB0BF /* SIYController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539811F620F9001FB0BF /* SIYController.m */; };
 		3C1E539B11F620F9001FB0BF /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */; };
 		3C1E539D11F6212E001FB0BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
-		3C897ECB11F8DB1300AABCEE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */; };
-		3C89838A11F9698F00AABCEE /* SIYCardDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89838911F9698F00AABCEE /* SIYCardDatabase.m */; };
 		3C8EED8811ED2E07003E7D9F /* DeckEditorWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */; };
 		3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
 		3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
@@ -98,6 +100,12 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Yawgmoth_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yawgmoth_Prefix.pch; sourceTree = "<group>"; };
+		3C006A8B11FF883C00C5C084 /* Yawgmoth-Importer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yawgmoth-Importer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C006A8D11FF883C00C5C084 /* Yawgmoth-Importer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Yawgmoth-Importer-Info.plist"; sourceTree = "<group>"; };
+		3C006AA211FF89BD00C5C084 /* SIYImportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIYImportController.h; sourceTree = "<group>"; };
+		3C006AA311FF89BD00C5C084 /* SIYImportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIYImportController.m; sourceTree = "<group>"; };
+		3C006AA511FF89DD00C5C084 /* Importer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Importer.xib; sourceTree = "<group>"; };
+		3C006B7911FFC4BB00C5C084 /* storedata */ = {isa = PBXFileReference; lastKnownFileType = file; name = storedata; path = res/storedata; sourceTree = "<group>"; };
 		3C0F85B811FCDF3C0043D7DD /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb.git/src/FMDatabase.h; sourceTree = "<group>"; };
 		3C0F85B911FCDF3C0043D7DD /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = src/fmdb.git/src/FMDatabase.m; sourceTree = "<group>"; };
 		3C0F85BA11FCDF3C0043D7DD /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb.git/src/FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -152,6 +160,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3C006A8911FF883C00C5C084 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C006ABE11FF914B00C5C084 /* Cocoa.framework in Frameworks */,
+				3C006A9311FF896700C5C084 /* libsqlite3.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3C0F865411FD00300043D7DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -165,7 +182,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C897ECB11F8DB1300AABCEE /* libsqlite3.dylib in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +227,7 @@
 			children = (
 				8D1107320486CEB800E47090 /* Yawgmoth.app */,
 				3C0F865A11FD00300043D7DD /* Yawgmoth.app */,
+				3C006A8B11FF883C00C5C084 /* Yawgmoth-Importer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,6 +238,7 @@
 				3C1E539111F61E8B001FB0BF /* Yawgmoth */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				3C006A8D11FF883C00C5C084 /* Yawgmoth-Importer-Info.plist */,
 			);
 			name = Yawgmoth;
 			sourceTree = "<group>";
@@ -232,6 +250,8 @@
 				32CA4F630368D1EE00C91783 /* Yawgmoth_Prefix.pch */,
 				3C180E4011FEA00D00235976 /* TSVParser.h */,
 				3C180E4111FEA00D00235976 /* TSVParser.m */,
+				3C006AA211FF89BD00C5C084 /* SIYImportController.h */,
+				3C006AA311FF89BD00C5C084 /* SIYImportController.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -239,12 +259,14 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3C006B7911FFC4BB00C5C084 /* storedata */,
 				3C180E7E11FEA65000235976 /* cardimgs */,
 				3C180E3D11FE918A00235976 /* cards.db */,
 				3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */,
 				8D1107310486CEB800E47090 /* Info-10.5.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				3C0F865C11FD00300043D7DD /* Info-10.6.plist */,
+				3C006AA511FF89DD00C5C084 /* Importer.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -329,6 +351,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3C006A8A11FF883C00C5C084 /* Yawgmoth-Importer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C006A9011FF883E00C5C084 /* Build configuration list for PBXNativeTarget "Yawgmoth-Importer" */;
+			buildPhases = (
+				3C006A8711FF883C00C5C084 /* Resources */,
+				3C006A8811FF883C00C5C084 /* Sources */,
+				3C006A8911FF883C00C5C084 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Yawgmoth-Importer";
+			productName = "Yawgmoth-Importer";
+			productReference = 3C006A8B11FF883C00C5C084 /* Yawgmoth-Importer.app */;
+			productType = "com.apple.product-type.application";
+		};
 		3C0F864711FD00300043D7DD /* Yawgmoth-10.6 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C0F865711FD00300043D7DD /* Build configuration list for PBXNativeTarget "Yawgmoth-10.6" */;
@@ -379,18 +418,27 @@
 			targets = (
 				8D1107260486CEB800E47090 /* Yawgmoth-10.5 */,
 				3C0F864711FD00300043D7DD /* Yawgmoth-10.6 */,
+				3C006A8A11FF883C00C5C084 /* Yawgmoth-Importer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3C006A8711FF883C00C5C084 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C006A9211FF894800C5C084 /* cards.db in Resources */,
+				3C006AA611FF89DD00C5C084 /* Importer.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3C0F864811FD00300043D7DD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3C0F864911FD00300043D7DD /* InfoPlist.strings in Resources */,
 				3C0F864A11FD00300043D7DD /* DeckEditorWindow.nib in Resources */,
-				3C180E3F11FE918A00235976 /* cards.db in Resources */,
 				3C180EB511FEA65000235976 /* card-pictures_a.txt in Resources */,
 				3C180EB611FEA65000235976 /* card-pictures_b.txt in Resources */,
 				3C180EB711FEA65000235976 /* card-pictures_c.txt in Resources */,
@@ -418,6 +466,7 @@
 				3C180ECD11FEA65000235976 /* card-pictures_x.txt in Resources */,
 				3C180ECE11FEA65000235976 /* card-pictures_y.txt in Resources */,
 				3C180ECF11FEA65000235976 /* card-pictures_z.txt in Resources */,
+				3C006B7A11FFC4BB00C5C084 /* storedata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,13 +503,27 @@
 				3CD2828811FECE2F00042B4B /* card-pictures_z.txt in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				3C8EED8811ED2E07003E7D9F /* DeckEditorWindow.nib in Resources */,
-				3C180E3E11FE918A00235976 /* cards.db in Resources */,
+				3C006B7B11FFC4BB00C5C084 /* storedata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3C006A8811FF883C00C5C084 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C006B0811FF931B00C5C084 /* SIYDataModel.xcdatamodel in Sources */,
+				3C006AE511FF925200C5C084 /* main.m in Sources */,
+				3C006ADF11FF922E00C5C084 /* FMDatabase.m in Sources */,
+				3C006AE011FF922E00C5C084 /* FMDatabaseAdditions.m in Sources */,
+				3C006AE111FF922E00C5C084 /* FMResultSet.m in Sources */,
+				3C006AA111FF899800C5C084 /* SIYCardDatabase.m in Sources */,
+				3C006AA411FF89BD00C5C084 /* SIYImportController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3C0F864C11FD00300043D7DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -468,10 +531,6 @@
 				3C0F864D11FD00300043D7DD /* SIYController.m in Sources */,
 				3C0F864E11FD00300043D7DD /* SIYDataModel.xcdatamodel in Sources */,
 				3C0F864F11FD00300043D7DD /* main.m in Sources */,
-				3C0F865011FD00300043D7DD /* SIYCardDatabase.m in Sources */,
-				3C0F865111FD00300043D7DD /* FMDatabase.m in Sources */,
-				3C0F865211FD00300043D7DD /* FMDatabaseAdditions.m in Sources */,
-				3C0F865311FD00300043D7DD /* FMResultSet.m in Sources */,
 				3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */,
 				3C180E4311FEA00D00235976 /* TSVParser.m in Sources */,
 			);
@@ -484,10 +543,6 @@
 				3C1E539A11F620F9001FB0BF /* SIYController.m in Sources */,
 				3C1E539B11F620F9001FB0BF /* SIYDataModel.xcdatamodel in Sources */,
 				3C1E539D11F6212E001FB0BF /* main.m in Sources */,
-				3C89838A11F9698F00AABCEE /* SIYCardDatabase.m in Sources */,
-				3C0F85BE11FCDF3C0043D7DD /* FMDatabase.m in Sources */,
-				3C0F85BF11FCDF3C0043D7DD /* FMDatabaseAdditions.m in Sources */,
-				3C0F85C011FCDF3C0043D7DD /* FMResultSet.m in Sources */,
 				3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */,
 				3C180E4211FEA00D00235976 /* TSVParser.m in Sources */,
 			);
@@ -515,6 +570,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3C006A8E11FF883D00C5C084 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Yawgmoth-Importer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Yawgmoth-Importer";
+			};
+			name = Debug;
+		};
+		3C006A8F11FF883D00C5C084 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Yawgmoth-Importer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Yawgmoth-Importer";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		3C0F865811FD00300043D7DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -624,6 +727,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3C006A9011FF883E00C5C084 /* Build configuration list for PBXNativeTarget "Yawgmoth-Importer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C006A8E11FF883D00C5C084 /* Debug */,
+				3C006A8F11FF883D00C5C084 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3C0F865711FD00300043D7DD /* Build configuration list for PBXNativeTarget "Yawgmoth-10.6" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

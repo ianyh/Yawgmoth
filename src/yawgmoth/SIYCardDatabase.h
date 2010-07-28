@@ -1,6 +1,7 @@
 #import <Cocoa/Cocoa.h>
 #import "FMDatabase.h"
 #import "FMDatabaseAdditions.h"
+#import "SIYDataModelManagedObjects.h"
 
 @interface SIYCardDatabase : NSObject {
 	FMDatabase *db;

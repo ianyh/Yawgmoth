@@ -12,6 +12,7 @@
 	}
 	[db setShouldCacheStatements:YES];
 	
+	/*
 	id cacheClass = NSClassFromString(@"NSCache");
 	if (cacheClass == nil) {
 		nameCache = [[NSMutableDictionary dictionaryWithCapacity:1000] retain];
@@ -22,13 +23,17 @@
 		[nameCache setCountLimit:1000];
 		[setCache setCountLimit:1000];
 	}
+	 */
 	
 	numberOfRows = -1;
+	
+	/*
 	nextRowToCache = 0;
 	lastRequestedRow = -1;
 	
 	cachingThread = [[[NSThread alloc] initWithTarget:self selector:@selector(cache) object:nil] retain];
 	cacheLock = [[[NSLock alloc] init] retain];
+	 */
 	
 	return [super init];
 }
@@ -112,7 +117,7 @@
 	
 	card.manaCost = [resultSet stringForColumn:@"mana"];
 	card.name = [resultSet stringForColumn:@"name"];
-	card.quantity = [NSNumber numberWithInt:1];
+	card.quantity = [NSNumber numberWithInt:0];
 	card.rarity = [resultSet stringForColumn:@"rarity"];
 	card.text = [resultSet stringForColumn:@"text"];
 	
@@ -122,6 +127,8 @@
 	NSString *type = [resultSet stringForColumn:@"type"];
 	card.superType = [self superTypeFromType:type];
 	card.type = type;
+	
+	[resultSet close];
 }
 
 - (NSString *)queryWithSelection:(NSString *)selectStatement singleSelection:(BOOL)isSingleSelection
@@ -144,8 +151,24 @@
 
 - (NSString *)superTypeFromType:(NSString *)type
 {
-	NSArray *superTypeRegexStrings = [NSArray arrayWithObjects:@".*Instant.*", @".*Sorcery.*", @".*Artifact Creature.*", @".*Artifact Land.*", @".*Creature.*", @".*Artifact.*", @".*Land.*", @".*Enchantment.*", @".*Planeswalker.*", nil];
-	NSArray *superTypes = [NSArray arrayWithObjects:@"Instant", @"Sorcery", @"Artifact Creature", @"Artifact Land", @"Creature", @"Artifact", @"Land", @"Enchantment", @"Planeswalker", nil];
+	NSArray *superTypeRegexStrings = [NSArray arrayWithObjects:@".*Instant.*", 
+									  @".*Sorcery.*", 
+									  @".*Artifact Creature.*", 
+									  @".*Artifact Land.*", 
+									  @".*Creature.*", 
+									  @".*Artifact.*", 
+									  @".*Land.*", 
+									  @".*Enchantment.*", 
+									  @".*Planeswalker.*", nil];
+	NSArray *superTypes = [NSArray arrayWithObjects:@"Instant", 
+						   @"Sorcery", 
+						   @"Artifact Creature", 
+						   @"Artifact Land", 
+						   @"Creature", 
+						   @"Artifact", 
+						   @"Land", 
+						   @"Enchantment", 
+						   @"Planeswalker", nil];
 	int i;
 	
 	for (i = 0; i < [superTypes count]; i++) {
@@ -195,6 +218,8 @@
 	[nameCache removeAllObjects];
 	[setCache removeAllObjects];
 	nextRowToCache = 0;
+	
+	[filterString release];
 	filterString = [[newFilterString copy] retain];
 }
 
