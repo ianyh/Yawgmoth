@@ -193,6 +193,28 @@
 	[NSApp endSheet:newDeckPanel];
 }
 
+- (IBAction)deleteDeck:(id)sender
+{
+	NSManagedObject *deck = [self managedDeckWithName:[[deckSelectionButton selectedItem] title]];
+	if (deck == nil) {
+		return;
+	}
+	
+	NSEnumerator *deckEnumerator = [deck.cards objectEnumerator];
+	NSManagedObject *card;
+	NSManagedObject *libraryCard;
+	
+	while ((card = [deckEnumerator nextObject]) != nil) {
+		libraryCard = [self managedLibraryCardWithName:card.name];
+		libraryCard.quantity = [NSNumber numberWithInt:[libraryCard.quantity intValue]+[card.quantity intValue]];
+		
+		[[self managedObjectContext] deleteObject:card];
+	}
+	
+	[[self managedObjectContext] deleteObject:deck];
+	[self save];
+}
+
 - (NSManagedObject *)managedCardWithName:(NSString *)name inDeck:(NSManagedObject *)deck
 {
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];

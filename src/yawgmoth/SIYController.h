@@ -50,6 +50,7 @@
 - (NSString *)applicationSupportDirectory;
 - (void)libraryTableSelectionAction;
 - (void)deckCardsTableSelectionAction;
+- (IBAction)deleteDeck:(id)sender;
 - (IBAction)cancelAddToLibrary:(id)sender;
 - (IBAction)createNewDeck:(id)sender;
 - (IBAction)createNewDeckDidEnd:(id)sender;

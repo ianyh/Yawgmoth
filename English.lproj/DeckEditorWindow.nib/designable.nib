@@ -11,10 +11,10 @@
 			<string key="NS.object.0">762</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="650"/>
-			<integer value="202"/>
-			<integer value="57"/>
+			<integer value="199"/>
 			<integer value="266"/>
+			<integer value="57"/>
+			<integer value="650"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2223,6 +2223,26 @@
 											<reference key="NSCornerView" ref="666427308"/>
 											<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
 										</object>
+										<object class="NSButton" id="18892897">
+											<reference key="NSNextResponder" ref="155633076"/>
+											<int key="NSvFlags">268</int>
+											<string key="NSFrame">{{111, 290}, {116, 32}}</string>
+											<reference key="NSSuperview" ref="155633076"/>
+											<bool key="NSEnabled">YES</bool>
+											<object class="NSButtonCell" key="NSCell" id="813121048">
+												<int key="NSCellFlags">67239424</int>
+												<int key="NSCellFlags2">134217728</int>
+												<string key="NSContents">Delete Deck</string>
+												<reference key="NSSupport" ref="465319721"/>
+												<reference key="NSControlView" ref="18892897"/>
+												<int key="NSButtonFlags">-2038284033</int>
+												<int key="NSButtonFlags2">129</int>
+												<string key="NSAlternateContents"/>
+												<string key="NSKeyEquivalent"/>
+												<int key="NSPeriodicDelay">200</int>
+												<int key="NSPeriodicInterval">25</int>
+											</object>
+										</object>
 									</array>
 									<string key="NSFrame">{{2, 2}, {773, 335}}</string>
 									<reference key="NSSuperview" ref="333287099"/>
@@ -3877,6 +3897,14 @@
 					</object>
 					<int key="connectionID">921</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">deleteDeck:</string>
+						<reference key="source" ref="900151345"/>
+						<reference key="destination" ref="18892897"/>
+					</object>
+					<int key="connectionID">924</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -4469,6 +4497,7 @@
 							<reference ref="1022142674"/>
 							<reference ref="469472709"/>
 							<reference ref="1020884061"/>
+							<reference ref="18892897"/>
 						</array>
 						<reference key="parent" ref="343233240"/>
 					</object>
@@ -5089,6 +5118,19 @@
 						<reference key="object" ref="290896892"/>
 						<reference key="parent" ref="527269320"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">922</int>
+						<reference key="object" ref="18892897"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="813121048"/>
+						</array>
+						<reference key="parent" ref="333287099"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">923</int>
+						<reference key="object" ref="813121048"/>
+						<reference key="parent" ref="18892897"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -5325,12 +5367,14 @@
 				<string key="847.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="896.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="897.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="922.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="923.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">921</int>
+			<int key="maxID">924</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -5343,6 +5387,7 @@
 						<string key="cancelAddToLibrary:">id</string>
 						<string key="createNewDeck:">id</string>
 						<string key="createNewDeckDidEnd:">id</string>
+						<string key="deleteDeck:">id</string>
 						<string key="moveToDeck:">id</string>
 						<string key="moveToLibrary:">id</string>
 						<string key="openAddToLibraryWindow:">id</string>
