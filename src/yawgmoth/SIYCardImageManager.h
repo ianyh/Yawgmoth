@@ -14,6 +14,7 @@
 
 - (id)initWithApplicationSupportDirectory:(NSString *)applicationSupportDirectory;
 
+- (BOOL)cardNameIsDownloading:(NSString *)cardName;
 - (void)download:(NSURLDownload *)download didFailWithError:(NSError *)error;
 - (void)downloadDidFinish:(NSURLDownload *)download;
 - (NSString *)imageFileNameForCardName:(NSString *)cardName;

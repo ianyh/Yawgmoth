@@ -37,6 +37,11 @@
 	return [super init];
 }
 
+- (BOOL)cardNameIsDownloading:(NSString *)cardName
+{
+	return [cardImageDownloaders objectForKey:cardName] != nil;
+}
+
 - (void)download:(NSURLDownload *)download didFailWithError:(NSError *)error
 {
 	while ([[cardImageDownloaders allKeysForObject:download] count] == 0) {
@@ -86,7 +91,9 @@
 	NSString *fileName = [self imageFileNameForCardName:cardName];
 	NSString *filePath = [cardImagesDirectory stringByAppendingPathComponent:fileName];
 	
-	if ([fileManager fileExistsAtPath:filePath]) {
+	if ([self cardNameIsDownloading:cardName]) {
+		return nil;
+	} else if ([fileManager fileExistsAtPath:filePath]) {
 		return [[NSImage alloc] initWithContentsOfFile:filePath];
 	} else if (shouldDownload) {
 		mainDownloadingCardName = cardName;
