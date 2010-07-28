@@ -11,10 +11,10 @@
 			<string key="NS.object.0">762</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="192"/>
 			<integer value="650"/>
 			<integer value="57"/>
-			<integer value="414"/>
+			<integer value="202"/>
+			<integer value="266"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -493,7 +493,7 @@
 																</object>
 															</object>
 															<double key="NSRowHeight">17</double>
-															<int key="NSTvFlags">-700448768</int>
+															<int key="NSTvFlags">-767557632</int>
 															<reference key="NSDelegate"/>
 															<reference key="NSDataSource"/>
 															<int key="NSColumnAutoresizingStyle">4</int>
@@ -901,7 +901,7 @@
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSSearchFieldCell" key="NSCell" id="290896892">
 								<int key="NSCellFlags">343014976</int>
-								<int key="NSCellFlags2">268436544</int>
+								<int key="NSCellFlags2">1088</int>
 								<reference key="NSSupport" ref="465319721"/>
 								<string key="NSPlaceholderString">All</string>
 								<reference key="NSControlView" ref="527269320"/>
@@ -1175,7 +1175,6 @@
 																	</object>
 																	<int key="NSResizingMask">3</int>
 																	<bool key="NSIsResizeable">YES</bool>
-																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="211166562"/>
 																</object>
 																<object class="NSTableColumn" id="132385969">
@@ -1201,7 +1200,6 @@
 																	</object>
 																	<int key="NSResizingMask">3</int>
 																	<bool key="NSIsResizeable">YES</bool>
-																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="211166562"/>
 																</object>
 																<object class="NSTableColumn" id="394253439">
@@ -1227,7 +1225,6 @@
 																	</object>
 																	<int key="NSResizingMask">3</int>
 																	<bool key="NSIsResizeable">YES</bool>
-																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="211166562"/>
 																</object>
 																<object class="NSTableColumn" id="296952869">
@@ -1253,7 +1250,6 @@
 																	</object>
 																	<int key="NSResizingMask">3</int>
 																	<bool key="NSIsResizeable">YES</bool>
-																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="211166562"/>
 																</object>
 																<object class="NSTableColumn" id="1053019589">
@@ -1279,7 +1275,6 @@
 																	</object>
 																	<int key="NSResizingMask">3</int>
 																	<bool key="NSIsResizeable">YES</bool>
-																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="211166562"/>
 																</object>
 																<object class="NSTableColumn" id="538311447">
@@ -1343,7 +1338,6 @@
 																	</object>
 																	<int key="NSResizingMask">3</int>
 																	<bool key="NSIsResizeable">YES</bool>
-																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="211166562"/>
 																</object>
 																<object class="NSTableColumn" id="1061617892">
@@ -1407,7 +1401,6 @@
 																	</object>
 																	<int key="NSResizingMask">3</int>
 																	<bool key="NSIsResizeable">YES</bool>
-																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="211166562"/>
 																</object>
 																<object class="NSTableColumn" id="379003388">
@@ -1433,7 +1426,6 @@
 																	</object>
 																	<int key="NSResizingMask">3</int>
 																	<bool key="NSIsResizeable">YES</bool>
-																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="211166562"/>
 																</object>
 																<object class="NSTableColumn" id="994963230">
@@ -1459,7 +1451,6 @@
 																	</object>
 																	<int key="NSResizingMask">3</int>
 																	<bool key="NSIsResizeable">YES</bool>
-																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="211166562"/>
 																</object>
 															</array>
@@ -1501,6 +1492,7 @@
 													<int key="NSsFlags">1</int>
 													<reference key="NSTarget" ref="698011360"/>
 													<string key="NSAction">_doScroller:</string>
+													<double key="NSCurValue">0.58943089430894302</double>
 													<double key="NSPercent">0.97877984084880632</double>
 												</object>
 												<object class="NSClipView" id="523309443">
@@ -3828,7 +3820,7 @@
 						<string key="label">predicate: filterPredicate</string>
 						<reference key="source" ref="527269320"/>
 						<reference key="destination" ref="852888610"/>
-						<object class="NSNibBindingConnector" key="connector" id="733617991">
+						<object class="NSNibBindingConnector" key="connector" id="726364367">
 							<reference key="NSSource" ref="527269320"/>
 							<reference key="NSDestination" ref="852888610"/>
 							<string key="NSLabel">predicate: filterPredicate</string>
@@ -3836,19 +3828,19 @@
 							<string key="NSKeyPath">filterPredicate</string>
 							<dictionary key="NSOptions">
 								<string key="NSDisplayName">All</string>
-								<string key="NSPredicateFormat">(name contains $value) or (set contains $value)</string>
+								<string key="NSPredicateFormat">(name contains[c] $value) or (set contains[c] $value)</string>
 							</dictionary>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">910</int>
+					<int key="connectionID">916</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">predicate2: filterPredicate</string>
 						<reference key="source" ref="527269320"/>
 						<reference key="destination" ref="852888610"/>
-						<object class="NSNibBindingConnector" key="connector" id="570852505">
+						<object class="NSNibBindingConnector" key="connector" id="227093420">
 							<reference key="NSSource" ref="527269320"/>
 							<reference key="NSDestination" ref="852888610"/>
 							<string key="NSLabel">predicate2: filterPredicate</string>
@@ -3856,13 +3848,13 @@
 							<string key="NSKeyPath">filterPredicate</string>
 							<dictionary key="NSOptions">
 								<string key="NSDisplayName">Set</string>
-								<string key="NSPredicateFormat">set contains $value</string>
+								<string key="NSPredicateFormat">set contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="733617991"/>
+							<reference key="NSPreviousConnector" ref="726364367"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">913</int>
+					<int key="connectionID">919</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -3877,13 +3869,13 @@
 							<string key="NSKeyPath">filterPredicate</string>
 							<dictionary key="NSOptions">
 								<string key="NSDisplayName">Name</string>
-								<string key="NSPredicateFormat">name contains $value</string>
+								<string key="NSPredicateFormat">name contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="570852505"/>
+							<reference key="NSPreviousConnector" ref="227093420"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">915</int>
+					<int key="connectionID">921</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -5122,9 +5114,9 @@
 				<string key="130.editorWindowContentRectSynchronizationRect">{{475, 832}, {234, 43}}</string>
 				<string key="131.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="132.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="191.IBEditorWindowLastContentRect">{{327, 150}, {886, 643}}</string>
+				<string key="191.IBEditorWindowLastContentRect">{{329, 49}, {886, 643}}</string>
 				<string key="191.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="191.IBWindowTemplateEditedContentRect">{{327, 150}, {886, 643}}</string>
+				<string key="191.IBWindowTemplateEditedContentRect">{{329, 49}, {886, 643}}</string>
 				<boolean value="NO" key="191.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="191.WindowOrigin">{196, 240}</string>
 				<string key="191.editorWindowContentRectSynchronizationRect">{{357, 418}, {480, 270}}</string>
@@ -5158,9 +5150,9 @@
 				<string key="220.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="221.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="222.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="265.IBEditorWindowLastContentRect">{{310, 58}, {1051, 790}}</string>
+				<string key="265.IBEditorWindowLastContentRect">{{365, 46}, {1051, 790}}</string>
 				<string key="265.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="265.IBWindowTemplateEditedContentRect">{{310, 58}, {1051, 790}}</string>
+				<string key="265.IBWindowTemplateEditedContentRect">{{365, 46}, {1051, 790}}</string>
 				<integer value="1" key="265.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="265.editorWindowContentRectSynchronizationRect">{{33, 99}, {480, 360}}</string>
 				<boolean value="YES" key="265.windowTemplate.hasMinSize"/>
@@ -5338,7 +5330,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">915</int>
+			<int key="maxID">921</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

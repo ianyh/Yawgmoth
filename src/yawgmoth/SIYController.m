@@ -57,7 +57,7 @@
 		tempCard = [array objectAtIndex:i];
 		libraryCard = [self managedLibraryCardWithName:tempCard.name];
 		if (libraryCard == nil) {
-			libraryCard = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
+			libraryCard = [NSEntityDescription insertNewObjectForEntityForName:@"LibraryCard" inManagedObjectContext:[self managedObjectContext]];
 			libraryCard.manaCost = tempCard.manaCost;
 			libraryCard.name = tempCard.name;
 			libraryCard.quantity = tempCard.quantity;
@@ -94,7 +94,12 @@
 
 - (void)allCardsSelectionAction
 {
-	NSString *selectedCardName = [[[allCardsController selectedObjects] objectAtIndex:0] name];
+	NSArray *array = [allCardsController selectedObjects];
+	if ([array count] == 0) {
+		[libraryAddingCardImageView setImage:NULL];
+		return;
+	}
+	NSString *selectedCardName = [[array objectAtIndex:0] name];
 	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
 											 shouldDownloadIfMissing:YES 
 											 withAction:@selector(updateLibraryAddImage:forCardWithName:) 
@@ -155,8 +160,8 @@
 	}	
 }
 
-- (NSString *)applicationSupportDirectory {
-	
+- (NSString *)applicationSupportDirectory 
+{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
     NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
     return [basePath stringByAppendingPathComponent:@"Yawgmoth"];
@@ -284,8 +289,8 @@
 	return nil;
 }
 
-- (NSManagedObjectContext *)managedObjectContext {
-	
+- (NSManagedObjectContext *)managedObjectContext 
+{
     if (managedObjectContext) return managedObjectContext;
 	
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
@@ -303,8 +308,8 @@
     return managedObjectContext;
 }
 
-- (NSManagedObjectModel *)managedObjectModel {
-	
+- (NSManagedObjectModel *)managedObjectModel 
+{	
     if (managedObjectModel) return managedObjectModel;
 	
     managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
