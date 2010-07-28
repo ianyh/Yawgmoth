@@ -196,7 +196,6 @@
 			children = (
 				3CBD2D3911FE2E5300DE9543 /* SIYCardImageManager.h */,
 				3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */,
-				3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */,
 				3C1E539711F620F9001FB0BF /* SIYController.h */,
 				3C1E539811F620F9001FB0BF /* SIYController.m */,
 			);
@@ -246,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				3C1E539C11F6212E001FB0BF /* main.m */,
+				3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */,
 				32CA4F630368D1EE00C91783 /* Yawgmoth_Prefix.pch */,
 				3C180E4011FEA00D00235976 /* TSVParser.h */,
 				3C180E4111FEA00D00235976 /* TSVParser.m */,

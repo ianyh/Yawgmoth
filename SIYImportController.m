@@ -27,7 +27,7 @@
         [dict setValue:@"Failed to initialize the store" forKey:NSLocalizedDescriptionKey];
         [dict setValue:@"There was an error building up the data file." forKey:NSLocalizedFailureReasonErrorKey];
         NSError *error = [NSError errorWithDomain:@"com.scarredions.yawgmoth" code:9999 userInfo:dict];
-        [[NSApplication sharedApplication] presentError:error];
+		NSLog(@"%@", [error localizedDescription]);
         return nil;
     }
     managedObjectContext = [[NSManagedObjectContext alloc] init];
@@ -73,11 +73,11 @@
 												  configuration:nil 
 															URL:url 
 														options:nil 
-														  error:&error]){
-        [[NSApplication sharedApplication] presentError:error];
+														  error:&error]) {
+		NSLog(@"%@", [error localizedDescription]);
         [persistentStoreCoordinator release], persistentStoreCoordinator = nil;
         return nil;
-    }    
+    }
 	
     return persistentStoreCoordinator;
 }
@@ -91,7 +91,7 @@
     }
 	
     if (![[self managedObjectContext] save:&error]) {
-        [[NSApplication sharedApplication] presentError:error];
+		NSLog(@"%@", [error localizedDescription]);
     }	
 }
 
@@ -103,10 +103,10 @@
 	
 	for (i = 0; i < [cardDatabase numberOfRowsInTableView:nil]; i++) {
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-		card = [NSEntityDescription insertNewObjectForEntityForName:@"LibraryCard" inManagedObjectContext:[self managedObjectContext]];
+		card = [NSEntityDescription insertNewObjectForEntityForName:@"FullCard" inManagedObjectContext:[self managedObjectContext]];
 		[cardDatabase populateCard:card withRowIndex:i];
 		[importProgress incrementBy:increment];
-		NSString *string = [NSString stringWithFormat:@"%d/%d", i, [cardDatabase numberOfRowsInTableView:nil]];
+		NSString *string = [NSString stringWithFormat:@"%d/%d", i+1, [cardDatabase numberOfRowsInTableView:nil]];
 		[importText setStringValue:string];
 		[self save];
 		[pool release];
