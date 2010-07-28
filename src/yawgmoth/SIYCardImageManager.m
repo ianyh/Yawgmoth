@@ -10,6 +10,16 @@
 	fileNameToURL = [[NSMutableDictionary dictionary] retain];	
 	
 	NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error = nil;
+    
+    if ( ![fileManager fileExistsAtPath:cardImagesDirectory isDirectory:NULL] ) {
+		if (![fileManager createDirectoryAtPath:cardImagesDirectory withIntermediateDirectories:YES attributes:nil error:&error]) {
+            NSAssert(NO, ([NSString stringWithFormat:@"Failed to create App Support directory %@ : %@", cardImagesDirectory, error]));
+            NSLog(@"Error creating application support directory at %@ : %@",cardImagesDirectory,error);
+            return nil;
+		}
+    }
+	
 	NSString *directoryPath = [[NSBundle mainBundle] resourcePath];
 	NSDirectoryEnumerator *directoryEnumerator = [fileManager enumeratorAtPath:directoryPath];
 	NSPredicate *fileNameRegex = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", @".*txt"];
