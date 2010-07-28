@@ -1,12 +1,12 @@
 #import <Cocoa/Cocoa.h>
-#import "SIYCardDatabase.h"
 #import "SIYCardImageManager.h"
 
 
 @interface SIYController : NSObject {
 	
-	SIYCardDatabase *cardDatabase;
 	SIYCardImageManager *imageManager;
+	
+	IBOutlet NSArrayController *allCardsController;
 	IBOutlet NSArrayController *libraryController;
 	IBOutlet NSArrayController *deckCardsController;
 	IBOutlet NSArrayController *tempCardsController;
@@ -14,8 +14,6 @@
 	IBOutlet NSWindow *deckEditingWindow;
 	IBOutlet NSTableView *libraryTableView;
 	IBOutlet NSTableView *deckTableView;
-	IBOutlet NSTableColumn *libraryCardNameTableColumn;
-	IBOutlet NSTableColumn *deckCardNameTableColumn;
 	IBOutlet NSPopUpButton *deckSelectionButton;
 	IBOutlet NSButton *moveToDeckButton;
 	IBOutlet NSButton *moveToLibraryButton;
@@ -49,6 +47,7 @@
 - (IBAction)addCardToLibraryAddTable:(id)sender;
 - (IBAction)addToLibrary:(id)sender;
 - (void)allCardsSelectionAction;
+- (NSString *)applicationSupportDirectory;
 - (void)libraryTableSelectionAction;
 - (void)deckCardsTableSelectionAction;
 - (IBAction)cancelAddToLibrary:(id)sender;
@@ -64,7 +63,6 @@
 - (IBAction)removeCardFromLibraryAddTable:(id)sender;
 - (IBAction)removeFromLibrary:(id)sender;
 - (void)save;
-- (IBAction)updateFilter:(id)sender;
 - (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
 - (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
 

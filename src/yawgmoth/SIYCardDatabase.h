@@ -5,19 +5,10 @@
 
 @interface SIYCardDatabase : NSObject {
 	FMDatabase *db;
-	id nameCache;
-	id setCache;
 	
-	NSString *filterString;
 	NSInteger numberOfRows;
-	NSInteger nextRowToCache;
-	NSInteger lastRequestedRow;
-	
-	NSThread *cachingThread;
-	NSLock *cacheLock;
 }
 
-- (void)cache;
 - (NSString *)cardValueType:(NSString *)type fromDBAtIndex:(NSInteger)rowIndex;
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView;
 - (void)populateCard:(NSManagedObject *)card withRowIndex:(NSInteger)rowIndex;

@@ -6,9 +6,6 @@
 - (void)awakeFromNib
 {
 	imageManager = [[[SIYCardImageManager alloc] initWithApplicationSupportDirectory:[self applicationSupportDirectory]] retain];	
-	cardDatabase = [[[SIYCardDatabase alloc] init] retain];
-	[cardDatabase startCachingThread];
-	[allCardsTable setDataSource:cardDatabase];
 	
 	[allCardsTable setDelegate:self];
 	[cardsToAddToLibraryTable setDelegate:self];
@@ -18,40 +15,53 @@
 
 - (IBAction)addCardToLibraryAddTable:(id)sender
 {
-	NSString *name = [cardDatabase cardValueType:@"name" fromDBAtIndex:[allCardsTable selectedRow]];
-	NSManagedObject *card = [self managedTempCardWithName:name];
-
-	if (card != nil) {
-		card.quantity = [NSNumber numberWithInt:[card.quantity intValue]+1];
-	} else {
-		card = [NSEntityDescription insertNewObjectForEntityForName:@"TempCard" inManagedObjectContext:[self managedObjectContext]];
-		[cardDatabase populateCard:card withRowIndex:[allCardsTable selectedRow]];
+	NSArray *array = [[allCardsController selectedObjects] copy];
+	NSManagedObject *tempCard;	
+	NSManagedObject *fullCard;
+	int i;
+	
+	for (i = 0; i < [array count]; i++) {
+		fullCard = [array objectAtIndex:i];
+		tempCard = [self managedTempCardWithName:fullCard.name];
+		
+		if (tempCard == nil) {
+			tempCard = [NSEntityDescription insertNewObjectForEntityForName:@"TempCard" inManagedObjectContext:[self managedObjectContext]];
+			
+			tempCard.convertedManaCost = fullCard.convertedManaCost;
+			tempCard.manaCost = fullCard.manaCost;
+			tempCard.name = fullCard.name;
+			tempCard.rarity = fullCard.rarity;
+			tempCard.text = fullCard.text;
+			
+			tempCard.power = fullCard.power;
+			tempCard.toughness = fullCard.toughness;
+			
+			tempCard.superType = fullCard.superType;
+			tempCard.type = fullCard.type;
+			
+			tempCard.quantity = [NSNumber numberWithInt:1];			
+		} else {
+			tempCard.quantity = [NSNumber numberWithInt:[tempCard.quantity intValue]+1];
+		}
 	}
 }
 
 - (IBAction)addToLibrary:(id)sender
 {
-	NSEntityDescription *tempCardEntityDescription = [NSEntityDescription entityForName:@"TempCard" inManagedObjectContext:[self managedObjectContext]];
-	NSFetchRequest *allTempCardsFetchRequest = [[NSFetchRequest alloc] init];
-	[allTempCardsFetchRequest setEntity:tempCardEntityDescription];
-	
-	NSError *error;
-	NSArray *tempCards = [[self managedObjectContext] executeFetchRequest:allTempCardsFetchRequest error:&error];
-	[allTempCardsFetchRequest release];
+	NSArray *array = [[tempCardsController arrangedObjects] copy];
 	NSManagedObject *tempCard;
 	NSManagedObject *libraryCard;
 	int i;
 	
-	for (i = 0; i < [tempCards count]; i++) {
-		tempCard = [tempCards objectAtIndex:i];
+	for (i = 0; i < [array count]; i++) {
+		tempCard = [array objectAtIndex:i];
 		libraryCard = [self managedLibraryCardWithName:tempCard.name];
 		if (libraryCard == nil) {
-			libraryCard = [NSEntityDescription insertNewObjectForEntityForName:@"LibraryCard" inManagedObjectContext:[self managedObjectContext]];
+			libraryCard = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
 			libraryCard.manaCost = tempCard.manaCost;
 			libraryCard.name = tempCard.name;
 			libraryCard.quantity = tempCard.quantity;
 			libraryCard.rarity = tempCard.rarity;
-			libraryCard.quantity = tempCard.quantity;
 			libraryCard.text = tempCard.text;
 			
 			libraryCard.power = tempCard.power;
@@ -84,7 +94,7 @@
 
 - (void)allCardsSelectionAction
 {
-	NSString *selectedCardName = [cardDatabase cardValueType:@"name" fromDBAtIndex:[allCardsTable selectedRow]];
+	NSString *selectedCardName = [[[allCardsController selectedObjects] objectAtIndex:0] name];
 	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
 											 shouldDownloadIfMissing:YES 
 											 withAction:@selector(updateLibraryAddImage:forCardWithName:) 
@@ -274,7 +284,7 @@
 	return nil;
 }
 
-- (NSManagedObjectContext *) managedObjectContext {
+- (NSManagedObjectContext *)managedObjectContext {
 	
     if (managedObjectContext) return managedObjectContext;
 	
@@ -369,9 +379,9 @@
 	[libraryAddingWindow makeKeyAndOrderFront:self];
 }
 
-- (NSPersistentStoreCoordinator *) persistentStoreCoordinator {
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
 	
-    if (persistentStoreCoordinator) return persistentStoreCoordinator;
+    if (persistentStoreCoordinator)return persistentStoreCoordinator;
 	
     NSManagedObjectModel *mom = [self managedObjectModel];
     if (!mom) {
@@ -379,7 +389,8 @@
         NSLog(@"%@:%s No model to generate a store from", [self class], _cmd);
         return nil;
     }
-	
+
+	/*
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *applicationSupportDirectory = [self applicationSupportDirectory];
     NSError *error = nil;
@@ -391,10 +402,12 @@
             return nil;
 		}
     }
+	 */
     
-    NSURL *url = [NSURL fileURLWithPath: [applicationSupportDirectory stringByAppendingPathComponent: @"storedata"]];
+	NSError *error = nil;
+    NSURL *url = [NSURL fileURLWithPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: @"storedata"]];
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: mom];
-    if (![persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType 
+    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType 
 												  configuration:nil 
 															URL:url 
 														options:nil 
@@ -449,12 +462,6 @@
     if (![[self managedObjectContext] save:&error]) {
         [[NSApplication sharedApplication] presentError:error];
     }	
-}
-
-- (IBAction)updateFilter:(id)sender
-{
-	[cardDatabase updateFilter:[allCardsSearchField stringValue]];
-	[allCardsTable reloadData];
 }
 
 - (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName

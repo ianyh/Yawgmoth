@@ -59,6 +59,7 @@
 		3C1E539A11F620F9001FB0BF /* SIYController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539811F620F9001FB0BF /* SIYController.m */; };
 		3C1E539B11F620F9001FB0BF /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */; };
 		3C1E539D11F6212E001FB0BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
+		3C4EA47311FFC90200F7F3CA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */; };
 		3C8EED8811ED2E07003E7D9F /* DeckEditorWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */; };
 		3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
 		3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
@@ -101,7 +102,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Yawgmoth_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yawgmoth_Prefix.pch; sourceTree = "<group>"; };
 		3C006A8B11FF883C00C5C084 /* Yawgmoth-Importer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yawgmoth-Importer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C006A8D11FF883C00C5C084 /* Yawgmoth-Importer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Yawgmoth-Importer-Info.plist"; sourceTree = "<group>"; };
+		3C006A8D11FF883C00C5C084 /* Info-importer.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-importer.plist"; sourceTree = "<group>"; };
 		3C006AA211FF89BD00C5C084 /* SIYImportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIYImportController.h; sourceTree = "<group>"; };
 		3C006AA311FF89BD00C5C084 /* SIYImportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIYImportController.m; sourceTree = "<group>"; };
 		3C006AA511FF89DD00C5C084 /* Importer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Importer.xib; sourceTree = "<group>"; };
@@ -182,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C4EA47311FFC90200F7F3CA /* libsqlite3.dylib in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,18 +191,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Classes */ = {
+		080E96DDFE201D6D7F000001 /* Yawgmoth Classes */ = {
 			isa = PBXGroup;
 			children = (
 				3CBD2D3911FE2E5300DE9543 /* SIYCardImageManager.h */,
 				3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */,
 				3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */,
-				3C89838811F9698F00AABCEE /* SIYCardDatabase.h */,
-				3C89838911F9698F00AABCEE /* SIYCardDatabase.m */,
 				3C1E539711F620F9001FB0BF /* SIYController.h */,
 				3C1E539811F620F9001FB0BF /* SIYController.m */,
 			);
-			name = Classes;
+			name = "Yawgmoth Classes";
 			sourceTree = "<group>";
 		};
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
@@ -238,7 +238,6 @@
 				3C1E539111F61E8B001FB0BF /* Yawgmoth */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				3C006A8D11FF883C00C5C084 /* Yawgmoth-Importer-Info.plist */,
 			);
 			name = Yawgmoth;
 			sourceTree = "<group>";
@@ -250,8 +249,6 @@
 				32CA4F630368D1EE00C91783 /* Yawgmoth_Prefix.pch */,
 				3C180E4011FEA00D00235976 /* TSVParser.h */,
 				3C180E4111FEA00D00235976 /* TSVParser.m */,
-				3C006AA211FF89BD00C5C084 /* SIYImportController.h */,
-				3C006AA311FF89BD00C5C084 /* SIYImportController.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -259,6 +256,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3C006A8D11FF883C00C5C084 /* Info-importer.plist */,
 				3C006B7911FFC4BB00C5C084 /* storedata */,
 				3C180E7E11FEA65000235976 /* cardimgs */,
 				3C180E3D11FE918A00235976 /* cards.db */,
@@ -320,7 +318,8 @@
 			isa = PBXGroup;
 			children = (
 				3C9586B711FB7DE200E0F11E /* Models */,
-				080E96DDFE201D6D7F000001 /* Classes */,
+				3C4EA4B511FFD8CC00F7F3CA /* Importer Classes */,
+				080E96DDFE201D6D7F000001 /* Yawgmoth Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 			);
@@ -338,6 +337,17 @@
 				3C0F85BD11FCDF3C0043D7DD /* FMResultSet.m */,
 			);
 			name = fmdb;
+			sourceTree = "<group>";
+		};
+		3C4EA4B511FFD8CC00F7F3CA /* Importer Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3C006AA211FF89BD00C5C084 /* SIYImportController.h */,
+				3C006AA311FF89BD00C5C084 /* SIYImportController.m */,
+				3C89838811F9698F00AABCEE /* SIYCardDatabase.h */,
+				3C89838911F9698F00AABCEE /* SIYCardDatabase.m */,
+			);
+			name = "Importer Classes";
 			sourceTree = "<group>";
 		};
 		3C9586B711FB7DE200E0F11E /* Models */ = {
@@ -581,7 +591,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "Yawgmoth-Importer-Info.plist";
+				INFOPLIST_FILE = "Info-importer.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -604,7 +614,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "Yawgmoth-Importer-Info.plist";
+				INFOPLIST_FILE = "Info-importer.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",

@@ -12,9 +12,9 @@
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<integer value="192"/>
-			<integer value="266"/>
-			<integer value="57"/>
 			<integer value="650"/>
+			<integer value="57"/>
+			<integer value="414"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -389,7 +389,6 @@
 															</object>
 															<array class="NSMutableArray" key="NSTableColumns">
 																<object class="NSTableColumn" id="484310012">
-																	<string key="NSIdentifier">name</string>
 																	<double key="NSWidth">217</double>
 																	<double key="NSMinWidth">40</double>
 																	<double key="NSMaxWidth">1000</double>
@@ -444,7 +443,6 @@
 																	</object>
 																	<int key="NSResizingMask">3</int>
 																	<bool key="NSIsResizeable">YES</bool>
-																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="279286403"/>
 																</object>
 																<object class="NSTableColumn" id="136123241">
@@ -479,7 +477,6 @@
 																	</object>
 																	<int key="NSResizingMask">3</int>
 																	<bool key="NSIsResizeable">YES</bool>
-																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="279286403"/>
 																</object>
 															</array>
@@ -886,19 +883,28 @@
 								<int key="NSPeriodicInterval">25</int>
 							</object>
 						</object>
-						<object class="NSSearchField" id="595647324">
+						<object class="NSProgressIndicator" id="494444816">
+							<reference key="NSNextResponder" ref="421791908"/>
+							<int key="NSvFlags">1292</int>
+							<object class="NSPSMatrix" key="NSDrawMatrix"/>
+							<string key="NSFrame">{{427, 354}, {32, 32}}</string>
+							<reference key="NSSuperview" ref="421791908"/>
+							<bool key="NSViewCanDrawConcurrently">YES</bool>
+							<int key="NSpiFlags">28682</int>
+							<double key="NSMaxValue">100</double>
+						</object>
+						<object class="NSSearchField" id="527269320">
 							<reference key="NSNextResponder" ref="421791908"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{185, 612}, {153, 22}}</string>
+							<string key="NSFrame">{{181, 613}, {157, 22}}</string>
 							<reference key="NSSuperview" ref="421791908"/>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSSearchFieldCell" key="NSCell" id="788136248">
+							<object class="NSSearchFieldCell" key="NSCell" id="290896892">
 								<int key="NSCellFlags">343014976</int>
-								<int key="NSCellFlags2">272630848</int>
-								<string key="NSContents"/>
+								<int key="NSCellFlags2">268436544</int>
 								<reference key="NSSupport" ref="465319721"/>
-								<string key="NSPlaceholderString">Search all cards...</string>
-								<reference key="NSControlView" ref="595647324"/>
+								<string key="NSPlaceholderString">All</string>
+								<reference key="NSControlView" ref="527269320"/>
 								<bool key="NSDrawsBackground">YES</bool>
 								<int key="NSTextBezelStyle">1</int>
 								<reference key="NSBackgroundColor" ref="848569321"/>
@@ -907,9 +913,9 @@
 									<int key="NSCellFlags">130560</int>
 									<int key="NSCellFlags2">0</int>
 									<string key="NSContents">search</string>
-									<reference key="NSControlView" ref="595647324"/>
+									<reference key="NSControlView" ref="527269320"/>
 									<string key="NSAction">_searchFieldSearch:</string>
-									<reference key="NSTarget" ref="788136248"/>
+									<reference key="NSTarget" ref="290896892"/>
 									<int key="NSButtonFlags">138690815</int>
 									<int key="NSButtonFlags2">0</int>
 									<string key="NSKeyEquivalent"/>
@@ -926,9 +932,9 @@
 											<integer value="1" key="NSAccessibilityEncodedAttributesValueType"/>
 										</dictionary>
 									</array>
-									<reference key="NSControlView" ref="595647324"/>
+									<reference key="NSControlView" ref="527269320"/>
 									<string key="NSAction">_searchFieldCancel:</string>
-									<reference key="NSTarget" ref="788136248"/>
+									<reference key="NSTarget" ref="290896892"/>
 									<int key="NSButtonFlags">138690815</int>
 									<int key="NSButtonFlags2">0</int>
 									<string key="NSKeyEquivalent"/>
@@ -937,16 +943,6 @@
 								</object>
 								<int key="NSMaximumRecents">255</int>
 							</object>
-						</object>
-						<object class="NSProgressIndicator" id="494444816">
-							<reference key="NSNextResponder" ref="421791908"/>
-							<int key="NSvFlags">1292</int>
-							<object class="NSPSMatrix" key="NSDrawMatrix"/>
-							<string key="NSFrame">{{427, 354}, {32, 32}}</string>
-							<reference key="NSSuperview" ref="421791908"/>
-							<bool key="NSViewCanDrawConcurrently">YES</bool>
-							<int key="NSpiFlags">28682</int>
-							<double key="NSMaxValue">100</double>
 						</object>
 					</array>
 					<string key="NSFrameSize">{886, 643}</string>
@@ -1505,7 +1501,6 @@
 													<int key="NSsFlags">1</int>
 													<reference key="NSTarget" ref="698011360"/>
 													<string key="NSAction">_doScroller:</string>
-													<double key="NSCurValue">0.01490514905149054</double>
 													<double key="NSPercent">0.97877984084880632</double>
 												</object>
 												<object class="NSClipView" id="523309443">
@@ -2489,6 +2484,22 @@
 				<bool key="NSFilterRestrictsInsertion">YES</bool>
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
+			<object class="NSArrayController" id="852888610">
+				<array class="NSMutableArray" key="NSDeclaredKeys">
+					<string>name</string>
+					<string>set</string>
+				</array>
+				<bool key="NSAutomaticallyPreparesContent">YES</bool>
+				<object class="_NSManagedProxy" key="_NSManagedProxy">
+					<string key="NSEntityName">FullCard</string>
+				</object>
+				<bool key="_NSIsUsingManagedProxy">YES</bool>
+				<bool key="NSAvoidsEmptySelection">YES</bool>
+				<bool key="NSPreservesSelection">YES</bool>
+				<bool key="NSSelectsInsertedObjects">YES</bool>
+				<bool key="NSFilterRestrictsInsertion">YES</bool>
+				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
+			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<array class="NSMutableArray" key="connectionRecords">
@@ -2668,22 +2679,6 @@
 						<reference key="destination" ref="990221670"/>
 					</object>
 					<int key="connectionID">585</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">allCardsSearchField</string>
-						<reference key="source" ref="900151345"/>
-						<reference key="destination" ref="595647324"/>
-					</object>
-					<int key="connectionID">593</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">updateFilter:</string>
-						<reference key="source" ref="900151345"/>
-						<reference key="destination" ref="595647324"/>
-					</object>
-					<int key="connectionID">594</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -3730,22 +3725,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">libraryCardNameTableColumn</string>
-						<reference key="source" ref="900151345"/>
-						<reference key="destination" ref="132385969"/>
-					</object>
-					<int key="connectionID">836</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">deckCardNameTableColumn</string>
-						<reference key="source" ref="900151345"/>
-						<reference key="destination" ref="59915846"/>
-					</object>
-					<int key="connectionID">837</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">deckEditingCardImageView</string>
 						<reference key="source" ref="900151345"/>
 						<reference key="destination" ref="720032181"/>
@@ -3783,6 +3762,128 @@
 						<reference key="destination" ref="794969625"/>
 					</object>
 					<int key="connectionID">846</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">managedObjectContext: managedObjectContext</string>
+						<reference key="source" ref="852888610"/>
+						<reference key="destination" ref="900151345"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="852888610"/>
+							<reference key="NSDestination" ref="900151345"/>
+							<string key="NSLabel">managedObjectContext: managedObjectContext</string>
+							<string key="NSBinding">managedObjectContext</string>
+							<string key="NSKeyPath">managedObjectContext</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">848</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: arrangedObjects.set</string>
+						<reference key="source" ref="136123241"/>
+						<reference key="destination" ref="852888610"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="136123241"/>
+							<reference key="NSDestination" ref="852888610"/>
+							<string key="NSLabel">value: arrangedObjects.set</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">arrangedObjects.set</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSConditionallySetsEditable</string>
+								<boolean value="NO" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">855</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">allCardsController</string>
+						<reference key="source" ref="900151345"/>
+						<reference key="destination" ref="852888610"/>
+					</object>
+					<int key="connectionID">856</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: arrangedObjects.name</string>
+						<reference key="source" ref="484310012"/>
+						<reference key="destination" ref="852888610"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="484310012"/>
+							<reference key="NSDestination" ref="852888610"/>
+							<string key="NSLabel">value: arrangedObjects.name</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">arrangedObjects.name</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">860</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">predicate: filterPredicate</string>
+						<reference key="source" ref="527269320"/>
+						<reference key="destination" ref="852888610"/>
+						<object class="NSNibBindingConnector" key="connector" id="733617991">
+							<reference key="NSSource" ref="527269320"/>
+							<reference key="NSDestination" ref="852888610"/>
+							<string key="NSLabel">predicate: filterPredicate</string>
+							<string key="NSBinding">predicate</string>
+							<string key="NSKeyPath">filterPredicate</string>
+							<dictionary key="NSOptions">
+								<string key="NSDisplayName">All</string>
+								<string key="NSPredicateFormat">(name contains $value) or (set contains $value)</string>
+							</dictionary>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">910</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">predicate2: filterPredicate</string>
+						<reference key="source" ref="527269320"/>
+						<reference key="destination" ref="852888610"/>
+						<object class="NSNibBindingConnector" key="connector" id="570852505">
+							<reference key="NSSource" ref="527269320"/>
+							<reference key="NSDestination" ref="852888610"/>
+							<string key="NSLabel">predicate2: filterPredicate</string>
+							<string key="NSBinding">predicate2</string>
+							<string key="NSKeyPath">filterPredicate</string>
+							<dictionary key="NSOptions">
+								<string key="NSDisplayName">Set</string>
+								<string key="NSPredicateFormat">set contains $value</string>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="733617991"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">913</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">predicate3: filterPredicate</string>
+						<reference key="source" ref="527269320"/>
+						<reference key="destination" ref="852888610"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="527269320"/>
+							<reference key="NSDestination" ref="852888610"/>
+							<string key="NSLabel">predicate3: filterPredicate</string>
+							<string key="NSBinding">predicate3</string>
+							<string key="NSKeyPath">filterPredicate</string>
+							<dictionary key="NSOptions">
+								<string key="NSDisplayName">Name</string>
+								<string key="NSPredicateFormat">name contains $value</string>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="570852505"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">915</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -4068,7 +4169,6 @@
 						<reference key="object" ref="421791908"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="937099974"/>
-							<reference ref="595647324"/>
 							<reference ref="639797843"/>
 							<reference ref="12038763"/>
 							<reference ref="990221670"/>
@@ -4076,6 +4176,7 @@
 							<reference ref="961258661"/>
 							<reference ref="436608706"/>
 							<reference ref="494444816"/>
+							<reference ref="527269320"/>
 						</array>
 						<reference key="parent" ref="88537734"/>
 					</object>
@@ -4464,19 +4565,6 @@
 						<int key="objectID">573</int>
 						<reference key="object" ref="189962549"/>
 						<reference key="parent" ref="280701586"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">587</int>
-						<reference key="object" ref="595647324"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="788136248"/>
-						</array>
-						<reference key="parent" ref="421791908"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">588</int>
-						<reference key="object" ref="788136248"/>
-						<reference key="parent" ref="595647324"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">589</int>
@@ -4990,6 +5078,25 @@
 						<reference key="object" ref="129714312"/>
 						<reference key="parent" ref="794969625"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">847</int>
+						<reference key="object" ref="852888610"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">AllCardsController</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">896</int>
+						<reference key="object" ref="527269320"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="290896892"/>
+						</array>
+						<reference key="parent" ref="421791908"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">897</int>
+						<reference key="object" ref="290896892"/>
+						<reference key="parent" ref="527269320"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -5090,8 +5197,6 @@
 				<string key="572.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="573.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="587.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="588.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="589.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="59.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="59.ImportedFromIB2"/>
@@ -5225,12 +5330,15 @@
 				<string key="841.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="843.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="844.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="847.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="896.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="897.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">846</int>
+			<int key="maxID">915</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -5248,14 +5356,13 @@
 						<string key="openAddToLibraryWindow:">id</string>
 						<string key="removeCardFromLibraryAddTable:">id</string>
 						<string key="removeFromLibrary:">id</string>
-						<string key="updateFilter:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="addToLibraryButton">NSButton</string>
+						<string key="allCardsController">NSArrayController</string>
 						<string key="allCardsSearchField">NSSearchField</string>
 						<string key="allCardsTable">NSTableView</string>
 						<string key="cardsToAddToLibraryTable">NSTableView</string>
-						<string key="deckCardNameTableColumn">NSTableColumn</string>
 						<string key="deckCardsController">NSArrayController</string>
 						<string key="deckEditingCardImageProgress">NSProgressIndicator</string>
 						<string key="deckEditingCardImageView">NSImageView</string>
@@ -5265,7 +5372,6 @@
 						<string key="libraryAddingCardImageProgress">NSProgressIndicator</string>
 						<string key="libraryAddingCardImageView">NSImageView</string>
 						<string key="libraryAddingWindow">NSWindow</string>
-						<string key="libraryCardNameTableColumn">NSTableColumn</string>
 						<string key="libraryController">NSArrayController</string>
 						<string key="libraryTableView">NSTableView</string>
 						<string key="moveToDeckButton">NSButton</string>
