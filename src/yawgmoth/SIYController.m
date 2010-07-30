@@ -417,7 +417,7 @@
         return nil;
     }
 
-	/*
+	
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *applicationSupportDirectory = [self applicationSupportDirectory];
     NSError *error = nil;
@@ -428,11 +428,19 @@
             NSLog(@"Error creating application support directory at %@ : %@",applicationSupportDirectory,error);
             return nil;
 		}
-    }
-	 */
+	}
+
+	NSString *storeDataPath = [applicationSupportDirectory stringByAppendingPathComponent:@"storedata"];
+	
+	if (![fileManager fileExistsAtPath:storeDataPath]) {
+		NSString *seedStoreDataPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"storedata"];
+		if (![fileManager copyItemAtPath:seedStoreDataPath toPath:storeDataPath error:&error]) {
+			NSLog(@"Error copying seed store data to application support directory");
+			return nil;
+		}
+	}
     
-	NSError *error = nil;
-    NSURL *url = [NSURL fileURLWithPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: @"storedata"]];
+    NSURL *url = [NSURL fileURLWithPath:storeDataPath];
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: mom];
     if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType 
 												  configuration:nil 

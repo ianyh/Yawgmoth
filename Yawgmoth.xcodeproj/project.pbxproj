@@ -706,7 +706,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Yawgmoth_Prefix.pch;
-				INFOPLIST_FILE = "Info-10.5.plist";
+				INFOPLIST_FILE = "res/Info-10.5.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Yawgmoth;
 				WRAPPER_EXTENSION = app;
