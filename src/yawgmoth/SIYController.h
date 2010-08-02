@@ -77,6 +77,8 @@
 - (IBAction)removeFromLibrary:(id)sender;
 - (void)save;
 - (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
+- (void)updateDeckEditingAltImageWithCard:(NSManagedObject *)card;
 - (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
+- (void)updateLibraryAddAltImageWithCard:(NSManagedObject *)card;
 
 @end

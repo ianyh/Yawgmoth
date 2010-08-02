@@ -99,7 +99,11 @@
 		[libraryAddingCardImageView setImage:NULL];
 		return;
 	}
-	NSString *selectedCardName = [[array objectAtIndex:0] name];
+	
+	NSManagedObject *selectedCard = [array objectAtIndex:0];
+	[self updateLibraryAddAltImageWithCard:selectedCard];
+	
+	NSString *selectedCardName = selectedCard.name;
 	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
 											 shouldDownloadIfMissing:YES 
 											 withAction:@selector(updateLibraryAddImage:forCardWithName:) 
@@ -122,7 +126,10 @@
 		return;
 	}
 	
-	NSString *selectedCardName = ((NSManagedObject *) [array objectAtIndex:0]).name;
+	NSManagedObject *selectedCard = [array objectAtIndex:0];
+	[self updateDeckEditingAltImageWithCard:selectedCard];
+	
+	NSString *selectedCardName = selectedCard.name;
 	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
 												 shouldDownloadIfMissing:YES
 												 withAction:@selector(updateDeckEditingImage:forCardWithName:) 
@@ -145,14 +152,17 @@
 		return;
 	}
 	
-	NSString *selectedCardName = ((NSManagedObject *) [array objectAtIndex:0]).name;
+	NSManagedObject *selectedCard = [array objectAtIndex:0];
+	[self updateDeckEditingAltImageWithCard:selectedCard];
+	
+	NSString *selectedCardName = selectedCard.name;
 	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
 												 shouldDownloadIfMissing:YES
 												 withAction:@selector(updateDeckEditingImage:forCardWithName:) 
 												 withTarget:self];
 	
 	if (cardImage != nil) {
-		[deckEditingCardImageProgress stopAnimation:self];		
+		[deckEditingCardImageProgress stopAnimation:self];
 		[deckEditingCardImageView setImage:cardImage];
 	} else {
 		[deckEditingCardImageProgress startAnimation:self];		
@@ -505,6 +515,34 @@
 		[libraryAddingCardImageView setImage:cardImage];
 	}
 	[libraryAddingCardImageProgress stopAnimation:self];
+}
+
+- (void)updateLibraryAddAltImageWithCard:(NSManagedObject *)card
+{
+	[libraryAddingNameTextField setStringValue:card.name];
+	[libraryAddingCostTextField setStringValue:card.manaCost];
+	[libraryAddingTypeTextField setStringValue:card.type];
+	[libraryAddingRarityTextField setStringValue:card.rarity];
+	if ([card.superType isEqualToString:@"Artifact Creature"] || [card.superType isEqualToString:@"Creature"]) {
+		[libraryAddingPTTextField setStringValue:[NSString stringWithFormat:@"%@/%@", card.power, card.toughness]];
+	} else {
+		[libraryAddingPTTextField setStringValue:@""];
+	}
+	[[libraryAddingTextScrollView documentView] setString:card.text];
+}
+
+- (void)updateDeckEditingAltImageWithCard:(NSManagedObject *)card
+{
+	[deckEditingNameTextField setStringValue:card.name];
+	[deckEditingCostTextField setStringValue:card.manaCost];
+	[deckEditingTypeTextField setStringValue:card.type];
+	[deckEditingRarityTextField setStringValue:card.rarity];
+	if ([card.superType isEqualToString:@"Artifact Creature"] || [card.superType isEqualToString:@"Creature"]) {
+		[deckEditingPTTextField setStringValue:[NSString stringWithFormat:@"%@/%@", card.power, card.toughness]];
+	} else {
+		[deckEditingPTTextField setStringValue:@""];
+	}
+	[[deckEditingTextScrollView documentView] setString:card.text];
 }
 
 - (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName

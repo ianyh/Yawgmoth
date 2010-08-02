@@ -12,9 +12,9 @@
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<integer value="57"/>
-			<integer value="266"/>
 			<integer value="192"/>
 			<integer value="650"/>
+			<integer value="266"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -819,30 +819,6 @@
 								<int key="NSPeriodicInterval">75</int>
 							</object>
 						</object>
-						<object class="NSImageView" id="639797843">
-							<reference key="NSNextResponder" ref="421791908"/>
-							<int key="NSvFlags">268</int>
-							<set class="NSMutableSet" key="NSDragTypes">
-								<string>Apple PDF pasteboard type</string>
-								<string>Apple PICT pasteboard type</string>
-								<string>Apple PNG pasteboard type</string>
-								<string>NSFilenamesPboardType</string>
-								<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
-								<string>NeXT TIFF v4.0 pasteboard type</string>
-							</set>
-							<string key="NSFrame">{{343, 228}, {200, 285}}</string>
-							<reference key="NSSuperview" ref="421791908"/>
-							<bool key="NSEnabled">YES</bool>
-							<object class="NSImageCell" key="NSCell" id="178316192">
-								<int key="NSCellFlags">654848</int>
-								<int key="NSCellFlags2">33554432</int>
-								<int key="NSAlign">0</int>
-								<int key="NSScale">0</int>
-								<int key="NSStyle">0</int>
-								<bool key="NSAnimates">NO</bool>
-							</object>
-							<bool key="NSEditable">YES</bool>
-						</object>
 						<object class="NSButton" id="522857437">
 							<reference key="NSNextResponder" ref="421791908"/>
 							<int key="NSvFlags">268</int>
@@ -1159,6 +1135,30 @@
 							<reference key="NSHScroller" ref="881412171"/>
 							<reference key="NSContentView" ref="987078510"/>
 						</object>
+						<object class="NSImageView" id="639797843">
+							<reference key="NSNextResponder" ref="421791908"/>
+							<int key="NSvFlags">268</int>
+							<set class="NSMutableSet" key="NSDragTypes">
+								<string>Apple PDF pasteboard type</string>
+								<string>Apple PICT pasteboard type</string>
+								<string>Apple PNG pasteboard type</string>
+								<string>NSFilenamesPboardType</string>
+								<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
+								<string>NeXT TIFF v4.0 pasteboard type</string>
+							</set>
+							<string key="NSFrame">{{343, 228}, {200, 285}}</string>
+							<reference key="NSSuperview" ref="421791908"/>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSImageCell" key="NSCell" id="178316192">
+								<int key="NSCellFlags">654848</int>
+								<int key="NSCellFlags2">33554432</int>
+								<int key="NSAlign">0</int>
+								<int key="NSScale">0</int>
+								<int key="NSStyle">0</int>
+								<bool key="NSAnimates">NO</bool>
+							</object>
+							<bool key="NSEditable">YES</bool>
+						</object>
 					</array>
 					<string key="NSFrameSize">{886, 643}</string>
 					<reference key="NSSuperview"/>
@@ -1180,30 +1180,6 @@
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
-						<object class="NSImageView" id="720032181">
-							<reference key="NSNextResponder" ref="343233240"/>
-							<int key="NSvFlags">283</int>
-							<set class="NSMutableSet" key="NSDragTypes">
-								<string>Apple PDF pasteboard type</string>
-								<string>Apple PICT pasteboard type</string>
-								<string>Apple PNG pasteboard type</string>
-								<string>NSFilenamesPboardType</string>
-								<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
-								<string>NeXT TIFF v4.0 pasteboard type</string>
-							</set>
-							<string key="NSFrame">{{809, 438}, {225, 322}}</string>
-							<reference key="NSSuperview" ref="343233240"/>
-							<bool key="NSEnabled">YES</bool>
-							<object class="NSImageCell" key="NSCell" id="259224113">
-								<int key="NSCellFlags">130560</int>
-								<int key="NSCellFlags2">33554432</int>
-								<int key="NSAlign">0</int>
-								<int key="NSScale">3</int>
-								<int key="NSStyle">0</int>
-								<bool key="NSAnimates">NO</bool>
-							</object>
-							<bool key="NSEditable">YES</bool>
-						</object>
 						<object class="NSButton" id="528368911">
 							<reference key="NSNextResponder" ref="343233240"/>
 							<int key="NSvFlags">268</int>
@@ -2492,7 +2468,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="1067615512">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">Label</string>
+								<string key="NSContents"/>
 								<reference key="NSSupport" ref="465319721"/>
 								<reference key="NSControlView" ref="1012257518"/>
 								<reference key="NSBackgroundColor" ref="745973202"/>
@@ -2508,7 +2484,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="1057796744">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">71304192</int>
-								<string key="NSContents">Label</string>
+								<string key="NSContents"/>
 								<reference key="NSSupport" ref="465319721"/>
 								<reference key="NSControlView" ref="1006885932"/>
 								<reference key="NSBackgroundColor" ref="745973202"/>
@@ -2524,7 +2500,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="990630800">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">Label</string>
+								<string key="NSContents"/>
 								<reference key="NSSupport" ref="465319721"/>
 								<reference key="NSControlView" ref="448824515"/>
 								<reference key="NSBackgroundColor" ref="745973202"/>
@@ -2561,7 +2537,7 @@
 												<string>WebURLsWithTitlesPboardType</string>
 												<string>public.url</string>
 											</set>
-											<string key="NSFrameSize">{223, 47}</string>
+											<string key="NSFrame">{{0, 7}, {223, 40}}</string>
 											<reference key="NSSuperview" ref="530897340"/>
 											<object class="NSTextContainer" key="NSTextContainer" id="566895983">
 												<object class="NSLayoutManager" key="NSLayoutManager">
@@ -2660,7 +2636,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="598465098">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">71304192</int>
-								<string key="NSContents">Label</string>
+								<string key="NSContents"/>
 								<reference key="NSSupport" ref="465319721"/>
 								<reference key="NSControlView" ref="959745795"/>
 								<reference key="NSBackgroundColor" ref="745973202"/>
@@ -2676,12 +2652,36 @@
 							<object class="NSTextFieldCell" key="NSCell" id="910193871">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">71304192</int>
-								<string key="NSContents">Label</string>
+								<string key="NSContents"/>
 								<reference key="NSSupport" ref="465319721"/>
 								<reference key="NSControlView" ref="929719244"/>
 								<reference key="NSBackgroundColor" ref="745973202"/>
 								<reference key="NSTextColor" ref="173462953"/>
 							</object>
+						</object>
+						<object class="NSImageView" id="720032181">
+							<reference key="NSNextResponder" ref="343233240"/>
+							<int key="NSvFlags">283</int>
+							<set class="NSMutableSet" key="NSDragTypes">
+								<string>Apple PDF pasteboard type</string>
+								<string>Apple PICT pasteboard type</string>
+								<string>Apple PNG pasteboard type</string>
+								<string>NSFilenamesPboardType</string>
+								<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
+								<string>NeXT TIFF v4.0 pasteboard type</string>
+							</set>
+							<string key="NSFrame">{{809, 438}, {225, 322}}</string>
+							<reference key="NSSuperview" ref="343233240"/>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSImageCell" key="NSCell" id="259224113">
+								<int key="NSCellFlags">130560</int>
+								<int key="NSCellFlags2">33554432</int>
+								<int key="NSAlign">0</int>
+								<int key="NSScale">3</int>
+								<int key="NSStyle">0</int>
+								<bool key="NSAnimates">NO</bool>
+							</object>
+							<bool key="NSEditable">YES</bool>
 						</object>
 					</array>
 					<string key="NSFrameSize">{1051, 790}</string>
