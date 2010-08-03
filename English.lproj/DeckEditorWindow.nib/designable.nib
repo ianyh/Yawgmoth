@@ -11,9 +11,9 @@
 			<string key="NS.object.0">762</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="57"/>
-			<integer value="192"/>
 			<integer value="266"/>
+			<integer value="192"/>
+			<integer value="69"/>
 			<integer value="650"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -4402,6 +4402,14 @@
 					</object>
 					<int key="connectionID">969</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">orderFrontStandardAboutPanel:</string>
+						<reference key="source" ref="1004"/>
+						<reference key="destination" ref="441470293"/>
+					</object>
+					<int key="connectionID">970</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -5970,7 +5978,7 @@
 				<string key="686.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="687.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="689.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="69.IBEditorWindowLastContentRect">{{477, 577}, {207, 183}}</string>
+				<string key="69.IBEditorWindowLastContentRect">{{403, 126}, {207, 183}}</string>
 				<string key="69.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="69.ImportedFromIB2"/>
 				<string key="69.editorWindowContentRectSynchronizationRect">{{23, 794}, {245, 183}}</string>
@@ -6091,7 +6099,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">969</int>
+			<int key="maxID">970</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
