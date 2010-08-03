@@ -63,6 +63,7 @@
 	}
 	
 	NSString *cardName = [[cardImageDownloaders allKeysForObject:download] objectAtIndex:0];
+	[cardImageDownloaders removeObjectForKey:cardName];	
 	NSImage *cardImage = [self imageForCardName:cardName 
 									 shouldDownloadIfMissing:NO 
 									 withAction:nil 
@@ -70,7 +71,6 @@
 	[downloadFinishTarget performSelector:downloadFinishAction 
 							   withObject:cardImage
 							   withObject:cardName];
-	[cardImageDownloaders removeObjectForKey:cardName];
 	[download release];
 }
 

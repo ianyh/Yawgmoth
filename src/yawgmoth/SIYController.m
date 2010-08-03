@@ -513,7 +513,6 @@
 {
 	if (cardName != nil && [cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
 		[libraryAddingCardImageView setImage:cardImage];
-		[libraryAddingCardImageView setHidden:NO];
 	}
 	[libraryAddingCardImageProgress stopAnimation:self];
 }
@@ -550,7 +549,6 @@
 {
 	if (cardName != nil && [cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
 		[deckEditingCardImageView setImage:cardImage];
-		[deckEditingCardImageView setHidden:NO];
 	}
 	[deckEditingCardImageProgress stopAnimation:self];	
 }
