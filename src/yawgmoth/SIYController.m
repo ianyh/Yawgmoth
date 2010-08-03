@@ -99,9 +99,10 @@
 		[libraryAddingCardImageView setImage:NULL];
 		return;
 	}
-	
+
 	NSManagedObject *selectedCard = [array objectAtIndex:0];
-	[self updateLibraryAddAltImageWithCard:selectedCard];
+	[libraryAddingCardImageView setImage:NULL];
+	[self updateLibraryAddAltImageWithCard:selectedCard];		
 	
 	NSString *selectedCardName = selectedCard.name;
 	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
@@ -112,9 +113,8 @@
 	if (cardImage != nil) {
 		[libraryAddingCardImageProgress stopAnimation:self];
 		[libraryAddingCardImageView setImage:cardImage];
-	} else {
+	} else if ([libraryAddingCardImageView image] == NULL) {
 		[libraryAddingCardImageProgress startAnimation:self];
-		[libraryAddingCardImageView setImage:NULL];
 	}
 }
 	 
@@ -127,7 +127,8 @@
 	}
 	
 	NSManagedObject *selectedCard = [array objectAtIndex:0];
-	[self updateDeckEditingAltImageWithCard:selectedCard];
+	[deckEditingCardImageView setImage:NULL];
+	[self updateLibraryAddAltImageWithCard:selectedCard];
 	
 	NSString *selectedCardName = selectedCard.name;
 	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
@@ -138,9 +139,8 @@
 	if (cardImage != nil) {
 		[deckEditingCardImageProgress stopAnimation:self];
 		[deckEditingCardImageView setImage:cardImage];
-	} else {
+	} else if ([deckEditingCardImageView image] == NULL) {
 		[deckEditingCardImageProgress startAnimation:self];
-		[deckEditingCardImageView setImage:NULL];
 	}
 }
 
@@ -153,6 +153,7 @@
 	}
 	
 	NSManagedObject *selectedCard = [array objectAtIndex:0];
+	[deckEditingCardImageView setImage:NULL];
 	[self updateDeckEditingAltImageWithCard:selectedCard];
 	
 	NSString *selectedCardName = selectedCard.name;
@@ -164,9 +165,8 @@
 	if (cardImage != nil) {
 		[deckEditingCardImageProgress stopAnimation:self];
 		[deckEditingCardImageView setImage:cardImage];
-	} else {
-		[deckEditingCardImageProgress startAnimation:self];		
-		[deckEditingCardImageView setImage:NULL];
+	} else if ([deckEditingCardImageView image] == NULL) {
+		[deckEditingCardImageProgress startAnimation:self];
 	}	
 }
 
@@ -513,6 +513,7 @@
 {
 	if (cardName != nil && [cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
 		[libraryAddingCardImageView setImage:cardImage];
+		[libraryAddingCardImageView setHidden:NO];
 	}
 	[libraryAddingCardImageProgress stopAnimation:self];
 }
@@ -549,6 +550,7 @@
 {
 	if (cardName != nil && [cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
 		[deckEditingCardImageView setImage:cardImage];
+		[deckEditingCardImageView setHidden:NO];
 	}
 	[deckEditingCardImageProgress stopAnimation:self];	
 }
