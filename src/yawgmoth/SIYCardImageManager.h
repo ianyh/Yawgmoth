@@ -1,5 +1,4 @@
 #import <Cocoa/Cocoa.h>
-#import "TSVParser.h"
 
 
 @interface SIYCardImageManager : NSObject {
@@ -15,6 +14,7 @@
 - (id)initWithApplicationSupportDirectory:(NSString *)applicationSupportDirectory;
 
 - (BOOL)cardNameIsDownloading:(NSString *)cardName;
+- (NSMutableDictionary *)fileToURLDictionaryFromString:(NSString *)string;
 - (void)download:(NSURLDownload *)download didFailWithError:(NSError *)error;
 - (void)downloadDidFinish:(NSURLDownload *)download;
 - (NSString *)imageFileNameForCardName:(NSString *)cardName;

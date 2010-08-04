@@ -27,8 +27,6 @@
 		3C0F864E11FD00300043D7DD /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */; };
 		3C0F864F11FD00300043D7DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
 		3C0F865611FD00300043D7DD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		3C180E4211FEA00D00235976 /* TSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C180E4111FEA00D00235976 /* TSVParser.m */; };
-		3C180E4311FEA00D00235976 /* TSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C180E4111FEA00D00235976 /* TSVParser.m */; };
 		3C180EB511FEA65000235976 /* card-pictures_a.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E7F11FEA65000235976 /* card-pictures_a.txt */; };
 		3C180EB611FEA65000235976 /* card-pictures_b.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8011FEA65000235976 /* card-pictures_b.txt */; };
 		3C180EB711FEA65000235976 /* card-pictures_c.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3C180E8111FEA65000235976 /* card-pictures_c.txt */; };
@@ -118,8 +116,6 @@
 		3C0F85BD11FCDF3C0043D7DD /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb.git/src/FMResultSet.m; sourceTree = "<group>"; };
 		3C0F865A11FD00300043D7DD /* Yawgmoth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawgmoth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C180E3D11FE918A00235976 /* cards.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = cards.db; path = res/cards.db; sourceTree = "<group>"; };
-		3C180E4011FEA00D00235976 /* TSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSVParser.h; path = src/TSVParser.h; sourceTree = "<group>"; };
-		3C180E4111FEA00D00235976 /* TSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSVParser.m; path = src/TSVParser.m; sourceTree = "<group>"; };
 		3C180E7F11FEA65000235976 /* card-pictures_a.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_a.txt"; sourceTree = "<group>"; };
 		3C180E8011FEA65000235976 /* card-pictures_b.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_b.txt"; sourceTree = "<group>"; };
 		3C180E8111FEA65000235976 /* card-pictures_c.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "card-pictures_c.txt"; sourceTree = "<group>"; };
@@ -244,8 +240,6 @@
 				3C1E539C11F6212E001FB0BF /* main.m */,
 				3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */,
 				32CA4F630368D1EE00C91783 /* Yawgmoth_Prefix.pch */,
-				3C180E4011FEA00D00235976 /* TSVParser.h */,
-				3C180E4111FEA00D00235976 /* TSVParser.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -556,7 +550,6 @@
 				3C0F864E11FD00300043D7DD /* SIYDataModel.xcdatamodel in Sources */,
 				3C0F864F11FD00300043D7DD /* main.m in Sources */,
 				3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */,
-				3C180E4311FEA00D00235976 /* TSVParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,7 +561,6 @@
 				3C1E539B11F620F9001FB0BF /* SIYDataModel.xcdatamodel in Sources */,
 				3C1E539D11F6212E001FB0BF /* main.m in Sources */,
 				3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */,
-				3C180E4211FEA00D00235976 /* TSVParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

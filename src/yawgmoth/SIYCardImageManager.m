@@ -30,7 +30,7 @@
 			NSString *fileString = [NSString stringWithContentsOfFile:[directoryPath stringByAppendingPathComponent:fileName] 
 															 encoding:NSASCIIStringEncoding 
 															 error:nil];
-			[fileNameToURL addEntriesFromDictionary:[fileString dictionaryFromTSV]];
+			[fileNameToURL addEntriesFromDictionary:[self fileToURLDictionaryFromString:fileString]];
 		}
 	}
 	
@@ -40,6 +40,24 @@
 - (BOOL)cardNameIsDownloading:(NSString *)cardName
 {
 	return [cardImageDownloaders objectForKey:cardName] != nil;
+}
+
+- (NSMutableDictionary *)fileToURLDictionaryFromString:(NSString *)string
+{
+	NSMutableDictionary *result = [NSMutableDictionary dictionary];
+	NSArray  *lines  = [string componentsSeparatedByString:@"\n"];
+	NSEnumerator *theEnum = [lines objectEnumerator];
+	NSString *theLine;
+	
+	while (nil != (theLine = [theEnum nextObject]) )
+	{
+		if (![theLine isEqualToString:@""] && ![theLine hasPrefix:@"#"])
+		{
+			NSArray *values  = [theLine componentsSeparatedByString:@"\t"];
+			[result setObject:[values objectAtIndex:1] forKey:[values objectAtIndex:0]];
+		}
+	}
+	return result;
 }
 
 - (void)download:(NSURLDownload *)download didFailWithError:(NSError *)error
