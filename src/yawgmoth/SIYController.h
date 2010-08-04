@@ -61,6 +61,7 @@
 - (IBAction)cancelAddToLibrary:(id)sender;
 - (IBAction)createNewDeck:(id)sender;
 - (IBAction)createNewDeckDidEnd:(id)sender;
+- (NSManagedObject *)managedObjectWithName:(NSString *)name inEntityWithName:(NSString *)entityName;
 - (NSManagedObject *)managedCardWithName:(NSString *)name inDeck:(NSManagedObject *)deck;
 - (NSManagedObject *)managedDeckWithName:(NSString *)name;
 - (NSManagedObject *)managedLibraryCardWithName:(NSString *)name;

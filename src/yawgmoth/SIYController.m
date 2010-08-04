@@ -225,6 +225,30 @@
 	[self save];
 }
 
+- (NSManagedObject *)managedObjectWithName:(NSString *)name inEntityWithName:(NSString *)entityName
+{
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:[self managedObjectContext]];
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	[fetchRequest setEntity:entityDescription];
+	
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
+	[fetchRequest setPredicate:predicate];
+	
+	NSError *error;
+	NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+	[fetchRequest release];
+	if (results == nil) {
+		// TODO: present error
+		return nil;
+	}
+	
+	if ([results count] > 0) {
+		return (NSManagedObject *) [results objectAtIndex:0];
+	}
+	
+	return nil;
+}
+
 - (NSManagedObject *)managedCardWithName:(NSString *)name inDeck:(NSManagedObject *)deck
 {
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
@@ -251,74 +275,17 @@
 
 - (NSManagedObject *)managedDeckWithName:(NSString *)name
 {
-	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Deck" inManagedObjectContext:[self managedObjectContext]];
-	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	[fetchRequest setEntity:entityDescription];
-	
-	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
-	[fetchRequest setPredicate:predicate];
-	
-	NSError *error;
-	NSArray *checkResults = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-	[fetchRequest release];
-	if (checkResults == nil) {
-		// TODO: do something with error
-		return nil;
-	}
-	
-	if ([checkResults count] > 0) {
-		return (NSManagedObject *) [checkResults objectAtIndex:0];
-	}
-	
-	return nil;
+    return [self managedObjectWithName:name inEntityWithName:@"Deck"];
 }
 
 - (NSManagedObject *)managedLibraryCardWithName:(NSString *)name
 {
-	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"LibraryCard" inManagedObjectContext:[self managedObjectContext]];
-	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	[fetchRequest setEntity:entityDescription];
-	
-	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
-	[fetchRequest setPredicate:predicate];
-	
-	NSError *error;
-	NSArray *checkResults = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-	[fetchRequest release];
-	if (checkResults == nil) {
-		// TODO: do something with error
-		return nil;
-	}
-	
-	if ([checkResults count] > 0) {
-		return (NSManagedObject *) [checkResults objectAtIndex:0];
-	}
-	
-	return nil;
+    return [self managedObjectWithName:name inEntityWithName:@"LibraryCard"];
 }
 
 - (NSManagedObject *)managedTempCardWithName:(NSString *)name
 {
-	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"TempCard" inManagedObjectContext:[self managedObjectContext]];
-	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	[fetchRequest setEntity:entityDescription];
-	
-	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
-	[fetchRequest setPredicate:predicate];
-	
-	NSError *error;
-	NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-	[fetchRequest release];
-	if (results == nil) {
-		// TODO: do something with error
-		return nil;
-	}
-	
-	if ([results count] > 0) {
-		return (NSManagedObject *) [results objectAtIndex:0];
-	}
-	
-	return nil;
+    return [self managedObjectWithName:name inEntityWithName:@"TempCard"];
 }
 
 - (NSManagedObjectContext *)managedObjectContext 
