@@ -15,8 +15,6 @@
 	IBOutlet NSTableView *libraryTableView;
 	IBOutlet NSTableView *deckTableView;
 	IBOutlet NSPopUpButton *deckSelectionButton;
-	IBOutlet NSButton *moveToDeckButton;
-	IBOutlet NSButton *moveToLibraryButton;
 	IBOutlet NSTextField *deckEditingNameTextField;
 	IBOutlet NSTextField *deckEditingCostTextField;
 	IBOutlet NSTextField *deckEditingTypeTextField;
@@ -25,10 +23,8 @@
 	IBOutlet NSScrollView *deckEditingTextScrollView;	
 	IBOutlet NSImageView *deckEditingCardImageView;
 	IBOutlet NSProgressIndicator *deckEditingCardImageProgress;
-	IBOutlet NSButton *removeFromLibraryButton;
 	
 	IBOutlet NSWindow *libraryAddingWindow;
-	IBOutlet NSButton *addToLibraryButton;
 	IBOutlet NSTableView *allCardsTable;
 	IBOutlet NSSearchField *allCardsSearchField;
 	IBOutlet NSTableView *cardsToAddToLibraryTable;
@@ -44,7 +40,6 @@
 	IBOutlet NSPanel *newDeckPanel;
 	IBOutlet NSTextField *newDeckNameField;
 	IBOutlet NSButton *newDeckCreateButton;
-	IBOutlet NSButton *newDeckCancelButton;
 	
 	NSPersistentStoreCoordinator *persistentStoreCoordinator;
     NSManagedObjectModel *managedObjectModel;
