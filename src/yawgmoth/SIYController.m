@@ -102,7 +102,7 @@
 
 	NSManagedObject *selectedCard = [array objectAtIndex:0];
 	[libraryAddingCardImageView setImage:NULL];
-	[self updateLibraryAddAltImageWithCard:selectedCard];		
+	[self updateLibraryAddAltImageWithCard:selectedCard];
 	
 	NSString *selectedCardName = selectedCard.name;
 	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
@@ -511,9 +511,7 @@
 
 - (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName
 {
-	if (cardName != nil && [cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
-		[libraryAddingCardImageView setImage:cardImage];
-	}
+    [libraryAddingCardImageView setImage:cardImage];
 	[libraryAddingCardImageProgress stopAnimation:self];
 }
 
@@ -547,9 +545,7 @@
 
 - (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName
 {
-	if (cardName != nil && [cardName isEqualToString:[imageManager mainDownloadingCardName]]) {
-		[deckEditingCardImageView setImage:cardImage];
-	}
+    [deckEditingCardImageView setImage:cardImage];
 	[deckEditingCardImageProgress stopAnimation:self];	
 }
 

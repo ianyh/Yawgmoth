@@ -49,9 +49,11 @@
 	}
 	
 	NSString *cardName = [[cardImageDownloaders allKeysForObject:download] objectAtIndex:0];
-	[downloadFinishTarget performSelector:downloadFinishAction 
-							   withObject:nil 
-							   withObject:nil];
+    if ([cardName isEqualToString:[self mainDownloadingCardName]]) {
+        [downloadFinishTarget performSelector:downloadFinishAction 
+                                   withObject:NULL 
+                                   withObject:nil];
+    }
 	[cardImageDownloaders removeObjectForKey:cardName];
 	[download release];	
 }
@@ -64,13 +66,15 @@
 	
 	NSString *cardName = [[cardImageDownloaders allKeysForObject:download] objectAtIndex:0];
 	[cardImageDownloaders removeObjectForKey:cardName];	
-	NSImage *cardImage = [self imageForCardName:cardName 
-									 shouldDownloadIfMissing:NO 
-									 withAction:nil 
-									 withTarget:nil];
-	[downloadFinishTarget performSelector:downloadFinishAction 
-							   withObject:cardImage
-							   withObject:cardName];
+    if ([cardName isEqualToString:[self mainDownloadingCardName]]) {
+        NSImage *cardImage = [self imageForCardName:cardName 
+                                         shouldDownloadIfMissing:NO 
+                                         withAction:nil 
+                                         withTarget:nil];
+        [downloadFinishTarget performSelector:downloadFinishAction 
+                                   withObject:cardImage
+                                   withObject:cardName];
+    }
 	[download release];
 }
 
@@ -90,13 +94,13 @@
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSString *fileName = [self imageFileNameForCardName:cardName];
 	NSString *filePath = [cardImagesDirectory stringByAppendingPathComponent:fileName];
+    mainDownloadingCardName = cardName;
 	
 	if ([self cardNameIsDownloading:cardName]) {
 		return nil;
 	} else if ([fileManager fileExistsAtPath:filePath]) {
 		return [[NSImage alloc] initWithContentsOfFile:filePath];
 	} else if (shouldDownload) {
-		mainDownloadingCardName = cardName;
 		downloadFinishAction = action;
 		downloadFinishTarget = target;
 		
