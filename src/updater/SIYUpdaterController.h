@@ -2,8 +2,9 @@
 
 
 @interface SIYUpdaterController : NSObject {
+    NSMutableDictionary *setToCards;
     IBOutlet NSButton *updateButton;
-    IBOutlet NSLevelIndicator *setProgressIndicator;
+    IBOutlet NSProgressIndicator *setProgressIndicator;
     IBOutlet NSProgressIndicator *cardProgressIndicator;
     IBOutlet NSTextField *cardNumberLabel;
     IBOutlet NSTextField *setLabel;
@@ -14,10 +15,13 @@
 }
 
 - (NSString *)applicationSupportDirectory;
+- (NSArray *)csvRowsFromString:(NSString *)fileString;
 - (NSManagedObjectContext *)managedObjectContext;
 - (NSManagedObjectModel *)managedObjectModel;
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
+- (void)save;
+- (IBAction)startUpdate:(id)sender;
+- (NSString *)superTypeFromType:(NSString *)type;
 - (void)update;
-- (IBAction)update:(id)sender;
 
 @end

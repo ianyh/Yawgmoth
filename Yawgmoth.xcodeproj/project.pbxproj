@@ -61,6 +61,14 @@
 		3C31AF8F120B429C00ED4CDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
 		3C31AF90120B42B600ED4CDE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		3C31AFA0120B42F000ED4CDE /* SIYUpdaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */; };
+		3C31AFD3120B560E00ED4CDE /* Alara Reborn.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFCB120B560E00ED4CDE /* Alara Reborn.csv */; };
+		3C31AFD4120B560E00ED4CDE /* Conflux.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFCC120B560E00ED4CDE /* Conflux.csv */; };
+		3C31AFD5120B560E00ED4CDE /* M2010.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFCD120B560E00ED4CDE /* M2010.csv */; };
+		3C31AFD6120B560E00ED4CDE /* M2011.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFCE120B560E00ED4CDE /* M2011.csv */; };
+		3C31AFD7120B560E00ED4CDE /* Rise of the Eldrazi.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFCF120B560E00ED4CDE /* Rise of the Eldrazi.csv */; };
+		3C31AFD8120B560E00ED4CDE /* Shards of Alara.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFD0120B560E00ED4CDE /* Shards of Alara.csv */; };
+		3C31AFD9120B560E00ED4CDE /* Worldwake.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFD1120B560E00ED4CDE /* Worldwake.csv */; };
+		3C31AFDA120B560E00ED4CDE /* Zendikar.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFD2120B560E00ED4CDE /* Zendikar.csv */; };
 		3C8EED8811ED2E07003E7D9F /* DeckEditorWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */; };
 		3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
 		3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
@@ -156,6 +164,14 @@
 		3C31AF6F120B3C9B00ED4CDE /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Updater.xib; sourceTree = "<group>"; };
 		3C31AF9E120B42EF00ED4CDE /* SIYUpdaterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYUpdaterController.h; path = src/updater/SIYUpdaterController.h; sourceTree = "<group>"; };
 		3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYUpdaterController.m; path = src/updater/SIYUpdaterController.m; sourceTree = "<group>"; };
+		3C31AFCB120B560E00ED4CDE /* Alara Reborn.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Alara Reborn.csv"; path = "res/sets/Alara Reborn.csv"; sourceTree = "<group>"; };
+		3C31AFCC120B560E00ED4CDE /* Conflux.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Conflux.csv; path = res/sets/Conflux.csv; sourceTree = "<group>"; };
+		3C31AFCD120B560E00ED4CDE /* M2010.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = M2010.csv; path = res/sets/M2010.csv; sourceTree = "<group>"; };
+		3C31AFCE120B560E00ED4CDE /* M2011.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = M2011.csv; path = res/sets/M2011.csv; sourceTree = "<group>"; };
+		3C31AFCF120B560E00ED4CDE /* Rise of the Eldrazi.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Rise of the Eldrazi.csv"; path = "res/sets/Rise of the Eldrazi.csv"; sourceTree = "<group>"; };
+		3C31AFD0120B560E00ED4CDE /* Shards of Alara.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Shards of Alara.csv"; path = "res/sets/Shards of Alara.csv"; sourceTree = "<group>"; };
+		3C31AFD1120B560E00ED4CDE /* Worldwake.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Worldwake.csv; path = res/sets/Worldwake.csv; sourceTree = "<group>"; };
+		3C31AFD2120B560E00ED4CDE /* Zendikar.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Zendikar.csv; path = res/sets/Zendikar.csv; sourceTree = "<group>"; };
 		3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3C8EED8711ED2E07003E7D9F /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/DeckEditorWindow.nib; sourceTree = "<group>"; };
 		3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDataModelManagedObjects.h; path = src/yawgmoth/SIYDataModelManagedObjects.h; sourceTree = "<group>"; };
@@ -265,6 +281,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3C31AFCA120B55FB00ED4CDE /* Sets */,
 				3C0A8A9111FFF80D0032CEDB /* Infos */,
 				3C0A8A9011FFF7EE0032CEDB /* Interface */,
 				3C180E7E11FEA65000235976 /* cardimgs */,
@@ -374,6 +391,21 @@
 				3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */,
 			);
 			name = "Updater Classes";
+			sourceTree = "<group>";
+		};
+		3C31AFCA120B55FB00ED4CDE /* Sets */ = {
+			isa = PBXGroup;
+			children = (
+				3C31AFCB120B560E00ED4CDE /* Alara Reborn.csv */,
+				3C31AFCC120B560E00ED4CDE /* Conflux.csv */,
+				3C31AFCD120B560E00ED4CDE /* M2010.csv */,
+				3C31AFCE120B560E00ED4CDE /* M2011.csv */,
+				3C31AFCF120B560E00ED4CDE /* Rise of the Eldrazi.csv */,
+				3C31AFD0120B560E00ED4CDE /* Shards of Alara.csv */,
+				3C31AFD1120B560E00ED4CDE /* Worldwake.csv */,
+				3C31AFD2120B560E00ED4CDE /* Zendikar.csv */,
+			);
+			name = Sets;
 			sourceTree = "<group>";
 		};
 		3C4EA4B511FFD8CC00F7F3CA /* Importer Classes */ = {
@@ -541,6 +573,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C31AF70120B3C9B00ED4CDE /* Updater.xib in Resources */,
+				3C31AFD3120B560E00ED4CDE /* Alara Reborn.csv in Resources */,
+				3C31AFD4120B560E00ED4CDE /* Conflux.csv in Resources */,
+				3C31AFD5120B560E00ED4CDE /* M2010.csv in Resources */,
+				3C31AFD6120B560E00ED4CDE /* M2011.csv in Resources */,
+				3C31AFD7120B560E00ED4CDE /* Rise of the Eldrazi.csv in Resources */,
+				3C31AFD8120B560E00ED4CDE /* Shards of Alara.csv in Resources */,
+				3C31AFD9120B560E00ED4CDE /* Worldwake.csv in Resources */,
+				3C31AFDA120B560E00ED4CDE /* Zendikar.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,7 +807,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_PREFIX_HEADER = Yawgmoth_Prefix.pch;
 				INFOPLIST_FILE = "res/Yawgmoth Updater-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
