@@ -57,6 +57,10 @@
 		3C1E539A11F620F9001FB0BF /* SIYController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539811F620F9001FB0BF /* SIYController.m */; };
 		3C1E539B11F620F9001FB0BF /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */; };
 		3C1E539D11F6212E001FB0BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
+		3C31AF70120B3C9B00ED4CDE /* Updater.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AF6E120B3C9B00ED4CDE /* Updater.xib */; };
+		3C31AF8F120B429C00ED4CDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
+		3C31AF90120B42B600ED4CDE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		3C31AFA0120B42F000ED4CDE /* SIYUpdaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */; };
 		3C8EED8811ED2E07003E7D9F /* DeckEditorWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */; };
 		3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
 		3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
@@ -147,6 +151,11 @@
 		3C1E539811F620F9001FB0BF /* SIYController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYController.m; path = src/yawgmoth/SIYController.m; sourceTree = "<group>"; };
 		3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; fileEncoding = 4; name = SIYDataModel.xcdatamodel; path = src/yawgmoth/SIYDataModel.xcdatamodel; sourceTree = "<group>"; };
 		3C1E539C11F6212E001FB0BF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/yawgmoth/main.m; sourceTree = "<group>"; };
+		3C31AF67120B3BF000ED4CDE /* Yawgmoth Updater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yawgmoth Updater.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C31AF6D120B3C7500ED4CDE /* Yawgmoth Updater-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Yawgmoth Updater-Info.plist"; path = "res/Yawgmoth Updater-Info.plist"; sourceTree = "<group>"; };
+		3C31AF6F120B3C9B00ED4CDE /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Updater.xib; sourceTree = "<group>"; };
+		3C31AF9E120B42EF00ED4CDE /* SIYUpdaterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYUpdaterController.h; path = src/updater/SIYUpdaterController.h; sourceTree = "<group>"; };
+		3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYUpdaterController.m; path = src/updater/SIYUpdaterController.m; sourceTree = "<group>"; };
 		3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3C8EED8711ED2E07003E7D9F /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/DeckEditorWindow.nib; sourceTree = "<group>"; };
 		3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDataModelManagedObjects.h; path = src/yawgmoth/SIYDataModelManagedObjects.h; sourceTree = "<group>"; };
@@ -170,6 +179,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C0F865611FD00300043D7DD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C31AF65120B3BF000ED4CDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C31AF90120B42B600ED4CDE /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +237,7 @@
 				8D1107320486CEB800E47090 /* Yawgmoth.app */,
 				3C0F865A11FD00300043D7DD /* Yawgmoth.app */,
 				3C006A8B11FF883C00C5C084 /* Yawgmoth-Importer.app */,
+				3C31AF67120B3BF000ED4CDE /* Yawgmoth Updater.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -271,6 +289,7 @@
 			children = (
 				3C0A8A8D11FFF7E80032CEDB /* Importer.xib */,
 				3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */,
+				3C31AF6E120B3C9B00ED4CDE /* Updater.xib */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -278,6 +297,7 @@
 		3C0A8A9111FFF80D0032CEDB /* Infos */ = {
 			isa = PBXGroup;
 			children = (
+				3C31AF6D120B3C7500ED4CDE /* Yawgmoth Updater-Info.plist */,
 				3C0A8A9911FFF8720032CEDB /* Info-importer.plist */,
 				3C0A8A9511FFF8580032CEDB /* Info-10.5.plist */,
 				3C0A8A9711FFF8640032CEDB /* Info-10.6.plist */,
@@ -324,6 +344,7 @@
 		3C1E539111F61E8B001FB0BF /* Yawgmoth */ = {
 			isa = PBXGroup;
 			children = (
+				3C31AF72120B3D9F00ED4CDE /* Updater Classes */,
 				3C9586B711FB7DE200E0F11E /* Models */,
 				3C4EA4B511FFD8CC00F7F3CA /* Importer Classes */,
 				080E96DDFE201D6D7F000001 /* Yawgmoth Classes */,
@@ -344,6 +365,15 @@
 				3C0F85BD11FCDF3C0043D7DD /* FMResultSet.m */,
 			);
 			name = fmdb;
+			sourceTree = "<group>";
+		};
+		3C31AF72120B3D9F00ED4CDE /* Updater Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3C31AF9E120B42EF00ED4CDE /* SIYUpdaterController.h */,
+				3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */,
+			);
+			name = "Updater Classes";
 			sourceTree = "<group>";
 		};
 		3C4EA4B511FFD8CC00F7F3CA /* Importer Classes */ = {
@@ -403,6 +433,23 @@
 			productReference = 3C0F865A11FD00300043D7DD /* Yawgmoth.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3C31AF66120B3BF000ED4CDE /* Yawgmoth Updater */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C31AF6C120B3BF100ED4CDE /* Build configuration list for PBXNativeTarget "Yawgmoth Updater" */;
+			buildPhases = (
+				3C31AF63120B3BF000ED4CDE /* Resources */,
+				3C31AF64120B3BF000ED4CDE /* Sources */,
+				3C31AF65120B3BF000ED4CDE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Yawgmoth Updater";
+			productName = "Yawgmoth Updater";
+			productReference = 3C31AF67120B3BF000ED4CDE /* Yawgmoth Updater.app */;
+			productType = "com.apple.product-type.application";
+		};
 		8D1107260486CEB800E47090 /* Yawgmoth-10.5 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Yawgmoth-10.5" */;
@@ -436,6 +483,7 @@
 				8D1107260486CEB800E47090 /* Yawgmoth-10.5 */,
 				3C0F864711FD00300043D7DD /* Yawgmoth-10.6 */,
 				3C006A8A11FF883C00C5C084 /* Yawgmoth-Importer */,
+				3C31AF66120B3BF000ED4CDE /* Yawgmoth Updater */,
 			);
 		};
 /* End PBXProject section */
@@ -485,6 +533,14 @@
 				3C180ECE11FEA65000235976 /* card-pictures_y.txt in Resources */,
 				3C180ECF11FEA65000235976 /* card-pictures_z.txt in Resources */,
 				3C006B7A11FFC4BB00C5C084 /* storedata in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C31AF63120B3BF000ED4CDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C31AF70120B3C9B00ED4CDE /* Updater.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +609,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3C31AF64120B3BF000ED4CDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C31AF8F120B429C00ED4CDE /* main.m in Sources */,
+				3C31AFA0120B42F000ED4CDE /* SIYUpdaterController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -581,6 +646,14 @@
 				3C0A8A8E11FFF7E80032CEDB /* English */,
 			);
 			name = Importer.xib;
+			sourceTree = "<group>";
+		};
+		3C31AF6E120B3C9B00ED4CDE /* Updater.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C31AF6F120B3C9B00ED4CDE /* English */,
+			);
+			name = Updater.xib;
 			sourceTree = "<group>";
 		};
 		3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */ = {
@@ -684,6 +757,54 @@
 			};
 			name = Release;
 		};
+		3C31AF6A120B3BF100ED4CDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "res/Yawgmoth Updater-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Yawgmoth Updater";
+			};
+			name = Debug;
+		};
+		3C31AF6B120B3BF100ED4CDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Yawgmoth Updater-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Yawgmoth Updater";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -765,6 +886,15 @@
 			buildConfigurations = (
 				3C0F865811FD00300043D7DD /* Debug */,
 				3C0F865911FD00300043D7DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C31AF6C120B3BF100ED4CDE /* Build configuration list for PBXNativeTarget "Yawgmoth Updater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C31AF6A120B3BF100ED4CDE /* Debug */,
+				3C31AF6B120B3BF100ED4CDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
