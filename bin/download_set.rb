@@ -52,7 +52,7 @@ def download(options)
       end
       text.gsub!(/<br \/>/, "\n")
       text.gsub!(/&#13;/, '')
-      text = text.strip.chop
+      text = text.strip
       text = Sanitize.clean(text)
 
       pt = card_table.search('tr[4] td[2]').text.strip

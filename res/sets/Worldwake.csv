@@ -1,0 +1,360 @@
+Admonition Angel,3WWW,6,0,6,M,Creature - Angel,"Flying
+Landfall - Whenever a land enters the battlefield under your control, you may exile target nonland permanent other than Admonition Angel.
+
+When Admonition Angel leaves the battlefield, return all cards exiled with it to the battlefield under their owners' control."
+Apex Hawks,2W,3,0,2,C,Creature - Bird,"Multikicker 1W(You may pay an additional 1W any number of times as you cast this spell.)
+
+Flying
+
+Apex Hawks enters the battlefield with a +1/+1 counter on it for each time it was kicked."
+Archon of Redemption,3WW,5,0,4,R,Creature - Archon,"Flying
+
+Whenver Archon Of Redemption or another creature with flying enters the battlefield under your control, you may gain life equal to that creature's power."
+Battle Hurda,4W,5,0,3,C,Creature - Giant,First Strike
+Fledgling Griffin,1W,2,0,2,C,Creature - Griffin,"Landfall - Whenever a land enters the battlefield under your control, Fledgling Griffin gains flying until end of turn."
+Guardian Zendikon,2W,3,0,0,C,Enchantment - Aura,"Enchant land
+
+Enchanted land is a 2/6 white Wall creature with defender. It's still a land.
+
+When enchanted land is put into a graveyard, return that card to its owner’s hand."
+Hada Freeblade,W,1,0,1,U,Creature - Human Soldier Ally,"Whenever Hada Freeblade or another Ally enters the battlefield under your control, you may put a +1/+1 counter on Hada Freeblade."
+Iona's Judgment,4W,5,0,0,C,Sorcery,Exile target creature or enchantment.
+Join the Ranks,3W,4,0,0,C,Instant,Put two 1/1 white Soldier Ally creature tokens onto the battlefield.
+Kitesail Apprentice,W,1,0,1,C,Creature - Kor Soldier,"As long as Kitesail Apprentice is equipped, it gets +1/+1 and has flying."
+Kor Firewalker,WW,2,0,2,U,Creature - Kor Soldier,"Protection from red
+
+Whenever a player casts a red spell, you may gain 1 life."
+Lightkeeper of Emeria,3W,4,0,4,U,Creature - Angel,"Multikicker W(You may pay an additional W any number of times as you cast this spell.)
+
+Flying
+
+When Lightkeeper of Emeria enters the battlefield you gain 2 life for each time it was kicked."
+Loam Lion,W,1,0,1,U,Creature - Cat,Loam Lion gets +1/+2 as long as you control a Forest.
+Marsh Threader,1W,2,0,1,C,Creature - Kor Scout,Swampwalk
+Marshal's Anthem,2WW,4,0,0,R,Enchantment,"Multikicker 1W(You may pay an additional 1W any number of times as you cast this spell.)
+
+Creatures you control get +1+1.
+
+When Marshal's Anthem enters the battlefield, return up to X target creature cards from your graveyard to the battlefield, where X is equal to the number of times Marshal's Anthem was kicked."
+Perimeter Captain,W,1,0,0,U,Creature - Human Soldier,"Defender
+
+Whenever a creature you control with defender blocks, you may gain 2 life."
+Refraction Trap,3W,4,0,0,U,Instant - Trap,"If an opponent cast a red instant or sorcery spell this turn, you may pay W rather than pay Refraction Trap's mana cost.
+
+Prevent the next 3 damage that a source of your choice would deal to you and/or permanents you control. Refraction Trap deals that much damage to target creature or player."
+Rest for the Weary,1W,2,0,0,C,Instant,"You gain 4 life.
+Landfall - If you had a land enter the battlefield under your control this turn, you gain 8 life instead."
+Ruin Ghost,1W,2,0,0,U,Creature - Spirit,"W, T: Exile target land you control, then return it to the battlefield under your control."
+Stoneforge Mystic,1W,2,0,2,R,Creature - Kor Artificer,"When Stoneforge Mystic enters the battlefield, you may search your library for an Equipment card, reveal it, and put it into your hand. If you do, shuffle your library.
+1W, T: You may put an Equipment card from your hand onto the battlefield."
+Talus Paladin,3W,4,0,3,R,Creature - Human Knight Ally,"Whenever Talus Paladin or another Ally enters the battlefield under your control, you may have Allies you control gain lifelink until end of turn and you may put a +1/+1 counter on Talus Paladin."
+Terra Eternal,2W,3,0,0,R,Enchantment,All lands are indestructible.
+Veteran's Reflexes,W,1,0,0,C,Instant,Target creature gets +1/+1 until end of turn. Untap that creature.
+AEther Tradewinds,2U,3,0,0,C,Instant,Return target permanent you control and target permanent you don't control to their owner's hand.
+Calcite Snapper,1UU,3,0,4,C,Creature - Turtle,"Shroud
+Landfall - Whenever a land enters the battlefield under your control, you
+
+may switch Calcite Snapper’s power and toughness until end of turn."
+Dispel,U,1,0,0,C,Instant,Counter target instant spell.
+Enclave Elite,2U,3,0,2,C,Creature - Merfolk Soldier,"Multikicker 1U
+
+Islandwalk
+
+Enclave Elite enters the battlefield with a +1/+1 counter on it for each time it was kicked."
+Goliath Sphinx,5UU,7,0,0,R,Creature - Sphinx,Flying
+Halimar Excavator,1U,2,0,3,C,Creature - Human Wizard Ally,"Whenever Halimar Excavator or another Ally enters the battlefield under your control, target player puts the top X cards of his or her library into his or her graveyard, where X is the number of Allies you control."
+Horizon Drake,1UU,3,0,1,U,Creature - Drake,"Flying, protection from lands"
+"Jace, the Mind Sculptor",2UU,4,0,3,M,Planeswalker - Jace,"[+2]: Look at the top card of target player’s library. You may put that card on the bottom of that player’s library.
+
+[0]: Draw three cards, then put two cards from your hand on top of your library in any order.
+
+[-1]: Return target creature to its owner’s hand.
+
+[-12]: Exile all cards from target player’s library, then that player shuffles his or her hand into his or her library."
+Jwari Shapeshifter,1U,2,0,0,R,Creature - Shapeshifter Ally,You may have Jwari Shapeshifter enter the battlefield as a copy of any Ally creature on the battlefield.
+Mysteries of the Deep,4U,5,0,0,C,Instant,"Draw two cards.
+Landfall - If you had a land enter the battlefield under your control this turn, draw three cards instead."
+Permafrost Trap,2UU,4,0,0,U,Instant - Trap,"If an opponent had a green creature enter the battlefield under his or her control this turn, you may pay U rather than pay Permafrost Trap's mana cost.
+
+Tap up to two target creatures. Those creatures don't untap during their controller's next untap step."
+Quest for Ula's Temple,U,1,0,0,R,Enchantment,"At the beginning of your upkeep, you may look at the top card of your library. If it's a creature card, you may reveal it and put a quest counter on Quest for Ula’s Temple.
+
+At the beginning of each end step, if there are three or more quest counters on Quest for Ula’s Temple, you may put a Kraken, Leviathan, Octopus, or Serpent creature card from your hand onto the battlefield."
+Sejiri Merfolk,1U,2,0,1,U,Creature - Merfolk Soldier,"As long as you control a Plains, Sejiri Merfolk has first strike and lifelink."
+Selective Memory,3U,4,0,0,R,Sorcery,"Search your library for any number of nonland cards and exile them.
+
+Then shuffle your library."
+Spell Contortion,2U,3,0,0,U,Instant,"Multikicker 1U(You may pay an additional 1U any number of times as you cast this spell.)
+
+Counter target spell unless its
+
+controller pays 2. Draw a card for
+
+each time Spell Contortion was
+
+kicked."
+Surrakar Banisher,4U,5,0,3,C,Creature - Surrakar,"When Surrakar Banisher enters the battlefield, you may return target tapped creature to its owner’s hand."
+"Thada Adel, Acquisitor",1UU,3,0,2,R,Legendary Creature - Merfolk Rogue,"Islandwalk
+
+Whenever Thada Adel, Acquisitor deals combat damage to a player, search that player's library for an artifact card and exile it. Then that player shuffles his or her library. Until end of turn, you may play that card."
+Tideforce Elemental,2U,3,0,1,U,Creature - Elemental,"U, T: You may tap or untap another target creature.
+Landfall - Whenever a land enters the battlefield under your control, you may untap Tideforce Elemental."
+Treasure Hunt,1U,2,0,0,C,Sorcery,"Reveal cards from the top of your library until you reveal a nonland card, then put all cards revealed this way into your hand."
+Twitch,2U,3,0,0,C,Instant,"You may tap or untap target artifact, creature, or land.
+
+Draw a card."
+Vapor Snare,4U,5,0,0,U,Enchantment - Aura,"Enchant creature
+
+You control enchanted creature.
+
+At the beginning of your upkeep, sacrifice Vapor Snare unless you return a land you control to its owner's hand."
+Voyager Drake,3U,4,0,3,U,Creature - Drake,"Multikicker U
+
+Flying
+
+When Voyager Drake enters the battlefield, up to X target creatures gain flying until end of turn, where X is the number of times Voyager Drake was kicked."
+Wind Zendikon,U,1,0,0,C,Enchantment - Aura,"Enchant land
+
+Enchanted land is a 2/2 blue Elemental creature with flying. It’s still a land.
+
+When enchanted land is put into a graveyard, return that card to its owner’s hand."
+Abyssal Persecutor,2BB,4,0,6,M,Creature - Demon,"Flying, trample
+
+You can’t win the game and your opponents can’t lose the game."
+Agadeem Occultist,2B,3,0,2,R,Creature - Human Shaman Ally,T: Put target creature card from an opponent's graveyard onto the battlefield under your control if its converted mana cost is less than or equal to the number of Allies you control.
+"Anowon, the Ruin Sage",3BB,5,0,3,R,Legendary Creature - Vampire Shaman,"At the beginning of your upkeep, each player sacrifices a non-Vampire creature."
+Bloodhusk Ritualist,2B,3,0,2,U,Creature - Vampire Shaman,"Multikicker B(You may pay an additional B any number of times as you cast this spell.)
+
+When Bloodhusk Ritualist enters the battlefield, target opponent discards a card for each time it was kicked."
+Bojuka Brigand,1B,2,0,1,C,Creature - Human Warrior Ally,"Bojuka Brigand can't block.
+
+Whenever Bojuka Brigand or another Ally creature enters the battlefield under your control, you may put a +1/+1 counter on Bojuka Brigand."
+Brink of Disaster,2BB,4,0,0,C,Enchantment - Aura,"Enchant creature or land
+
+When enchanted permanent becomes tapped, destroy it."
+Butcher of Malakir,5BB,7,0,4,R,Creature - Vampire Warrior,"Flying
+
+Whenever Butcher of Malakir or another creature you control is put into a graveyard from the battlefield, each opponent sacrifices a creature."
+Caustic Crawler,3BB,5,0,3,U,Creature - Insect,"Landfall - Whenever a land enters the battlefield under your control, you may have target creature get -1/-1 until end of turn."
+Corrupted Zendikon,1B,2,0,0,C,Enchantment - Aura,"Enchant land
+
+Enchanted land is a 3/3 black Ooze creature. It's still a land.
+
+When enchanted land is put into a graveyard, return that card to its owner's hand."
+Dead Reckoning,1BB,3,0,0,C,Sorcery,"You may put target creature card from your graveyard on top of your library.
+
+If you do, Dead Reckoning deals damage equal to that card's power to target creature."
+Death's Shadow,B,1,0,13,R,Creature - Avatar,"Death’s Shadow gets -X/-X, where X is your life total."
+Jagwasp Swarm,3B,4,0,2,C,Creature - Insect,Flying
+Kalastria Highborn,BB,2,0,2,R,Creature - Vampire Shaman,"Whenever Kalastria Highborn or another Vampire you control is put into a graveyard from the battlefield, you may pay B. If you do, target player loses 2 life and you gain 2 life."
+Mire's Toll,B,1,0,0,C,Sorcery,Target player reveals a card from his or her hand for each Swamp you control. Choose one of those cards. That player discards that card.
+Nemesis Trap,4BB,6,0,0,U,Instant - Trap,"If a white creature is attacking you, you may pay BB rather than pay Nemesis Trap's mana cost.
+
+Exile target creature, then put a token that is a copy of that creature onto the battlefield. Exile it at the beginning of the next end step."
+Pulse Tracker,B,1,0,1,C,Creature - Vampire Rogue,"Whenever Pulse Tracker attacks, each opponent loses 1 life."
+Quag Vampires,B,1,0,1,C,Creature - Vampire Rogue,"Multikicker 1B(You may pay an additional 1B any number of times as you cast this spell.)
+
+Swampwalk
+
+Quag Vampires enters the battlefield with a +1/+1 counter on it for each time it was kicked."
+Quest for the Nihil Stone,B,1,0,0,R,Enchantment,"Whenever an opponent discards a card, you may put a quest counter on Quest for the Nihil Stone.
+
+At the beginning of each opponent's upkeep, if that player has no cards in hand and Quest for the Nihil Stone has two or more quest counters on it, you may have that player lose 5 life."
+Ruthless Cullblade,1B,2,0,1,C,Creature - Vampire Warrior,Ruthless Cullblade gets +2/+1 as long as an opponent has 10 or less life.
+Scrib Nibblers,2B,3,0,1,U,Creature - Rat,"T: Exile the top card of target player's library. If it's a land card, you gain 1 life.
+Landfall - Whenever a land enters the battlefield under your control, you may untap Scrib Nibblers."
+Shoreline Salvager,3B,4,0,3,U,Creature - Surrakar,"When Shoreline Salvager deals combat damage to a player, if you control an Island, draw a card."
+Smother,1B,2,0,0,U,Instant,Destroy target creature with converted mana cost 3 or less. It can't be regenerated.
+Tomb Hex,2B,3,0,0,C,Instant,"Target creature gets -2/-2 until end of turn.
+Landfall - If a land entered the battlefield under your control this turn, that creature gets -4/-4 until end of turn instead."
+Urge to Feed,BB,2,0,0,U,Instant,"Target creature gets -3/-3 until end of turn. You may tap any number of untapped Vampire creatures you control. If you do, put a +1/+1 counter on each of those Vampires."
+Akoum Battlesinger,1R,2,0,1,C,Creature - Human Berserker Ally,"Haste
+
+Whenever Akoum Battlesinger or another Ally enters the battlefield under your control, you may have Ally creatures you control get +1/+0 until end of turn."
+Bazaar Trader,1R,2,0,1,R,Creature - Goblin,"T: Target player gains control of target artifact, creature or land that you control."
+Bull Rush,R,1,0,0,C,Instant,Target creature gets +2/+0 until end of turn.
+Chain Reaction,2RR,4,0,0,R,Sorcery,"Chain Reaction deals X damage to each creature, where X is the number of creatures on the battlefield."
+Claws of Valakut,1RR,3,0,0,C,Enchantment - Aura,"Enchant creature
+
+Enchanted creature gets +1/+0 for each Mountain you control and has first strike."
+Comet Storm,XRR,3,0,0,M,Instant,"Multikicker 1(You may pay an additional 1 any number of times as you cast this spell.)
+
+Choose target creature or player, then choose another target creature or player for each time Comet Storm was kicked. Comet Storm then deals X damage to each of them."
+Cosi's Ravager,3R,4,0,2,C,Creature - Elemental,"Landfall - Whenever a land enters the battlefield under your control, you may have Cosi's Ravager deal 1 damage to target player."
+Crusher Zendikon,2R,3,0,0,C,Enchantment - Aura,"Enchant land
+
+Enchanted land is a 4/2 red Beast creature with trample. It’s still a land.
+
+When enchanted land is put into a graveyard, return that card to its owner’s hand."
+Cunning Sparkmage,2R,3,0,1,U,Creature - Human Shaman,"Haste
+T: Cunning Sparkmage deals 1 damage to target creature or player."
+Deathforge Shaman,4R,5,0,3,U,Creature - Ogre Shaman,"Multikicker R
+
+When Deathforge Shaman enters the battlefield, it deals damage to target player equal to twice the number of times it was kicked."
+Dragonmaster Outcast,R,1,0,1,M,Creature - Human Shaman,"At the beginning of your upkeep, if you control six or more lands, put a 5/5 red Dragon creature token with flying onto the battlefield."
+Goblin Roughrider,2R,3,0,2,C,Creature - Goblin Knight,""
+Grotag Thrasher,4R,5,0,3,C,Creature - Lizard,"Whenever Grotag Thrasher attacks, target creature can't block this turn."
+"Kazuul, Tyrant of the Cliffs",3RR,5,0,4,R,Legendary Creature - Ogre Warrior,"Whenever a creature under an opponent's control attacks you, put a 3/3 red Ogre creature token onto the battlefield unless that creature's controller pays 3."
+Mordant Dragon,3RRR,6,0,5,R,Creature - Dragon,"Flying
+1R: Mordant Dragon gets +1+0 until end of turn.
+
+Whenever Mordant Dragon deals combat damage to a player, you may have it deal that much damage to a creature that player controls."
+Quest for the Goblin Lord,R,1,0,0,U,Enchantment,"Whenever a Goblin enters the battlefield under your control, you may put a quest counter on Quest for the Goblin Lord.
+
+As long as Quest for the Goblin Lord has five or more counters on it, creatures you control get +2/+0."
+Ricochet Trap,3R,4,0,0,U,Instant - Trap,"If an opponent cast a blue spell this turn, you may pay R rather than pay Ricochet Trap’s mana cost.
+
+Change the target of target spell with a single target."
+Roiling Terrain,2RR,4,0,0,C,Sorcery,"Destroy target land, then Roiling Terrain deals damage to that land's controller equal to the number of land cards in that player's graveyard."
+Rumbling Aftershocks,4R,5,0,0,U,Enchantment,"Whenever you cast a kicked spell, you may have Rumbling Aftershocks deal damage to target creature or player equal to the number of times that spell was kicked."
+Searing Blaze,RR,2,0,0,C,Instant,"Searing Blaze deals 1 damage to target player and 1 damage to target creature that player controls.
+Landfall - If you had a land enter the battlefield under your control this turn, Searing Blaze deals 3 damage to that player and 3 damage to that creature instead."
+Skitter of Lizards,R,1,0,1,C,Creature - Lizard,"Multikicker 1R(You may pay an additional 1R any number of times as you cast this spell.)
+
+Haste
+
+Skitter of Lizards enters the battlefield with a +1/+1 counter on it for each time it was kicked."
+Slavering Nulls,1R,2,0,1,U,Creature - Goblin Zombie,"Whenever Slavering Nulls deals combat damage to a player, if you control a Swamp, you may have that player discard a card."
+Stone Idol Trap,5R,6,0,0,R,Instant - Trap,"Stone Idol Trap costs 1 less to cast for each attacking creature.
+
+Put a 6/12 colorless Construct artifact creature token with trample onto the battlefield. Exile it at the beginning of your next end step."
+Tuktuk Scrapper,3R,4,0,2,U,Creature - Goblin Artificer Ally,"Whenever Tuktuk Scrapper or another Ally enters the battlefield under your control, you may destroy target artifact. If that artifact is put into a graveyard this way, Tuktuk Scrapper deals damage equal to the number of Allies you control to that artifact's controller."
+Arbor Elf,G,1,0,0,C,Creature - Elf Druid,T: Untap target Forest.
+Avenger of Zendikar,5GG,7,0,5,M,Creature - Elemental,"When Avenger of Zendikar enters the battlefield, put a 0/1 green Plant creature token onto the battlefield for each land you control.
+Landfall - Whenever a land enters the battlefield under your control, you may put a +1/+1 counter on each Plant creature you control."
+Bestial Menace,3GG,5,0,0,U,Sorcery,"Put a 1/1 green Snake creature token, a 2/2 green Wolf creature token, and a 3/3 green Elephant creature token onto the battlefield."
+Canopy Cover,1G,2,0,0,U,Enchantment - Aura,"Enchant creature
+
+Enchanted creature can't be blocked except by creatures with flying and/or reach.
+
+Enchanted creature can't be the target of spells or abilities your opponents control."
+Explore,1G,2,0,0,C,Sorcery,"You may play an additional land this turn.
+
+Draw a card."
+Feral Contest,3G,4,0,0,C,Sorcery,Put a +1/+1 counter on target creature you control. Another target creature must block it this turn if able.
+Gnarlid Pack,1G,2,0,2,C,Creature - Beast,"Multikicker 1G(You may pay an additional 1G any number of times as you cast this spell.)
+
+Gnarlid Pack enters the battlefield with a +1/+1 counter on it for each time it was kicked."
+Grappler Spider,1G,2,0,1,C,Creature - Spider,Reach
+Graypelt Hunter,3G,4,0,2,C,Creature - Human Warrior Ally?,"Trample
+
+Whenever Graypelt Hunter or another Ally enters the battlefield under your control, you may put a +1/+1 counter on Graypelt Hunter."
+Groundswell,G,1,0,0,C,Instant,"Target creature gets +2/+2 until end of turn.
+Landfall - If you had a land enter the battlefield under your control this turn, that creature gets +4/+4 until end of turn instead."
+Harabaz Druid,1G,2,0,1,R,Creature - Human Druid Ally,"T: Add X mana of any one color to your mana pool, where X is the number of Allies you control."
+Joraga Warcaller,G,1,0,1,R,Creature - Elf Warrior,"Multikicker 1G(You may pay an additional 1G any number of times as you cast this spell.)
+
+Joraga Warcaller enters the battlefield with a +1/+1 counter on it for each time it was kicked.
+
+Other Elf creatures you control get +1/+1 for each +1/+1 counter on Joraga Warcaller."
+Leatherback Baloth,GGG,3,0,0,U,Creature - Beast,""
+Nature's Claim,G,1,0,0,C,Instant,Destroy target artifact or enchantment. Its controller gains 4 life.
+"Omnath, Locus of Mana",2G,3,0,1,M,Legendary Creature - Elemental,"Green mana doesn’t empty from your mana pool as phases and steps end.
+
+Omnath, Locus of Mana gets +1/+1 for each green mana in your mana pool."
+Quest for Renewal,1G,2,0,0,U,Enchantment,"Whenever a creature under your control taps, you may put a quest counter on Quest for Renewal.
+
+As long as Quest for Renewal has four or more quest counters on it, untap all creatures you control during each other player's untap step."
+Slingbow Trap,3G,4,0,0,U,Instant - Trap,"If a black creature with flying is attacking, you may pay G rather than pay Slingbow Trap's mana cost.
+
+Destroy target attacking creature with flying."
+Snapping Creeper,2G,3,0,0,C,Creature - Plant,"Landfall - Whenever a land enters the battlefield under your control, Snapping Creeper gains vigilance until end of turn."
+Strength of the Tajuru,XGG,3,0,0,R,Instant,"Multikicker 1(You may pay an additional 1 any number of times as you cast this spell.)
+
+Choose target creature, then choose another target creature for each time Strength of the Tajuru was kicked. Put X +1/+1 counters on each of them."
+Summit Apes,3G,4,0,2,U,Creature - Ape,As long as you control a Mountain Summit Apes can't be blocked except by two or more creatures.
+Terastodon,6GG,8,0,9,R,Creature - Elephant,"When Terastodon enters the battlefield, destroy up to three target noncreature permanents. For each permanent put into a graveyard this way, it's controller puts a 3/3 green Elephant creature token onto the battlefield."
+Vastwood Animist,2G,3,0,1,U,Creature - Elf Shaman Ally,"T: Target land you control becomes a X/X Elemental creature until end of turn, where X is the number of Allies you control. It's still a land."
+Vastwood Zendikon,4G,5,0,0,C,Enchantment - Aura,"Enchant land
+
+Enchanted land is a 6/4 green Elemental creature. It’s still a land.
+
+When enchanted land is put into a graveyard, return that card to its owner’s hand."
+Wolfbriar Elemental,2GG,4,0,4,R,Creature - Elemental,"Multikicker G
+
+When Wolfbriar Elemental enters the battlefield, put a 2/2 green Wolf creature token onto the battlefield for each time it was kicked."
+Novablast Wurm,3GGWW,7,0,7,M,Creature - Wurm,"Whenever Novablast Wurm attacks, destroy all other creatures."
+"Wrexial, the Risen Deep",3UUB,6,0,8,M,Legendary Creature - Kraken,"Islandwalk, swampwalk
+
+Whenever Wrexial, the Risen Deep deals
+
+combat damage to a player, you may
+
+cast target instant or sorcery card from
+
+that player's graveyard without paying
+
+its mana cost. If that card would be
+
+put into a graveyard this turn, exile it
+
+instead."
+Amulet of Vigor,1,1,0,0,R,Artifact,"Whenever a permanent enters the battlefield tapped and under your control, untap it."
+Basilisk Collar,1,1,0,0,R,Artifact - Equipment,"Equipped creature has deathtouch and lifelink.
+
+Equip 2"
+Everflowing Chalice,0,0,0,0,U,Artifact,"Multikicker 2
+
+Everflowing Chalice enters the battlefield with a charge counter on it for each time it was kicked.
+T: Add 1 to your mana pool for each charge counter on Everflowing Chalice."
+Hammer of Ruin,2,2,0,0,U,Artifact - Equipment,"Equipped creature gets +2/+0.
+
+Whenever equipped creature deals combat damage to a player, you may destroy target equipment that player controls.
+
+Equip 2"
+Hedron Rover,4,4,0,2,C,Artifact Creature - Construct,"Landfall - Whenever a land enters the battlefield under your control, Hedron Rover gets +2/+2 until end of turn."
+Kitesail,2,2,0,0,C,Artifact - Equipment,"Equipped creature gets +1/+0 and has flying.
+
+Equip 2"
+Lodestone Golem,4,4,0,3,R,Artifact Creature - Golem,Nonartifact spells cost 1 more to cast.
+Pilgrim's Eye,3,3,0,1,C,Artifact Creature - Thopter,"Flying
+
+When Pilgrim's Eye enters the battlefield, search your library for a basic land, reveal it, and put it into your hand. Then shuffle your library."
+Razor Boomerang,3,3,0,0,U,Artifact - Equipment,"Equipped creature has ""T, Unattach Razor Boomerang: Razor Boomerang deals 1 damage to target creature or player. Return Razor Boomerang to its owner's hand"".
+
+Equip 2"
+Seer's Sundial,4,4,0,0,R,Artifact,"Landfall - Whenever a land enters the battlefield under your control, you may pay 2. If you do, draw a card."
+Walking Atlas,2,2,0,1,C,Artifact Creature - Construct,T: You may put a land card from your hand onto the battlefield.
+Bojuka Bog,"",0,0,0,C,Land,"Bojuka Bog enters the battlefield tapped.
+T: Add B to your mana pool.
+
+When Bojuka Bog enters the battlefield, exile all cards from target player’s graveyard."
+Celestial Colonnade,"",0,0,0,R,Land,"Celestial Colonnade enters the battlefield tapped.
+T: Add W or U to your mana pool.
+3WU: Until end of turn, Celestial Colonnade becomes a 4/4 white and blue Elemental creature with flying and vigilance. It’s still a land."
+Creeping Tar Pits,"",0,0,0,R,Land,"Creeping Tar Pits enters the battlefield tapped.
+T: Add U or B to your mana pool.
+1UB: Until end of turn, Creeping Tar Pits becomes a 3/2 blue and black Elemental creature and is unblockable. It's still a land."
+Dread Statuary,"",0,0,0,U,Land,"T: Add 1 to your mana pool
+4: Dread Statuary becomes a 4/2 Golem artifact creature until end of turn. It’s still a land."
+Eye of Ugin,"",0,0,0,M,Legendary Land,"Colorless Eldrazi spells cost 2 less to cast.
+7, T: Search your library for a colorless creature card, reveal it and put it in your hand. Then shuffle your library."
+Halimar Depths,"",0,0,0,C,Land,"Halimar Depths enters the battlefield tapped.
+T: Add U to your mana pool.
+
+When Halimar Depths enters the battlefield, look at top three cards of your library and put them back in any order."
+Khalni Garden,"",0,0,0,C,Land,"Khalni Garden enters the battlefield tapped.
+
+When Khalni Garden enters the battlefield, put a 0/1 green Plant creature token onto the battlefield.
+T: Add G to your mana pool."
+Lavaclaw Reaches,"",0,0,0,R,Land,"Lavaclaw Reaches enters the battlefield tapped.
+T: Add B or R to your mana pool.
+1BR: Until end of turn, Lavaclaw Reaches becomes a 2/2 black and red Elemental creature with ""X: This creature gets +X/+0 until end of turn."" It’s still a land."
+Quicksand,"",0,0,0,C,Land,"T: Add 1 to your mana pool.
+T, Sacrifice Quicksand: Target attacking creature without flying gets -1/-2 until end of turn."
+Raging Ravine,"",0,0,0,R,Land,"Raging Ravine enters the battlefield tapped.
+T: Add R or G to your mana pool.
+2RG: Until end of turn, Raging Ravine becomes a 3/3 red and green Elemental creature with ""Whenever this creature attacks, put a +1/+1 counter on it."" It’s still a land."
+Sejiri Steppe,"",0,0,0,C,Land,"Sejiri Steppe enters the battlefield tapped.
+
+When Sejiri Steppe enters the battlefield, you may have target creature gain protection from the color of your choice until end of turn.
+T: Add W to your mana pool."
+Smoldering Spires,"",0,0,0,C,Land,"Smoldering Spires enters the battlefield tapped.
+
+When Smoldering Spires enters the battlefield, target creature can't block until end of turn.
+T: Add R to your mana pool."
+Stirring Wildwood,"",0,0,0,R,Land,"Stirring Wildwood enters the battlefield tapped.
+T: Add G or W to your mana pool.
+1GW: Until end of turn, Stirring Wildwood becomes a 3/4 green and white Elemental creature with reach. It's still a land."
+Tectonic Edge,"",0,0,0,U,Land,"T: Add 1 to your mana pool.
+1, T: Sacrifice Tectonic Edge: Destroy target nonbasic land. Activate this ability only if an opponent controls four or more lands."

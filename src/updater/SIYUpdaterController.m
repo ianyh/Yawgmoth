@@ -236,6 +236,7 @@
 
 - (void)update
 {
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSArray *setNames = [setToCards allKeys];
     double setIncrement = 100.0 / [setNames count];
     int i, j;
@@ -250,7 +251,7 @@
         double increment = 100.0 / [setRows count];
         
         for (j = 0; j < [setRows count]; j++) {
-            NSArray *row = [setRows objectAtIndex:i];
+            NSArray *row = [setRows objectAtIndex:j];
             NSManagedObject *card = [self managedFullCardWithName:[row objectAtIndex:0] withSet:setName];
             if (card == nil) {
                 card = [NSEntityDescription insertNewObjectForEntityForName:@"FullCard" inManagedObjectContext:[self managedObjectContext]];
@@ -263,7 +264,9 @@
                 card.rarity = [row objectAtIndex:5];
                 card.type = [row objectAtIndex:6];
                 card.superType = [self superTypeFromType:[row objectAtIndex:6]];
-                card.text = [row objectAtIndex:7];
+                if ([row count] > 7) {
+                    card.text = [row objectAtIndex:7];
+                }
                 card.set = setName;
                 
                 [self save];
@@ -275,6 +278,8 @@
         
         [setProgressIndicator incrementBy:setIncrement];
     }
+    
+    [pool release];
 }
 
 - (IBAction)startUpdate:(id)sender

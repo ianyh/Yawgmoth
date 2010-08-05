@@ -69,6 +69,7 @@
 		3C31AFD8120B560E00ED4CDE /* Shards of Alara.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFD0120B560E00ED4CDE /* Shards of Alara.csv */; };
 		3C31AFD9120B560E00ED4CDE /* Worldwake.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFD1120B560E00ED4CDE /* Worldwake.csv */; };
 		3C31AFDA120B560E00ED4CDE /* Zendikar.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFD2120B560E00ED4CDE /* Zendikar.csv */; };
+		3C31B01B120B59AD00ED4CDE /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539911F620F9001FB0BF /* SIYDataModel.xcdatamodel */; };
 		3C8EED8811ED2E07003E7D9F /* DeckEditorWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */; };
 		3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
 		3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
@@ -653,6 +654,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C31B01B120B59AD00ED4CDE /* SIYDataModel.xcdatamodel in Sources */,
 				3C31AF8F120B429C00ED4CDE /* main.m in Sources */,
 				3C31AFA0120B42F000ED4CDE /* SIYUpdaterController.m in Sources */,
 			);
