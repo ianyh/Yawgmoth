@@ -59,7 +59,9 @@ def download(options)
       power = 0
       toughness = 0
       unless pt == ''
-        power = pt[/^\d+/] || power
+        if power =~ /\//
+          power = pt[/^\d+/] || power
+        end
         toughness = pt[/\d+$/] || toughness
       end
 
@@ -70,7 +72,6 @@ def download(options)
   puts "found #{cards.size} cards"
   
   FasterCSV.open("../res/sets/#{options[:set]}.csv", File::CREAT|File::WRONLY) do |csv|
-    csv << ['Name', 'Mana Cost', 'Converted Mana Cost', 'Power', 'Toughness', 'Rarity', 'Type', 'Text']
     cards.each do |card|
       csv << card
     end
