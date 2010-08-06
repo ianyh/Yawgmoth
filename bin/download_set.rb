@@ -111,13 +111,31 @@ def download(options)
   end
 end
 
-set = ARGV[0]
-url = ARGV[1]
-img_url = ARGV[2]
+if __FILE__ == $0
+  options = {}
+  opts = OptionParser.new do |opts|
+    opts.banner = "Usage: #{File.basename(__FILE__)} [options]"
+    opts.on('-s', '--set', String, 'set name to be downloaded') do |s|
+      options[:set] = s
+    end
+    opts.on('-u', '--spoiler-url', String, 'url to grab card information from') do |u|
+      options[:url] = u
+    end
+    opts.on('-i', '--images-url', String, 'url to grab card image urls from') do |u|
+      options[:image_url] = u
+    end
+    opts.on_tail('-h', '--help', 'show this message') do
+      puts opts
+      exit
+    end
+  end
 
-unless url and set and img_url
-  puts "usage: ruby download_set.rb set_name set_url set_images_url"
-  exit
+  opts.parse!(ARGV)
+
+  unless options[:url] and options[:set] and options[:image_url]
+    puts opts
+    exit
+  end
+
+  download(options)
 end
-
-download(:set => set, :url => url, :image_url => img_url, :image_map => load_image_map)
