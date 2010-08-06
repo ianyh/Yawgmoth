@@ -27,20 +27,8 @@
 		if (tempCard == nil) {
 			tempCard = [NSEntityDescription insertNewObjectForEntityForName:@"TempCollectionCard" inManagedObjectContext:[self managedObjectContext]];
 			
-			tempCard.convertedManaCost = fullCard.convertedManaCost;
-			tempCard.manaCost = fullCard.manaCost;
-			tempCard.name = fullCard.name;
-			tempCard.rarity = fullCard.rarity;
-			tempCard.text = fullCard.text;
-			
-			tempCard.power = fullCard.power;
-			tempCard.toughness = fullCard.toughness;
-			
-			tempCard.superType = fullCard.superType;
-			tempCard.type = fullCard.type;
-            
+            [self copyCard:fullCard toCard:tempCard];
             tempCard.set = fullCard.set;
-			
 			tempCard.quantity = [NSNumber numberWithInt:1];			
 		} else {
 			tempCard.quantity = [NSNumber numberWithInt:[tempCard.quantity intValue]+1];
@@ -74,32 +62,9 @@
         }
         
         [[self managedObjectContext] deleteObject:tempCard];
-        [self save];
     }
-     /*   
-		libraryCard = [self managedLibraryCardWithName:tempCard.name];
-		if (libraryCard == nil) {
-			libraryCard = [NSEntityDescription insertNewObjectForEntityForName:@"LibraryCard" inManagedObjectContext:[self managedObjectContext]];
-			libraryCard.manaCost = tempCard.manaCost;
-			libraryCard.name = tempCard.name;
-			libraryCard.quantity = tempCard.quantity;
-			libraryCard.rarity = tempCard.rarity;
-			libraryCard.text = tempCard.text;
-			
-			libraryCard.power = tempCard.power;
-			libraryCard.toughness = tempCard.toughness;
-			
-			libraryCard.superType = tempCard.superType;
-			libraryCard.type = tempCard.type;			
-		} else {
-			libraryCard.quantity = [NSNumber numberWithInt:[libraryCard.quantity intValue]+[tempCard.quantity intValue]];
-		}
-		
-		[[self managedObjectContext] deleteObject:tempCard];
-	}
-	
-	[self save];
-	*/
+    
+    [self save];
 	[libraryAddingWindow close];
 }
 
@@ -244,6 +209,10 @@
         metaCardEnumerator = [deckMetaCard.cards objectEnumerator];
         while ((deckCollectionCard = [metaCardEnumerator nextObject]) != nil) {
             libraryCollectionCard = [self collectionCardWithCardName:deckCollectionCard.name withSet:deckCollectionCard.set inCollection:libraryMetaCard.cards];
+            if (libraryCollectionCard == nil) {
+                libraryCollectionCard = [self insertCollectionCardFromCard:deckCollectionCard];
+                [libraryMetaCard addCardsObject:libraryCollectionCard];
+            }
             libraryCollectionCard.quantity = [NSNumber numberWithInt:[libraryCollectionCard.quantity intValue]+[deckCollectionCard.quantity intValue]];
             
             [[self managedObjectContext] deleteObject:deckCollectionCard];
@@ -370,12 +339,13 @@
         deckCollectionCard = [self collectionCardWithCardName:libraryCollectionCard.name withSet:libraryCollectionCard.set inCollection:deckMetaCard.cards];
         if (deckCollectionCard == nil) {
             deckCollectionCard = [self insertCollectionCardFromCard:libraryCollectionCard];
-            deckCollectionCard.quantity = [NSNumber numberWithInt:1];
-        } else {
-            deckCollectionCard.quantity = [NSNumber numberWithInt:[deckCollectionCard.quantity intValue]+1];
         }
-        
+        deckCollectionCard.quantity = [NSNumber numberWithInt:[deckCollectionCard.quantity intValue]+1];
         libraryCollectionCard.quantity = [NSNumber numberWithInt:[libraryCollectionCard.quantity intValue]-1];
+        
+        if ([libraryCollectionCard.quantity intValue] == 0) {
+            [[self managedObjectContext] deleteObject:libraryCollectionCard];
+        }
 	}
 	
 	[self save];
@@ -397,6 +367,10 @@
         
         deckCollectionCard = [deckMetaCard.cards anyObject];
         libraryCollectionCard = [self collectionCardWithCardName:deckCollectionCard.name withSet:deckCollectionCard.set inCollection:libraryMetaCard.cards];
+        if (libraryCollectionCard == nil) {
+            libraryCollectionCard = [self insertCollectionCardFromCard:deckCollectionCard];
+            [libraryMetaCard addCardsObject:libraryCollectionCard];
+        }
         
         libraryCollectionCard.quantity = [NSNumber numberWithInt:[libraryCollectionCard.quantity intValue]+1];
         deckCollectionCard.quantity = [NSNumber numberWithInt:[deckCollectionCard.quantity intValue]-1];
@@ -585,6 +559,8 @@
 {
     NSManagedObject *collectionCard = [NSEntityDescription insertNewObjectForEntityForName:@"CollectionCard" inManagedObjectContext:[self managedObjectContext]];
     [self copyCard:card toCard:collectionCard];
+    collectionCard.set = card.set;
+    collectionCard.quantity = [NSNumber numberWithInt:0];
     return collectionCard;
 }
 
