@@ -558,22 +558,71 @@
 
 - (NSManagedObject *)metaCardWithCardName:(NSString *)cardName inDeck:(NSManagedObject *)deck
 {
-    return nil;
+    return [self managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@) AND (deck == %@)", cardName, deck] 
+                           inEntityWithName:@"MetaCard"];
 }
 
 - (NSManagedObject *)insertMetaCardFromCard:(NSManagedObject *)card
 {
-    return nil;
+    NSManagedObject *metaCard = [NSEntityDescription insertNewObjectForEntityForName:@"MetaCard" inManagedObjectContext:[self managedObjectContext]];
+    [self copyCard:card toCard:metaCard];
+    return metaCard;
 }
 
 - (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inCollection:(NSSet *)collection
 {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name == %@) AND (set == %@)", cardName, set];
+    
+    NSSet *filteredSet = [collection filteredSetUsingPredicate:predicate];
+    if ([filteredSet count] > 0) {
+        return (NSManagedObject *) [filteredSet anyObject];
+    }
+    
     return nil;
 }
 
 - (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card
 {
+    NSManagedObject *collectionCard = [NSEntityDescription insertNewObjectForEntityForName:@"CollectionCard" inManagedObjectContext:[self managedObjectContext]];
+    [self copyCard:card toCard:collectionCard];
+    return collectionCard;
+}
+
+- (NSManagedObject *)managedObjectWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName
+{
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:[self managedObjectContext]];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entityDescription];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+    [fetchRequest release];
+    if (results == nil) {
+        // TODO: error
+        return nil;
+    }
+
+    if ([results count] > 0) {
+        return (NSManagedObject *) [results objectAtIndex:0];
+    }
+    
     return nil;
+}
+
+- (void)copyCard:(NSManagedObject *)sourceCard toCard:(NSManagedObject *)destinationCard
+{
+    destinationCard.convertedManaCost = sourceCard.convertedManaCost;
+    destinationCard.imageUrl = sourceCard.imageUrl;
+    destinationCard.manaCost = sourceCard.manaCost;
+    destinationCard.rarity = sourceCard.rarity;
+    destinationCard.text = sourceCard.text;
+    
+    destinationCard.power = sourceCard.power;
+    destinationCard.toughness = sourceCard.toughness;
+    
+    destinationCard.superType = sourceCard.superType;
+    destinationCard.type = sourceCard.type;
 }
 
 @end

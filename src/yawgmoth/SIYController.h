@@ -81,5 +81,7 @@
 - (NSManagedObject *)insertMetaCardFromCard:(NSManagedObject *)card;
 - (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inCollection:(NSSet *)collection;
 - (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card;
+- (NSManagedObject *)managedObjectWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName;
+- (void)copyCard:(NSManagedObject *)sourceCard toCard:(NSManagedObject *)destinationCard;
 
 @end
