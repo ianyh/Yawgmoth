@@ -77,4 +77,9 @@
 - (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
 - (void)updateLibraryAddAltImageWithCard:(NSManagedObject *)card;
 
+- (NSManagedObject *)metaCardWithCardName:(NSString *)cardName inDeck:(NSManagedObject *)deck;
+- (NSManagedObject *)insertMetaCardFromCard:(NSManagedObject *)card;
+- (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inCollection:(NSSet *)collection;
+- (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card;
+
 @end
