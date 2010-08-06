@@ -6,6 +6,28 @@ require 'set'
 require 'pp'
 require 'fastercsv'
 
+def load_image_map
+  image_map_file = '../res/card-image-map'
+  FasterCSV.read(image_map_file, :col_sep => "\t").inject({}) do |img_map, pair|
+    img_map.merge({ pair[0] => pair[1] })
+  end
+end
+
+def write_image_map(image_map)
+  image_map_file = '../res/card-image-map'
+  FasterCSV.open(image_map_file, File::WRONLY, :col_sep => "\t") do |tsv|
+    image_map.each do |fname, url|
+      tsv << [fname, url]
+    end
+  end
+end
+
+def filename_from_name(card_name)
+  fname = card_name.gsub(/ \/\/ /, '_').gsub(/'/, '').gsub(',', '').gsub(/ /, '_').gsub(/-/, '_')
+  fname += '.jpg'
+  fname.downcase
+end
+
 def download(options)
   agent = Mechanize.new
   page = agent.get options[:url]
@@ -70,6 +92,17 @@ def download(options)
   end
 
   puts "found #{cards.size} cards"
+
+  page = agent.get options[:image_url]
+  page.search('img').each do |img|
+    name = img['alt']
+    if downloaded_names.include? name
+      url = img['src']
+      url = 'http://gatherer.wizards.com/' + url.gsub('../', '')
+      options[:image_map][filename_from_name(name)] = url
+    end
+  end
+  write_image_map(options[:image_map])
   
   FasterCSV.open("../res/sets/#{options[:set]}.csv", File::CREAT|File::WRONLY) do |csv|
     cards.each do |card|
@@ -80,10 +113,11 @@ end
 
 set = ARGV[0]
 url = ARGV[1]
+img_url = ARGV[2]
 
-unless url and set
-  puts "usage: ruby download_set.rb set_name set_url"
+unless url and set and img_url
+  puts "usage: ruby download_set.rb set_name set_url set_images_url"
   exit
 end
 
-download(:set => set, :url => url)
+download(:set => set, :url => url, :image_url => img_url, :image_map => load_image_map)
