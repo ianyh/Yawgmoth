@@ -6,11 +6,6 @@
 - (void)awakeFromNib
 {
 	imageManager = [[[SIYCardImageManager alloc] initWithApplicationSupportDirectory:[self applicationSupportDirectory]] retain];	
-	
-	[allCardsTable setDelegate:self];
-	[cardsToAddToLibraryTable setDelegate:self];
-	[libraryTableView setDelegate:self];
-	[deckTableView setDelegate:self];
 }
 
 - (IBAction)addCardToLibraryAddTable:(id)sender
