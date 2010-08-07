@@ -17,7 +17,8 @@
 	
 	for (i = 0; i < [array count]; i++) {
 		fullCard = [array objectAtIndex:i];
-		tempCard = [self managedTempCardWithName:fullCard.name];
+		tempCard = [self managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@) AND (set == %@)", fullCard.name, fullCard.set] 
+                                   inEntityWithName:@"TempCollectionCard"];
 		
 		if (tempCard == nil) {
 			tempCard = [NSEntityDescription insertNewObjectForEntityForName:@"TempCollectionCard" inManagedObjectContext:[self managedObjectContext]];
@@ -45,11 +46,15 @@
         if (metaCard == nil) {
             metaCard = [self insertMetaCardFromCard:tempCard];
             libraryCard = [self insertCollectionCardFromCard:tempCard];
+            libraryCard.set = tempCard.set;
+            libraryCard.quantity = tempCard.quantity;
             [metaCard addCardsObject:libraryCard];
         } else {
             libraryCard = [self collectionCardWithCardName:tempCard.name withSet:tempCard.set inCollection:metaCard.cards];
             if (libraryCard == nil) {
                 libraryCard = [self insertCollectionCardFromCard:tempCard];
+                libraryCard.set = tempCard.set;
+                libraryCard.quantity = tempCard.quantity;
                 [metaCard addCardsObject:libraryCard];
             } else {
                 libraryCard.quantity = [NSNumber numberWithInt:[libraryCard.quantity intValue]+[tempCard.quantity intValue]];
@@ -583,6 +588,7 @@
     destinationCard.manaCost = sourceCard.manaCost;
     destinationCard.rarity = sourceCard.rarity;
     destinationCard.text = sourceCard.text;
+    destinationCard.name = sourceCard.name;
     
     destinationCard.power = sourceCard.power;
     destinationCard.toughness = sourceCard.toughness;

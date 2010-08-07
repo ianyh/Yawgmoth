@@ -46,6 +46,8 @@
 		3CE302C1120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */; };
 		3CE30340120D63FF0093FD1E /* card-image-map in Resources */ = {isa = PBXBuildFile; fileRef = 3CE3033F120D63FF0093FD1E /* card-image-map */; };
 		3CE30341120D63FF0093FD1E /* card-image-map in Resources */ = {isa = PBXBuildFile; fileRef = 3CE3033F120D63FF0093FD1E /* card-image-map */; };
+		3CFE865F120DA5CD0096E65B /* SIYMetaCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE865E120DA5CD0096E65B /* SIYMetaCard.m */; };
+		3CFE8660120DA5CD0096E65B /* SIYMetaCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE865E120DA5CD0096E65B /* SIYMetaCard.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +98,8 @@
 		3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYCardImageManager.m; path = src/yawgmoth/SIYCardImageManager.m; sourceTree = "<group>"; };
 		3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = SIYDataModel.xcdatamodel; path = src/yawgmoth/SIYDataModel.xcdatamodel; sourceTree = "<group>"; };
 		3CE3033F120D63FF0093FD1E /* card-image-map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "card-image-map"; path = "res/card-image-map"; sourceTree = "<group>"; };
+		3CFE865D120DA5CD0096E65B /* SIYMetaCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYMetaCard.h; path = src/yawgmoth/SIYMetaCard.h; sourceTree = "<group>"; };
+		3CFE865E120DA5CD0096E65B /* SIYMetaCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYMetaCard.m; path = src/yawgmoth/SIYMetaCard.m; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Yawgmoth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawgmoth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,6 +147,8 @@
 				3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */,
 				3C1E539711F620F9001FB0BF /* SIYController.h */,
 				3C1E539811F620F9001FB0BF /* SIYController.m */,
+				3CFE865D120DA5CD0096E65B /* SIYMetaCard.h */,
+				3CFE865E120DA5CD0096E65B /* SIYMetaCard.m */,
 			);
 			name = "Yawgmoth Classes";
 			sourceTree = "<group>";
@@ -474,6 +480,7 @@
 				3C0F864F11FD00300043D7DD /* main.m in Sources */,
 				3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */,
 				3CE302BE120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */,
+				3CFE865F120DA5CD0096E65B /* SIYMetaCard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +502,7 @@
 				3C1E539D11F6212E001FB0BF /* main.m in Sources */,
 				3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */,
 				3CE302BF120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */,
+				3CFE8660120DA5CD0096E65B /* SIYMetaCard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

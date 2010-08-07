@@ -121,7 +121,7 @@
 
 - (NSManagedObject *)managedFullCardWithName:(NSString *)cardName withSet:(NSString *)cardSet
 {
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"FullCard" inManagedObjectContext:[self managedObjectContext]];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:entityDescription];
     
@@ -254,13 +254,13 @@
             NSArray *row = [setRows objectAtIndex:j];
             NSManagedObject *card = [self managedFullCardWithName:[row objectAtIndex:0] withSet:setName];
             if (card == nil) {
-                card = [NSEntityDescription insertNewObjectForEntityForName:@"FullCard" inManagedObjectContext:[self managedObjectContext]];
+                card = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
                 
                 card.name = [row objectAtIndex:0];
                 card.manaCost = [row objectAtIndex:1];
                 card.convertedManaCost = [NSNumber numberWithInt:[[row objectAtIndex:2] intValue]];
-                card.power = [NSNumber numberWithInt:[[row objectAtIndex:3] intValue]];
-                card.toughness = [NSNumber numberWithInt:[[row objectAtIndex:4] intValue]];
+                card.power = [row objectAtIndex:3];
+                card.toughness = [row objectAtIndex:4];
                 card.rarity = [row objectAtIndex:5];
                 card.type = [row objectAtIndex:6];
                 card.superType = [self superTypeFromType:[row objectAtIndex:6]];
