@@ -11,9 +11,9 @@
 			<string key="NS.object.0">788</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="209"/>
-			<integer value="116"/>
 			<integer value="650"/>
+			<integer value="116"/>
+			<integer value="209"/>
 			<integer value="724"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -2739,18 +2739,18 @@
 				</array>
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy">
-					<string key="NSEntityName">LibraryCard</string>
+					<string key="NSEntityName">MetaCard</string>
 					<object class="NSComparisonPredicate" key="NSFetchPredicate">
 						<object class="NSKeyPathExpression" key="NSLeftExpression">
 							<int key="NSExpressionType">3</int>
-							<string key="NSSelectorName">valueForKey:</string>
+							<string key="NSSelectorName">valueForKeyPath:</string>
 							<object class="NSSelfExpression" key="NSOperand">
 								<int key="NSExpressionType">1</int>
 							</object>
 							<array class="NSMutableArray" key="NSArguments">
 								<object class="NSKeyPathSpecifierExpression">
 									<int key="NSExpressionType">10</int>
-									<string key="NSKeyPath">quantity</string>
+									<string key="NSKeyPath">cards.@sum.quantity</string>
 								</object>
 							</array>
 						</object>
@@ -2789,7 +2789,7 @@
 				</array>
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy">
-					<string key="NSEntityName">Card</string>
+					<string key="NSEntityName">MetaCard</string>
 				</object>
 				<bool key="_NSIsUsingManagedProxy">YES</bool>
 				<bool key="NSAvoidsEmptySelection">YES</bool>
@@ -2821,7 +2821,7 @@
 				</array>
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy">
-					<string key="NSEntityName">TempCard</string>
+					<string key="NSEntityName">TempCollectionCard</string>
 				</object>
 				<bool key="_NSIsUsingManagedProxy">YES</bool>
 				<bool key="NSAvoidsEmptySelection">YES</bool>
@@ -2837,7 +2837,7 @@
 				</array>
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy">
-					<string key="NSEntityName">FullCard</string>
+					<string key="NSEntityName">Card</string>
 				</object>
 				<bool key="_NSIsUsingManagedProxy">YES</bool>
 				<bool key="NSAvoidsEmptySelection">YES</bool>

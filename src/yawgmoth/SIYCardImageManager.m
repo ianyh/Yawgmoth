@@ -20,8 +20,8 @@
 		}
     }
 	
-	NSString *fileName = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"card-image-map"];
-    NSString *fileString = [NSString stringWithContentsOfFile:[directoryPath stringByAppendingPathComponent:fileName] 
+	NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"card-image-map"];
+    NSString *fileString = [NSString stringWithContentsOfFile:filePath
                                                      encoding:NSASCIIStringEncoding 
                                                         error:nil];
     [fileNameToURL addEntriesFromDictionary:[self fileToURLDictionaryFromString:fileString]];
