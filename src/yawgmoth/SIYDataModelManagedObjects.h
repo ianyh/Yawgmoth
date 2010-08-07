@@ -6,13 +6,13 @@
 @property (nonatomic, retain) NSString * imageUrl;
 @property (nonatomic, retain) NSString * manaCost;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * power;
+@property (nonatomic, retain) NSString * power;
 @property (nonatomic, retain) NSNumber * quantity;
 @property (nonatomic, retain) NSString * rarity;
 @property (nonatomic, retain) NSString * set;
 @property (nonatomic, retain) NSString * superType;
 @property (nonatomic, retain) NSString * text;
-@property (nonatomic, retain) NSNumber * toughness;
+@property (nonatomic, retain) NSString * toughness;
 @property (nonatomic, retain) NSString * type;
 
 @end

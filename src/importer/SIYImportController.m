@@ -103,13 +103,13 @@
 
 - (void)import
 {
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];    
     FMResultSet *resultSet = [db executeQuery:@"SELECT * FROM y_cards"];
 	NSManagedObject *card;
 	double increment = 100.0 / rowCount;
 	int i = 0;
 	
     while ([resultSet next]) {
-		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		card = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
         
         card.convertedManaCost = [NSNumber numberWithInt:[resultSet intForColumn:@"converted_mana"]];
@@ -119,8 +119,8 @@
         card.set = [resultSet stringForColumn:@"expansion"];
         card.text = [resultSet stringForColumn:@"text"];
         
-        card.power = [NSNumber numberWithInt:[resultSet intForColumn:@"power"]];
-        card.toughness = [NSNumber numberWithInt:[resultSet intForColumn:@"toughness"]];
+        card.power = [resultSet stringForColumn:@"power"];
+        card.toughness = [resultSet stringForColumn:@"toughness"];
         
         NSString *type = [resultSet stringForColumn:@"type"];
         card.superType = [self superTypeFromType:type];
@@ -130,8 +130,9 @@
 		NSString *string = [NSString stringWithFormat:@"%d/%d", ++i, rowCount];
 		[importText setStringValue:string];
 		[self save];
-		[pool release];
 	}	
+    
+    [pool release];
 }
 
 - (IBAction)startImport:(id)sender
