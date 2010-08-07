@@ -17,9 +17,7 @@
 		3C006B7A11FFC4BB00C5C084 /* storedata in Resources */ = {isa = PBXBuildFile; fileRef = 3C006B7911FFC4BB00C5C084 /* storedata */; };
 		3C006B7B11FFC4BB00C5C084 /* storedata in Resources */ = {isa = PBXBuildFile; fileRef = 3C006B7911FFC4BB00C5C084 /* storedata */; };
 		3C0A8A8711FFF7820032CEDB /* SIYImportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A8A8611FFF7820032CEDB /* SIYImportController.m */; };
-		3C0A8A8C11FFF7AF0032CEDB /* SIYCardDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A8A8B11FFF7AF0032CEDB /* SIYCardDatabase.m */; };
 		3C0A8A8F11FFF7E80032CEDB /* Importer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0A8A8D11FFF7E80032CEDB /* Importer.xib */; };
-		3C0A8A9A11FFF8720032CEDB /* Info-importer.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C0A8A9911FFF8720032CEDB /* Info-importer.plist */; };
 		3C0F864911FD00300043D7DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		3C0F864A11FD00300043D7DD /* DeckEditorWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */; };
 		3C0F864D11FD00300043D7DD /* SIYController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539811F620F9001FB0BF /* SIYController.m */; };
@@ -115,8 +113,6 @@
 		3C006B7911FFC4BB00C5C084 /* storedata */ = {isa = PBXFileReference; lastKnownFileType = file; name = storedata; path = res/storedata; sourceTree = "<group>"; };
 		3C0A8A8511FFF7820032CEDB /* SIYImportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYImportController.h; path = src/importer/SIYImportController.h; sourceTree = "<group>"; };
 		3C0A8A8611FFF7820032CEDB /* SIYImportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYImportController.m; path = src/importer/SIYImportController.m; sourceTree = "<group>"; };
-		3C0A8A8A11FFF7AF0032CEDB /* SIYCardDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYCardDatabase.h; path = src/importer/SIYCardDatabase.h; sourceTree = "<group>"; };
-		3C0A8A8B11FFF7AF0032CEDB /* SIYCardDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYCardDatabase.m; path = src/importer/SIYCardDatabase.m; sourceTree = "<group>"; };
 		3C0A8A8E11FFF7E80032CEDB /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Importer.xib; sourceTree = "<group>"; };
 		3C0A8A9511FFF8580032CEDB /* Info-10.5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Info-10.5.plist"; path = "res/Info-10.5.plist"; sourceTree = "<group>"; };
 		3C0A8A9711FFF8640032CEDB /* Info-10.6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Info-10.6.plist"; path = "res/Info-10.6.plist"; sourceTree = "<group>"; };
@@ -412,8 +408,6 @@
 		3C4EA4B511FFD8CC00F7F3CA /* Importer Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3C0A8A8A11FFF7AF0032CEDB /* SIYCardDatabase.h */,
-				3C0A8A8B11FFF7AF0032CEDB /* SIYCardDatabase.m */,
 				3C0A8A8511FFF7820032CEDB /* SIYImportController.h */,
 				3C0A8A8611FFF7820032CEDB /* SIYImportController.m */,
 			);
@@ -528,7 +522,6 @@
 			files = (
 				3C006A9211FF894800C5C084 /* cards.db in Resources */,
 				3C0A8A8F11FFF7E80032CEDB /* Importer.xib in Resources */,
-				3C0A8A9A11FFF8720032CEDB /* Info-importer.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,7 +627,6 @@
 				3C006AE011FF922E00C5C084 /* FMDatabaseAdditions.m in Sources */,
 				3C006AE111FF922E00C5C084 /* FMResultSet.m in Sources */,
 				3C0A8A8711FFF7820032CEDB /* SIYImportController.m in Sources */,
-				3C0A8A8C11FFF7AF0032CEDB /* SIYCardDatabase.m in Sources */,
 				3CE302C0120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -719,7 +711,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_PREFIX_HEADER = Yawgmoth_Prefix.pch;
 				INFOPLIST_FILE = "res/Info-importer.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (

@@ -12,8 +12,14 @@
 
 - (void)awakeFromNib
 {
-	cardDatabase = [[SIYCardDatabase alloc] init];
-	NSString *string = [NSString stringWithFormat:@"0/%d", [cardDatabase numberOfRowsInTableView:nil]];
+	NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"cards" ofType:@"db"];
+	db = [[FMDatabase databaseWithPath:dbPath] retain];
+	if (![db open]) {
+		NSLog(@"failed to open cards.db");
+	}
+
+    rowCount = [db intForQuery:@"SELECT count(*) FROM y_cards"];
+	NSString *string = [NSString stringWithFormat:@"0/%d", rowCount];
 	[importText setStringValue:string];
 }
 
@@ -97,16 +103,32 @@
 
 - (void)import
 {
+    FMResultSet *resultSet = [db executeQuery:@"SELECT * FROM y_cards"];
 	NSManagedObject *card;
-	double increment = 100.0 / [cardDatabase numberOfRowsInTableView:nil];
-	int i;
+	double increment = 100.0 / rowCount;
+	int i = 0;
 	
-	for (i = 0; i < [cardDatabase numberOfRowsInTableView:nil]; i++) {
+    while ([resultSet next]) {
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-		card = [NSEntityDescription insertNewObjectForEntityForName:@"FullCard" inManagedObjectContext:[self managedObjectContext]];
-		[cardDatabase populateCard:card withRowIndex:i];
+		card = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
+        
+        card.convertedManaCost = [NSNumber numberWithInt:[resultSet intForColumn:@"converted_mana"]];
+        card.imageUrl = [resultSet stringForColumn:@"image_url"];
+        card.manaCost = [resultSet stringForColumn:@"mana"];
+        card.name = [resultSet stringForColumn:@"name"];
+        card.rarity = [resultSet stringForColumn:@"rarity"];
+        card.set = [resultSet stringForColumn:@"expansion"];
+        card.text = [resultSet stringForColumn:@"text"];
+        
+        card.power = [NSNumber numberWithInt:[resultSet intForColumn:@"power"]];
+        card.toughness = [NSNumber numberWithInt:[resultSet intForColumn:@"toughness"]];
+        
+        NSString *type = [resultSet stringForColumn:@"type"];
+        card.superType = [self superTypeFromType:type];
+        card.type = type;
+
 		[importProgress incrementBy:increment];
-		NSString *string = [NSString stringWithFormat:@"%d/%d", i+1, [cardDatabase numberOfRowsInTableView:nil]];
+		NSString *string = [NSString stringWithFormat:@"%d/%d", ++i, rowCount];
 		[importText setStringValue:string];
 		[self save];
 		[pool release];
@@ -117,6 +139,38 @@
 {
 	[importButton setEnabled:NO];
 	[NSThread detachNewThreadSelector:@selector(import) toTarget:self withObject:nil];
+}
+
+- (NSString *)superTypeFromType:(NSString *)type
+{
+	NSArray *superTypeRegexStrings = [NSArray arrayWithObjects:@".*Instant.*", 
+									  @".*Sorcery.*", 
+									  @".*Artifact Creature.*", 
+									  @".*Artifact Land.*", 
+									  @".*Creature.*", 
+									  @".*Artifact.*", 
+									  @".*Land.*", 
+									  @".*Enchantment.*", 
+									  @".*Planeswalker.*", nil];
+	NSArray *superTypes = [NSArray arrayWithObjects:@"Instant", 
+						   @"Sorcery", 
+						   @"Artifact Creature", 
+						   @"Artifact Land", 
+						   @"Creature", 
+						   @"Artifact", 
+						   @"Land", 
+						   @"Enchantment", 
+						   @"Planeswalker", nil];
+	int i;
+	
+	for (i = 0; i < [superTypes count]; i++) {
+		NSPredicate *superTypeRegex = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", [superTypeRegexStrings objectAtIndex:i]];
+		if ([superTypeRegex evaluateWithObject:type]) {
+			return [superTypes objectAtIndex:i];
+		}
+	}
+	
+	return @"";
 }
 
 @end

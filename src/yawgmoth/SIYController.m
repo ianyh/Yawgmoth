@@ -273,11 +273,6 @@
     return [self managedObjectWithName:name inEntityWithName:@"Deck"];
 }
 
-- (NSManagedObject *)managedLibraryCardWithName:(NSString *)name
-{
-    return [self managedObjectWithName:name inEntityWithName:@"LibraryCard"];
-}
-
 - (NSManagedObject *)managedTempCardWithName:(NSString *)name
 {
     return [self managedObjectWithName:name inEntityWithName:@"TempCard"];
