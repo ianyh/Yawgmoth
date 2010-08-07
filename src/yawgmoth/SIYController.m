@@ -46,16 +46,16 @@
         if (metaCard == nil) {
             metaCard = [self insertMetaCardFromCard:tempCard];
             libraryCard = [self insertCollectionCardFromCard:tempCard];
+            [metaCard addCardsObject:libraryCard];            
             libraryCard.set = tempCard.set;
             libraryCard.quantity = tempCard.quantity;
-            [metaCard addCardsObject:libraryCard];
         } else {
             libraryCard = [self collectionCardWithCardName:tempCard.name withSet:tempCard.set inCollection:metaCard.cards];
             if (libraryCard == nil) {
                 libraryCard = [self insertCollectionCardFromCard:tempCard];
+                [metaCard addCardsObject:libraryCard];                
                 libraryCard.set = tempCard.set;
                 libraryCard.quantity = tempCard.quantity;
-                [metaCard addCardsObject:libraryCard];
             } else {
                 libraryCard.quantity = [NSNumber numberWithInt:[libraryCard.quantity intValue]+[tempCard.quantity intValue]];
             }
@@ -212,6 +212,7 @@
             if (libraryCollectionCard == nil) {
                 libraryCollectionCard = [self insertCollectionCardFromCard:deckCollectionCard];
                 [libraryMetaCard addCardsObject:libraryCollectionCard];
+                libraryCollectionCard.set = deckCollectionCard.set;
             }
             libraryCollectionCard.quantity = [NSNumber numberWithInt:[libraryCollectionCard.quantity intValue]+[deckCollectionCard.quantity intValue]];
             

@@ -11,9 +11,9 @@
 {
     if ([keyPath isEqualToString:@"quantity"]) {
         [self updateQuantity];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
-    
-    [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
 - (void)updateQuantity
@@ -32,6 +32,7 @@
     [changedObjects release];
     
     [value addObserver:self forKeyPath:@"quantity" options:0 context:nil];
+    [self updateQuantity];
 }
 
 - (void)addCards:(NSSet *)value 
@@ -46,6 +47,7 @@
     while ((object = [enumerator nextObject]) != nil) {
         [object addObserver:self forKeyPath:@"quantity" options:0 context:nil];
     }
+    [self updateQuantity];
 }
 
 @end
