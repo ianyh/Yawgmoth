@@ -20,19 +20,11 @@
 		}
     }
 	
-	NSString *directoryPath = [[NSBundle mainBundle] resourcePath];
-	NSDirectoryEnumerator *directoryEnumerator = [fileManager enumeratorAtPath:directoryPath];
-	NSPredicate *fileNameRegex = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", @".*txt"];
-	NSString *fileName;	
-	
-	while ((fileName = [directoryEnumerator nextObject]) != nil) {
-		if ([fileNameRegex evaluateWithObject:fileName]) {
-			NSString *fileString = [NSString stringWithContentsOfFile:[directoryPath stringByAppendingPathComponent:fileName] 
-															 encoding:NSASCIIStringEncoding 
-															 error:nil];
-			[fileNameToURL addEntriesFromDictionary:[self fileToURLDictionaryFromString:fileString]];
-		}
-	}
+	NSString *fileName = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"card-image-map"];
+    NSString *fileString = [NSString stringWithContentsOfFile:[directoryPath stringByAppendingPathComponent:fileName] 
+                                                     encoding:NSASCIIStringEncoding 
+                                                        error:nil];
+    [fileNameToURL addEntriesFromDictionary:[self fileToURLDictionaryFromString:fileString]];
 	
 	return [super init];
 }

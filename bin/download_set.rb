@@ -104,7 +104,6 @@ def download(options)
 
   if options[:image_url]
     page = agent.get options[:image_url]
-    puts page.search('img').each {|foo|}
     page.search('img').each do |img|
       next unless img
       name = img['alt']

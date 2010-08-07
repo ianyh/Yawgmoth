@@ -113,7 +113,6 @@
 		card = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
         
         card.convertedManaCost = [NSNumber numberWithInt:[resultSet intForColumn:@"converted_mana"]];
-        card.imageUrl = [resultSet stringForColumn:@"image_url"];
         card.manaCost = [resultSet stringForColumn:@"mana"];
         card.name = [resultSet stringForColumn:@"name"];
         card.rarity = [resultSet stringForColumn:@"rarity"];
