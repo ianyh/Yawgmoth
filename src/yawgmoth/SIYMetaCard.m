@@ -7,8 +7,21 @@
 @dynamic cards;
 @dynamic deck;
 
+- (void)awakeFromFetch
+{
+    NSSet *cardSet = [self cards];
+    NSEnumerator *enumerator = [cardSet objectEnumerator];
+    NSManagedObject *card;
+    while ((card = [enumerator nextObject]) != nil) {
+        [card addObserver:self forKeyPath:@"quantity" options:0 context:nil];
+    }
+    
+    [super awakeFromFetch];
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
+    NSLog(@"observed value change");
     if ([keyPath isEqualToString:@"quantity"]) {
         [self updateQuantity];
     } else {

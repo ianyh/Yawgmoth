@@ -8,8 +8,9 @@
 @property (nonatomic, retain) NSManagedObject * deck;
 
 - (void)addCardsObject:(NSManagedObject *)value;
-//- (void)removeCardsObject:(NSManagedObject *)value;
+- (void)removeCardsObject:(NSManagedObject *)value;
 - (void)addCards:(NSSet *)value;
-//- (void)removeCards:(NSSet *)value;
+- (void)removeCards:(NSSet *)value;
+- (void)updateQuantity;
 
 @end

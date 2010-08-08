@@ -1,5 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #import "SIYCardImageManager.h"
+#import "SIYMetaCard.h"
 
 
 @interface SIYController : NSObject {
@@ -64,7 +65,6 @@
 - (NSManagedObject *)managedObjectWithName:(NSString *)name inEntityWithName:(NSString *)entityName;
 - (NSManagedObject *)managedCardWithName:(NSString *)name inDeck:(NSManagedObject *)deck;
 - (NSManagedObject *)managedDeckWithName:(NSString *)name;
-- (NSManagedObject *)managedLibraryCardWithName:(NSString *)name;
 - (NSManagedObject *)managedTempCardWithName:(NSString *)name;
 - (IBAction)moveToDeck:(id)sender;
 - (IBAction)moveToLibrary:(id)sender;
@@ -77,8 +77,8 @@
 - (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
 - (void)updateLibraryAddAltImageWithCard:(NSManagedObject *)card;
 
-- (NSManagedObject *)metaCardWithCardName:(NSString *)cardName inDeck:(NSManagedObject *)deck;
-- (NSManagedObject *)insertMetaCardFromCard:(NSManagedObject *)card;
+- (SIYMetaCard *)metaCardWithCardName:(NSString *)cardName inDeck:(NSManagedObject *)deck;
+- (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card;
 - (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inCollection:(NSSet *)collection;
 - (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card;
 - (NSManagedObject *)managedObjectWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName;

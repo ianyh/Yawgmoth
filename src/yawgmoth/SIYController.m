@@ -37,7 +37,7 @@
 	NSArray *array = [[tempCardsController arrangedObjects] copy];
 	NSManagedObject *tempCard;
 	NSManagedObject *libraryCard;
-    NSManagedObject *metaCard;
+    SIYMetaCard *metaCard;
 	int i;
 	
 	for (i = 0; i < [array count]; i++) {
@@ -46,15 +46,13 @@
         if (metaCard == nil) {
             metaCard = [self insertMetaCardFromCard:tempCard];
             libraryCard = [self insertCollectionCardFromCard:tempCard];
-            [metaCard addCardsObject:libraryCard];            
-            libraryCard.set = tempCard.set;
+            [metaCard addCardsObject:libraryCard];
             libraryCard.quantity = tempCard.quantity;
         } else {
             libraryCard = [self collectionCardWithCardName:tempCard.name withSet:tempCard.set inCollection:metaCard.cards];
             if (libraryCard == nil) {
                 libraryCard = [self insertCollectionCardFromCard:tempCard];
-                [metaCard addCardsObject:libraryCard];                
-                libraryCard.set = tempCard.set;
+                [metaCard addCardsObject:libraryCard];
                 libraryCard.quantity = tempCard.quantity;
             } else {
                 libraryCard.quantity = [NSNumber numberWithInt:[libraryCard.quantity intValue]+[tempCard.quantity intValue]];
@@ -199,8 +197,8 @@
 	
 	NSEnumerator *deckEnumerator = [deck.cards objectEnumerator];
     NSEnumerator *metaCardEnumerator;
-	NSManagedObject *deckMetaCard;    
-    NSManagedObject *libraryMetaCard;
+	SIYMetaCard *deckMetaCard;    
+    SIYMetaCard *libraryMetaCard;
     NSManagedObject *deckCollectionCard;
     NSManagedObject *libraryCollectionCard;
 
@@ -212,7 +210,6 @@
             if (libraryCollectionCard == nil) {
                 libraryCollectionCard = [self insertCollectionCardFromCard:deckCollectionCard];
                 [libraryMetaCard addCardsObject:libraryCollectionCard];
-                libraryCollectionCard.set = deckCollectionCard.set;
             }
             libraryCollectionCard.quantity = [NSNumber numberWithInt:[libraryCollectionCard.quantity intValue]+[deckCollectionCard.quantity intValue]];
             
@@ -318,8 +315,8 @@
 		return;
 	}
 	NSArray *array = [[libraryController selectedObjects] copy];
-    NSManagedObject *libraryMetaCard;
-    NSManagedObject *deckMetaCard;
+    SIYMetaCard *libraryMetaCard;
+    SIYMetaCard *deckMetaCard;
     NSManagedObject *libraryCollectionCard;
     NSManagedObject *deckCollectionCard;
 	int i;
@@ -337,8 +334,9 @@
         if (deckCollectionCard == nil) {
             deckCollectionCard = [self insertCollectionCardFromCard:libraryCollectionCard];
             [deckMetaCard addCardsObject:deckCollectionCard];
-            deckCollectionCard.set = libraryCollectionCard.set;
+            [[self managedObjectContext] refreshObject:deckMetaCard mergeChanges:YES];
         }
+        
         deckCollectionCard.quantity = [NSNumber numberWithInt:[deckCollectionCard.quantity intValue]+1];
         libraryCollectionCard.quantity = [NSNumber numberWithInt:[libraryCollectionCard.quantity intValue]-1];
         
@@ -354,9 +352,9 @@
 - (IBAction)moveToLibrary:(id)sender
 {
 	NSArray *array = [[deckCardsController selectedObjects] copy];
-    NSManagedObject *deckMetaCard;
+    SIYMetaCard *deckMetaCard;
     NSManagedObject *deckCollectionCard;
-    NSManagedObject *libraryMetaCard;
+    SIYMetaCard *libraryMetaCard;
     NSManagedObject *libraryCollectionCard;
 	int i;
 	
@@ -364,21 +362,20 @@
         deckMetaCard = [array objectAtIndex:i];
         libraryMetaCard = [self metaCardWithCardName:deckMetaCard.name inDeck:nil];
         
-        NSSet *cards = deckMetaCard.cards;
         deckCollectionCard = [deckMetaCard.cards anyObject];
         libraryCollectionCard = [self collectionCardWithCardName:deckCollectionCard.name withSet:deckCollectionCard.set inCollection:libraryMetaCard.cards];
         if (libraryCollectionCard == nil) {
             libraryCollectionCard = [self insertCollectionCardFromCard:deckCollectionCard];
             [libraryMetaCard addCardsObject:libraryCollectionCard];
+            [[self managedObjectContext] refreshObject:libraryMetaCard mergeChanges:YES];
         }
         
         libraryCollectionCard.quantity = [NSNumber numberWithInt:[libraryCollectionCard.quantity intValue]+1];
         deckCollectionCard.quantity = [NSNumber numberWithInt:[deckCollectionCard.quantity intValue]-1];
+        
         if ([deckCollectionCard.quantity intValue] == 0) {
             [[self managedObjectContext] deleteObject:deckCollectionCard];
         }
-        
-        [self save];
         
         if ([deckMetaCard.cards count] == 0) {
             [[self managedObjectContext] deleteObject:deckMetaCard];
@@ -534,15 +531,15 @@
 }
 
 
-- (NSManagedObject *)metaCardWithCardName:(NSString *)cardName inDeck:(NSManagedObject *)deck
+- (SIYMetaCard *)metaCardWithCardName:(NSString *)cardName inDeck:(NSManagedObject *)deck
 {
-    return [self managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@) AND (deck == %@)", cardName, deck] 
+    return (SIYMetaCard *)[self managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@) AND (deck == %@)", cardName, deck] 
                            inEntityWithName:@"MetaCard"];
 }
 
-- (NSManagedObject *)insertMetaCardFromCard:(NSManagedObject *)card
+- (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card
 {
-    NSManagedObject *metaCard = [NSEntityDescription insertNewObjectForEntityForName:@"MetaCard" inManagedObjectContext:[self managedObjectContext]];
+    SIYMetaCard *metaCard = [NSEntityDescription insertNewObjectForEntityForName:@"MetaCard" inManagedObjectContext:[self managedObjectContext]];
     [self copyCard:card toCard:metaCard];
     return metaCard;
 }

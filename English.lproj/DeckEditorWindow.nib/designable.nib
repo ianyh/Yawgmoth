@@ -11,9 +11,9 @@
 			<string key="NS.object.0">788</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="212"/>
+			<integer value="192"/>
 			<integer value="116"/>
-			<integer value="462"/>
+			<integer value="266"/>
 			<integer value="650"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -723,7 +723,7 @@
 									<string key="NSResourceName">NSAddTemplate</string>
 								</object>
 								<string key="NSAlternateContents"/>
-								<string key="NSKeyEquivalent"/>
+								<string type="base64-UTF8" key="NSKeyEquivalent">DQ</string>
 								<int key="NSPeriodicDelay">400</int>
 								<int key="NSPeriodicInterval">75</int>
 							</object>
@@ -747,7 +747,7 @@
 									<string key="NSResourceName">NSRemoveTemplate</string>
 								</object>
 								<string key="NSAlternateContents"/>
-								<string key="NSKeyEquivalent"/>
+								<string key="NSKeyEquivalent"></string>
 								<int key="NSPeriodicDelay">400</int>
 								<int key="NSPeriodicInterval">75</int>
 							</object>
@@ -2750,7 +2750,7 @@
 								<object class="NSKeyPathExpression" key="NSLeftExpression">
 									<int key="NSExpressionType">3</int>
 									<string key="NSSelectorName">valueForKey:</string>
-									<object class="NSSelfExpression" key="NSOperand" id="697412660">
+									<object class="NSSelfExpression" key="NSOperand" id="284722954">
 										<int key="NSExpressionType">1</int>
 									</object>
 									<array class="NSMutableArray" key="NSArguments">
@@ -2775,7 +2775,7 @@
 								<object class="NSKeyPathExpression" key="NSLeftExpression">
 									<int key="NSExpressionType">3</int>
 									<string key="NSSelectorName">valueForKey:</string>
-									<reference key="NSOperand" ref="697412660"/>
+									<reference key="NSOperand" ref="284722954"/>
 									<array class="NSMutableArray" key="NSArguments">
 										<object class="NSKeyPathSpecifierExpression">
 											<int key="NSExpressionType">10</int>
@@ -4197,7 +4197,7 @@
 						<string key="label">predicate2: filterPredicate</string>
 						<reference key="source" ref="492065915"/>
 						<reference key="destination" ref="361697186"/>
-						<object class="NSNibBindingConnector" key="connector" id="95127197">
+						<object class="NSNibBindingConnector" key="connector" id="269585496">
 							<reference key="NSSource" ref="492065915"/>
 							<reference key="NSDestination" ref="361697186"/>
 							<string key="NSLabel">predicate2: filterPredicate</string>
@@ -4218,7 +4218,7 @@
 						<string key="label">predicate3: filterPredicate</string>
 						<reference key="source" ref="492065915"/>
 						<reference key="destination" ref="361697186"/>
-						<object class="NSNibBindingConnector" key="connector" id="700824811">
+						<object class="NSNibBindingConnector" key="connector" id="379849151">
 							<reference key="NSSource" ref="492065915"/>
 							<reference key="NSDestination" ref="361697186"/>
 							<string key="NSLabel">predicate3: filterPredicate</string>
@@ -4228,7 +4228,7 @@
 								<string key="NSDisplayName">Super Type</string>
 								<string key="NSPredicateFormat">superType contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="95127197"/>
+							<reference key="NSPreviousConnector" ref="269585496"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -4239,7 +4239,7 @@
 						<string key="label">predicate4: filterPredicate</string>
 						<reference key="source" ref="492065915"/>
 						<reference key="destination" ref="361697186"/>
-						<object class="NSNibBindingConnector" key="connector" id="867707929">
+						<object class="NSNibBindingConnector" key="connector" id="335186588">
 							<reference key="NSSource" ref="492065915"/>
 							<reference key="NSDestination" ref="361697186"/>
 							<string key="NSLabel">predicate4: filterPredicate</string>
@@ -4249,7 +4249,7 @@
 								<string key="NSDisplayName">Rarity</string>
 								<string key="NSPredicateFormat">rarity contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="700824811"/>
+							<reference key="NSPreviousConnector" ref="379849151"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -4260,7 +4260,7 @@
 						<string key="label">predicate5: filterPredicate</string>
 						<reference key="source" ref="492065915"/>
 						<reference key="destination" ref="361697186"/>
-						<object class="NSNibBindingConnector" key="connector" id="351719524">
+						<object class="NSNibBindingConnector" key="connector" id="63549602">
 							<reference key="NSSource" ref="492065915"/>
 							<reference key="NSDestination" ref="361697186"/>
 							<string key="NSLabel">predicate5: filterPredicate</string>
@@ -4270,7 +4270,7 @@
 								<string key="NSDisplayName">Power</string>
 								<string key="NSPredicateFormat">power.description contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="867707929"/>
+							<reference key="NSPreviousConnector" ref="335186588"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -4281,7 +4281,7 @@
 						<string key="label">predicate6: filterPredicate</string>
 						<reference key="source" ref="492065915"/>
 						<reference key="destination" ref="361697186"/>
-						<object class="NSNibBindingConnector" key="connector" id="609921321">
+						<object class="NSNibBindingConnector" key="connector" id="731565678">
 							<reference key="NSSource" ref="492065915"/>
 							<reference key="NSDestination" ref="361697186"/>
 							<string key="NSLabel">predicate6: filterPredicate</string>
@@ -4291,7 +4291,7 @@
 								<string key="NSDisplayName">Text</string>
 								<string key="NSPredicateFormat">text contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="351719524"/>
+							<reference key="NSPreviousConnector" ref="63549602"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -4302,7 +4302,7 @@
 						<string key="label">predicate7: filterPredicate</string>
 						<reference key="source" ref="492065915"/>
 						<reference key="destination" ref="361697186"/>
-						<object class="NSNibBindingConnector" key="connector" id="1066463867">
+						<object class="NSNibBindingConnector" key="connector" id="945104911">
 							<reference key="NSSource" ref="492065915"/>
 							<reference key="NSDestination" ref="361697186"/>
 							<string key="NSLabel">predicate7: filterPredicate</string>
@@ -4312,7 +4312,7 @@
 								<string key="NSDisplayName">Type</string>
 								<string key="NSPredicateFormat">type contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="609921321"/>
+							<reference key="NSPreviousConnector" ref="731565678"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -4323,7 +4323,7 @@
 						<string key="label">predicate8: filterPredicate</string>
 						<reference key="source" ref="492065915"/>
 						<reference key="destination" ref="361697186"/>
-						<object class="NSNibBindingConnector" key="connector" id="704102577">
+						<object class="NSNibBindingConnector" key="connector" id="56271644">
 							<reference key="NSSource" ref="492065915"/>
 							<reference key="NSDestination" ref="361697186"/>
 							<string key="NSLabel">predicate8: filterPredicate</string>
@@ -4333,7 +4333,7 @@
 								<string key="NSDisplayName">Toughness</string>
 								<string key="NSPredicateFormat">toughness.description contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="1066463867"/>
+							<reference key="NSPreviousConnector" ref="945104911"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -4354,7 +4354,7 @@
 								<string key="NSDisplayName">Name</string>
 								<string key="NSPredicateFormat">name contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="704102577"/>
+							<reference key="NSPreviousConnector" ref="56271644"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -4634,7 +4634,6 @@
 							<reference ref="990221670"/>
 							<reference ref="522857437"/>
 							<reference ref="961258661"/>
-							<reference ref="436608706"/>
 							<reference ref="527269320"/>
 							<reference ref="682791390"/>
 							<reference ref="568002353"/>
@@ -4643,6 +4642,7 @@
 							<reference ref="570782467"/>
 							<reference ref="503393823"/>
 							<reference ref="494444816"/>
+							<reference ref="436608706"/>
 						</array>
 						<reference key="parent" ref="88537734"/>
 					</object>
@@ -4667,14 +4667,6 @@
 						<reference key="object" ref="639797843"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="178316192"/>
-						</array>
-						<reference key="parent" ref="421791908"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">196</int>
-						<reference key="object" ref="436608706"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="205024608"/>
 						</array>
 						<reference key="parent" ref="421791908"/>
 					</object>
@@ -4815,11 +4807,6 @@
 						<int key="objectID">218</int>
 						<reference key="object" ref="834420804"/>
 						<reference key="parent" ref="961258661"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">219</int>
-						<reference key="object" ref="205024608"/>
-						<reference key="parent" ref="436608706"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">220</int>
@@ -5762,6 +5749,19 @@
 						<int key="objectID">957</int>
 						<reference key="object" ref="604593409"/>
 						<reference key="parent" ref="503393823"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">196</int>
+						<reference key="object" ref="436608706"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="205024608"/>
+						</array>
+						<reference key="parent" ref="421791908"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">219</int>
+						<reference key="object" ref="205024608"/>
+						<reference key="parent" ref="436608706"/>
 					</object>
 				</array>
 			</object>
