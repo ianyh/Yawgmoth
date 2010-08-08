@@ -329,12 +329,15 @@
         deckMetaCard = [self metaCardWithCardName:libraryMetaCard.name inDeck:deck];
         if (deckMetaCard == nil) {
             deckMetaCard = [self insertMetaCardFromCard:libraryMetaCard];
+            [deck addMetaCardsObject:deckMetaCard];
         }
         
         libraryCollectionCard = [libraryMetaCard.cards anyObject];
         deckCollectionCard = [self collectionCardWithCardName:libraryCollectionCard.name withSet:libraryCollectionCard.set inCollection:deckMetaCard.cards];
         if (deckCollectionCard == nil) {
             deckCollectionCard = [self insertCollectionCardFromCard:libraryCollectionCard];
+            [deckMetaCard addCardsObject:deckCollectionCard];
+            deckCollectionCard.set = libraryCollectionCard.set;
         }
         deckCollectionCard.quantity = [NSNumber numberWithInt:[deckCollectionCard.quantity intValue]+1];
         libraryCollectionCard.quantity = [NSNumber numberWithInt:[libraryCollectionCard.quantity intValue]-1];
@@ -361,6 +364,7 @@
         deckMetaCard = [array objectAtIndex:i];
         libraryMetaCard = [self metaCardWithCardName:deckMetaCard.name inDeck:nil];
         
+        NSSet *cards = deckMetaCard.cards;
         deckCollectionCard = [deckMetaCard.cards anyObject];
         libraryCollectionCard = [self collectionCardWithCardName:deckCollectionCard.name withSet:deckCollectionCard.set inCollection:libraryMetaCard.cards];
         if (libraryCollectionCard == nil) {
@@ -374,9 +378,13 @@
             [[self managedObjectContext] deleteObject:deckCollectionCard];
         }
         
+        [self save];
+        
         if ([deckMetaCard.cards count] == 0) {
             [[self managedObjectContext] deleteObject:deckMetaCard];
         }
+        
+        [self save];
 	}
 	
 	[self save];

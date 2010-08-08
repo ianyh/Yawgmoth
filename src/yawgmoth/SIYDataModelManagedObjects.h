@@ -34,11 +34,11 @@
 @interface NSManagedObject (Deck)
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet* cards;
-- (void)addCardsObject:(NSManagedObject *)value;
-- (void)removeCardsObject:(NSManagedObject *)value;
-- (void)addCards:(NSSet *)value;
-- (void)removeCards:(NSSet *)value;
+@property (nonatomic, retain) NSSet* metaCards;
+- (void)addMetaCardsObject:(NSManagedObject *)value;
+- (void)removeMetaCardsObject:(NSManagedObject *)value;
+- (void)addMetaCards:(NSSet *)value;
+- (void)removeMetaCards:(NSSet *)value;
 
 @end
 

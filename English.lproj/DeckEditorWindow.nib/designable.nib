@@ -13,7 +13,7 @@
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<integer value="212"/>
 			<integer value="116"/>
-			<integer value="682"/>
+			<integer value="462"/>
 			<integer value="650"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -2744,30 +2744,58 @@
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy">
 					<string key="NSEntityName">MetaCard</string>
-					<object class="NSComparisonPredicate" key="NSFetchPredicate">
-						<object class="NSKeyPathExpression" key="NSLeftExpression">
-							<int key="NSExpressionType">3</int>
-							<string key="NSSelectorName">valueForKey:</string>
-							<object class="NSSelfExpression" key="NSOperand">
-								<int key="NSExpressionType">1</int>
-							</object>
-							<array class="NSMutableArray" key="NSArguments">
-								<object class="NSKeyPathSpecifierExpression">
-									<int key="NSExpressionType">10</int>
-									<string key="NSKeyPath">quantity</string>
+					<object class="NSCompoundPredicate" key="NSFetchPredicate">
+						<array key="NSSubpredicates">
+							<object class="NSComparisonPredicate">
+								<object class="NSKeyPathExpression" key="NSLeftExpression">
+									<int key="NSExpressionType">3</int>
+									<string key="NSSelectorName">valueForKey:</string>
+									<object class="NSSelfExpression" key="NSOperand" id="697412660">
+										<int key="NSExpressionType">1</int>
+									</object>
+									<array class="NSMutableArray" key="NSArguments">
+										<object class="NSKeyPathSpecifierExpression">
+											<int key="NSExpressionType">10</int>
+											<string key="NSKeyPath">quantity</string>
+										</object>
+									</array>
 								</object>
-							</array>
-						</object>
-						<object class="NSConstantValueExpression" key="NSRightExpression">
-							<int key="NSExpressionType">0</int>
-							<integer value="0" key="NSConstantValue"/>
-						</object>
-						<object class="NSComparisonPredicateOperator" key="NSPredicateOperator">
-							<int key="NSOperatorType">2</int>
-							<int key="NSModifier">0</int>
-							<int key="NSVariant">2</int>
-							<int key="NSOptions">0</int>
-						</object>
+								<object class="NSConstantValueExpression" key="NSRightExpression">
+									<int key="NSExpressionType">0</int>
+									<integer value="0" key="NSConstantValue"/>
+								</object>
+								<object class="NSComparisonPredicateOperator" key="NSPredicateOperator">
+									<int key="NSOperatorType">2</int>
+									<int key="NSModifier">0</int>
+									<int key="NSVariant">2</int>
+									<int key="NSOptions">0</int>
+								</object>
+							</object>
+							<object class="NSComparisonPredicate">
+								<object class="NSKeyPathExpression" key="NSLeftExpression">
+									<int key="NSExpressionType">3</int>
+									<string key="NSSelectorName">valueForKey:</string>
+									<reference key="NSOperand" ref="697412660"/>
+									<array class="NSMutableArray" key="NSArguments">
+										<object class="NSKeyPathSpecifierExpression">
+											<int key="NSExpressionType">10</int>
+											<string key="NSKeyPath">deck</string>
+										</object>
+									</array>
+								</object>
+								<object class="NSConstantValueExpression" key="NSRightExpression">
+									<int key="NSExpressionType">0</int>
+									<nil key="NSConstantValueClassName"/>
+								</object>
+								<object class="NSEqualityPredicateOperator" key="NSPredicateOperator">
+									<int key="NSOperatorType">4</int>
+									<int key="NSModifier">0</int>
+									<bool key="NSNegate">NO</bool>
+									<int key="NSOptions">0</int>
+								</object>
+							</object>
+						</array>
+						<int key="NSCompoundPredicateType">1</int>
 					</object>
 				</object>
 				<bool key="_NSIsUsingManagedProxy">YES</bool>
@@ -2806,16 +2834,17 @@
 				<array class="NSMutableArray" key="NSDeclaredKeys">
 					<string>name</string>
 					<string>cards</string>
+					<string>metaCards</string>
 				</array>
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy">
 					<string key="NSEntityName">Deck</string>
 				</object>
 				<bool key="_NSIsUsingManagedProxy">YES</bool>
+				<bool key="NSPreservesSelection">YES</bool>
 				<bool key="NSSelectsInsertedObjects">YES</bool>
 				<bool key="NSFilterRestrictsInsertion">YES</bool>
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
-				<bool key="NSAutomaticallyRearrangesObjects">YES</bool>
 			</object>
 			<object class="NSArrayController" id="981681964">
 				<array class="NSMutableArray" key="NSDeclaredKeys">
@@ -3798,26 +3827,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">contentSet: selection.cards</string>
-						<reference key="source" ref="947128634"/>
-						<reference key="destination" ref="179588920"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="947128634"/>
-							<reference key="NSDestination" ref="179588920"/>
-							<string key="NSLabel">contentSet: selection.cards</string>
-							<string key="NSBinding">contentSet</string>
-							<string key="NSKeyPath">selection.cards</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSConditionallySetsEditable</string>
-								<boolean value="NO" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">822</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">selectedIndex: selectionIndex</string>
 						<reference key="source" ref="1020884061"/>
 						<reference key="destination" ref="179588920"/>
@@ -4188,7 +4197,7 @@
 						<string key="label">predicate2: filterPredicate</string>
 						<reference key="source" ref="492065915"/>
 						<reference key="destination" ref="361697186"/>
-						<object class="NSNibBindingConnector" key="connector" id="148586074">
+						<object class="NSNibBindingConnector" key="connector" id="95127197">
 							<reference key="NSSource" ref="492065915"/>
 							<reference key="NSDestination" ref="361697186"/>
 							<string key="NSLabel">predicate2: filterPredicate</string>
@@ -4209,7 +4218,7 @@
 						<string key="label">predicate3: filterPredicate</string>
 						<reference key="source" ref="492065915"/>
 						<reference key="destination" ref="361697186"/>
-						<object class="NSNibBindingConnector" key="connector" id="661006281">
+						<object class="NSNibBindingConnector" key="connector" id="700824811">
 							<reference key="NSSource" ref="492065915"/>
 							<reference key="NSDestination" ref="361697186"/>
 							<string key="NSLabel">predicate3: filterPredicate</string>
@@ -4219,7 +4228,7 @@
 								<string key="NSDisplayName">Super Type</string>
 								<string key="NSPredicateFormat">superType contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="148586074"/>
+							<reference key="NSPreviousConnector" ref="95127197"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -4230,7 +4239,7 @@
 						<string key="label">predicate4: filterPredicate</string>
 						<reference key="source" ref="492065915"/>
 						<reference key="destination" ref="361697186"/>
-						<object class="NSNibBindingConnector" key="connector" id="190462493">
+						<object class="NSNibBindingConnector" key="connector" id="867707929">
 							<reference key="NSSource" ref="492065915"/>
 							<reference key="NSDestination" ref="361697186"/>
 							<string key="NSLabel">predicate4: filterPredicate</string>
@@ -4240,7 +4249,7 @@
 								<string key="NSDisplayName">Rarity</string>
 								<string key="NSPredicateFormat">rarity contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="661006281"/>
+							<reference key="NSPreviousConnector" ref="700824811"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -4251,7 +4260,7 @@
 						<string key="label">predicate5: filterPredicate</string>
 						<reference key="source" ref="492065915"/>
 						<reference key="destination" ref="361697186"/>
-						<object class="NSNibBindingConnector" key="connector" id="824878325">
+						<object class="NSNibBindingConnector" key="connector" id="351719524">
 							<reference key="NSSource" ref="492065915"/>
 							<reference key="NSDestination" ref="361697186"/>
 							<string key="NSLabel">predicate5: filterPredicate</string>
@@ -4261,7 +4270,7 @@
 								<string key="NSDisplayName">Power</string>
 								<string key="NSPredicateFormat">power.description contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="190462493"/>
+							<reference key="NSPreviousConnector" ref="867707929"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -4272,7 +4281,7 @@
 						<string key="label">predicate6: filterPredicate</string>
 						<reference key="source" ref="492065915"/>
 						<reference key="destination" ref="361697186"/>
-						<object class="NSNibBindingConnector" key="connector" id="512381074">
+						<object class="NSNibBindingConnector" key="connector" id="609921321">
 							<reference key="NSSource" ref="492065915"/>
 							<reference key="NSDestination" ref="361697186"/>
 							<string key="NSLabel">predicate6: filterPredicate</string>
@@ -4282,7 +4291,7 @@
 								<string key="NSDisplayName">Text</string>
 								<string key="NSPredicateFormat">text contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="824878325"/>
+							<reference key="NSPreviousConnector" ref="351719524"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -4293,7 +4302,7 @@
 						<string key="label">predicate7: filterPredicate</string>
 						<reference key="source" ref="492065915"/>
 						<reference key="destination" ref="361697186"/>
-						<object class="NSNibBindingConnector" key="connector" id="1046385850">
+						<object class="NSNibBindingConnector" key="connector" id="1066463867">
 							<reference key="NSSource" ref="492065915"/>
 							<reference key="NSDestination" ref="361697186"/>
 							<string key="NSLabel">predicate7: filterPredicate</string>
@@ -4303,7 +4312,7 @@
 								<string key="NSDisplayName">Type</string>
 								<string key="NSPredicateFormat">type contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="512381074"/>
+							<reference key="NSPreviousConnector" ref="609921321"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -4314,7 +4323,7 @@
 						<string key="label">predicate8: filterPredicate</string>
 						<reference key="source" ref="492065915"/>
 						<reference key="destination" ref="361697186"/>
-						<object class="NSNibBindingConnector" key="connector" id="597320575">
+						<object class="NSNibBindingConnector" key="connector" id="704102577">
 							<reference key="NSSource" ref="492065915"/>
 							<reference key="NSDestination" ref="361697186"/>
 							<string key="NSLabel">predicate8: filterPredicate</string>
@@ -4324,7 +4333,7 @@
 								<string key="NSDisplayName">Toughness</string>
 								<string key="NSPredicateFormat">toughness.description contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="1046385850"/>
+							<reference key="NSPreviousConnector" ref="1066463867"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -4345,7 +4354,7 @@
 								<string key="NSDisplayName">Name</string>
 								<string key="NSPredicateFormat">name contains[c] $value</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="597320575"/>
+							<reference key="NSPreviousConnector" ref="704102577"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -4371,6 +4380,26 @@
 						</object>
 					</object>
 					<int key="connectionID">1022</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">contentSet: selection.metaCards</string>
+						<reference key="source" ref="947128634"/>
+						<reference key="destination" ref="179588920"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="947128634"/>
+							<reference key="NSDestination" ref="179588920"/>
+							<string key="NSLabel">contentSet: selection.metaCards</string>
+							<string key="NSBinding">contentSet</string>
+							<string key="NSKeyPath">selection.metaCards</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSConditionallySetsEditable</string>
+								<boolean value="NO" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1023</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -5989,7 +6018,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1022</int>
+			<int key="maxID">1023</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
