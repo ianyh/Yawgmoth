@@ -21,7 +21,6 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    NSLog(@"observed value change");
     if ([keyPath isEqualToString:@"quantity"]) {
         [self updateQuantity];
     } else {
