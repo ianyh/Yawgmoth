@@ -499,7 +499,11 @@
 - (void)updateLibraryAddAltImageWithCard:(NSManagedObject *)card
 {
 	[libraryAddingNameTextField setStringValue:card.name];
-	[libraryAddingCostTextField setStringValue:card.manaCost];
+    if (card.manaCost == nil) {
+        [libraryAddingCostTextField setStringValue:@""];
+    } else {
+        [libraryAddingCostTextField setStringValue:card.manaCost];
+    }
 	[libraryAddingTypeTextField setStringValue:card.type];
     if (card.rarity == nil) {
         [libraryAddingRarityTextField setStringValue:@""];
@@ -521,7 +525,11 @@
 - (void)updateDeckEditingAltImageWithCard:(NSManagedObject *)card
 {
 	[deckEditingNameTextField setStringValue:card.name];
-	[deckEditingCostTextField setStringValue:card.manaCost];
+    if (card.manaCost == nil) {
+        [deckEditingCostTextField setStringValue:@""];
+    } else {
+        [deckEditingCostTextField setStringValue:card.manaCost];
+    }
 	[deckEditingTypeTextField setStringValue:card.type];
     if (card.rarity == nil) {
         [deckEditingRarityTextField setStringValue:@""];
