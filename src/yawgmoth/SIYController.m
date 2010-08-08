@@ -501,13 +501,21 @@
 	[libraryAddingNameTextField setStringValue:card.name];
 	[libraryAddingCostTextField setStringValue:card.manaCost];
 	[libraryAddingTypeTextField setStringValue:card.type];
-	[libraryAddingRarityTextField setStringValue:card.rarity];
+    if (card.rarity == nil) {
+        [libraryAddingRarityTextField setStringValue:@""];
+    } else {
+        [libraryAddingRarityTextField setStringValue:card.rarity];
+    }
 	if ([card.superType isEqualToString:@"Artifact Creature"] || [card.superType isEqualToString:@"Creature"]) {
 		[libraryAddingPTTextField setStringValue:[NSString stringWithFormat:@"%@/%@", card.power, card.toughness]];
 	} else {
 		[libraryAddingPTTextField setStringValue:@""];
 	}
-	[[libraryAddingTextScrollView documentView] setString:card.text];
+    if (card.text == nil) {
+        [[libraryAddingTextScrollView documentView] setString:@""];
+    } else {
+        [[libraryAddingTextScrollView documentView] setString:card.text];
+    }
 }
 
 - (void)updateDeckEditingAltImageWithCard:(NSManagedObject *)card
@@ -515,7 +523,11 @@
 	[deckEditingNameTextField setStringValue:card.name];
 	[deckEditingCostTextField setStringValue:card.manaCost];
 	[deckEditingTypeTextField setStringValue:card.type];
-	[deckEditingRarityTextField setStringValue:card.rarity];
+    if (card.rarity == nil) {
+        [deckEditingRarityTextField setStringValue:@""];
+    } else {
+        [deckEditingRarityTextField setStringValue:card.rarity];
+    }
 	if ([card.superType isEqualToString:@"Artifact Creature"] || [card.superType isEqualToString:@"Creature"]) {
 		[deckEditingPTTextField setStringValue:[NSString stringWithFormat:@"%@/%@", card.power, card.toughness]];
 	} else {
