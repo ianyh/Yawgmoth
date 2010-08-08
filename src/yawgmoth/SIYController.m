@@ -521,7 +521,11 @@
 	} else {
 		[deckEditingPTTextField setStringValue:@""];
 	}
-	[[deckEditingTextScrollView documentView] setString:card.text];
+    if (card.text == nil) {
+        [[deckEditingTextScrollView documentView] setString:@""];
+    } else {
+        [[deckEditingTextScrollView documentView] setString:card.text];
+    }
 }
 
 - (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName

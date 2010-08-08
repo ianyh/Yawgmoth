@@ -121,7 +121,7 @@
 
 - (NSManagedObject *)managedFullCardWithName:(NSString *)cardName withSet:(NSString *)cardSet
 {
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"FullCard" inManagedObjectContext:[self managedObjectContext]];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:entityDescription];
     
@@ -254,7 +254,7 @@
             NSArray *row = [setRows objectAtIndex:j];
             NSManagedObject *card = [self managedFullCardWithName:[row objectAtIndex:0] withSet:setName];
             if (card == nil) {
-                card = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
+                card = [NSEntityDescription insertNewObjectForEntityForName:@"FullCard" inManagedObjectContext:[self managedObjectContext]];
                 
                 card.name = [row objectAtIndex:0];
                 card.manaCost = [row objectAtIndex:1];

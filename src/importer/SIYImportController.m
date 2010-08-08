@@ -110,7 +110,7 @@
 	int i = 0;
 	
     while ([resultSet next]) {
-		card = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
+		card = [NSEntityDescription insertNewObjectForEntityForName:@"FullCard" inManagedObjectContext:[self managedObjectContext]];
         
         card.convertedManaCost = [NSNumber numberWithInt:[resultSet intForColumn:@"converted_mana"]];
         card.manaCost = [resultSet stringForColumn:@"mana"];
