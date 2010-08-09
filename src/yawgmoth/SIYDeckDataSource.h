@@ -19,6 +19,8 @@
 @interface SIYDeckDataSource : NSObject {
 	NSManagedObject *deck;
 	
+	IBOutlet NSArrayController *deckArrayController;
+	
 	NSMutableDictionary *colorToCount;
 	NSMutableDictionary *typeToCount;
 	NSMutableDictionary *costToCount;
@@ -27,6 +29,9 @@
 	IBOutlet SMPieChartView *typePieChart;
 	IBOutlet SM2DGraphView *manaCurveGraph;
 }
+
+- (void)reloadData;
+- (NSColor *)colorFromString:(NSString *)colorString;
 
 // 2d graph data source methods
 - (unsigned int)numberOfLinesInTwoDGraphView:(SM2DGraphView *)inGraphView;
