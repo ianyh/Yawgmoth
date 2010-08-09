@@ -11,7 +11,6 @@
 #import <SM2DGraphView/SMPieChartView.h>
 
 // data to index:
-//  distribution of colors
 //  distribution of land mana
 //  distribution of converted costs
 //  distribution of types

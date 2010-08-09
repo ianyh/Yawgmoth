@@ -14,6 +14,7 @@
 - (void)awakeFromNib
 {
 	colorToCount = [[NSMutableDictionary dictionary] retain];
+	typeToCount = [[NSMutableDictionary dictionary] retain];
 	
 	[deckArrayController addObserver:self forKeyPath:@"selectedObjects" options:0 context:nil];
 }
@@ -56,6 +57,9 @@
 	[colorToCount release];
 	colorToCount = [[NSMutableDictionary dictionary] retain];
 	
+	[typeToCount release];
+	typeToCount = [[NSMutableDictionary dictionary] retain];
+	
 	NSArray *colorArray = [NSArray arrayWithObjects:@"G", @"R", @"B", @"U", @"W", nil];
 	NSSet *cards = deck.metaCards;
 	NSEnumerator *enumerator = [cards objectEnumerator];
@@ -86,10 +90,21 @@
 				[colorToCount setObject:[NSNumber numberWithInt:[colorCount intValue]+1] forKey:@"Colorless"];
 			}
 		}
+		
+		NSString *superType = card.superType;
+		NSNumber *typeCount = [typeToCount objectForKey:superType];
+		if (typeCount == nil) {
+			[typeToCount setObject:[NSNumber numberWithInt:1] forKey:superType];
+		} else {
+			[typeToCount setObject:[NSNumber numberWithInt:[typeCount intValue]+1] forKey:superType];
+		}
 	}
 	
 	[colorPieChart reloadData];
 	[colorPieChart reloadAttributes];
+	
+	[typePieChart reloadData];
+	[typePieChart reloadAttributes];
 }
 
 // 2d graph data source methods
@@ -130,25 +145,41 @@
 
 - (unsigned int)numberOfSlicesInPieChartView:(SMPieChartView *)inPieChartView
 {
-	return [colorToCount count];
+	if (inPieChartView == colorPieChart) {
+		return [colorToCount count];
+	} else {
+		return [typeToCount count];
+	}
 }
 
 - (double)pieChartView:(SMPieChartView *)inPieChartView dataForSliceIndex:(unsigned int)inSliceIndex
 {
-	return [[[colorToCount allValues] objectAtIndex:inSliceIndex] intValue];
+	if (inPieChartView == colorPieChart) {
+		return [[[colorToCount allValues] objectAtIndex:inSliceIndex] intValue];
+	} else {
+		return [[[typeToCount allValues] objectAtIndex:inSliceIndex] intValue];
+	}
 }
 
 - (NSArray *)pieChartViewArrayOfSliceData:(SMPieChartView *)inPieChartView
 {
-	return [colorToCount allValues];
+	if (inPieChartView == colorPieChart) {
+		return [colorToCount allValues];
+	} else {
+		return [typeToCount allValues];
+	}
 }
 
 - (NSDictionary *)pieChartView:(SMPieChartView *)inPieChartView attributesForSliceIndex:(unsigned int)inSliceIndex
 {
-	NSString *colorString = [[colorToCount allKeys] objectAtIndex:inSliceIndex];
-	NSColor *color = [self colorFromString:colorString];
-	
-	return [NSDictionary dictionaryWithObject:color forKey:NSBackgroundColorAttributeName];
+	if (inPieChartView == colorPieChart) {
+		NSString *colorString = [[colorToCount allKeys] objectAtIndex:inSliceIndex];
+		NSColor *color = [self colorFromString:colorString];
+		
+		return [NSDictionary dictionaryWithObject:color forKey:NSBackgroundColorAttributeName];
+	} else {
+		return [NSDictionary dictionaryWithObject:[NSColor grayColor] forKey:NSBackgroundColorAttributeName];
+	}
 }
 
 - (unsigned int)numberOfExplodedPartsInPieChartView:(SMPieChartView *)inPieChartView
