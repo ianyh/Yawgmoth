@@ -64,8 +64,7 @@
 		3C0A8A8511FFF7820032CEDB /* SIYImportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYImportController.h; path = src/importer/SIYImportController.h; sourceTree = "<group>"; };
 		3C0A8A8611FFF7820032CEDB /* SIYImportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYImportController.m; path = src/importer/SIYImportController.m; sourceTree = "<group>"; };
 		3C0A8A8E11FFF7E80032CEDB /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Importer.xib; sourceTree = "<group>"; };
-		3C0A8A9511FFF8580032CEDB /* Info-10.5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Info-10.5.plist"; path = "res/Info-10.5.plist"; sourceTree = "<group>"; };
-		3C0A8A9711FFF8640032CEDB /* Info-10.6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Info-10.6.plist"; path = "res/Info-10.6.plist"; sourceTree = "<group>"; };
+		3C0A8A9511FFF8580032CEDB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = res/Info.plist; sourceTree = "<group>"; };
 		3C0A8A9911FFF8720032CEDB /* Info-importer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Info-importer.plist"; path = "res/Info-importer.plist"; sourceTree = "<group>"; };
 		3C0F85B811FCDF3C0043D7DD /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb.git/src/FMDatabase.h; sourceTree = "<group>"; };
 		3C0F85B911FCDF3C0043D7DD /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = src/fmdb.git/src/FMDatabase.m; sourceTree = "<group>"; };
@@ -241,8 +240,7 @@
 			children = (
 				3C31AF6D120B3C7500ED4CDE /* Yawgmoth Updater-Info.plist */,
 				3C0A8A9911FFF8720032CEDB /* Info-importer.plist */,
-				3C0A8A9511FFF8580032CEDB /* Info-10.5.plist */,
-				3C0A8A9711FFF8640032CEDB /* Info-10.6.plist */,
+				3C0A8A9511FFF8580032CEDB /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 			);
 			name = Infos;
@@ -606,7 +604,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Yawgmoth_Prefix.pch;
-				INFOPLIST_FILE = "res/Info-10.6.plist";
+				INFOPLIST_FILE = res/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Yawgmoth;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
@@ -696,7 +694,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Yawgmoth_Prefix.pch;
-				INFOPLIST_FILE = "res/Info-10.5.plist";
+				INFOPLIST_FILE = res/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Yawgmoth;
 				WRAPPER_EXTENSION = app;
@@ -715,7 +713,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Yawgmoth_Prefix.pch;
-				INFOPLIST_FILE = "res/Info-10.5.plist";
+				INFOPLIST_FILE = res/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Yawgmoth;
 				WRAPPER_EXTENSION = app;
