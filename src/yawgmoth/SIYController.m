@@ -330,6 +330,17 @@
 	[self save];
 }
 
+- (IBAction)toggleDeckData:(id)sender
+{
+	if ([sender state] == NSOffState) {
+		[sender setState:NSOnState];
+		[deckDataPanel makeKeyAndOrderFront:self];
+	} else {
+		[sender setState:NSOffState];
+		[deckDataPanel close];
+	}
+}
+
 - (void)tableViewSelectionDidChange:(NSNotification *)notification
 {
 	if ([notification object] == allCardsTable) {

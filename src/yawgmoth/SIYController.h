@@ -42,6 +42,8 @@
 	IBOutlet NSTextField *newDeckNameField;
 	IBOutlet NSButton *newDeckCreateButton;
 	
+	IBOutlet NSPanel *deckDataPanel;
+	
 	NSPersistentStoreCoordinator *persistentStoreCoordinator;
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;
@@ -71,6 +73,8 @@
 - (IBAction)moveToDeck:(id)sender;
 - (IBAction)moveToLibrary:(id)sender;
 - (IBAction)removeFromLibrary:(id)sender;
+
+- (IBAction)toggleDeckData:(id)sender;
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification;
 - (void)allCardsSelectionAction;
