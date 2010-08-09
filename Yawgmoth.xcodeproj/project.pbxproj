@@ -40,6 +40,8 @@
 		3C50B32B1210A7A700AA4C68 /* SM2DGraphView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3C50B32F1210A7C800AA4C68 /* SM2DGraphView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3C50B3351210A7DC00AA4C68 /* SM2DGraphView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
+		3C50B3451210AAA000AA4C68 /* SIYDeckDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */; };
+		3C50B3461210AAA000AA4C68 /* SIYDeckDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */; };
 		3C8EED8811ED2E07003E7D9F /* DeckEditorWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */; };
 		3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
 		3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
@@ -117,6 +119,8 @@
 		3C31AFD1120B560E00ED4CDE /* Worldwake.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Worldwake.csv; path = res/sets/Worldwake.csv; sourceTree = "<group>"; };
 		3C31AFD2120B560E00ED4CDE /* Zendikar.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Zendikar.csv; path = res/sets/Zendikar.csv; sourceTree = "<group>"; };
 		3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SM2DGraphView.framework; path = Library/Frameworks/SM2DGraphView.framework; sourceTree = SDKROOT; };
+		3C50B3431210AAA000AA4C68 /* SIYDeckDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDeckDataSource.h; path = src/yawgmoth/SIYDeckDataSource.h; sourceTree = "<group>"; };
+		3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYDeckDataSource.m; path = src/yawgmoth/SIYDeckDataSource.m; sourceTree = "<group>"; };
 		3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3C8EED8711ED2E07003E7D9F /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/DeckEditorWindow.nib; sourceTree = "<group>"; };
 		3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDataModelManagedObjects.h; path = src/yawgmoth/SIYDataModelManagedObjects.h; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 				3C1E539811F620F9001FB0BF /* SIYController.m */,
 				3CFE865D120DA5CD0096E65B /* SIYMetaCard.h */,
 				3CFE865E120DA5CD0096E65B /* SIYMetaCard.m */,
+				3C50B3431210AAA000AA4C68 /* SIYDeckDataSource.h */,
+				3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */,
 			);
 			name = "Yawgmoth Classes";
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 				3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */,
 				3CE302BE120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */,
 				3CFE865F120DA5CD0096E65B /* SIYMetaCard.m in Sources */,
+				3C50B3451210AAA000AA4C68 /* SIYDeckDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +539,7 @@
 				3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */,
 				3CE302BF120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */,
 				3CFE8660120DA5CD0096E65B /* SIYMetaCard.m in Sources */,
+				3C50B3461210AAA000AA4C68 /* SIYDeckDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
