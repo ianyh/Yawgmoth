@@ -120,7 +120,7 @@
 			tempCard = [self insertTempCollectionCardFromCard:fullCard];
 		}
 		
-		tempCard.quantity = [NSNumber numberWithInt:[tempCard.quantity intValue]+1];
+		[self incrementQuantityForCard:tempCard withIncrement:1];
 	}
 }
 
@@ -147,7 +147,7 @@
                 [metaCard addCardsObject:libraryCard];
                 libraryCard.quantity = tempCard.quantity;
             } else {
-                libraryCard.quantity = [NSNumber numberWithInt:[libraryCard.quantity intValue]+[tempCard.quantity intValue]];
+				[self incrementQuantityForCard:libraryCard withIncrement:[tempCard.quantity intValue]];
             }
         }
         
@@ -179,7 +179,7 @@
 		if ([tempCollectionCard.quantity intValue] == 1) {
 			[[self managedObjectContext] deleteObject:tempCollectionCard];
 		} else {
-			tempCollectionCard.quantity = [NSNumber numberWithInt:[tempCollectionCard.quantity intValue]-1];
+			[self incrementQuantityForCard:tempCollectionCard withIncrement:-1];
 		}
 	}
     
@@ -231,9 +231,7 @@
                 [libraryMetaCard addCardsObject:libraryCollectionCard];
                 [[self managedObjectContext] refreshObject:libraryMetaCard mergeChanges:YES];
             }
-            libraryCollectionCard.quantity = [NSNumber numberWithInt:[libraryCollectionCard.quantity intValue]+[deckCollectionCard.quantity intValue]];
-            
-            [[self managedObjectContext] deleteObject:deckCollectionCard];
+			[self incrementQuantityForCard:libraryCollectionCard withIncrement:[deckCollectionCard.quantity intValue]];            
         }
         
         [[self managedObjectContext] deleteObject:deckMetaCard];
@@ -271,13 +269,9 @@
             [deckMetaCard addCardsObject:deckCollectionCard];
             [[self managedObjectContext] refreshObject:deckMetaCard mergeChanges:YES];
         }
-        
-        deckCollectionCard.quantity = [NSNumber numberWithInt:[deckCollectionCard.quantity intValue]+1];
-        libraryCollectionCard.quantity = [NSNumber numberWithInt:[libraryCollectionCard.quantity intValue]-1];
-        
-        if ([libraryCollectionCard.quantity intValue] == 0) {
-            [[self managedObjectContext] deleteObject:libraryCollectionCard];
-        }
+
+        [self incrementQuantityForCard:deckCollectionCard withIncrement:1];
+		[self incrementQuantityForCard:libraryCollectionCard withIncrement:-1];
 	}
 	
 	[self save];
@@ -305,12 +299,8 @@
             [[self managedObjectContext] refreshObject:libraryMetaCard mergeChanges:YES];
         }
         
-        libraryCollectionCard.quantity = [NSNumber numberWithInt:[libraryCollectionCard.quantity intValue]+1];
-        deckCollectionCard.quantity = [NSNumber numberWithInt:[deckCollectionCard.quantity intValue]-1];
-        
-        if ([deckCollectionCard.quantity intValue] == 0) {
-            [[self managedObjectContext] deleteObject:deckCollectionCard];
-        }
+		[self incrementQuantityForCard:libraryCollectionCard withIncrement:1];
+		[self incrementQuantityForCard:deckCollectionCard withIncrement:-1];
         
         if ([deckMetaCard.cards count] == 0) {
             [[self managedObjectContext] deleteObject:deckMetaCard];
@@ -333,7 +323,7 @@
 	for (i = 0; i < [array count]; i++) {
         libraryMetaCard = [array objectAtIndex:i];
         libraryCollectionCard = [libraryMetaCard.cards anyObject];
-        libraryCollectionCard.quantity = [NSNumber numberWithInt:[libraryCollectionCard.quantity intValue]-1];
+		[self incrementQuantityForCard:libraryCollectionCard withIncrement:-1];
 	}
 	
 	[array release];
@@ -516,6 +506,28 @@
     return [self managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@)", deckName] inEntityWithName:@"Deck"];
 }
 
+- (NSManagedObject *)managedObjectWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName
+{
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:[self managedObjectContext]];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entityDescription];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+    [fetchRequest release];
+    if (results == nil) {
+        // TODO: error
+        return nil;
+    }
+	
+    if ([results count] > 0) {
+        return (NSManagedObject *) [results objectAtIndex:0];
+    }
+    
+    return nil;
+}
+
 - (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card
 {
     SIYMetaCard *metaCard = [NSEntityDescription insertNewObjectForEntityForName:@"MetaCard" inManagedObjectContext:[self managedObjectContext]];
@@ -541,28 +553,6 @@
 	return tempCollectionCard;
 }
 
-- (NSManagedObject *)managedObjectWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName
-{
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:[self managedObjectContext]];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    [fetchRequest setEntity:entityDescription];
-    [fetchRequest setPredicate:predicate];
-    
-    NSError *error;
-    NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-    [fetchRequest release];
-    if (results == nil) {
-        // TODO: error
-        return nil;
-    }
-
-    if ([results count] > 0) {
-        return (NSManagedObject *) [results objectAtIndex:0];
-    }
-    
-    return nil;
-}
-
 - (void)copyCard:(NSManagedObject *)sourceCard toCard:(NSManagedObject *)destinationCard
 {
     destinationCard.convertedManaCost = sourceCard.convertedManaCost;
@@ -577,6 +567,15 @@
     
     destinationCard.superType = sourceCard.superType;
     destinationCard.type = sourceCard.type;
+}
+
+- (void)incrementQuantityForCard:(NSManagedObject *)card withIncrement:(int)increment
+{
+	card.quantity = [NSNumber numberWithInt:[card.quantity intValue]+increment];
+	
+	if ([card.quantity intValue] <= 0) {
+		[[self managedObjectContext] deleteObject:card];
+	}
 }
 
 @end

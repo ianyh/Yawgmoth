@@ -92,4 +92,6 @@
 - (NSManagedObject *)insertTempCollectionCardFromCard:(NSManagedObject *)card;
 - (void)copyCard:(NSManagedObject *)sourceCard toCard:(NSManagedObject *)destinationCard;
 
+- (void)incrementQuantityForCard:(NSManagedObject *)card withIncrement:(int)increment;
+
 @end
