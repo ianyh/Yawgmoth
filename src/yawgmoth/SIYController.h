@@ -52,36 +52,39 @@
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 
+- (NSString *)applicationSupportDirectory;
+- (NSManagedObjectContext *)managedObjectContext;
+- (NSManagedObjectModel *)managedObjectModel;
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
+- (void)save;
+
 - (IBAction)addCardToLibraryAddTable:(id)sender;
 - (IBAction)addToLibrary:(id)sender;
-- (void)allCardsSelectionAction;
-- (NSString *)applicationSupportDirectory;
-- (void)libraryTableSelectionAction;
-- (void)deckCardsTableSelectionAction;
 - (IBAction)deleteDeck:(id)sender;
 - (IBAction)cancelAddToLibrary:(id)sender;
 - (IBAction)createNewDeck:(id)sender;
 - (IBAction)createNewDeckDidEnd:(id)sender;
-- (NSManagedObject *)managedObjectWithName:(NSString *)name inEntityWithName:(NSString *)entityName;
-- (NSManagedObject *)managedCardWithName:(NSString *)name inDeck:(NSManagedObject *)deck;
-- (NSManagedObject *)managedDeckWithName:(NSString *)name;
-- (NSManagedObject *)managedTempCardWithName:(NSString *)name;
 - (IBAction)moveToDeck:(id)sender;
 - (IBAction)moveToLibrary:(id)sender;
 - (IBAction)openAddToLibraryWindow:(id)sender;
 - (IBAction)removeCardFromLibraryAddTable:(id)sender;
 - (IBAction)removeFromLibrary:(id)sender;
-- (void)save;
+
+- (void)allCardsSelectionAction;
+- (void)libraryTableSelectionAction;
+- (void)deckCardsTableSelectionAction;
+
 - (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
-- (void)updateDeckEditingAltImageWithCard:(NSManagedObject *)card;
 - (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
+- (void)updateDeckEditingAltImageWithCard:(NSManagedObject *)card;
 - (void)updateLibraryAddAltImageWithCard:(NSManagedObject *)card;
 
 - (SIYMetaCard *)metaCardWithCardName:(NSString *)cardName inDeck:(NSManagedObject *)deck;
-- (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card;
 - (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inCollection:(NSSet *)collection;
-- (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card;
+- (NSManagedObject *)deckWithName:(NSString *)deckName;
 - (NSManagedObject *)managedObjectWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName;
+- (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card;
+- (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card;
 - (void)copyCard:(NSManagedObject *)sourceCard toCard:(NSManagedObject *)destinationCard;
 
 @end

@@ -176,7 +176,7 @@
 {
 	if (sender == newDeckCreateButton) {
 		NSString *deckName = [newDeckNameField stringValue];
-		NSManagedObject *deck = [self managedDeckWithName:deckName];
+		NSManagedObject *deck = [self deckWithName:deckName];
 		if (deck == nil) {
 			deck = [NSEntityDescription insertNewObjectForEntityForName:@"Deck" inManagedObjectContext:[self managedObjectContext]];
 			deck.name = deckName;
@@ -190,7 +190,7 @@
 
 - (IBAction)deleteDeck:(id)sender
 {
-	NSManagedObject *deck = [self managedDeckWithName:[[deckSelectionButton selectedItem] title]];
+	NSManagedObject *deck = [self deckWithName:[[deckSelectionButton selectedItem] title]];
 	if (deck == nil) {
 		return;
 	}
@@ -210,6 +210,7 @@
             if (libraryCollectionCard == nil) {
                 libraryCollectionCard = [self insertCollectionCardFromCard:deckCollectionCard];
                 [libraryMetaCard addCardsObject:libraryCollectionCard];
+                [[self managedObjectContext] refreshObject:libraryMetaCard mergeChanges:YES];
             }
             libraryCollectionCard.quantity = [NSNumber numberWithInt:[libraryCollectionCard.quantity intValue]+[deckCollectionCard.quantity intValue]];
             
@@ -221,64 +222,6 @@
     
     [[self managedObjectContext] deleteObject:deck];
     [self save];
-}
-
-- (NSManagedObject *)managedObjectWithName:(NSString *)name inEntityWithName:(NSString *)entityName
-{
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:[self managedObjectContext]];
-	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	[fetchRequest setEntity:entityDescription];
-	
-	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
-	[fetchRequest setPredicate:predicate];
-	
-	NSError *error;
-	NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-	[fetchRequest release];
-	if (results == nil) {
-		// TODO: present error
-		return nil;
-	}
-	
-	if ([results count] > 0) {
-		return (NSManagedObject *) [results objectAtIndex:0];
-	}
-	
-	return nil;
-}
-
-- (NSManagedObject *)managedCardWithName:(NSString *)name inDeck:(NSManagedObject *)deck
-{
-	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
-	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	[fetchRequest setEntity:entityDescription];
-	
-	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name = %@) AND (deck = %@)", name, deck];
-	[fetchRequest setPredicate:predicate];
-	
-	NSError *error;
-	NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-	[fetchRequest release];
-	if (results == nil) {
-		// TODO: present error
-		return nil;
-	}
-	
-	if ([results count] > 0) {
-		return (NSManagedObject *) [results objectAtIndex:0];
-	}
-	
-	return nil;
-}
-
-- (NSManagedObject *)managedDeckWithName:(NSString *)name
-{
-    return [self managedObjectWithName:name inEntityWithName:@"Deck"];
-}
-
-- (NSManagedObject *)managedTempCardWithName:(NSString *)name
-{
-    return [self managedObjectWithName:name inEntityWithName:@"TempCard"];
 }
 
 - (NSManagedObjectContext *)managedObjectContext 
@@ -300,7 +243,7 @@
     return managedObjectContext;
 }
 
-- (NSManagedObjectModel *)managedObjectModel 
+- (NSManagedObjectModel *)managedObjectModel
 {	
     if (managedObjectModel) return managedObjectModel;
 	
@@ -310,7 +253,7 @@
 
 - (IBAction)moveToDeck:(id)sender
 {
-	NSManagedObject *deck = [self managedDeckWithName:[[deckSelectionButton selectedItem] title]];
+	NSManagedObject *deck = [self deckWithName:[[deckSelectionButton selectedItem] title]];
 	if (deck == nil) {
 		return;
 	}
@@ -393,9 +336,9 @@
 	[libraryAddingWindow makeKeyAndOrderFront:self];
 }
 
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-	
-    if (persistentStoreCoordinator)return persistentStoreCoordinator;
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+{
+    if (persistentStoreCoordinator) return persistentStoreCoordinator;
 	
     NSManagedObjectModel *mom = [self managedObjectModel];
     if (!mom) {
@@ -554,18 +497,10 @@
 	[deckEditingCardImageProgress stopAnimation:self];	
 }
 
-
 - (SIYMetaCard *)metaCardWithCardName:(NSString *)cardName inDeck:(NSManagedObject *)deck
 {
     return (SIYMetaCard *)[self managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@) AND (deck == %@)", cardName, deck] 
                            inEntityWithName:@"MetaCard"];
-}
-
-- (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card
-{
-    SIYMetaCard *metaCard = [NSEntityDescription insertNewObjectForEntityForName:@"MetaCard" inManagedObjectContext:[self managedObjectContext]];
-    [self copyCard:card toCard:metaCard];
-    return metaCard;
 }
 
 - (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inCollection:(NSSet *)collection
@@ -578,6 +513,18 @@
     }
     
     return nil;
+}
+
+- (NSManagedObject *)deckWithName:(NSString *)deckName
+{
+    return [self managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@)", deckName] inEntityWithName:@"Deck"];
+}
+
+- (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card
+{
+    SIYMetaCard *metaCard = [NSEntityDescription insertNewObjectForEntityForName:@"MetaCard" inManagedObjectContext:[self managedObjectContext]];
+    [self copyCard:card toCard:metaCard];
+    return metaCard;
 }
 
 - (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card
