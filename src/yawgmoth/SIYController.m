@@ -8,6 +8,102 @@
 	imageManager = [[[SIYCardImageManager alloc] initWithApplicationSupportDirectory:[self applicationSupportDirectory]] retain];	
 }
 
+- (NSString *)applicationSupportDirectory 
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
+    return [basePath stringByAppendingPathComponent:@"Yawgmoth"];
+}
+
+- (NSManagedObjectContext *)managedObjectContext 
+{
+    if (managedObjectContext) return managedObjectContext;
+	
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (!coordinator) {
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        [dict setValue:@"Failed to initialize the store" forKey:NSLocalizedDescriptionKey];
+        [dict setValue:@"There was an error building up the data file." forKey:NSLocalizedFailureReasonErrorKey];
+        NSError *error = [NSError errorWithDomain:@"com.scarredions.yawgmoth" code:9999 userInfo:dict];
+        [[NSApplication sharedApplication] presentError:error];
+        return nil;
+    }
+    managedObjectContext = [[NSManagedObjectContext alloc] init];
+    [managedObjectContext setPersistentStoreCoordinator: coordinator];
+	
+    return managedObjectContext;
+}
+
+- (NSManagedObjectModel *)managedObjectModel
+{	
+    if (managedObjectModel) return managedObjectModel;
+	
+    managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
+    return managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+{
+    if (persistentStoreCoordinator) return persistentStoreCoordinator;
+	
+    NSManagedObjectModel *mom = [self managedObjectModel];
+    if (!mom) {
+        NSAssert(NO, @"Managed object model is nil");
+        NSLog(@"%@:%s No model to generate a store from", [self class], _cmd);
+        return nil;
+    }
+
+	
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *applicationSupportDirectory = [self applicationSupportDirectory];
+    NSError *error = nil;
+    
+    if ( ![fileManager fileExistsAtPath:applicationSupportDirectory isDirectory:NULL] ) {
+		if (![fileManager createDirectoryAtPath:applicationSupportDirectory withIntermediateDirectories:NO attributes:nil error:&error]) {
+            NSAssert(NO, ([NSString stringWithFormat:@"Failed to create App Support directory %@ : %@", applicationSupportDirectory,error]));
+            NSLog(@"Error creating application support directory at %@ : %@",applicationSupportDirectory,error);
+            return nil;
+		}
+	}
+
+	NSString *storeDataPath = [applicationSupportDirectory stringByAppendingPathComponent:@"storedata"];
+	
+	if (![fileManager fileExistsAtPath:storeDataPath]) {
+		NSString *seedStoreDataPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"storedata"];
+		if (![fileManager copyItemAtPath:seedStoreDataPath toPath:storeDataPath error:&error]) {
+			NSLog(@"Error copying seed store data to application support directory");
+			return nil;
+		}
+	}
+    
+    NSURL *url = [NSURL fileURLWithPath:storeDataPath];
+    persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: mom];
+    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType 
+												  configuration:nil 
+															URL:url 
+														options:nil 
+														  error:&error]){
+        [[NSApplication sharedApplication] presentError:error];
+        [persistentStoreCoordinator release], persistentStoreCoordinator = nil;
+        return nil;
+    }    
+	
+    return persistentStoreCoordinator;
+}
+
+- (void)save
+{
+    NSError *error;
+    
+    if (![[self managedObjectContext] commitEditing]) {
+        NSLog(@"%@:%s unable to commit editing before saving", [self class], _cmd);
+    }
+	
+    if (![[self managedObjectContext] save:&error]) {
+        [[NSApplication sharedApplication] presentError:error];
+    }	
+}
+
 - (IBAction)addCardToLibraryAddTable:(id)sender
 {
 	NSArray *array = [[allCardsController selectedObjects] copy];
@@ -18,17 +114,13 @@
 	for (i = 0; i < [array count]; i++) {
 		fullCard = [array objectAtIndex:i];
 		tempCard = [self managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@) AND (set == %@)", fullCard.name, fullCard.set] 
-                                   inEntityWithName:@"TempCollectionCard"];
+								   inEntityWithName:@"TempCollectionCard"];
 		
 		if (tempCard == nil) {
-			tempCard = [NSEntityDescription insertNewObjectForEntityForName:@"TempCollectionCard" inManagedObjectContext:[self managedObjectContext]];
-			
-            [self copyCard:fullCard toCard:tempCard];
-            tempCard.set = fullCard.set;
-			tempCard.quantity = [NSNumber numberWithInt:1];			
-		} else {
-			tempCard.quantity = [NSNumber numberWithInt:[tempCard.quantity intValue]+1];
+			tempCard = [self insertTempCollectionCardFromCard:fullCard];
 		}
+		
+		tempCard.quantity = [NSNumber numberWithInt:[tempCard.quantity intValue]+1];
 	}
 }
 
@@ -66,105 +158,32 @@
 	[libraryAddingWindow close];
 }
 
-- (void)tableViewSelectionDidChange:(NSNotification *)notification
-{
-	if ([notification object] == allCardsTable) {
-		[self allCardsSelectionAction];
-	} else if ([notification object] == deckTableView) {
-		[self deckCardsTableSelectionAction];
-	} else if ([notification object] == libraryTableView) {
-		[self libraryTableSelectionAction];
-	}
-}
-
-- (void)allCardsSelectionAction
-{
-	NSArray *array = [allCardsController selectedObjects];
-	if ([array count] == 0) {
-		[libraryAddingCardImageView setImage:NULL];
-		return;
-	}
-
-	NSManagedObject *selectedCard = [array objectAtIndex:0];
-	[libraryAddingCardImageView setImage:NULL];
-	[self updateLibraryAddAltImageWithCard:selectedCard];
-	
-	NSString *selectedCardName = selectedCard.name;
-	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
-											 shouldDownloadIfMissing:YES 
-											 withAction:@selector(updateLibraryAddImage:forCardWithName:) 
-											 withTarget:self];
-
-	if (cardImage != nil) {
-		[libraryAddingCardImageProgress stopAnimation:self];
-		[libraryAddingCardImageView setImage:cardImage];
-	} else if ([libraryAddingCardImageView image] == NULL) {
-		[libraryAddingCardImageProgress startAnimation:self];
-	}
-}
-	 
-- (void)libraryTableSelectionAction
-{
-	NSArray *array = [libraryController selectedObjects];
-	if ([array count] == 0) {
-		[deckEditingCardImageView setImage:NULL];
-		return;
-	}
-	
-	NSManagedObject *selectedCard = [array objectAtIndex:0];
-	[deckEditingCardImageView setImage:NULL];
-	[self updateLibraryAddAltImageWithCard:selectedCard];
-	
-	NSString *selectedCardName = selectedCard.name;
-	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
-												 shouldDownloadIfMissing:YES
-												 withAction:@selector(updateDeckEditingImage:forCardWithName:) 
-												 withTarget:self];
-	
-	if (cardImage != nil) {
-		[deckEditingCardImageProgress stopAnimation:self];
-		[deckEditingCardImageView setImage:cardImage];
-	} else if ([deckEditingCardImageView image] == NULL) {
-		[deckEditingCardImageProgress startAnimation:self];
-	}
-}
-
-- (void)deckCardsTableSelectionAction
-{
-	NSArray *array = [deckCardsController selectedObjects];
-	if ([array count] == 0) {
-		[deckEditingCardImageView setImage:NULL];
-		return;
-	}
-	
-	NSManagedObject *selectedCard = [array objectAtIndex:0];
-	[deckEditingCardImageView setImage:NULL];
-	[self updateDeckEditingAltImageWithCard:selectedCard];
-	
-	NSString *selectedCardName = selectedCard.name;
-	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
-												 shouldDownloadIfMissing:YES
-												 withAction:@selector(updateDeckEditingImage:forCardWithName:) 
-												 withTarget:self];
-	
-	if (cardImage != nil) {
-		[deckEditingCardImageProgress stopAnimation:self];
-		[deckEditingCardImageView setImage:cardImage];
-	} else if ([deckEditingCardImageView image] == NULL) {
-		[deckEditingCardImageProgress startAnimation:self];
-	}	
-}
-
-- (NSString *)applicationSupportDirectory 
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
-    return [basePath stringByAppendingPathComponent:@"Yawgmoth"];
-}
-
 - (IBAction)cancelAddToLibrary:(id)sender
 {
 	[libraryAddingWindow close];
+}
+
+- (IBAction)openAddToLibraryWindow:(id)sender
+{	
+	[libraryAddingWindow makeKeyAndOrderFront:self];
+}
+
+- (IBAction)removeCardFromLibraryAddTable:(id)sender
+{
+	NSArray *array = [[tempCardsController selectedObjects] copy];
+	NSManagedObject *tempCollectionCard;
+	int i;
+	
+	for (i = 0; i < [array count]; i++) {
+        tempCollectionCard = [array objectAtIndex:i];
+		if ([tempCollectionCard.quantity intValue] == 1) {
+			[[self managedObjectContext] deleteObject:tempCollectionCard];
+		} else {
+			tempCollectionCard.quantity = [NSNumber numberWithInt:[tempCollectionCard.quantity intValue]-1];
+		}
+	}
+    
+    [array release];
 }
 
 - (IBAction)createNewDeck:(id)sender
@@ -222,33 +241,6 @@
     
     [[self managedObjectContext] deleteObject:deck];
     [self save];
-}
-
-- (NSManagedObjectContext *)managedObjectContext 
-{
-    if (managedObjectContext) return managedObjectContext;
-	
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (!coordinator) {
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [dict setValue:@"Failed to initialize the store" forKey:NSLocalizedDescriptionKey];
-        [dict setValue:@"There was an error building up the data file." forKey:NSLocalizedFailureReasonErrorKey];
-        NSError *error = [NSError errorWithDomain:@"com.scarredions.yawgmoth" code:9999 userInfo:dict];
-        [[NSApplication sharedApplication] presentError:error];
-        return nil;
-    }
-    managedObjectContext = [[NSManagedObjectContext alloc] init];
-    [managedObjectContext setPersistentStoreCoordinator: coordinator];
-	
-    return managedObjectContext;
-}
-
-- (NSManagedObjectModel *)managedObjectModel
-{	
-    if (managedObjectModel) return managedObjectModel;
-	
-    managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
-    return managedObjectModel;
 }
 
 - (IBAction)moveToDeck:(id)sender
@@ -331,78 +323,6 @@
 	[array release];
 }
 
-- (IBAction)openAddToLibraryWindow:(id)sender
-{	
-	[libraryAddingWindow makeKeyAndOrderFront:self];
-}
-
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
-{
-    if (persistentStoreCoordinator) return persistentStoreCoordinator;
-	
-    NSManagedObjectModel *mom = [self managedObjectModel];
-    if (!mom) {
-        NSAssert(NO, @"Managed object model is nil");
-        NSLog(@"%@:%s No model to generate a store from", [self class], _cmd);
-        return nil;
-    }
-
-	
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *applicationSupportDirectory = [self applicationSupportDirectory];
-    NSError *error = nil;
-    
-    if ( ![fileManager fileExistsAtPath:applicationSupportDirectory isDirectory:NULL] ) {
-		if (![fileManager createDirectoryAtPath:applicationSupportDirectory withIntermediateDirectories:NO attributes:nil error:&error]) {
-            NSAssert(NO, ([NSString stringWithFormat:@"Failed to create App Support directory %@ : %@", applicationSupportDirectory,error]));
-            NSLog(@"Error creating application support directory at %@ : %@",applicationSupportDirectory,error);
-            return nil;
-		}
-	}
-
-	NSString *storeDataPath = [applicationSupportDirectory stringByAppendingPathComponent:@"storedata"];
-	
-	if (![fileManager fileExistsAtPath:storeDataPath]) {
-		NSString *seedStoreDataPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"storedata"];
-		if (![fileManager copyItemAtPath:seedStoreDataPath toPath:storeDataPath error:&error]) {
-			NSLog(@"Error copying seed store data to application support directory");
-			return nil;
-		}
-	}
-    
-    NSURL *url = [NSURL fileURLWithPath:storeDataPath];
-    persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: mom];
-    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType 
-												  configuration:nil 
-															URL:url 
-														options:nil 
-														  error:&error]){
-        [[NSApplication sharedApplication] presentError:error];
-        [persistentStoreCoordinator release], persistentStoreCoordinator = nil;
-        return nil;
-    }    
-	
-    return persistentStoreCoordinator;
-}
-
-- (IBAction)removeCardFromLibraryAddTable:(id)sender
-{
-	NSArray *array = [[tempCardsController selectedObjects] copy];
-	NSManagedObject *tempCollectionCard;
-	int i;
-	
-	for (i = 0; i < [array count]; i++) {
-        tempCollectionCard = [array objectAtIndex:i];
-		if ([tempCollectionCard.quantity intValue] == 1) {
-			[[self managedObjectContext] deleteObject:tempCollectionCard];
-		} else {
-			tempCollectionCard.quantity = [NSNumber numberWithInt:[tempCollectionCard.quantity intValue]-1];
-		}
-	}
-    
-    [array release];
-}
-
 - (IBAction)removeFromLibrary:(id)sender
 {
 	NSArray *array = [[libraryController selectedObjects] copy];
@@ -420,49 +340,105 @@
 	[self save];
 }
 
-- (void)save
+- (void)tableViewSelectionDidChange:(NSNotification *)notification
 {
-    NSError *error;
-    
-    if (![[self managedObjectContext] commitEditing]) {
-        NSLog(@"%@:%s unable to commit editing before saving", [self class], _cmd);
-    }
+	if ([notification object] == allCardsTable) {
+		[self allCardsSelectionAction];
+	} else if ([notification object] == deckTableView) {
+		[self deckCardsTableSelectionAction];
+	} else if ([notification object] == libraryTableView) {
+		[self libraryTableSelectionAction];
+	}
+}
+
+- (void)allCardsSelectionAction
+{
+	NSArray *array = [allCardsController selectedObjects];
+	if ([array count] == 0) {
+		[libraryAddingCardImageView setImage:NULL];
+		return;
+	}
 	
-    if (![[self managedObjectContext] save:&error]) {
-        [[NSApplication sharedApplication] presentError:error];
-    }	
+	NSManagedObject *selectedCard = [array objectAtIndex:0];
+	[libraryAddingCardImageView setImage:NULL];
+	[self updateLibraryAddAltImageWithCard:selectedCard];
+	
+	NSString *selectedCardName = selectedCard.name;
+	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
+								shouldDownloadIfMissing:YES 
+											 withAction:@selector(updateLibraryAddImage:forCardWithName:) 
+											 withTarget:self];
+	
+	if (cardImage != nil) {
+		[libraryAddingCardImageProgress stopAnimation:self];
+		[libraryAddingCardImageView setImage:cardImage];
+	} else if ([libraryAddingCardImageView image] == NULL) {
+		[libraryAddingCardImageProgress startAnimation:self];
+	}
+}
+
+- (void)libraryTableSelectionAction
+{
+	NSArray *array = [libraryController selectedObjects];
+	if ([array count] == 0) {
+		[deckEditingCardImageView setImage:NULL];
+		return;
+	}
+	
+	NSManagedObject *selectedCard = [array objectAtIndex:0];
+	[deckEditingCardImageView setImage:NULL];
+	[self updateLibraryAddAltImageWithCard:selectedCard];
+	
+	NSString *selectedCardName = selectedCard.name;
+	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
+								shouldDownloadIfMissing:YES
+											 withAction:@selector(updateDeckEditingImage:forCardWithName:) 
+											 withTarget:self];
+	
+	if (cardImage != nil) {
+		[deckEditingCardImageProgress stopAnimation:self];
+		[deckEditingCardImageView setImage:cardImage];
+	} else if ([deckEditingCardImageView image] == NULL) {
+		[deckEditingCardImageProgress startAnimation:self];
+	}
+}
+
+- (void)deckCardsTableSelectionAction
+{
+	NSArray *array = [deckCardsController selectedObjects];
+	if ([array count] == 0) {
+		[deckEditingCardImageView setImage:NULL];
+		return;
+	}
+	
+	NSManagedObject *selectedCard = [array objectAtIndex:0];
+	[deckEditingCardImageView setImage:NULL];
+	[self updateDeckEditingAltImageWithCard:selectedCard];
+	
+	NSString *selectedCardName = selectedCard.name;
+	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
+								shouldDownloadIfMissing:YES
+											 withAction:@selector(updateDeckEditingImage:forCardWithName:) 
+											 withTarget:self];
+	
+	if (cardImage != nil) {
+		[deckEditingCardImageProgress stopAnimation:self];
+		[deckEditingCardImageView setImage:cardImage];
+	} else if ([deckEditingCardImageView image] == NULL) {
+		[deckEditingCardImageProgress startAnimation:self];
+	}	
+}
+
+- (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName
+{
+    [deckEditingCardImageView setImage:cardImage];
+	[deckEditingCardImageProgress stopAnimation:self];	
 }
 
 - (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName
 {
     [libraryAddingCardImageView setImage:cardImage];
 	[libraryAddingCardImageProgress stopAnimation:self];
-}
-
-- (void)updateLibraryAddAltImageWithCard:(NSManagedObject *)card
-{
-	[libraryAddingNameTextField setStringValue:card.name];
-    if (card.manaCost == nil) {
-        [libraryAddingCostTextField setStringValue:@""];
-    } else {
-        [libraryAddingCostTextField setStringValue:card.manaCost];
-    }
-	[libraryAddingTypeTextField setStringValue:card.type];
-    if (card.rarity == nil) {
-        [libraryAddingRarityTextField setStringValue:@""];
-    } else {
-        [libraryAddingRarityTextField setStringValue:card.rarity];
-    }
-	if ([card.superType isEqualToString:@"Artifact Creature"] || [card.superType isEqualToString:@"Creature"]) {
-		[libraryAddingPTTextField setStringValue:[NSString stringWithFormat:@"%@/%@", card.power, card.toughness]];
-	} else {
-		[libraryAddingPTTextField setStringValue:@""];
-	}
-    if (card.text == nil) {
-        [[libraryAddingTextScrollView documentView] setString:@""];
-    } else {
-        [[libraryAddingTextScrollView documentView] setString:card.text];
-    }
 }
 
 - (void)updateDeckEditingAltImageWithCard:(NSManagedObject *)card
@@ -491,10 +467,30 @@
     }
 }
 
-- (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName
+- (void)updateLibraryAddAltImageWithCard:(NSManagedObject *)card
 {
-    [deckEditingCardImageView setImage:cardImage];
-	[deckEditingCardImageProgress stopAnimation:self];	
+	[libraryAddingNameTextField setStringValue:card.name];
+    if (card.manaCost == nil) {
+        [libraryAddingCostTextField setStringValue:@""];
+    } else {
+        [libraryAddingCostTextField setStringValue:card.manaCost];
+    }
+	[libraryAddingTypeTextField setStringValue:card.type];
+    if (card.rarity == nil) {
+        [libraryAddingRarityTextField setStringValue:@""];
+    } else {
+        [libraryAddingRarityTextField setStringValue:card.rarity];
+    }
+	if ([card.superType isEqualToString:@"Artifact Creature"] || [card.superType isEqualToString:@"Creature"]) {
+		[libraryAddingPTTextField setStringValue:[NSString stringWithFormat:@"%@/%@", card.power, card.toughness]];
+	} else {
+		[libraryAddingPTTextField setStringValue:@""];
+	}
+    if (card.text == nil) {
+        [[libraryAddingTextScrollView documentView] setString:@""];
+    } else {
+        [[libraryAddingTextScrollView documentView] setString:card.text];
+    }
 }
 
 - (SIYMetaCard *)metaCardWithCardName:(NSString *)cardName inDeck:(NSManagedObject *)deck
@@ -534,6 +530,15 @@
     collectionCard.set = card.set;
     collectionCard.quantity = [NSNumber numberWithInt:0];
     return collectionCard;
+}
+
+- (NSManagedObject *)insertTempCollectionCardFromCard:(NSManagedObject *)card
+{
+	NSManagedObject *tempCollectionCard = [NSEntityDescription insertNewObjectForEntityForName:@"TempCollectionCard" inManagedObjectContext:[self managedObjectContext]];
+	[self copyCard:card toCard:tempCollectionCard];
+	tempCollectionCard.set = card.set;
+	tempCollectionCard.quantity = [NSNumber numberWithInt:0];
+	return tempCollectionCard;
 }
 
 - (NSManagedObject *)managedObjectWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName

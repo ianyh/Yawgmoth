@@ -60,16 +60,19 @@
 
 - (IBAction)addCardToLibraryAddTable:(id)sender;
 - (IBAction)addToLibrary:(id)sender;
-- (IBAction)deleteDeck:(id)sender;
 - (IBAction)cancelAddToLibrary:(id)sender;
-- (IBAction)createNewDeck:(id)sender;
-- (IBAction)createNewDeckDidEnd:(id)sender;
-- (IBAction)moveToDeck:(id)sender;
-- (IBAction)moveToLibrary:(id)sender;
 - (IBAction)openAddToLibraryWindow:(id)sender;
 - (IBAction)removeCardFromLibraryAddTable:(id)sender;
+
+- (IBAction)createNewDeck:(id)sender;
+- (IBAction)createNewDeckDidEnd:(id)sender;
+- (IBAction)deleteDeck:(id)sender;
+
+- (IBAction)moveToDeck:(id)sender;
+- (IBAction)moveToLibrary:(id)sender;
 - (IBAction)removeFromLibrary:(id)sender;
 
+- (void)tableViewSelectionDidChange:(NSNotification *)notification;
 - (void)allCardsSelectionAction;
 - (void)libraryTableSelectionAction;
 - (void)deckCardsTableSelectionAction;
@@ -83,8 +86,10 @@
 - (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inCollection:(NSSet *)collection;
 - (NSManagedObject *)deckWithName:(NSString *)deckName;
 - (NSManagedObject *)managedObjectWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName;
+
 - (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card;
 - (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card;
+- (NSManagedObject *)insertTempCollectionCardFromCard:(NSManagedObject *)card;
 - (void)copyCard:(NSManagedObject *)sourceCard toCard:(NSManagedObject *)destinationCard;
 
 @end
