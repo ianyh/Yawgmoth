@@ -15,26 +15,31 @@
 {
 	colorToCount = [[NSMutableDictionary dictionary] retain];
 	typeToCount = [[NSMutableDictionary dictionary] retain];
+	costToCount = [[NSMutableDictionary dictionary] retain];
 	
 	[deckArrayController addObserver:self forKeyPath:@"selectedObjects" options:0 context:nil];
 }
 
-- (NSColor *)colorFromString:(NSString *)colorString
+- (NSColor *)colorFromString:(NSString *)string
 {
-	if ([colorString isEqualToString:@"B"]) {
+	if ([string isEqualToString:@"B"] || [string isEqualToString:@"Sorcery"]) {
 		return [NSColor blackColor];
-	} else if ([colorString isEqualToString:@"U"]) {
+	} else if ([string isEqualToString:@"U"] || [string isEqualToString:@"Instant"]) {
 		return [NSColor blueColor];
-	} else if ([colorString isEqualToString:@"W"]) {
+	} else if ([string isEqualToString:@"W"] || [string isEqualToString:@"Planeswalker"]) {
 		return [NSColor whiteColor];
-	} else if ([colorString isEqualToString:@"G"]) {
+	} else if ([string isEqualToString:@"G"] || [string isEqualToString:@"Creature"]) {
 		return [NSColor greenColor];
-	} else if ([colorString isEqualToString:@"R"]) {
+	} else if ([string isEqualToString:@"R"] || [string isEqualToString:@"Land"]) {
 		return [NSColor redColor];
-	} else if ([colorString isEqualToString:@"Colorless"]) {
+	} else if ([string isEqualToString:@"Colorless"] || [string isEqualToString:@"Artifact Creature"]) {
 		return [NSColor grayColor];
+	} else if ([string isEqualToString:@"Artifact Creature"]) {
+		return [NSColor darkGrayColor];
+	} else if ([string isEqualToString:@"Enchantment"]) {
+		return [NSColor magentaColor];
 	} else {
-		return nil;
+		return [NSColor orangeColor];
 	}
 }
 
@@ -60,34 +65,38 @@
 	[typeToCount release];
 	typeToCount = [[NSMutableDictionary dictionary] retain];
 	
+	[costToCount release];
+	costToCount = [[NSMutableDictionary dictionary] retain];
+	
 	NSArray *colorArray = [NSArray arrayWithObjects:@"G", @"R", @"B", @"U", @"W", nil];
 	NSSet *cards = deck.metaCards;
 	NSEnumerator *enumerator = [cards objectEnumerator];
 	NSManagedObject *card;
 	while ((card = [enumerator nextObject]) != nil) {
 		NSString *manaCost = card.manaCost;
-		if (manaCost == nil) continue;
-		BOOL found = NO;
-		int i = 0;
-		for (; i < [colorArray count]; i++) {
-			NSString *colorString = [colorArray objectAtIndex:i];
-			NSRange range = [manaCost rangeOfString:colorString];
-			if (range.location != NSNotFound) {
-				found = YES;
-				NSNumber *colorCount = [colorToCount objectForKey:colorString];
-				if (colorCount == nil) {
-					[colorToCount setObject:[NSNumber numberWithInt:1] forKey:colorString];
-				} else {
-					[colorToCount setObject:[NSNumber numberWithInt:[colorCount intValue]+1] forKey:colorString];
+		if (manaCost != nil) {
+			BOOL found = NO;
+			int i = 0;
+			for (; i < [colorArray count]; i++) {
+				NSString *colorString = [colorArray objectAtIndex:i];
+				NSRange range = [manaCost rangeOfString:colorString];
+				if (range.location != NSNotFound) {
+					found = YES;
+					NSNumber *colorCount = [colorToCount objectForKey:colorString];
+					if (colorCount == nil) {
+						[colorToCount setObject:[NSNumber numberWithInt:1] forKey:colorString];
+					} else {
+						[colorToCount setObject:[NSNumber numberWithInt:[colorCount intValue]+1] forKey:colorString];
+					}
 				}
 			}
-		}
-		if (!found && manaCost != nil && ![manaCost isEqualToString:@""]) {
-			NSNumber *colorCount = [colorToCount objectForKey:@"Colorless"];
-			if (colorCount == nil) {
-				[colorToCount setObject:[NSNumber numberWithInt:1] forKey:@"Colorless"];
-			} else {
-				[colorToCount setObject:[NSNumber numberWithInt:[colorCount intValue]+1] forKey:@"Colorless"];
+			if (!found && manaCost != nil && ![manaCost isEqualToString:@""]) {
+				NSNumber *colorCount = [colorToCount objectForKey:@"Colorless"];
+				if (colorCount == nil) {
+					[colorToCount setObject:[NSNumber numberWithInt:1] forKey:@"Colorless"];
+				} else {
+					[colorToCount setObject:[NSNumber numberWithInt:[colorCount intValue]+1] forKey:@"Colorless"];
+				}
 			}
 		}
 		
@@ -98,13 +107,20 @@
 		} else {
 			[typeToCount setObject:[NSNumber numberWithInt:[typeCount intValue]+1] forKey:superType];
 		}
+		
+		NSNumber *convertedManaCost = card.convertedManaCost;
+		if (convertedManaCost != nil) {
+			NSNumber *costCount = [costToCount objectForKey:convertedManaCost];
+			if (costCount == nil) {
+				[costToCount setObject:[NSNumber numberWithInt:1] forKey:convertedManaCost];
+			} else {
+				[costToCount setObject:[NSNumber numberWithInt:[costCount intValue]+1] forKey:convertedManaCost];
+			}
+		}
 	}
 	
-	[colorPieChart reloadData];
-	[colorPieChart reloadAttributes];
-	
-	[typePieChart reloadData];
-	[typePieChart reloadAttributes];
+	[colorPieChart refreshDisplay:self];
+	[typePieChart refreshDisplay:self];
 }
 
 // 2d graph data source methods
@@ -172,19 +188,28 @@
 
 - (NSDictionary *)pieChartView:(SMPieChartView *)inPieChartView attributesForSliceIndex:(unsigned int)inSliceIndex
 {
+	NSColor *color;
 	if (inPieChartView == colorPieChart) {
-		NSString *colorString = [[colorToCount allKeys] objectAtIndex:inSliceIndex];
-		NSColor *color = [self colorFromString:colorString];
-		
-		return [NSDictionary dictionaryWithObject:color forKey:NSBackgroundColorAttributeName];
+		color = [self colorFromString:[[colorToCount allKeys] objectAtIndex:inSliceIndex]];
 	} else {
-		return [NSDictionary dictionaryWithObject:[NSColor grayColor] forKey:NSBackgroundColorAttributeName];
+		color = [self colorFromString:[[typeToCount allKeys] objectAtIndex:inSliceIndex]];
 	}
+	
+	return [NSDictionary dictionaryWithObject:color forKey:NSBackgroundColorAttributeName];
 }
 
 - (unsigned int)numberOfExplodedPartsInPieChartView:(SMPieChartView *)inPieChartView
 {
 	return 0;
+}
+
+- (NSString *)pieChartView:(SMPieChartView *)inPieChartView labelForSliceIndex:(unsigned int)inSliceIndex
+{
+	if (inPieChartView == typePieChart) {
+		return [[typeToCount allKeys] objectAtIndex:inSliceIndex];
+	} else {
+		return nil;
+	}
 }
 
 @end
