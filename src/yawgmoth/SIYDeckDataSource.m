@@ -15,7 +15,7 @@
 {
 	colorToCount = [[NSMutableDictionary dictionary] retain];
 	typeToCount = [[NSMutableDictionary dictionary] retain];
-	costToCount = [[NSMutableDictionary dictionary] retain];
+	costCounts = [[NSMutableArray array] retain];
 	
 	[deckArrayController addObserver:self forKeyPath:@"selectedObjects" options:0 context:nil];
 }
@@ -65,8 +65,8 @@
 	[typeToCount release];
 	typeToCount = [[NSMutableDictionary dictionary] retain];
 	
-	[costToCount release];
-	costToCount = [[NSMutableDictionary dictionary] retain];
+	[costCounts release];
+	costCounts = [[NSMutableArray array] retain];
 	
 	NSArray *colorArray = [NSArray arrayWithObjects:@"G", @"R", @"B", @"U", @"W", nil];
 	NSSet *cards = deck.metaCards;
@@ -110,29 +110,37 @@
 		
 		NSNumber *convertedManaCost = card.convertedManaCost;
 		if (convertedManaCost != nil) {
-			NSNumber *costCount = [costToCount objectForKey:convertedManaCost];
-			if (costCount == nil) {
-				[costToCount setObject:[NSNumber numberWithInt:1] forKey:convertedManaCost];
-			} else {
-				[costToCount setObject:[NSNumber numberWithInt:[costCount intValue]+1] forKey:convertedManaCost];
+			int convertedManaCostValue = [convertedManaCost	intValue];
+			while ([costCounts count] <= convertedManaCostValue + 1) {
+				[costCounts addObject:[NSNumber numberWithInt:0]];
 			}
+
+			NSNumber *costCount = [costCounts objectAtIndex:convertedManaCostValue];
+			[costCounts replaceObjectAtIndex:convertedManaCostValue withObject:[NSNumber numberWithInt:[costCount intValue]+1]];
 		}
 	}
 	
 	[colorPieChart refreshDisplay:self];
 	[typePieChart refreshDisplay:self];
+	[manaCurveGraph refreshDisplay:self];
 }
 
 // 2d graph data source methods
 
 - (unsigned int)numberOfLinesInTwoDGraphView:(SM2DGraphView *)inGraphView
 {
-	return 0;
+	return 1;
 }
 
 - (NSArray *)twoDGraphView:(SM2DGraphView *)inGraphView dataForLineIndex:(unsigned int)inLineIndex
 {
-	return nil;
+	NSMutableArray *data = [NSMutableArray array];
+	int cost = 0;
+	for (; cost < [costCounts count]; cost++) {
+		NSString *point = NSStringFromPoint( NSMakePoint(cost, [[costCounts objectAtIndex:cost] intValue]) );
+		[data addObject:point];
+	}
+	return [NSArray arrayWithArray:data];
 }
 
 - (NSData *)twoDGraphView:(SM2DGraphView *)inGraphView dataObjectForLineIndex:(unsigned int)inLineIndex
@@ -143,18 +151,36 @@
 - (double)twoDGraphView:(SM2DGraphView *)inGraphView maximumValueForLineIndex:(unsigned int)inLineIndex
 				forAxis:(SM2DGraphAxisEnum)inAxis
 {
-	return 0.0;
+	if (inAxis == kSM2DGraph_Axis_X) {
+		return [costCounts count] - 1;
+	} else {
+		int maxCount = 0;
+		int cost = 0;
+		for (; cost < [costCounts count]; cost++) {
+			if ([[costCounts objectAtIndex:cost] intValue] > maxCount) {
+				maxCount = [[costCounts objectAtIndex:cost] intValue];
+			}
+		}
+		return maxCount + 1;
+	}
 }
 
 - (double)twoDGraphView:(SM2DGraphView *)inGraphView minimumValueForLineIndex:(unsigned int)inLineIndex
 				forAxis:(SM2DGraphAxisEnum)inAxis
 {
-	return 0.0;
+	if (inAxis == kSM2DGraph_Axis_Y) {
+		return 0.0;
+	} else {
+		return -1.0;
+	}
 }
 
 - (NSDictionary *)twoDGraphView:(SM2DGraphView *)inGraphView attributesForLineIndex:(unsigned int)inLineIndex
 {
-	return nil;
+	return [NSDictionary dictionaryWithObjectsAndKeys:
+			[NSNumber numberWithBool:YES], SM2DGraphBarStyleAttributeName,
+			[NSNumber numberWithInt:kSM2DGraph_Width_None], SM2DGraphLineWidthAttributeName,
+			nil];
 }
 
 // pie chart data source methods

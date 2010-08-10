@@ -22,7 +22,7 @@
 	
 	NSMutableDictionary *colorToCount;
 	NSMutableDictionary *typeToCount;
-	NSMutableDictionary *costToCount;
+	NSMutableArray *costCounts;
 	
 	IBOutlet SMPieChartView *colorPieChart;
 	IBOutlet SMPieChartView *typePieChart;
