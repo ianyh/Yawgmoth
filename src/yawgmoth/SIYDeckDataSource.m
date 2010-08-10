@@ -32,7 +32,7 @@
 		return [NSColor greenColor];
 	} else if ([string isEqualToString:@"R"] || [string isEqualToString:@"Land"]) {
 		return [NSColor redColor];
-	} else if ([string isEqualToString:@"Colorless"] || [string isEqualToString:@"Artifact Creature"]) {
+	} else if ([string isEqualToString:@"Colorless"] || [string isEqualToString:@"Artifact"]) {
 		return [NSColor grayColor];
 	} else if ([string isEqualToString:@"Artifact Creature"]) {
 		return [NSColor darkGrayColor];
@@ -75,6 +75,8 @@
 	NSEnumerator *enumerator = [cards objectEnumerator];
 	NSManagedObject *card;
 	while ((card = [enumerator nextObject]) != nil) {
+		int quantity = [card.quantity intValue];
+		
 		NSString *manaCost = card.manaCost;
 		if (manaCost != nil) {
 			BOOL found = NO;
@@ -86,18 +88,18 @@
 					found = YES;
 					NSNumber *colorCount = [colorToCount objectForKey:colorString];
 					if (colorCount == nil) {
-						[colorToCount setObject:[NSNumber numberWithInt:1] forKey:colorString];
+						[colorToCount setObject:[NSNumber numberWithInt:quantity] forKey:colorString];
 					} else {
-						[colorToCount setObject:[NSNumber numberWithInt:[colorCount intValue]+1] forKey:colorString];
+						[colorToCount setObject:[NSNumber numberWithInt:[colorCount intValue]+quantity] forKey:colorString];
 					}
 				}
 			}
 			if (!found && manaCost != nil && ![manaCost isEqualToString:@""]) {
 				NSNumber *colorCount = [colorToCount objectForKey:@"Colorless"];
 				if (colorCount == nil) {
-					[colorToCount setObject:[NSNumber numberWithInt:1] forKey:@"Colorless"];
+					[colorToCount setObject:[NSNumber numberWithInt:quantity] forKey:@"Colorless"];
 				} else {
-					[colorToCount setObject:[NSNumber numberWithInt:[colorCount intValue]+1] forKey:@"Colorless"];
+					[colorToCount setObject:[NSNumber numberWithInt:[colorCount intValue]+quantity] forKey:@"Colorless"];
 				}
 			}
 		}
@@ -105,9 +107,9 @@
 		NSString *superType = card.superType;
 		NSNumber *typeCount = [typeToCount objectForKey:superType];
 		if (typeCount == nil) {
-			[typeToCount setObject:[NSNumber numberWithInt:1] forKey:superType];
+			[typeToCount setObject:[NSNumber numberWithInt:quantity] forKey:superType];
 		} else {
-			[typeToCount setObject:[NSNumber numberWithInt:[typeCount intValue]+1] forKey:superType];
+			[typeToCount setObject:[NSNumber numberWithInt:[typeCount intValue]+quantity] forKey:superType];
 		}
 		
 		NSNumber *convertedManaCost = card.convertedManaCost;
@@ -121,7 +123,7 @@
 				[costCounts addObject:[NSNumber numberWithInt:0]];
 			}
 
-			int costCount = [[costCounts objectAtIndex:convertedManaCostValue] intValue] + 1;
+			int costCount = [[costCounts objectAtIndex:convertedManaCostValue] intValue] + quantity;
 			if (costCount > maxCostCount) {
 				maxCostCount = costCount;
 			}
