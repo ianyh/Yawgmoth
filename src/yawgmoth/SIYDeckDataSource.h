@@ -25,7 +25,8 @@
 	NSMutableArray *costCounts;
 	int maxCost;
 	int maxCostCount;
-	
+
+	IBOutlet NSTextField *cardCount;
 	IBOutlet SMPieChartView *colorPieChart;
 	IBOutlet SMPieChartView *typePieChart;
 	IBOutlet SM2DGraphView *manaCurveGraph;

@@ -132,6 +132,8 @@
 		}
 	}
 	
+	[cardCount setStringValue:[deck valueForKeyPath:@"metaCards.@sum.quantity"]];
+	
 	[colorPieChart refreshDisplay:self];
 	[typePieChart refreshDisplay:self];
 	

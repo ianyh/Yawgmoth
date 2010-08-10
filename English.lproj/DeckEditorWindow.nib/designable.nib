@@ -11,9 +11,9 @@
 			<string key="com.snowmint.ib3plugin.SM2DGraphView">1</string>
 		</dictionary>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="462"/>
-			<integer value="1031"/>
+			<integer value="414"/>
 			<integer value="57"/>
+			<integer value="1025"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.snowmint.ib3plugin.SM2DGraphView</string>
@@ -2746,7 +2746,7 @@
 			<object class="NSWindowTemplate" id="41196188">
 				<int key="NSWindowStyleMask">279</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{162, 237}, {230, 242}}</string>
+				<string key="NSWindowRect">{{162, 212}, {230, 267}}</string>
 				<int key="NSWTFlags">-461897728</int>
 				<string key="NSWindowTitle">Deck Data</string>
 				<string key="NSWindowClass">NSPanel</string>
@@ -2765,7 +2765,7 @@
 								<object class="NSTabViewItem" id="835036942">
 									<string key="NSIdentifier">1</string>
 									<object class="NSView" key="NSView" id="396271146">
-										<nil key="NSNextResponder"/>
+										<reference key="NSNextResponder" ref="115333676"/>
 										<int key="NSvFlags">256</int>
 										<array class="NSMutableArray" key="NSSubviews">
 											<object class="SMPieChartView" id="400995312">
@@ -2783,6 +2783,7 @@
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 33}, {226, 212}}</string>
+										<reference key="NSSuperview" ref="115333676"/>
 									</object>
 									<string key="NSLabel">Colors</string>
 									<reference key="NSColor" ref="745973202"/>
@@ -2791,7 +2792,7 @@
 								<object class="NSTabViewItem" id="818213010">
 									<string key="NSIdentifier">2</string>
 									<object class="NSView" key="NSView" id="793403529">
-										<reference key="NSNextResponder" ref="115333676"/>
+										<nil key="NSNextResponder"/>
 										<int key="NSvFlags">256</int>
 										<array class="NSMutableArray" key="NSSubviews">
 											<object class="SM2DGraphView" id="850482967">
@@ -2838,7 +2839,6 @@
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 33}, {226, 212}}</string>
-										<reference key="NSSuperview" ref="115333676"/>
 									</object>
 									<string key="NSLabel">Costs</string>
 									<reference key="NSColor" ref="745973202"/>
@@ -2871,17 +2871,49 @@
 									<reference key="NSTabView" ref="115333676"/>
 								</object>
 							</array>
-							<reference key="NSSelectedTabViewItem" ref="818213010"/>
+							<reference key="NSSelectedTabViewItem" ref="835036942"/>
 							<reference key="NSFont" ref="465319721"/>
 							<int key="NSTvFlags">0</int>
 							<bool key="NSAllowTruncatedLabels">YES</bool>
 							<bool key="NSDrawsBackground">YES</bool>
 							<array class="NSMutableArray" key="NSSubviews">
-								<reference ref="793403529"/>
+								<reference ref="396271146"/>
 							</array>
 						</object>
+						<object class="NSTextField" id="638046760">
+							<reference key="NSNextResponder" ref="348971184"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{17, 250}, {80, 17}}</string>
+							<reference key="NSSuperview" ref="348971184"/>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSTextFieldCell" key="NSCell" id="193546234">
+								<int key="NSCellFlags">68288064</int>
+								<int key="NSCellFlags2">272630784</int>
+								<string key="NSContents">Card Count:</string>
+								<reference key="NSSupport" ref="465319721"/>
+								<reference key="NSControlView" ref="638046760"/>
+								<reference key="NSBackgroundColor" ref="745973202"/>
+								<reference key="NSTextColor" ref="173462953"/>
+							</object>
+						</object>
+						<object class="NSTextField" id="574791830">
+							<reference key="NSNextResponder" ref="348971184"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{99, 250}, {46, 17}}</string>
+							<reference key="NSSuperview" ref="348971184"/>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSTextFieldCell" key="NSCell" id="25450482">
+								<int key="NSCellFlags">68288064</int>
+								<int key="NSCellFlags2">272630784</int>
+								<string key="NSContents"/>
+								<reference key="NSSupport" ref="465319721"/>
+								<reference key="NSControlView" ref="574791830"/>
+								<reference key="NSBackgroundColor" ref="745973202"/>
+								<reference key="NSTextColor" ref="173462953"/>
+							</object>
+						</object>
 					</array>
-					<string key="NSFrameSize">{230, 242}</string>
+					<string key="NSFrameSize">{230, 267}</string>
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
@@ -3000,6 +3032,8 @@
 					<string>name</string>
 					<string>cards</string>
 					<string>metaCards</string>
+					<string>cards.@sum.quantity</string>
+					<string>metaCards.@sum.quantity</string>
 				</array>
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy">
@@ -3749,48 +3783,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">content: arrangedObjects</string>
-						<reference key="source" ref="1020884061"/>
-						<reference key="destination" ref="179588920"/>
-						<object class="NSNibBindingConnector" key="connector" id="831745221">
-							<reference key="NSSource" ref="1020884061"/>
-							<reference key="NSDestination" ref="179588920"/>
-							<string key="NSLabel">content: arrangedObjects</string>
-							<string key="NSBinding">content</string>
-							<string key="NSKeyPath">arrangedObjects</string>
-							<dictionary key="NSOptions">
-								<boolean value="YES" key="NSInsertsNullPlaceholder"/>
-								<string key="NSNoSelectionPlaceholder">Select a deck...</string>
-								<string key="NSNullPlaceholder">Select a deck...</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">809</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">contentValues: arrangedObjects.name</string>
-						<reference key="source" ref="1020884061"/>
-						<reference key="destination" ref="179588920"/>
-						<object class="NSNibBindingConnector" key="connector" id="1110">
-							<reference key="NSSource" ref="1020884061"/>
-							<reference key="NSDestination" ref="179588920"/>
-							<string key="NSLabel">contentValues: arrangedObjects.name</string>
-							<string key="NSBinding">contentValues</string>
-							<string key="NSKeyPath">arrangedObjects.name</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSInsertsNullPlaceholder</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<reference key="NSPreviousConnector" ref="831745221"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">811</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: arrangedObjects.quantity</string>
 						<reference key="source" ref="393597738"/>
 						<reference key="destination" ref="947128634"/>
@@ -3968,23 +3960,6 @@
 						</object>
 					</object>
 					<int key="connectionID">821</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">selectedIndex: selectionIndex</string>
-						<reference key="source" ref="1020884061"/>
-						<reference key="destination" ref="179588920"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="1020884061"/>
-							<reference key="NSDestination" ref="179588920"/>
-							<string key="NSLabel">selectedIndex: selectionIndex</string>
-							<string key="NSBinding">selectedIndex</string>
-							<string key="NSKeyPath">selectionIndex</string>
-							<reference key="NSPreviousConnector" ref="1110"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">828</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -4624,6 +4599,64 @@
 						<reference key="destination" ref="357604252"/>
 					</object>
 					<int key="connectionID">1056</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">content: arrangedObjects</string>
+						<reference key="source" ref="1020884061"/>
+						<reference key="destination" ref="179588920"/>
+						<object class="NSNibBindingConnector" key="connector" id="482914080">
+							<reference key="NSSource" ref="1020884061"/>
+							<reference key="NSDestination" ref="179588920"/>
+							<string key="NSLabel">content: arrangedObjects</string>
+							<string key="NSBinding">content</string>
+							<string key="NSKeyPath">arrangedObjects</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1063</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">contentValues: arrangedObjects.name</string>
+						<reference key="source" ref="1020884061"/>
+						<reference key="destination" ref="179588920"/>
+						<object class="NSNibBindingConnector" key="connector" id="342761073">
+							<reference key="NSSource" ref="1020884061"/>
+							<reference key="NSDestination" ref="179588920"/>
+							<string key="NSLabel">contentValues: arrangedObjects.name</string>
+							<string key="NSBinding">contentValues</string>
+							<string key="NSKeyPath">arrangedObjects.name</string>
+							<reference key="NSPreviousConnector" ref="482914080"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1064</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">selectedIndex: selectionIndex</string>
+						<reference key="source" ref="1020884061"/>
+						<reference key="destination" ref="179588920"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="1020884061"/>
+							<reference key="NSDestination" ref="179588920"/>
+							<string key="NSLabel">selectedIndex: selectionIndex</string>
+							<string key="NSBinding">selectedIndex</string>
+							<string key="NSKeyPath">selectionIndex</string>
+							<reference key="NSPreviousConnector" ref="342761073"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1065</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">cardCount</string>
+						<reference key="source" ref="357604252"/>
+						<reference key="destination" ref="574791830"/>
+					</object>
+					<int key="connectionID">1073</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -6000,6 +6033,8 @@
 						<int key="objectID">1025</int>
 						<reference key="object" ref="348971184"/>
 						<array class="NSMutableArray" key="children">
+							<reference ref="638046760"/>
+							<reference ref="574791830"/>
 							<reference ref="115333676"/>
 						</array>
 						<reference key="parent" ref="41196188"/>
@@ -6103,13 +6138,39 @@
 						<reference key="object" ref="850482967"/>
 						<reference key="parent" ref="793403529"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1066</int>
+						<reference key="object" ref="638046760"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="193546234"/>
+						</array>
+						<reference key="parent" ref="348971184"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1067</int>
+						<reference key="object" ref="193546234"/>
+						<reference key="parent" ref="638046760"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1068</int>
+						<reference key="object" ref="574791830"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="25450482"/>
+						</array>
+						<reference key="parent" ref="348971184"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1069</int>
+						<reference key="object" ref="25450482"/>
+						<reference key="parent" ref="574791830"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
 				<string key="-3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1024.IBEditorWindowLastContentRect">{{309, 503}, {230, 242}}</string>
+				<string key="1024.IBEditorWindowLastContentRect">{{309, 478}, {230, 267}}</string>
 				<string key="1024.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1024.IBWindowTemplateEditedContentRect">{{309, 503}, {230, 242}}</string>
+				<string key="1024.IBWindowTemplateEditedContentRect">{{309, 478}, {230, 267}}</string>
 				<boolean value="NO" key="1024.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="1025.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1028.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6126,6 +6187,10 @@
 				<string key="1046.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1049.IBPluginDependency">com.snowmint.ib3plugin.SM2DGraphView</string>
 				<string key="1052.IBPluginDependency">com.snowmint.ib3plugin.SM2DGraphView</string>
+				<string key="1066.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1067.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1068.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1069.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="116.IBEditorWindowLastContentRect">{{498, 286}, {143, 23}}</string>
 				<string key="116.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="116.ImportedFromIB2"/>
@@ -6377,7 +6442,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1056</int>
+			<int key="maxID">1073</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -6629,12 +6694,17 @@
 					<string key="className">SIYDeckDataSource</string>
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="cardCount">NSTextField</string>
 						<string key="colorPieChart">SMPieChartView</string>
 						<string key="deckArrayController">NSArrayController</string>
 						<string key="manaCurveGraph">SM2DGraphView</string>
 						<string key="typePieChart">SMPieChartView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="cardCount">
+							<string key="name">cardCount</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="colorPieChart">
 							<string key="name">colorPieChart</string>
 							<string key="candidateClassName">SMPieChartView</string>

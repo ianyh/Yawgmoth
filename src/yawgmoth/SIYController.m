@@ -234,6 +234,12 @@
 			[self incrementQuantityForCard:libraryCollectionCard withIncrement:[deckCollectionCard.quantity intValue]];            
         }
         
+		NSSet *cards = deckMetaCard.cards;
+		NSEnumerator *enumerator = [cards objectEnumerator];
+		NSManagedObject *card;
+		while ((card = [enumerator nextObject]) != nil) {
+			[[self managedObjectContext] deleteObject:card];
+		}
         [[self managedObjectContext] deleteObject:deckMetaCard];
     }
     
@@ -301,12 +307,6 @@
         
 		[self incrementQuantityForCard:libraryCollectionCard withIncrement:1];
 		[self incrementQuantityForCard:deckCollectionCard withIncrement:-1];
-        
-        if ([deckMetaCard.cards count] == 0) {
-            [[self managedObjectContext] deleteObject:deckMetaCard];
-        }
-        
-        [self save];
 	}
 	
 	[self save];
@@ -585,6 +585,10 @@
 	card.quantity = [NSNumber numberWithInt:[card.quantity intValue]+increment];
 	
 	if ([card.quantity intValue] <= 0) {
+		NSManagedObject *metaCard = card.metaCard;
+		if ([card.metaCard.cards count] == 1) {
+			[[self managedObjectContext] deleteObject:metaCard];
+		}
 		[[self managedObjectContext] deleteObject:card];
 	}
 }
