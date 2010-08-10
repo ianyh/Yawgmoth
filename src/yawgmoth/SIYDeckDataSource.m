@@ -15,7 +15,7 @@
 {
 	colorToCount = [[NSMutableDictionary dictionary] retain];
 	typeToCount = [[NSMutableDictionary dictionary] retain];
-	costCounts = [[NSMutableArray array] retain];
+	costCounts = [[NSMutableArray arrayWithCapacity:10] retain];
 	
 	[deckArrayController addObserver:self forKeyPath:@"selectedObjects" options:0 context:nil];
 }
@@ -66,7 +66,9 @@
 	typeToCount = [[NSMutableDictionary dictionary] retain];
 	
 	[costCounts release];
-	costCounts = [[NSMutableArray array] retain];
+	costCounts = [[NSMutableArray arrayWithCapacity:11] retain];
+	maxCost = 0;
+	maxCostCount = 0;
 	
 	NSArray *colorArray = [NSArray arrayWithObjects:@"G", @"R", @"B", @"U", @"W", nil];
 	NSSet *cards = deck.metaCards;
@@ -111,17 +113,28 @@
 		NSNumber *convertedManaCost = card.convertedManaCost;
 		if (convertedManaCost != nil) {
 			int convertedManaCostValue = [convertedManaCost	intValue];
+			if (convertedManaCostValue > maxCost) {
+				maxCost = convertedManaCostValue;
+			}
+			
 			while ([costCounts count] <= convertedManaCostValue + 1) {
 				[costCounts addObject:[NSNumber numberWithInt:0]];
 			}
 
-			NSNumber *costCount = [costCounts objectAtIndex:convertedManaCostValue];
-			[costCounts replaceObjectAtIndex:convertedManaCostValue withObject:[NSNumber numberWithInt:[costCount intValue]+1]];
+			int costCount = [[costCounts objectAtIndex:convertedManaCostValue] intValue] + 1;
+			if (costCount > maxCostCount) {
+				maxCostCount = costCount;
+			}
+			
+			[costCounts replaceObjectAtIndex:convertedManaCostValue withObject:[NSNumber numberWithInt:costCount]];
 		}
 	}
 	
 	[colorPieChart refreshDisplay:self];
 	[typePieChart refreshDisplay:self];
+	
+	[manaCurveGraph setNumberOfTickMarks:maxCost+3 forAxis:kSM2DGraph_Axis_X];
+	[manaCurveGraph setNumberOfTickMarks:maxCostCount+2 forAxis:kSM2DGraph_Axis_Y];
 	[manaCurveGraph refreshDisplay:self];
 }
 
@@ -181,6 +194,24 @@
 			[NSNumber numberWithBool:YES], SM2DGraphBarStyleAttributeName,
 			[NSNumber numberWithInt:kSM2DGraph_Width_None], SM2DGraphLineWidthAttributeName,
 			nil];
+}
+
+- (NSString *)twoDGraphView:(SM2DGraphView *)inGraphView labelForTickMarkIndex:(unsigned int)inTickMarkIndex
+					forAxis:(SM2DGraphAxisEnum)inAxis defaultLabel:(NSString *)inDefault
+{
+	if (inTickMarkIndex == 0) {
+		return @"";
+	}
+	
+	if (inAxis == kSM2DGraph_Axis_X) {
+		if (inTickMarkIndex == maxCost + 2) {
+			return @"";
+		}
+		
+		inTickMarkIndex--;
+	}
+	
+	return [NSString stringWithFormat:@"%d", inTickMarkIndex];	
 }
 
 // pie chart data source methods

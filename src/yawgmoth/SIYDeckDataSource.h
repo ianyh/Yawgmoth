@@ -23,6 +23,8 @@
 	NSMutableDictionary *colorToCount;
 	NSMutableDictionary *typeToCount;
 	NSMutableArray *costCounts;
+	int maxCost;
+	int maxCostCount;
 	
 	IBOutlet SMPieChartView *colorPieChart;
 	IBOutlet SMPieChartView *typePieChart;
