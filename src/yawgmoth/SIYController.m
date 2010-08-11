@@ -296,6 +296,9 @@
 	for (i = 0; i < [array count]; i++) {
         deckMetaCard = [array objectAtIndex:i];
         libraryMetaCard = [self metaCardWithCardName:deckMetaCard.name inDeck:nil];
+		if (libraryMetaCard == nil) {
+			libraryMetaCard = [self insertMetaCardFromCard:deckMetaCard];
+		}
         
         deckCollectionCard = [deckMetaCard.cards anyObject];
         libraryCollectionCard = [self collectionCardWithCardName:deckCollectionCard.name withSet:deckCollectionCard.set inCollection:libraryMetaCard.cards];
