@@ -24,18 +24,6 @@
 		3C0F865611FD00300043D7DD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		3C1E539A11F620F9001FB0BF /* SIYController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539811F620F9001FB0BF /* SIYController.m */; };
 		3C1E539D11F6212E001FB0BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
-		3C31AF70120B3C9B00ED4CDE /* Updater.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AF6E120B3C9B00ED4CDE /* Updater.xib */; };
-		3C31AF8F120B429C00ED4CDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
-		3C31AF90120B42B600ED4CDE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		3C31AFA0120B42F000ED4CDE /* SIYUpdaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */; };
-		3C31AFD3120B560E00ED4CDE /* Alara Reborn.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFCB120B560E00ED4CDE /* Alara Reborn.csv */; };
-		3C31AFD4120B560E00ED4CDE /* Conflux.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFCC120B560E00ED4CDE /* Conflux.csv */; };
-		3C31AFD5120B560E00ED4CDE /* M2010.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFCD120B560E00ED4CDE /* M2010.csv */; };
-		3C31AFD6120B560E00ED4CDE /* M2011.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFCE120B560E00ED4CDE /* M2011.csv */; };
-		3C31AFD7120B560E00ED4CDE /* Rise of the Eldrazi.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFCF120B560E00ED4CDE /* Rise of the Eldrazi.csv */; };
-		3C31AFD8120B560E00ED4CDE /* Shards of Alara.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFD0120B560E00ED4CDE /* Shards of Alara.csv */; };
-		3C31AFD9120B560E00ED4CDE /* Worldwake.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFD1120B560E00ED4CDE /* Worldwake.csv */; };
-		3C31AFDA120B560E00ED4CDE /* Zendikar.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C31AFD2120B560E00ED4CDE /* Zendikar.csv */; };
 		3C50B32B1210A7A700AA4C68 /* SM2DGraphView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3C50B32F1210A7C800AA4C68 /* SM2DGraphView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3C50B3351210A7DC00AA4C68 /* SM2DGraphView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
@@ -51,10 +39,26 @@
 		3CC6809D1213D43B00181E02 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6809B1213D43B00181E02 /* dsa_pub.pem */; };
 		3CC680CC1213DE0100181E02 /* Yawgmoth.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC680CA1213DE0100181E02 /* Yawgmoth.xib */; };
 		3CC680CD1213DE0100181E02 /* Yawgmoth.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC680CA1213DE0100181E02 /* Yawgmoth.xib */; };
+		3CC680E71213DFA400181E02 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		3CC680E81213DFA400181E02 /* storedata in Resources */ = {isa = PBXBuildFile; fileRef = 3C006B7911FFC4BB00C5C084 /* storedata */; };
+		3CC680E91213DFA400181E02 /* card-image-map in Resources */ = {isa = PBXBuildFile; fileRef = 3CE3033F120D63FF0093FD1E /* card-image-map */; };
+		3CC680EA1213DFA400181E02 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6809B1213D43B00181E02 /* dsa_pub.pem */; };
+		3CC680EB1213DFA400181E02 /* Yawgmoth.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC680CA1213DE0100181E02 /* Yawgmoth.xib */; };
+		3CC680EC1213DFB000181E02 /* SIYController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539811F620F9001FB0BF /* SIYController.m */; };
+		3CC680ED1213DFB000181E02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
+		3CC680EE1213DFB000181E02 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
+		3CC680EF1213DFB000181E02 /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */; };
+		3CC680F01213DFB000181E02 /* SIYMetaCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE865E120DA5CD0096E65B /* SIYMetaCard.m */; };
+		3CC680F11213DFB000181E02 /* SIYDeckDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */; };
+		3CC680F21213DFB900181E02 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		3CC680F31213DFB900181E02 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC680931213D13800181E02 /* Sparkle.framework */; };
+		3CC680F41213DFCD00181E02 /* SM2DGraphView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
+		3CC680F61213DFF100181E02 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CC680931213D13800181E02 /* Sparkle.framework */; };
+		3CC680F71213DFF100181E02 /* SM2DGraphView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
+		3CC681061213E0C400181E02 /* update in Resources */ = {isa = PBXBuildFile; fileRef = 3CC681051213E0C400181E02 /* update */; };
 		3CE302BE120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */; };
 		3CE302BF120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */; };
 		3CE302C0120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */; };
-		3CE302C1120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */; };
 		3CE30340120D63FF0093FD1E /* card-image-map in Resources */ = {isa = PBXBuildFile; fileRef = 3CE3033F120D63FF0093FD1E /* card-image-map */; };
 		3CE30341120D63FF0093FD1E /* card-image-map in Resources */ = {isa = PBXBuildFile; fileRef = 3CE3033F120D63FF0093FD1E /* card-image-map */; };
 		3CFE865F120DA5CD0096E65B /* SIYMetaCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE865E120DA5CD0096E65B /* SIYMetaCard.m */; };
@@ -86,6 +90,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3CC681021213DFF900181E02 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3CC680F61213DFF100181E02 /* Sparkle.framework in CopyFiles */,
+				3CC680F71213DFF100181E02 /* SM2DGraphView.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -113,7 +128,6 @@
 		3C1E539711F620F9001FB0BF /* SIYController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYController.h; path = src/yawgmoth/SIYController.h; sourceTree = "<group>"; };
 		3C1E539811F620F9001FB0BF /* SIYController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYController.m; path = src/yawgmoth/SIYController.m; sourceTree = "<group>"; };
 		3C1E539C11F6212E001FB0BF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/yawgmoth/main.m; sourceTree = "<group>"; };
-		3C31AF67120B3BF000ED4CDE /* Yawgmoth Updater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yawgmoth Updater.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C31AF6D120B3C7500ED4CDE /* Yawgmoth Updater-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Yawgmoth Updater-Info.plist"; path = "res/Yawgmoth Updater-Info.plist"; sourceTree = "<group>"; };
 		3C31AF6F120B3C9B00ED4CDE /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Updater.xib; sourceTree = "<group>"; };
 		3C31AF9E120B42EF00ED4CDE /* SIYUpdaterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYUpdaterController.h; path = src/updater/SIYUpdaterController.h; sourceTree = "<group>"; };
@@ -136,6 +150,9 @@
 		3CC680931213D13800181E02 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Library/Frameworks/Sparkle.framework; sourceTree = SDKROOT; };
 		3CC6809B1213D43B00181E02 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		3CC680CB1213DE0100181E02 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Yawgmoth.xib; sourceTree = "<group>"; };
+		3CC680E31213DF6300181E02 /* Yawgmoth-Distribution-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Yawgmoth-Distribution-Info.plist"; sourceTree = "<group>"; };
+		3CC681031213E0A800181E02 /* Yawgmoth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Yawgmoth.app; path = build/Debug/Yawgmoth.app; sourceTree = "<group>"; };
+		3CC681051213E0C400181E02 /* update */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = update; path = res/update; sourceTree = "<group>"; };
 		3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = SIYDataModel.xcdatamodel; path = src/yawgmoth/SIYDataModel.xcdatamodel; sourceTree = "<group>"; };
 		3CE3033F120D63FF0093FD1E /* card-image-map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "card-image-map"; path = "res/card-image-map"; sourceTree = "<group>"; };
 		3CFE865D120DA5CD0096E65B /* SIYMetaCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYMetaCard.h; path = src/yawgmoth/SIYMetaCard.h; sourceTree = "<group>"; };
@@ -163,11 +180,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C31AF65120B3BF000ED4CDE /* Frameworks */ = {
+		3CC680DF1213DF6300181E02 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C31AF90120B42B600ED4CDE /* Cocoa.framework in Frameworks */,
+				3CC680F41213DFCD00181E02 /* SM2DGraphView.framework in Frameworks */,
+				3CC680F21213DFB900181E02 /* Cocoa.framework in Frameworks */,
+				3CC680F31213DFB900181E02 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +225,7 @@
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */,
 				3CC680931213D13800181E02 /* Sparkle.framework */,
+				3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -216,7 +236,6 @@
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
-				3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -227,7 +246,7 @@
 				8D1107320486CEB800E47090 /* Yawgmoth.app */,
 				3C0F865A11FD00300043D7DD /* Yawgmoth.app */,
 				3C006A8B11FF883C00C5C084 /* Yawgmoth-Importer.app */,
-				3C31AF67120B3BF000ED4CDE /* Yawgmoth Updater.app */,
+				3CC681031213E0A800181E02 /* Yawgmoth.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +257,7 @@
 				3C1E539111F61E8B001FB0BF /* Yawgmoth */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				3CC680E31213DF6300181E02 /* Yawgmoth-Distribution-Info.plist */,
 			);
 			name = Yawgmoth;
 			sourceTree = "<group>";
@@ -255,6 +275,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3CC681051213E0C400181E02 /* update */,
 				3CC6809B1213D43B00181E02 /* dsa_pub.pem */,
 				3CE3033F120D63FF0093FD1E /* card-image-map */,
 				3C31AFCA120B55FB00ED4CDE /* Sets */,
@@ -393,26 +414,27 @@
 			productReference = 3C0F865A11FD00300043D7DD /* Yawgmoth.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3C31AF66120B3BF000ED4CDE /* Yawgmoth Updater */ = {
+		3CC680E01213DF6300181E02 /* Yawgmoth-Distribution */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3C31AF6C120B3BF100ED4CDE /* Build configuration list for PBXNativeTarget "Yawgmoth Updater" */;
+			buildConfigurationList = 3CC680E61213DF6400181E02 /* Build configuration list for PBXNativeTarget "Yawgmoth-Distribution" */;
 			buildPhases = (
-				3C31AF63120B3BF000ED4CDE /* Resources */,
-				3C31AF64120B3BF000ED4CDE /* Sources */,
-				3C31AF65120B3BF000ED4CDE /* Frameworks */,
+				3CC680DD1213DF6300181E02 /* Resources */,
+				3CC680DE1213DF6300181E02 /* Sources */,
+				3CC680DF1213DF6300181E02 /* Frameworks */,
+				3CC681021213DFF900181E02 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Yawgmoth Updater";
-			productName = "Yawgmoth Updater";
-			productReference = 3C31AF67120B3BF000ED4CDE /* Yawgmoth Updater.app */;
+			name = "Yawgmoth-Distribution";
+			productName = "Yawgmoth-Distribution";
+			productReference = 3CC681031213E0A800181E02 /* Yawgmoth.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8D1107260486CEB800E47090 /* Yawgmoth-10.5 */ = {
+		8D1107260486CEB800E47090 /* Yawgmoth-Debug */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Yawgmoth-10.5" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Yawgmoth-Debug" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -423,7 +445,7 @@
 			);
 			dependencies = (
 			);
-			name = "Yawgmoth-10.5";
+			name = "Yawgmoth-Debug";
 			productInstallPath = "$(HOME)/Applications";
 			productName = Yawgmoth;
 			productReference = 8D1107320486CEB800E47090 /* Yawgmoth.app */;
@@ -441,10 +463,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* Yawgmoth-10.5 */,
+				3CC680E01213DF6300181E02 /* Yawgmoth-Distribution */,
+				8D1107260486CEB800E47090 /* Yawgmoth-Debug */,
 				3C0F864711FD00300043D7DD /* Yawgmoth-10.6 */,
 				3C006A8A11FF883C00C5C084 /* Yawgmoth-Importer */,
-				3C31AF66120B3BF000ED4CDE /* Yawgmoth Updater */,
 			);
 		};
 /* End PBXProject section */
@@ -471,19 +493,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C31AF63120B3BF000ED4CDE /* Resources */ = {
+		3CC680DD1213DF6300181E02 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C31AF70120B3C9B00ED4CDE /* Updater.xib in Resources */,
-				3C31AFD3120B560E00ED4CDE /* Alara Reborn.csv in Resources */,
-				3C31AFD4120B560E00ED4CDE /* Conflux.csv in Resources */,
-				3C31AFD5120B560E00ED4CDE /* M2010.csv in Resources */,
-				3C31AFD6120B560E00ED4CDE /* M2011.csv in Resources */,
-				3C31AFD7120B560E00ED4CDE /* Rise of the Eldrazi.csv in Resources */,
-				3C31AFD8120B560E00ED4CDE /* Shards of Alara.csv in Resources */,
-				3C31AFD9120B560E00ED4CDE /* Worldwake.csv in Resources */,
-				3C31AFDA120B560E00ED4CDE /* Zendikar.csv in Resources */,
+				3CC680E71213DFA400181E02 /* InfoPlist.strings in Resources */,
+				3CC680E81213DFA400181E02 /* storedata in Resources */,
+				3CC680E91213DFA400181E02 /* card-image-map in Resources */,
+				3CC680EA1213DFA400181E02 /* dsa_pub.pem in Resources */,
+				3CC680EB1213DFA400181E02 /* Yawgmoth.xib in Resources */,
+				3CC681061213E0C400181E02 /* update in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,13 +547,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C31AF64120B3BF000ED4CDE /* Sources */ = {
+		3CC680DE1213DF6300181E02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C31AF8F120B429C00ED4CDE /* main.m in Sources */,
-				3C31AFA0120B42F000ED4CDE /* SIYUpdaterController.m in Sources */,
-				3CE302C1120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */,
+				3CC680EC1213DFB000181E02 /* SIYController.m in Sources */,
+				3CC680ED1213DFB000181E02 /* main.m in Sources */,
+				3CC680EE1213DFB000181E02 /* SIYCardImageManager.m in Sources */,
+				3CC680EF1213DFB000181E02 /* SIYDataModel.xcdatamodel in Sources */,
+				3CC680F01213DFB000181E02 /* SIYMetaCard.m in Sources */,
+				3CC680F11213DFB000181E02 /* SIYDeckDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,7 +702,7 @@
 			};
 			name = Release;
 		};
-		3C31AF6A120B3BF100ED4CDE /* Debug */ = {
+		3CC680E41213DF6400181E02 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -691,7 +713,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Yawgmoth_Prefix.pch;
-				INFOPLIST_FILE = "res/Yawgmoth Updater-Info.plist";
+				INFOPLIST_FILE = res/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -700,11 +722,11 @@
 					AppKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "Yawgmoth Updater";
+				PRODUCT_NAME = Yawgmoth;
 			};
 			name = Debug;
 		};
-		3C31AF6B120B3BF100ED4CDE /* Release */ = {
+		3CC680E51213DF6400181E02 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -714,7 +736,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "Yawgmoth Updater-Info.plist";
+				INFOPLIST_FILE = "Yawgmoth-Distribution-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -723,7 +745,7 @@
 					AppKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "Yawgmoth Updater";
+				PRODUCT_NAME = "Yawgmoth-Distribution";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -814,16 +836,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3C31AF6C120B3BF100ED4CDE /* Build configuration list for PBXNativeTarget "Yawgmoth Updater" */ = {
+		3CC680E61213DF6400181E02 /* Build configuration list for PBXNativeTarget "Yawgmoth-Distribution" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3C31AF6A120B3BF100ED4CDE /* Debug */,
-				3C31AF6B120B3BF100ED4CDE /* Release */,
+				3CC680E41213DF6400181E02 /* Debug */,
+				3CC680E51213DF6400181E02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Yawgmoth-10.5" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Yawgmoth-Debug" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
