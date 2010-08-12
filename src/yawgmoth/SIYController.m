@@ -248,6 +248,7 @@
 		NSEnumerator *enumerator = [cards objectEnumerator];
 		NSManagedObject *card;
 		while ((card = [enumerator nextObject]) != nil) {
+			[card removeObserver:deckMetaCard forKeyPath:@"quantity"];
 			[[self managedObjectContext] deleteObject:card];
 		}
         [[self managedObjectContext] deleteObject:deckMetaCard];
@@ -602,6 +603,7 @@
 		if ([card.metaCard.cards count] == 1) {
 			[[self managedObjectContext] deleteObject:metaCard];
 		}
+		[card removeObserver:metaCard forKeyPath:@"quantity"];
 		[[self managedObjectContext] deleteObject:card];
 	}
 }
