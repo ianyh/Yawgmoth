@@ -29,6 +29,8 @@
 		3C50B3351210A7DC00AA4C68 /* SM2DGraphView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3C50B3451210AAA000AA4C68 /* SIYDeckDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */; };
 		3C50B3461210AAA000AA4C68 /* SIYDeckDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */; };
+		3C7FCF4F1213EDBC0035BFE6 /* SIYUpdaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */; };
+		3C7FCF501213EDC70035BFE6 /* SIYUpdaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */; };
 		3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
 		3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
 		3CC680941213D13800181E02 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC680931213D13800181E02 /* Sparkle.framework */; };
@@ -56,6 +58,7 @@
 		3CC680F61213DFF100181E02 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CC680931213D13800181E02 /* Sparkle.framework */; };
 		3CC680F71213DFF100181E02 /* SM2DGraphView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3CC681061213E0C400181E02 /* update in Resources */ = {isa = PBXBuildFile; fileRef = 3CC681051213E0C400181E02 /* update */; };
+		3CC681201213E46E00181E02 /* SM2DGraphView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3CE302BE120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */; };
 		3CE302BF120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */; };
 		3CE302C0120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */; };
@@ -183,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CC681201213E46E00181E02 /* SM2DGraphView.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				3CC680941213D13800181E02 /* Sparkle.framework in Frameworks */,
 			);
@@ -526,6 +530,7 @@
 				3CC680EE1213DFB000181E02 /* SIYCardImageManager.m in Sources */,
 				3CC680EF1213DFB000181E02 /* SIYDataModel.xcdatamodel in Sources */,
 				3CC680F01213DFB000181E02 /* SIYMetaCard.m in Sources */,
+				3C7FCF4F1213EDBC0035BFE6 /* SIYUpdaterController.m in Sources */,
 				3CC680F11213DFB000181E02 /* SIYDeckDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C7FCF501213EDC70035BFE6 /* SIYUpdaterController.m in Sources */,
 				3C1E539A11F620F9001FB0BF /* SIYController.m in Sources */,
 				3C1E539D11F6212E001FB0BF /* main.m in Sources */,
 				3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */,

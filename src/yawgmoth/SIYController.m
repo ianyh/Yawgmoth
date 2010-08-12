@@ -4,6 +4,11 @@
 @implementation SIYController
 
 - (void)awakeFromNib
+{	
+	imageManager = [[[SIYCardImageManager alloc] initWithApplicationSupportDirectory:[self applicationSupportDirectory]] retain];	
+}
+
+- (void)applicationDidBecomeActive:(NSNotification *)notification
 {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSString *updateFilePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"update"];
@@ -11,8 +16,6 @@
 		[updaterController update];
 		[fileManager removeItemAtPath:updateFilePath error:nil];
 	}
-	
-	imageManager = [[[SIYCardImageManager alloc] initWithApplicationSupportDirectory:[self applicationSupportDirectory]] retain];	
 }
 
 - (NSString *)applicationSupportDirectory 

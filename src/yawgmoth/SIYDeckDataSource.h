@@ -1,19 +1,9 @@
-//
-//  SIYDeckDataSource.h
-//  Yawgmoth
-//
-//  Created by Ian Ynda-Hummel on 8/9/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
-//
-
 #import <Cocoa/Cocoa.h>
 #import <SM2DGraphView/SM2DGraphView.h>
 #import <SM2DGraphView/SMPieChartView.h>
 
 // data to index:
 //  distribution of land mana
-//  distribution of converted costs
-//  distribution of types
 
 @interface SIYDeckDataSource : NSObject {
 	NSManagedObject *deck;

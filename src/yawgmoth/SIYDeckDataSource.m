@@ -1,11 +1,3 @@
-//
-//  SIYDeckDataSource.m
-//  Yawgmoth
-//
-//  Created by Ian Ynda-Hummel on 8/9/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
-//
-
 #import "SIYDeckDataSource.h"
 
 

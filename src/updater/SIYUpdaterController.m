@@ -215,18 +215,21 @@
 
 - (void)update
 {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	[self startUpdate];
+	[NSApp runModalSession:modalSession];
 	[self endUpdate];
+	[pool release];
 }
 
 - (void)startUpdate
 {
-	[updatePanel makeKeyAndOrderFront:self];
+	modalSession = [NSApp beginModalSessionForWindow:updatePanel];
 }
 
 - (void)endUpdate
 {
-	[self save];
+	[NSApp endModalSession:modalSession];
 	[updatePanel close];
 }
 

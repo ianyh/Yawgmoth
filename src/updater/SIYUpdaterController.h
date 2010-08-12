@@ -8,7 +8,9 @@
 	
 	NSPersistentStoreCoordinator *persistentStoreCoordinator;
     NSManagedObjectModel *managedObjectModel;
-    NSManagedObjectContext *managedObjectContext;    
+    NSManagedObjectContext *managedObjectContext;
+	
+	NSModalSession modalSession;
 }
 
 - (NSString *)applicationSupportDirectory;
@@ -19,5 +21,7 @@
 - (void)save;
 - (NSString *)superTypeFromType:(NSString *)type;
 - (void)update;
+- (void)startUpdate;
+- (void)endUpdate;
 
 @end

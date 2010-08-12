@@ -12,6 +12,7 @@
 		</dictionary>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<integer value="1078"/>
+			<integer value="192"/>
 			<integer value="69"/>
 			<integer value="414"/>
 			<integer value="1025"/>
@@ -80,7 +81,7 @@
 									<reference key="NSOnImage" ref="320684736"/>
 									<reference key="NSMixedImage" ref="921746628"/>
 								</object>
-								<object class="NSMenuItem" id="335570448">
+								<object class="NSMenuItem" id="941996714">
 									<reference key="NSMenu" ref="637583734"/>
 									<string key="NSTitle">Check for Updates...</string>
 									<string key="NSKeyEquiv"/>
@@ -314,7 +315,7 @@
 				<nil key="NSViewClass"/>
 				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<object class="NSView" key="NSWindowView" id="421791908">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSBox" id="937099974">
@@ -1126,6 +1127,7 @@
 						</object>
 					</array>
 					<string key="NSFrameSize">{886, 643}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
@@ -2928,7 +2930,7 @@
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
 			</object>
-			<object class="NSWindowTemplate" id="122348892">
+			<object class="NSWindowTemplate" id="28361802">
 				<int key="NSWindowStyleMask">1</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{162, 398}, {268, 81}}</string>
@@ -2936,31 +2938,31 @@
 				<string key="NSWindowTitle"/>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
-				<object class="NSView" key="NSWindowView" id="854360251">
+				<object class="NSView" key="NSWindowView" id="90205253">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
-						<object class="NSProgressIndicator" id="715548410">
-							<reference key="NSNextResponder" ref="854360251"/>
+						<object class="NSProgressIndicator" id="603426057">
+							<reference key="NSNextResponder" ref="90205253"/>
 							<int key="NSvFlags">1292</int>
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
 							<string key="NSFrame">{{18, 41}, {232, 20}}</string>
-							<reference key="NSSuperview" ref="854360251"/>
+							<reference key="NSSuperview" ref="90205253"/>
 							<int key="NSpiFlags">16392</int>
 							<double key="NSMaxValue">100</double>
 						</object>
-						<object class="NSTextField" id="210990060">
-							<reference key="NSNextResponder" ref="854360251"/>
+						<object class="NSTextField" id="153149221">
+							<reference key="NSNextResponder" ref="90205253"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 20}, {234, 17}}</string>
-							<reference key="NSSuperview" ref="854360251"/>
+							<reference key="NSSuperview" ref="90205253"/>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSTextFieldCell" key="NSCell" id="1023962990">
+							<object class="NSTextFieldCell" key="NSCell" id="829753450">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272630784</int>
 								<string key="NSContents"/>
 								<reference key="NSSupport" ref="465319721"/>
-								<reference key="NSControlView" ref="210990060"/>
+								<reference key="NSControlView" ref="153149221"/>
 								<reference key="NSBackgroundColor" ref="745973202"/>
 								<reference key="NSTextColor" ref="173462953"/>
 							</object>
@@ -2978,11 +2980,8 @@
 			<object class="NSCustomObject" id="357604252">
 				<string key="NSClassName">SIYDeckDataSource</string>
 			</object>
-			<object class="NSCustomObject" id="707710120">
+			<object class="NSCustomObject" id="626315597">
 				<string key="NSClassName">SUUpdater</string>
-			</object>
-			<object class="NSCustomObject" id="957370760">
-				<string key="NSClassName">SIYUpdaterController</string>
 			</object>
 			<object class="NSArrayController" id="361697186">
 				<array class="NSMutableArray" key="NSDeclaredKeys">
@@ -3141,6 +3140,9 @@
 				<bool key="NSFilterRestrictsInsertion">YES</bool>
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
+			<object class="NSCustomObject" id="515108653">
+				<string key="NSClassName">SIYUpdaterController</string>
+			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<array class="NSMutableArray" key="connectionRecords">
@@ -3280,14 +3282,6 @@
 						<reference key="destination" ref="967379210"/>
 					</object>
 					<int key="connectionID">578</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">addToLibraryButton</string>
-						<reference key="source" ref="900151345"/>
-						<reference key="destination" ref="280701586"/>
-					</object>
-					<int key="connectionID">580</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -4720,42 +4714,42 @@
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">checkForUpdates:</string>
-						<reference key="source" ref="707710120"/>
-						<reference key="destination" ref="335570448"/>
+						<reference key="source" ref="626315597"/>
+						<reference key="destination" ref="941996714"/>
 					</object>
 					<int key="connectionID">1076</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">progressIndicator</string>
-						<reference key="source" ref="957370760"/>
-						<reference key="destination" ref="715548410"/>
-					</object>
-					<int key="connectionID">1083</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">progressLabel</string>
-						<reference key="source" ref="957370760"/>
-						<reference key="destination" ref="210990060"/>
-					</object>
-					<int key="connectionID">1084</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">updaterController</string>
 						<reference key="source" ref="900151345"/>
-						<reference key="destination" ref="957370760"/>
+						<reference key="destination" ref="515108653"/>
 					</object>
-					<int key="connectionID">1085</int>
+					<int key="connectionID">1088</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">updatePanel</string>
-						<reference key="source" ref="957370760"/>
-						<reference key="destination" ref="122348892"/>
+						<reference key="source" ref="515108653"/>
+						<reference key="destination" ref="28361802"/>
 					</object>
-					<int key="connectionID">1086</int>
+					<int key="connectionID">1089</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">progressIndicator</string>
+						<reference key="source" ref="515108653"/>
+						<reference key="destination" ref="603426057"/>
+					</object>
+					<int key="connectionID">1090</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">progressLabel</string>
+						<reference key="source" ref="515108653"/>
+						<reference key="destination" ref="153149221"/>
+					</object>
+					<int key="connectionID">1091</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -4876,7 +4870,7 @@
 							<reference ref="69483156"/>
 							<reference ref="461106667"/>
 							<reference ref="441470293"/>
-							<reference ref="335570448"/>
+							<reference ref="941996714"/>
 						</array>
 						<reference key="parent" ref="789440762"/>
 					</object>
@@ -6266,56 +6260,55 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1074</int>
-						<reference key="object" ref="707710120"/>
+						<reference key="object" ref="626315597"/>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">SUUpdater</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1075</int>
-						<reference key="object" ref="335570448"/>
+						<reference key="object" ref="941996714"/>
 						<reference key="parent" ref="637583734"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1077</int>
-						<reference key="object" ref="122348892"/>
+						<reference key="object" ref="28361802"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="854360251"/>
+							<reference ref="90205253"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">UpdatingPanel</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1078</int>
-						<reference key="object" ref="854360251"/>
+						<reference key="object" ref="90205253"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="715548410"/>
-							<reference ref="210990060"/>
+							<reference ref="603426057"/>
+							<reference ref="153149221"/>
 						</array>
-						<reference key="parent" ref="122348892"/>
+						<reference key="parent" ref="28361802"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1079</int>
-						<reference key="object" ref="715548410"/>
-						<reference key="parent" ref="854360251"/>
+						<reference key="object" ref="603426057"/>
+						<reference key="parent" ref="90205253"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1080</int>
-						<reference key="object" ref="210990060"/>
+						<reference key="object" ref="153149221"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="1023962990"/>
+							<reference ref="829753450"/>
 						</array>
-						<reference key="parent" ref="854360251"/>
+						<reference key="parent" ref="90205253"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1081</int>
-						<reference key="object" ref="1023962990"/>
-						<reference key="parent" ref="210990060"/>
+						<reference key="object" ref="829753450"/>
+						<reference key="parent" ref="153149221"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">1082</int>
-						<reference key="object" ref="957370760"/>
+						<int key="objectID">1087</int>
+						<reference key="object" ref="515108653"/>
 						<reference key="parent" ref="0"/>
-						<string key="objectName">SIYUpdater</string>
 					</object>
 				</array>
 			</object>
@@ -6354,7 +6347,7 @@
 				<string key="1079.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1080.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1081.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1082.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1087.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="116.IBEditorWindowLastContentRect">{{498, 286}, {143, 23}}</string>
 				<string key="116.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="116.ImportedFromIB2"/>
@@ -6606,7 +6599,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1086</int>
+			<int key="maxID">1091</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -7363,7 +7356,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="143557741">
+					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="836937623">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">Sparkle.framework/Headers/SUUpdater.h</string>
 					</object>
@@ -7654,7 +7647,7 @@
 							<string key="candidateClassName">id</string>
 						</object>
 					</object>
-					<reference key="sourceIdentifier" ref="143557741"/>
+					<reference key="sourceIdentifier" ref="836937623"/>
 				</object>
 			</array>
 		</object>
