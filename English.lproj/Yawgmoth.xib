@@ -81,7 +81,7 @@
 									<reference key="NSOnImage" ref="320684736"/>
 									<reference key="NSMixedImage" ref="921746628"/>
 								</object>
-								<object class="NSMenuItem" id="941996714">
+								<object class="NSMenuItem" id="314017968">
 									<reference key="NSMenu" ref="637583734"/>
 									<string key="NSTitle">Check for Updates...</string>
 									<string key="NSKeyEquiv"/>
@@ -2930,39 +2930,39 @@
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
 			</object>
-			<object class="NSWindowTemplate" id="28361802">
+			<object class="NSWindowTemplate" id="867899740">
 				<int key="NSWindowStyleMask">1</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{162, 398}, {268, 81}}</string>
 				<int key="NSWTFlags">-1267204096</int>
-				<string key="NSWindowTitle"/>
+				<string key="NSWindowTitle">Updating...</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
-				<object class="NSView" key="NSWindowView" id="90205253">
+				<object class="NSView" key="NSWindowView" id="950365209">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
-						<object class="NSProgressIndicator" id="603426057">
-							<reference key="NSNextResponder" ref="90205253"/>
+						<object class="NSProgressIndicator" id="983673488">
+							<reference key="NSNextResponder" ref="950365209"/>
 							<int key="NSvFlags">1292</int>
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
 							<string key="NSFrame">{{18, 41}, {232, 20}}</string>
-							<reference key="NSSuperview" ref="90205253"/>
+							<reference key="NSSuperview" ref="950365209"/>
 							<int key="NSpiFlags">16392</int>
 							<double key="NSMaxValue">100</double>
 						</object>
-						<object class="NSTextField" id="153149221">
-							<reference key="NSNextResponder" ref="90205253"/>
+						<object class="NSTextField" id="976808885">
+							<reference key="NSNextResponder" ref="950365209"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 20}, {234, 17}}</string>
-							<reference key="NSSuperview" ref="90205253"/>
+							<reference key="NSSuperview" ref="950365209"/>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSTextFieldCell" key="NSCell" id="829753450">
+							<object class="NSTextFieldCell" key="NSCell" id="496472049">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272630784</int>
 								<string key="NSContents"/>
 								<reference key="NSSupport" ref="465319721"/>
-								<reference key="NSControlView" ref="153149221"/>
+								<reference key="NSControlView" ref="976808885"/>
 								<reference key="NSBackgroundColor" ref="745973202"/>
 								<reference key="NSTextColor" ref="173462953"/>
 							</object>
@@ -2980,7 +2980,7 @@
 			<object class="NSCustomObject" id="357604252">
 				<string key="NSClassName">SIYDeckDataSource</string>
 			</object>
-			<object class="NSCustomObject" id="626315597">
+			<object class="NSCustomObject" id="287136042">
 				<string key="NSClassName">SUUpdater</string>
 			</object>
 			<object class="NSArrayController" id="361697186">
@@ -3140,7 +3140,7 @@
 				<bool key="NSFilterRestrictsInsertion">YES</bool>
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
-			<object class="NSCustomObject" id="515108653">
+			<object class="NSCustomObject" id="192675890">
 				<string key="NSClassName">SIYUpdaterController</string>
 			</object>
 		</array>
@@ -4714,8 +4714,8 @@
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">checkForUpdates:</string>
-						<reference key="source" ref="626315597"/>
-						<reference key="destination" ref="941996714"/>
+						<reference key="source" ref="287136042"/>
+						<reference key="destination" ref="314017968"/>
 					</object>
 					<int key="connectionID">1076</int>
 				</object>
@@ -4723,31 +4723,31 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">updaterController</string>
 						<reference key="source" ref="900151345"/>
-						<reference key="destination" ref="515108653"/>
+						<reference key="destination" ref="192675890"/>
 					</object>
 					<int key="connectionID">1088</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">updatePanel</string>
-						<reference key="source" ref="515108653"/>
-						<reference key="destination" ref="28361802"/>
+						<reference key="source" ref="192675890"/>
+						<reference key="destination" ref="867899740"/>
 					</object>
 					<int key="connectionID">1089</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">progressIndicator</string>
-						<reference key="source" ref="515108653"/>
-						<reference key="destination" ref="603426057"/>
+						<reference key="source" ref="192675890"/>
+						<reference key="destination" ref="983673488"/>
 					</object>
 					<int key="connectionID">1090</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">progressLabel</string>
-						<reference key="source" ref="515108653"/>
-						<reference key="destination" ref="153149221"/>
+						<reference key="source" ref="192675890"/>
+						<reference key="destination" ref="976808885"/>
 					</object>
 					<int key="connectionID">1091</int>
 				</object>
@@ -4870,7 +4870,7 @@
 							<reference ref="69483156"/>
 							<reference ref="461106667"/>
 							<reference ref="441470293"/>
-							<reference ref="941996714"/>
+							<reference ref="314017968"/>
 						</array>
 						<reference key="parent" ref="789440762"/>
 					</object>
@@ -6260,54 +6260,54 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1074</int>
-						<reference key="object" ref="626315597"/>
+						<reference key="object" ref="287136042"/>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">SUUpdater</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1075</int>
-						<reference key="object" ref="941996714"/>
+						<reference key="object" ref="314017968"/>
 						<reference key="parent" ref="637583734"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1077</int>
-						<reference key="object" ref="28361802"/>
+						<reference key="object" ref="867899740"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="90205253"/>
+							<reference ref="950365209"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">UpdatingPanel</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1078</int>
-						<reference key="object" ref="90205253"/>
+						<reference key="object" ref="950365209"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="603426057"/>
-							<reference ref="153149221"/>
+							<reference ref="983673488"/>
+							<reference ref="976808885"/>
 						</array>
-						<reference key="parent" ref="28361802"/>
+						<reference key="parent" ref="867899740"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1079</int>
-						<reference key="object" ref="603426057"/>
-						<reference key="parent" ref="90205253"/>
+						<reference key="object" ref="983673488"/>
+						<reference key="parent" ref="950365209"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1080</int>
-						<reference key="object" ref="153149221"/>
+						<reference key="object" ref="976808885"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="829753450"/>
+							<reference ref="496472049"/>
 						</array>
-						<reference key="parent" ref="90205253"/>
+						<reference key="parent" ref="950365209"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1081</int>
-						<reference key="object" ref="829753450"/>
-						<reference key="parent" ref="153149221"/>
+						<reference key="object" ref="496472049"/>
+						<reference key="parent" ref="976808885"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1087</int>
-						<reference key="object" ref="515108653"/>
+						<reference key="object" ref="192675890"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</array>
@@ -7356,7 +7356,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="836937623">
+					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="543439441">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">Sparkle.framework/Headers/SUUpdater.h</string>
 					</object>
@@ -7647,7 +7647,7 @@
 							<string key="candidateClassName">id</string>
 						</object>
 					</object>
-					<reference key="sourceIdentifier" ref="836937623"/>
+					<reference key="sourceIdentifier" ref="543439441"/>
 				</object>
 			</array>
 		</object>
