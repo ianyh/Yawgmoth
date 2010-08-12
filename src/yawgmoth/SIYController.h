@@ -7,6 +7,8 @@
 	
 	SIYCardImageManager *imageManager;
 	
+	IBOutlet SIYUpdaterController *updaterController;
+	
 	IBOutlet NSArrayController *allCardsController;
 	IBOutlet NSArrayController *libraryController;
 	IBOutlet NSArrayController *deckCardsController;

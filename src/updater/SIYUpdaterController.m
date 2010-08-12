@@ -10,27 +10,6 @@
     return [basePath stringByAppendingPathComponent:@"Yawgmoth"];
 }
 
-- (void)awakeFromNib
-{
-    setToCards = [[NSMutableDictionary dictionary] retain];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
-    NSDirectoryEnumerator *directoryEnumerator = [fileManager enumeratorAtPath:resourcePath];
-    NSString *fileName;
-    
-    while ((fileName = [directoryEnumerator nextObject]) != nil) {
-        if ([fileName hasSuffix:@".csv"]) {
-            NSString *setName = [[fileName componentsSeparatedByString:@"."] objectAtIndex:0];
-            NSString *fileString = [NSString stringWithContentsOfFile:[resourcePath stringByAppendingPathComponent:fileName] 
-                                                             encoding:NSASCIIStringEncoding 
-                                                             error:nil];
-            NSArray *setRows = [self csvRowsFromString:fileString];
-            [setToCards setObject:setRows forKey:setName];
-        }
-    }    
-}
-
 - (NSArray *)csvRowsFromString:(NSString *)fileString 
 {
     NSMutableArray *rows = [NSMutableArray array];
@@ -236,56 +215,19 @@
 
 - (void)update
 {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    NSArray *setNames = [setToCards allKeys];
-    double setIncrement = 100.0 / [setNames count];
-    int i, j;
-    
-    for (i = 0; i < [setNames count]; i++) {
-        NSString *setName = [setNames objectAtIndex:i];
-        [setLabel setStringValue:setName];
-        
-        NSArray *setRows = [setToCards objectForKey:setName];
-        [cardNumberLabel setStringValue:[NSString stringWithFormat:@"0/%d", [setRows count]]];
-        [cardProgressIndicator setDoubleValue:0.0];
-        double increment = 100.0 / [setRows count];
-        
-        for (j = 0; j < [setRows count]; j++) {
-            NSArray *row = [setRows objectAtIndex:j];
-            NSManagedObject *card = [self managedFullCardWithName:[row objectAtIndex:0] withSet:setName];
-            if (card == nil) {
-                card = [NSEntityDescription insertNewObjectForEntityForName:@"FullCard" inManagedObjectContext:[self managedObjectContext]];
-                
-                card.name = [row objectAtIndex:0];
-                card.manaCost = [row objectAtIndex:1];
-                card.convertedManaCost = [NSNumber numberWithInt:[[row objectAtIndex:2] intValue]];
-                card.power = [row objectAtIndex:3];
-                card.toughness = [row objectAtIndex:4];
-                card.rarity = [row objectAtIndex:5];
-                card.type = [row objectAtIndex:6];
-                card.superType = [self superTypeFromType:[row objectAtIndex:6]];
-                if ([row count] > 7) {
-                    card.text = [row objectAtIndex:7];
-                }
-                card.set = setName;
-                
-                [self save];
-            }
-            
-            [cardNumberLabel setStringValue:[NSString stringWithFormat:@"%d/%d", j+1, [setRows count]]];
-            [cardProgressIndicator incrementBy:increment];
-        }
-        
-        [setProgressIndicator incrementBy:setIncrement];
-    }
-    
-    [pool release];
+	[self startUpdate];
+	[self endUpdate];
 }
 
-- (IBAction)startUpdate:(id)sender
+- (void)startUpdate
 {
-    [updateButton setEnabled:NO];
-    [NSThread detachNewThreadSelector:@selector(update) toTarget:self withObject:NULL];
+	[updatePanel makeKeyAndOrderFront:self];
+}
+
+- (void)endUpdate
+{
+	[self save];
+	[updatePanel close];
 }
 
 @end

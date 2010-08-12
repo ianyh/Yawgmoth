@@ -45,6 +45,12 @@
 		3C8EED8811ED2E07003E7D9F /* DeckEditorWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8EED8611ED2E07003E7D9F /* DeckEditorWindow.nib */; };
 		3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
 		3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
+		3CC680941213D13800181E02 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC680931213D13800181E02 /* Sparkle.framework */; };
+		3CC680951213D14900181E02 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CC680931213D13800181E02 /* Sparkle.framework */; };
+		3CC680961213D15900181E02 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CC680931213D13800181E02 /* Sparkle.framework */; };
+		3CC680971213D16700181E02 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC680931213D13800181E02 /* Sparkle.framework */; };
+		3CC6809C1213D43B00181E02 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6809B1213D43B00181E02 /* dsa_pub.pem */; };
+		3CC6809D1213D43B00181E02 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6809B1213D43B00181E02 /* dsa_pub.pem */; };
 		3CE302BE120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */; };
 		3CE302BF120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */; };
 		3CE302C0120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */; };
@@ -64,6 +70,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3CC680961213D15900181E02 /* Sparkle.framework in CopyFiles */,
 				3C50B32F1210A7C800AA4C68 /* SM2DGraphView.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +81,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3CC680951213D14900181E02 /* Sparkle.framework in CopyFiles */,
 				3C50B3351210A7DC00AA4C68 /* SM2DGraphView.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +134,8 @@
 		3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDataModelManagedObjects.h; path = src/yawgmoth/SIYDataModelManagedObjects.h; sourceTree = "<group>"; };
 		3CBD2D3911FE2E5300DE9543 /* SIYCardImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYCardImageManager.h; path = src/yawgmoth/SIYCardImageManager.h; sourceTree = "<group>"; };
 		3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYCardImageManager.m; path = src/yawgmoth/SIYCardImageManager.m; sourceTree = "<group>"; };
+		3CC680931213D13800181E02 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Library/Frameworks/Sparkle.framework; sourceTree = SDKROOT; };
+		3CC6809B1213D43B00181E02 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = SIYDataModel.xcdatamodel; path = src/yawgmoth/SIYDataModel.xcdatamodel; sourceTree = "<group>"; };
 		3CE3033F120D63FF0093FD1E /* card-image-map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "card-image-map"; path = "res/card-image-map"; sourceTree = "<group>"; };
 		3CFE865D120DA5CD0096E65B /* SIYMetaCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYMetaCard.h; path = src/yawgmoth/SIYMetaCard.h; sourceTree = "<group>"; };
@@ -147,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CC680971213D16700181E02 /* Sparkle.framework in Frameworks */,
 				3C0F865611FD00300043D7DD /* Cocoa.framework in Frameworks */,
 				3C50B32B1210A7A700AA4C68 /* SM2DGraphView.framework in Frameworks */,
 			);
@@ -165,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				3CC680941213D13800181E02 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +203,7 @@
 			children = (
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */,
+				3CC680931213D13800181E02 /* Sparkle.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -240,6 +253,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3CC6809B1213D43B00181E02 /* dsa_pub.pem */,
 				3CE3033F120D63FF0093FD1E /* card-image-map */,
 				3C31AFCA120B55FB00ED4CDE /* Sets */,
 				3C0A8A9111FFF80D0032CEDB /* Infos */,
@@ -461,6 +475,7 @@
 				3C0F864A11FD00300043D7DD /* DeckEditorWindow.nib in Resources */,
 				3C006B7A11FFC4BB00C5C084 /* storedata in Resources */,
 				3CE30340120D63FF0093FD1E /* card-image-map in Resources */,
+				3CC6809C1213D43B00181E02 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +503,7 @@
 				3C8EED8811ED2E07003E7D9F /* DeckEditorWindow.nib in Resources */,
 				3C006B7B11FFC4BB00C5C084 /* storedata in Resources */,
 				3CE30341120D63FF0093FD1E /* card-image-map in Resources */,
+				3CC6809D1213D43B00181E02 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

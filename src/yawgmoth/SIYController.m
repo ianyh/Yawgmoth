@@ -5,6 +5,13 @@
 
 - (void)awakeFromNib
 {
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSString *updateFilePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"update"];
+	if ([fileManager fileExistsAtPath:updateFilePath]) {
+		[updaterController update];
+		[fileManager removeItemAtPath:updateFilePath error:nil];
+	}
+	
 	imageManager = [[[SIYCardImageManager alloc] initWithApplicationSupportDirectory:[self applicationSupportDirectory]] retain];	
 }
 
