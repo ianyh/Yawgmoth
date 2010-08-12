@@ -34,12 +34,14 @@
 }
 
 - (void)addCardsObject:(NSManagedObject *)value 
-{    
+{
     NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
     
     [self willChangeValueForKey:@"cards" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
     [[self primitiveCards] addObject:value];
     [self didChangeValueForKey:@"cards" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+	
+	value.metaCard = self;
     
     [changedObjects release];
     
@@ -48,7 +50,7 @@
 }
 
 - (void)addCards:(NSSet *)value 
-{    
+{
     [self willChangeValueForKey:@"cards" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
     [[self primitiveCards] unionSet:value];
     [self didChangeValueForKey:@"cards" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
@@ -57,6 +59,7 @@
     NSManagedObject *object;
     
     while ((object = [enumerator nextObject]) != nil) {
+		object.metaCard = self;
         [object addObserver:self forKeyPath:@"quantity" options:0 context:nil];
     }
     [self updateQuantity];
