@@ -129,17 +129,8 @@
 		3C1E539811F620F9001FB0BF /* SIYController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYController.m; path = src/yawgmoth/SIYController.m; sourceTree = "<group>"; };
 		3C1E539C11F6212E001FB0BF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/yawgmoth/main.m; sourceTree = "<group>"; };
 		3C31AF6D120B3C7500ED4CDE /* Yawgmoth Updater-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Yawgmoth Updater-Info.plist"; path = "res/Yawgmoth Updater-Info.plist"; sourceTree = "<group>"; };
-		3C31AF6F120B3C9B00ED4CDE /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Updater.xib; sourceTree = "<group>"; };
 		3C31AF9E120B42EF00ED4CDE /* SIYUpdaterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYUpdaterController.h; path = src/updater/SIYUpdaterController.h; sourceTree = "<group>"; };
 		3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYUpdaterController.m; path = src/updater/SIYUpdaterController.m; sourceTree = "<group>"; };
-		3C31AFCB120B560E00ED4CDE /* Alara Reborn.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Alara Reborn.csv"; path = "res/sets/Alara Reborn.csv"; sourceTree = "<group>"; };
-		3C31AFCC120B560E00ED4CDE /* Conflux.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Conflux.csv; path = res/sets/Conflux.csv; sourceTree = "<group>"; };
-		3C31AFCD120B560E00ED4CDE /* M2010.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = M2010.csv; path = res/sets/M2010.csv; sourceTree = "<group>"; };
-		3C31AFCE120B560E00ED4CDE /* M2011.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = M2011.csv; path = res/sets/M2011.csv; sourceTree = "<group>"; };
-		3C31AFCF120B560E00ED4CDE /* Rise of the Eldrazi.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Rise of the Eldrazi.csv"; path = "res/sets/Rise of the Eldrazi.csv"; sourceTree = "<group>"; };
-		3C31AFD0120B560E00ED4CDE /* Shards of Alara.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Shards of Alara.csv"; path = "res/sets/Shards of Alara.csv"; sourceTree = "<group>"; };
-		3C31AFD1120B560E00ED4CDE /* Worldwake.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Worldwake.csv; path = res/sets/Worldwake.csv; sourceTree = "<group>"; };
-		3C31AFD2120B560E00ED4CDE /* Zendikar.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Zendikar.csv; path = res/sets/Zendikar.csv; sourceTree = "<group>"; };
 		3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SM2DGraphView.framework; path = Library/Frameworks/SM2DGraphView.framework; sourceTree = SDKROOT; };
 		3C50B3431210AAA000AA4C68 /* SIYDeckDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDeckDataSource.h; path = src/yawgmoth/SIYDeckDataSource.h; sourceTree = "<group>"; };
 		3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYDeckDataSource.m; path = src/yawgmoth/SIYDeckDataSource.m; sourceTree = "<group>"; };
@@ -278,7 +269,6 @@
 				3CC681051213E0C400181E02 /* update */,
 				3CC6809B1213D43B00181E02 /* dsa_pub.pem */,
 				3CE3033F120D63FF0093FD1E /* card-image-map */,
-				3C31AFCA120B55FB00ED4CDE /* Sets */,
 				3C0A8A9111FFF80D0032CEDB /* Infos */,
 				3C0A8A9011FFF7EE0032CEDB /* Interface */,
 				3C180E3D11FE918A00235976 /* cards.db */,
@@ -302,7 +292,6 @@
 			children = (
 				3CC680CA1213DE0100181E02 /* Yawgmoth.xib */,
 				3C0A8A8D11FFF7E80032CEDB /* Importer.xib */,
-				3C31AF6E120B3C9B00ED4CDE /* Updater.xib */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -341,21 +330,6 @@
 				3C0F85BD11FCDF3C0043D7DD /* FMResultSet.m */,
 			);
 			name = fmdb;
-			sourceTree = "<group>";
-		};
-		3C31AFCA120B55FB00ED4CDE /* Sets */ = {
-			isa = PBXGroup;
-			children = (
-				3C31AFCB120B560E00ED4CDE /* Alara Reborn.csv */,
-				3C31AFCC120B560E00ED4CDE /* Conflux.csv */,
-				3C31AFCD120B560E00ED4CDE /* M2010.csv */,
-				3C31AFCE120B560E00ED4CDE /* M2011.csv */,
-				3C31AFCF120B560E00ED4CDE /* Rise of the Eldrazi.csv */,
-				3C31AFD0120B560E00ED4CDE /* Shards of Alara.csv */,
-				3C31AFD1120B560E00ED4CDE /* Worldwake.csv */,
-				3C31AFD2120B560E00ED4CDE /* Zendikar.csv */,
-			);
-			name = Sets;
 			sourceTree = "<group>";
 		};
 		3C4EA4B511FFD8CC00F7F3CA /* Importer Classes */ = {
@@ -590,14 +564,6 @@
 				3C0A8A8E11FFF7E80032CEDB /* English */,
 			);
 			name = Importer.xib;
-			sourceTree = "<group>";
-		};
-		3C31AF6E120B3C9B00ED4CDE /* Updater.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C31AF6F120B3C9B00ED4CDE /* English */,
-			);
-			name = Updater.xib;
 			sourceTree = "<group>";
 		};
 		3CC680CA1213DE0100181E02 /* Yawgmoth.xib */ = {
