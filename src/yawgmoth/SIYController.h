@@ -1,6 +1,7 @@
 #import <Cocoa/Cocoa.h>
 #import "SIYCardImageManager.h"
 #import "SIYMetaCard.h"
+#import "SIYUpdaterController.h"
 
 
 @interface SIYController : NSObject {
