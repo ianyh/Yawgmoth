@@ -128,7 +128,6 @@
 		3C1E539711F620F9001FB0BF /* SIYController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYController.h; path = src/yawgmoth/SIYController.h; sourceTree = "<group>"; };
 		3C1E539811F620F9001FB0BF /* SIYController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYController.m; path = src/yawgmoth/SIYController.m; sourceTree = "<group>"; };
 		3C1E539C11F6212E001FB0BF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/yawgmoth/main.m; sourceTree = "<group>"; };
-		3C31AF6D120B3C7500ED4CDE /* Yawgmoth Updater-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Yawgmoth Updater-Info.plist"; path = "res/Yawgmoth Updater-Info.plist"; sourceTree = "<group>"; };
 		3C31AF9E120B42EF00ED4CDE /* SIYUpdaterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYUpdaterController.h; path = src/updater/SIYUpdaterController.h; sourceTree = "<group>"; };
 		3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYUpdaterController.m; path = src/updater/SIYUpdaterController.m; sourceTree = "<group>"; };
 		3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SM2DGraphView.framework; path = Library/Frameworks/SM2DGraphView.framework; sourceTree = SDKROOT; };
@@ -141,8 +140,7 @@
 		3CC680931213D13800181E02 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Library/Frameworks/Sparkle.framework; sourceTree = SDKROOT; };
 		3CC6809B1213D43B00181E02 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		3CC680CB1213DE0100181E02 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Yawgmoth.xib; sourceTree = "<group>"; };
-		3CC680E31213DF6300181E02 /* Yawgmoth-Distribution-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Yawgmoth-Distribution-Info.plist"; sourceTree = "<group>"; };
-		3CC681031213E0A800181E02 /* Yawgmoth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Yawgmoth.app; path = build/Debug/Yawgmoth.app; sourceTree = "<group>"; };
+		3CC681031213E0A800181E02 /* Yawgmoth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawgmoth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC681051213E0C400181E02 /* update */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = update; path = res/update; sourceTree = "<group>"; };
 		3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = SIYDataModel.xcdatamodel; path = src/yawgmoth/SIYDataModel.xcdatamodel; sourceTree = "<group>"; };
 		3CE3033F120D63FF0093FD1E /* card-image-map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "card-image-map"; path = "res/card-image-map"; sourceTree = "<group>"; };
@@ -248,7 +246,6 @@
 				3C1E539111F61E8B001FB0BF /* Yawgmoth */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				3CC680E31213DF6300181E02 /* Yawgmoth-Distribution-Info.plist */,
 			);
 			name = Yawgmoth;
 			sourceTree = "<group>";
@@ -299,7 +296,6 @@
 		3C0A8A9111FFF80D0032CEDB /* Infos */ = {
 			isa = PBXGroup;
 			children = (
-				3C31AF6D120B3C7500ED4CDE /* Yawgmoth Updater-Info.plist */,
 				3C0A8A9911FFF8720032CEDB /* Info-importer.plist */,
 				3C0A8A9511FFF8580032CEDB /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
