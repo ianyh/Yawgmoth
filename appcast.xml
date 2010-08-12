@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+   <channel>
+      <title>Yawgmoth</title>
+      <link>http://ianyh.github.com/Yawgmoth/</link>
+      <description>Most recent changes with links to updates.</description>
+      <language>en</language>
+         <item>
+            <title>Version 0.6.1</title>
+	    <description><![CDATA[
+	    test
+	    ]]>
+	    </description>
+            <pubDate>Wed, 11 Aug 2010 22:12:00 +0000</pubDate>
+            <enclosure url="http://github.com/downloads/ianyh/Yawgmoth/Yawgmoth.zip"
+		       sparkle:version="0.6.1" 
+		       length="1737551" 
+		       type="application/octet-stream" 
+		       sparkle:dsaSignature="file:///Users/ian/Documents/Projects/Yawgmoth/build/Release/Yawgmoth.zip"
+		       />
+         </item>
+   </channel>
+</rss>
