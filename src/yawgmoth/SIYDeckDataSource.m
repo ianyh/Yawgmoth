@@ -10,6 +10,7 @@
 	costCounts = [[NSMutableArray arrayWithCapacity:10] retain];
 	
 	[deckArrayController addObserver:self forKeyPath:@"selectedObjects" options:0 context:nil];
+	deck = nil;
 }
 
 - (NSColor *)colorFromString:(NSString *)string
@@ -39,13 +40,46 @@
 {
 	if ([keyPath isEqualToString:@"selectedObjects"]) {
 		if ([[deckArrayController selectedObjects] count] > 0) {
+			if (deck != nil) {
+				[self removeObserverForDeck:deck];
+			}
 			deck = [[deckArrayController selectedObjects] objectAtIndex:0];
-			[self reloadData];
+			[self registerObserverForDeck:deck];
 		} else {
 			deck = nil;
 		}
+		[self reloadData];		
+	} else if ([keyPath isEqualToString:@"quantity"]) {
+		[self reloadData];
+	} else if ([keyPath isEqualToString:@"metaCards"]) {
+		[self registerObserverForDeck:deck];
+		[self reloadData];
 	} else {
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+	}
+}
+
+- (void)registerObserverForDeck:(NSManagedObject *)observedDeck
+{
+	[deck addObserver:self forKeyPath:@"metaCards" options:0 context:nil];
+	
+	NSSet *metaCards = deck.metaCards;
+	NSEnumerator *enumerator = [metaCards objectEnumerator];
+	NSManagedObject *metaCard;
+	while ((metaCard = [enumerator nextObject]) != nil) {
+		[metaCard addObserver:self forKeyPath:@"quantity" options:0 context:nil];
+	}	
+}
+
+- (void)removeObserverForDeck:(NSManagedObject *)observedDeck
+{
+	[deck removeObserver:self forKeyPath:@"metaCards"];
+	
+	NSSet *metaCards = deck.metaCards;
+	NSEnumerator *enumerator = [metaCards objectEnumerator];
+	NSManagedObject *metaCard;
+	while ((metaCard = [enumerator nextObject]) != nil) {
+		[metaCard removeObserver:self forKeyPath:@"quantity"];
 	}
 }
 

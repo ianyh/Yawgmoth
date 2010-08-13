@@ -22,6 +22,8 @@
 	IBOutlet SM2DGraphView *manaCurveGraph;
 }
 
+- (void)registerObserverForDeck:(NSManagedObject *)observedDeck;
+- (void)removeObserverForDeck:(NSManagedObject *)observedDeck;
 - (void)reloadData;
 - (NSColor *)colorFromString:(NSString *)colorString;
 
