@@ -357,91 +357,100 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification
 {
-	if ([notification object] == allCardsTable) {
-		[self allCardsSelectionAction];
-	} else if ([notification object] == deckTableView) {
-		[self deckCardsTableSelectionAction];
-	} else if ([notification object] == libraryTableView) {
-		[self libraryTableSelectionAction];
+	NSManagedObject *selectedCard;
+	NSArray *array;
+
+	if ([notification object] == allCardsTable || [notification object] == cardsToAddToLibraryTable) {
+		if ([notification object] == allCardsTable) {
+			array = [allCardsController selectedObjects];
+		} else {
+			array = [tempCardsController selectedObjects];
+		}
+		
+		if ([array count] == 0) {
+			selectedCard = nil;
+		} else {
+			selectedCard = [array objectAtIndex:0];
+		}
+		
+		[self libraryAddingImageLoadForCard:selectedCard];
+	} else {
+		if ([notification object] == libraryTableView) {
+			array = [libraryController selectedObjects];
+		} else {
+			array = [deckCardsController selectedObjects];
+		}
+		
+		if ([array count] == 0) {
+			selectedCard = nil;
+		} else {
+			selectedCard = [array objectAtIndex:0];
+		}
+		
+		[self deckEditingImageLoadForCard:selectedCard];
 	}
 }
 
-- (void)allCardsSelectionAction
+- (void)libraryAddingImageLoadForCard:(NSManagedObject *)selectedCard
 {
-	NSArray *array = [allCardsController selectedObjects];
-	if ([array count] == 0) {
-		[libraryAddingCardImageView setImage:NULL];
+	[self clearCardImage:libraryAddingCardImageView];
+	if (selectedCard == nil) {
 		return;
 	}
-	
-	NSManagedObject *selectedCard = [array objectAtIndex:0];
-	[libraryAddingCardImageView setImage:NULL];
-	[self updateLibraryAddAltImageWithCard:selectedCard];
-	
-	NSString *selectedCardName = selectedCard.name;
-	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
+
+	NSImage *cardImage = [imageManager imageForCardName:selectedCard.name 
 								shouldDownloadIfMissing:YES 
 											 withAction:@selector(updateLibraryAddImage:forCardWithName:) 
 											 withTarget:self];
-	
+
 	if (cardImage != nil) {
 		[libraryAddingCardImageProgress stopAnimation:self];
 		[libraryAddingCardImageView setImage:cardImage];
 	} else if ([libraryAddingCardImageView image] == NULL) {
+		[self updateLibraryAddAltImageWithCard:selectedCard];		
 		[libraryAddingCardImageProgress startAnimation:self];
 	}
 }
 
-- (void)libraryTableSelectionAction
+- (void)deckEditingImageLoadForCard:(NSManagedObject *)selectedCard
 {
-	NSArray *array = [libraryController selectedObjects];
-	if ([array count] == 0) {
-		[deckEditingCardImageView setImage:NULL];
+	[self clearCardImage:deckEditingCardImageView];
+	if (selectedCard == nil) {
 		return;
 	}
 	
-	NSManagedObject *selectedCard = [array objectAtIndex:0];
-	[deckEditingCardImageView setImage:NULL];
-	[self updateLibraryAddAltImageWithCard:selectedCard];
-	
-	NSString *selectedCardName = selectedCard.name;
-	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
-								shouldDownloadIfMissing:YES
-											 withAction:@selector(updateDeckEditingImage:forCardWithName:) 
+	NSImage *cardImage = [imageManager imageForCardName:selectedCard.name 
+								shouldDownloadIfMissing:YES 
+											 withAction:@selector(updateDeckEditingImage:forCardWithName:)
 											 withTarget:self];
 	
 	if (cardImage != nil) {
 		[deckEditingCardImageProgress stopAnimation:self];
 		[deckEditingCardImageView setImage:cardImage];
-	} else if ([deckEditingCardImageView image] == NULL) {
+	} else if ([libraryAddingCardImageView image] == NULL) {
+		[self updateDeckEditingAltImageWithCard:selectedCard];
 		[deckEditingCardImageProgress startAnimation:self];
 	}
 }
 
-- (void)deckCardsTableSelectionAction
+- (void)clearCardImage:(NSImageView *)imageView
 {
-	NSArray *array = [deckCardsController selectedObjects];
-	if ([array count] == 0) {
-		[deckEditingCardImageView setImage:NULL];
-		return;
+	[imageView setImage:nil];
+	if (imageView == libraryAddingCardImageView) {
+		[libraryAddingNameTextField setHidden:YES];
+		[libraryAddingCostTextField setHidden:YES];
+		[libraryAddingTypeTextField setHidden:YES];
+		[libraryAddingRarityTextField setHidden:YES];
+		[libraryAddingPTTextField setHidden:YES];
+		[libraryAddingTextScrollView setHidden:YES];
+	} else {
+		[deckEditingNameTextField setHidden:YES];
+		[deckEditingCostTextField setHidden:YES];
+		[deckEditingTypeTextField setHidden:YES];
+		[deckEditingRarityTextField setHidden:YES];
+		[deckEditingPTTextField setHidden:YES];
+		[deckEditingTextScrollView setHidden:YES];
 	}
-	
-	NSManagedObject *selectedCard = [array objectAtIndex:0];
-	[deckEditingCardImageView setImage:NULL];
-	[self updateDeckEditingAltImageWithCard:selectedCard];
-	
-	NSString *selectedCardName = selectedCard.name;
-	NSImage *cardImage = [imageManager imageForCardName:selectedCardName 
-								shouldDownloadIfMissing:YES
-											 withAction:@selector(updateDeckEditingImage:forCardWithName:) 
-											 withTarget:self];
-	
-	if (cardImage != nil) {
-		[deckEditingCardImageProgress stopAnimation:self];
-		[deckEditingCardImageView setImage:cardImage];
-	} else if ([deckEditingCardImageView image] == NULL) {
-		[deckEditingCardImageProgress startAnimation:self];
-	}	
 }
 
 - (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName
@@ -480,6 +489,13 @@
     } else {
         [[deckEditingTextScrollView documentView] setString:card.text];
     }
+	
+	[deckEditingNameTextField setHidden:NO];
+	[deckEditingCostTextField setHidden:NO];
+	[deckEditingTypeTextField setHidden:NO];
+	[deckEditingRarityTextField setHidden:NO];
+	[deckEditingPTTextField setHidden:NO];
+	[deckEditingTextScrollView setHidden:NO];
 }
 
 - (void)updateLibraryAddAltImageWithCard:(NSManagedObject *)card
@@ -506,6 +522,13 @@
     } else {
         [[libraryAddingTextScrollView documentView] setString:card.text];
     }
+	
+	[libraryAddingNameTextField setHidden:NO];
+	[libraryAddingCostTextField setHidden:NO];
+	[libraryAddingTypeTextField setHidden:NO];
+	[libraryAddingRarityTextField setHidden:NO];
+	[libraryAddingPTTextField setHidden:NO];
+	[libraryAddingTextScrollView setHidden:NO];
 }
 
 - (SIYMetaCard *)metaCardWithCardName:(NSString *)cardName inDeck:(NSManagedObject *)deck

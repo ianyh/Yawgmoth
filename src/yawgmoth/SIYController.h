@@ -80,10 +80,10 @@
 - (IBAction)toggleDeckData:(id)sender;
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification;
-- (void)allCardsSelectionAction;
-- (void)libraryTableSelectionAction;
-- (void)deckCardsTableSelectionAction;
+- (void)libraryAddingImageLoadForCard:(NSManagedObject *)selectedCard;
+- (void)deckEditingImageLoadForCard:(NSManagedObject *)selectedCard;
 
+- (void)clearCardImage:(NSImageView *)imageView;
 - (void)updateDeckEditingImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
 - (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
 - (void)updateDeckEditingAltImageWithCard:(NSManagedObject *)card;
