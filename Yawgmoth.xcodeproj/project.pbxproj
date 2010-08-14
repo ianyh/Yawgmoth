@@ -18,6 +18,8 @@
 		3C006B7B11FFC4BB00C5C084 /* storedata in Resources */ = {isa = PBXBuildFile; fileRef = 3C006B7911FFC4BB00C5C084 /* storedata */; };
 		3C047DEF1216D7DF004EF0FD /* SIYCardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C047DEE1216D7DF004EF0FD /* SIYCardManager.m */; };
 		3C047DF01216D7DF004EF0FD /* SIYCardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C047DEE1216D7DF004EF0FD /* SIYCardManager.m */; };
+		3C047E671216E04A004EF0FD /* SIYUpdaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C047E661216E04A004EF0FD /* SIYUpdaterController.m */; };
+		3C047E681216E04A004EF0FD /* SIYUpdaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C047E661216E04A004EF0FD /* SIYUpdaterController.m */; };
 		3C0A8A8711FFF7820032CEDB /* SIYImportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A8A8611FFF7820032CEDB /* SIYImportController.m */; };
 		3C0A8A8F11FFF7E80032CEDB /* Importer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0A8A8D11FFF7E80032CEDB /* Importer.xib */; };
 		3C0F864911FD00300043D7DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -31,8 +33,6 @@
 		3C50B3351210A7DC00AA4C68 /* SM2DGraphView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3C50B3451210AAA000AA4C68 /* SIYDeckDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */; };
 		3C50B3461210AAA000AA4C68 /* SIYDeckDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */; };
-		3C7FCF4F1213EDBC0035BFE6 /* SIYUpdaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */; };
-		3C7FCF501213EDC70035BFE6 /* SIYUpdaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */; };
 		3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
 		3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
 		3CC680941213D13800181E02 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC680931213D13800181E02 /* Sparkle.framework */; };
@@ -119,6 +119,8 @@
 		3C006B7911FFC4BB00C5C084 /* storedata */ = {isa = PBXFileReference; lastKnownFileType = file; name = storedata; path = res/storedata; sourceTree = "<group>"; };
 		3C047DED1216D7DF004EF0FD /* SIYCardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYCardManager.h; path = src/yawgmoth/SIYCardManager.h; sourceTree = "<group>"; };
 		3C047DEE1216D7DF004EF0FD /* SIYCardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYCardManager.m; path = src/yawgmoth/SIYCardManager.m; sourceTree = "<group>"; };
+		3C047E651216E04A004EF0FD /* SIYUpdaterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYUpdaterController.h; path = src/yawgmoth/SIYUpdaterController.h; sourceTree = "<group>"; };
+		3C047E661216E04A004EF0FD /* SIYUpdaterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYUpdaterController.m; path = src/yawgmoth/SIYUpdaterController.m; sourceTree = "<group>"; };
 		3C0A8A8511FFF7820032CEDB /* SIYImportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYImportController.h; path = src/importer/SIYImportController.h; sourceTree = "<group>"; };
 		3C0A8A8611FFF7820032CEDB /* SIYImportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYImportController.m; path = src/importer/SIYImportController.m; sourceTree = "<group>"; };
 		3C0A8A8E11FFF7E80032CEDB /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Importer.xib; sourceTree = "<group>"; };
@@ -135,8 +137,6 @@
 		3C1E539711F620F9001FB0BF /* SIYController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYController.h; path = src/yawgmoth/SIYController.h; sourceTree = "<group>"; };
 		3C1E539811F620F9001FB0BF /* SIYController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYController.m; path = src/yawgmoth/SIYController.m; sourceTree = "<group>"; };
 		3C1E539C11F6212E001FB0BF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/yawgmoth/main.m; sourceTree = "<group>"; };
-		3C31AF9E120B42EF00ED4CDE /* SIYUpdaterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYUpdaterController.h; path = src/updater/SIYUpdaterController.h; sourceTree = "<group>"; };
-		3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYUpdaterController.m; path = src/updater/SIYUpdaterController.m; sourceTree = "<group>"; };
 		3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SM2DGraphView.framework; path = Library/Frameworks/SM2DGraphView.framework; sourceTree = SDKROOT; };
 		3C50B3431210AAA000AA4C68 /* SIYDeckDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDeckDataSource.h; path = src/yawgmoth/SIYDeckDataSource.h; sourceTree = "<group>"; };
 		3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYDeckDataSource.m; path = src/yawgmoth/SIYDeckDataSource.m; sourceTree = "<group>"; };
@@ -202,8 +202,8 @@
 		080E96DDFE201D6D7F000001 /* Yawgmoth Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3C31AF9E120B42EF00ED4CDE /* SIYUpdaterController.h */,
-				3C31AF9F120B42F000ED4CDE /* SIYUpdaterController.m */,
+				3C047E651216E04A004EF0FD /* SIYUpdaterController.h */,
+				3C047E661216E04A004EF0FD /* SIYUpdaterController.m */,
 				3CBD2D3911FE2E5300DE9543 /* SIYCardImageManager.h */,
 				3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */,
 				3C1E539711F620F9001FB0BF /* SIYController.h */,
@@ -536,9 +536,9 @@
 				3CC680EE1213DFB000181E02 /* SIYCardImageManager.m in Sources */,
 				3CC680EF1213DFB000181E02 /* SIYDataModel.xcdatamodel in Sources */,
 				3CC680F01213DFB000181E02 /* SIYMetaCard.m in Sources */,
-				3C7FCF4F1213EDBC0035BFE6 /* SIYUpdaterController.m in Sources */,
 				3CC680F11213DFB000181E02 /* SIYDeckDataSource.m in Sources */,
 				3C047DEF1216D7DF004EF0FD /* SIYCardManager.m in Sources */,
+				3C047E671216E04A004EF0FD /* SIYUpdaterController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +546,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C7FCF501213EDC70035BFE6 /* SIYUpdaterController.m in Sources */,
 				3C1E539A11F620F9001FB0BF /* SIYController.m in Sources */,
 				3C1E539D11F6212E001FB0BF /* main.m in Sources */,
 				3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */,
@@ -554,6 +553,7 @@
 				3CFE8660120DA5CD0096E65B /* SIYMetaCard.m in Sources */,
 				3C50B3461210AAA000AA4C68 /* SIYDeckDataSource.m in Sources */,
 				3C047DF01216D7DF004EF0FD /* SIYCardManager.m in Sources */,
+				3C047E681216E04A004EF0FD /* SIYUpdaterController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
