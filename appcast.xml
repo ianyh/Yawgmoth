@@ -6,16 +6,16 @@
       <description>Most recent changes with links to updates.</description>
       <language>en</language>
          <item>
-            <title>Version 0.6.1</title>
+            <title>Version 0.7</title>
 	    <sparkle:releaseNotesLink>
 	      http://ianyh.github.com/Yawgmoth/rnotes.html
 	    </sparkle:releaseNotesLink>
-            <pubDate>Wed, 11 Aug 2010 22:12:00 +0000</pubDate>
+            <pubDate>Sat, 14 Aug 2010 11:04:53 +0000</pubDate>
             <enclosure url="http://github.com/downloads/ianyh/Yawgmoth/Yawgmoth.zip"
-		       sparkle:version="0.6.1" 
+		       sparkle:version="0.7" 
 		       length="1737551" 
 		       type="application/octet-stream" 
-		       sparkle:dsaSignature="MC0CFQCaheQomR6qujYFbvSbVG9i2bfn/AIUGuqoTAa1qBjsgvEAGqLS55Tg0Hc="
+		       sparkle:dsaSignature="MCwCFHymSV8RVlgKvgejmx+AVm4c7eM2AhQZ6uYA0AOtCeWjSA9nVpRinp/JEg=="
 		       />
          </item>
    </channel>
