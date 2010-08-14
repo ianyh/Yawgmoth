@@ -124,24 +124,31 @@
 
 - (NSManagedObject *)managedObjectWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName
 {
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:[self managedObjectContext]];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    [fetchRequest setEntity:entityDescription];
-    [fetchRequest setPredicate:predicate];
-    
-    NSError *error;
-    NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-    [fetchRequest release];
-    if (results == nil) {
-        // TODO: error
-        return nil;
-    }
+	NSArray *results = [self managedObjectsWithPredicate:predicate inEntityWithName:entityName];
 	
     if ([results count] > 0) {
         return (NSManagedObject *) [results objectAtIndex:0];
     }
     
     return nil;
+}
+
+- (NSArray *)managedObjectsWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName
+{
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:[self managedObjectContext]];
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	[fetchRequest setEntity:entityDescription];
+	[fetchRequest setPredicate:predicate];
+	
+	NSError *error;
+	NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+	[fetchRequest release];
+	if (results == nil) {
+		// TODO: error
+		return nil;
+	}
+	
+	return results;
 }
 
 - (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card

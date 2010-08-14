@@ -22,6 +22,7 @@
 - (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inCollection:(NSSet *)collection;
 - (NSManagedObject *)deckWithName:(NSString *)deckName;
 - (NSManagedObject *)managedObjectWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName;
+- (NSArray *)managedObjectsWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName;
 
 - (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card;
 - (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card;

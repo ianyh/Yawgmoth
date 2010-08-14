@@ -109,7 +109,7 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	[self startUpdate];
 	
-	double increment = 100.0;
+	double increment = 50.0;
 	
 	[progressLabel setStringValue:@"Adding missing cards..."];
 	
@@ -129,10 +129,32 @@
 		card.toughness = nil;
 		card.type = @"Instant";
 		[cardManager save];
-	}	
-	[progressIndicator incrementBy:increment];
+	}
 	
+	[progressIndicator incrementBy:increment];
 	[NSApp runModalSession:modalSession];
+	
+	[progressLabel setStringValue:@"Fixing existing cards..."];
+	int i;
+	NSArray *cards;
+	
+	cards = [cardManager managedObjectsWithPredicate:[NSPredicate predicateWithFormat:@"name = %@", @"Creeping Tar Pits"] inEntityWithName:@"FullCard"];
+	for (i = 0; i < [cards count]; i++) {
+		card = [cards objectAtIndex:i];
+		card.name = @"Creeping Tar Pit";
+	}
+	
+	cards = [cardManager managedObjectsWithPredicate:[NSPredicate predicateWithFormat:@"name = %@", @"Creeping Tar Pits"] inEntityWithName:@"MetaCard"];
+	for (i = 0; i < [cards count]; i++) {
+		card = [cards objectAtIndex:i];
+		card.name = @"Creeping Tar Pit";
+	}
+	
+	[cardManager save];
+	
+	[progressIndicator incrementBy:increment];
+	[NSApp runModalSession:modalSession];
+
 	[self endUpdate];
 	[pool release];
 }
