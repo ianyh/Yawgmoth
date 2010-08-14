@@ -3,13 +3,6 @@
 
 @implementation SIYUpdaterController
 
-- (NSString *)applicationSupportDirectory 
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
-    return [basePath stringByAppendingPathComponent:@"Yawgmoth"];
-}
-
 - (NSArray *)csvRowsFromString:(NSString *)fileString 
 {
     NSMutableArray *rows = [NSMutableArray array];
@@ -79,108 +72,6 @@
     return rows;
 }
 
-- (NSManagedObjectContext *)managedObjectContext
-{
-    if (managedObjectContext) return managedObjectContext;
-	
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (!coordinator) {
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [dict setValue:@"Failed to initialize the store" forKey:NSLocalizedDescriptionKey];
-        [dict setValue:@"There was an error building up the data file." forKey:NSLocalizedFailureReasonErrorKey];
-        NSError *error = [NSError errorWithDomain:@"com.scarredions.yawgmoth" code:9999 userInfo:dict];
-		NSLog(@"%@", [error localizedDescription]);
-        return nil;
-    }
-    managedObjectContext = [[NSManagedObjectContext alloc] init];
-    [managedObjectContext setPersistentStoreCoordinator: coordinator];
-	
-    return managedObjectContext;
-}
-
-- (NSManagedObject *)managedFullCardWithName:(NSString *)cardName withSet:(NSString *)cardSet
-{
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"FullCard" inManagedObjectContext:[self managedObjectContext]];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    [fetchRequest setEntity:entityDescription];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name = %@) AND (set = %@)", cardName, cardSet];
-    [fetchRequest setPredicate:predicate];
-    
-    NSError *error;
-    NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-    [fetchRequest release];
-    if (results == nil) {
-        // TODO: present error and fail
-        return nil;
-    }
-    
-    if ([results count] > 0) {
-        return (NSManagedObject *) [results objectAtIndex:0];
-    }
-    
-    return nil;
-}
-
-- (NSManagedObjectModel *)managedObjectModel 
-{
-    if (managedObjectModel) return managedObjectModel;
-	
-    managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
-    return managedObjectModel;
-}
-
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator 
-{
-    if (persistentStoreCoordinator) return persistentStoreCoordinator;
-	
-    NSManagedObjectModel *mom = [self managedObjectModel];
-    if (!mom) {
-        NSAssert(NO, @"Managed object model is nil");
-        NSLog(@"%@:%s No model to generate a store from", [self class], _cmd);
-        return nil;
-    }
-	
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *applicationSupportDirectory = [self applicationSupportDirectory];
-    NSError *error = nil;
-    
-    if ( ![fileManager fileExistsAtPath:applicationSupportDirectory isDirectory:NULL] ) {
-		if (![fileManager createDirectoryAtPath:applicationSupportDirectory withIntermediateDirectories:NO attributes:nil error:&error]) {
-            NSAssert(NO, ([NSString stringWithFormat:@"Failed to create App Support directory %@ : %@", applicationSupportDirectory,error]));
-            NSLog(@"Error creating application support directory at %@ : %@",applicationSupportDirectory,error);
-            return nil;
-		}
-    }
-    
-    NSURL *url = [NSURL fileURLWithPath: [applicationSupportDirectory stringByAppendingPathComponent: @"storedata"]];
-    persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: mom];
-    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
-												  configuration:nil 
-															URL:url 
-														options:nil 
-														  error:&error]) {
-		NSLog(@"%@", [error localizedDescription]);
-        [persistentStoreCoordinator release], persistentStoreCoordinator = nil;
-        return nil;
-    }
-	
-    return persistentStoreCoordinator;
-}
-
-- (void)save
-{
-    NSError *error;
-    
-    if (![[self managedObjectContext] commitEditing]) {
-        NSLog(@"%@:%s unable to commit editing before saving", [self class], _cmd);
-    }
-	
-    if (![[self managedObjectContext] save:&error]) {
-		NSLog(@"%@", [error localizedDescription]);
-    }	
-}
-
 - (NSString *)superTypeFromType:(NSString *)type
 {
 	NSArray *superTypeRegexStrings = [NSArray arrayWithObjects:@".*Instant.*", 
@@ -217,6 +108,30 @@
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	[self startUpdate];
+	
+	double increment = 100.0;
+	
+	[progressLabel setStringValue:@"Adding missing cards..."];
+	
+	NSManagedObject *card;
+	card = [cardManager managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"name = %@", @"AEther Burst"] inEntityWithName:@"FullCard"];
+	if (card == nil) {
+		card = [NSEntityDescription insertNewObjectForEntityForName:@"FullCard" inManagedObjectContext:[cardManager managedObjectContext]];
+		card.convertedManaCost = [NSNumber numberWithInt:2];
+		card.manaCost = @"1U";
+		card.name = @"AEther Burst";
+		card.power = nil;
+		card.rarity = @"C";
+		card.set = @"Odyssey";
+		card.superType = @"Instant";
+		card.text = [@"Return up to X target creatures to their owners' hands, where X is " stringByAppendingString:
+					 @"one plus the number of cards named AEther Burst in all graveyards as you cast AEther Burst."];
+		card.toughness = nil;
+		card.type = @"Instant";
+		[cardManager save];
+	}	
+	[progressIndicator incrementBy:increment];
+	
 	[NSApp runModalSession:modalSession];
 	[self endUpdate];
 	[pool release];

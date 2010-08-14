@@ -11,11 +11,11 @@
 			<string key="com.snowmint.ib3plugin.SM2DGraphView">1</string>
 		</dictionary>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
+			<integer value="649"/>
+			<integer value="116"/>
+			<integer value="192"/>
 			<integer value="1024"/>
 			<integer value="1291"/>
-			<integer value="192"/>
-			<integer value="116"/>
-			<integer value="649"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.snowmint.ib3plugin.SM2DGraphView</string>
@@ -3060,6 +3060,9 @@
 			<object class="NSCustomObject" id="900151345">
 				<string key="NSClassName">SIYController</string>
 			</object>
+			<object class="NSCustomObject" id="640642308">
+				<string key="NSClassName">SIYCardManager</string>
+			</object>
 			<object class="NSCustomObject" id="357604252">
 				<string key="NSClassName">SIYDeckDataSource</string>
 			</object>
@@ -4408,6 +4411,14 @@
 						</object>
 					</object>
 					<int key="connectionID">1326</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">cardManager</string>
+						<reference key="source" ref="900151345"/>
+						<reference key="destination" ref="640642308"/>
+					</object>
+					<int key="connectionID">1328</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -5994,6 +6005,11 @@
 						<reference key="object" ref="221337314"/>
 						<reference key="parent" ref="233891255"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1327</int>
+						<reference key="object" ref="640642308"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -6100,10 +6116,13 @@
 				<integer value="1" key="123.ImportedFromIB2"/>
 				<string key="1234.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1235.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1236.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1240.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1241.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1242.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1243.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1244.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1245.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1288.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1289.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1290.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6117,6 +6136,8 @@
 				<string key="1314.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1315.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1316.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1323.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1327.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="191.IBEditorWindowLastContentRect">{{426, 105}, {886, 643}}</string>
 				<string key="191.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="191.IBWindowTemplateEditedContentRect">{{426, 105}, {886, 643}}</string>
@@ -6281,10 +6302,18 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1326</int>
+			<int key="maxID">1328</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">SIYCardManager</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">src/yawgmoth/SIYCardManager.h</string>
+					</object>
+				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">SIYController</string>
 					<string key="superclassName">NSObject</string>
@@ -6356,6 +6385,7 @@
 						<string key="allCardsController">NSArrayController</string>
 						<string key="allCardsSearchField">NSSearchField</string>
 						<string key="allCardsTable">NSTableView</string>
+						<string key="cardManager">SIYCardManager</string>
 						<string key="cardsToAddToLibraryTable">NSTableView</string>
 						<string key="deckCardsController">NSArrayController</string>
 						<string key="deckController">NSArrayController</string>
@@ -6400,6 +6430,10 @@
 						<object class="IBToOneOutletInfo" key="allCardsTable">
 							<string key="name">allCardsTable</string>
 							<string key="candidateClassName">NSTableView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="cardManager">
+							<string key="name">cardManager</string>
+							<string key="candidateClassName">SIYCardManager</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="cardsToAddToLibraryTable">
 							<string key="name">cardsToAddToLibraryTable</string>

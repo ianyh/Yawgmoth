@@ -1,4 +1,5 @@
 #import <Cocoa/Cocoa.h>
+#import "SIYCardManager.h"
 #import "SIYCardImageManager.h"
 #import "SIYMetaCard.h"
 #import "SIYUpdaterController.h"
@@ -7,7 +8,7 @@
 @interface SIYController : NSObject {
 	
 	SIYCardImageManager *imageManager;
-	
+	IBOutlet SIYCardManager *cardManager;
 	IBOutlet SIYUpdaterController *updaterController;
 	
 	IBOutlet NSArrayController *allCardsController;
@@ -47,22 +48,7 @@
 	IBOutlet NSButton *newDeckCreateButton;
 	
 	IBOutlet NSPanel *deckDataPanel;
-	
-	NSPersistentStoreCoordinator *persistentStoreCoordinator;
-    NSManagedObjectModel *managedObjectModel;
-    NSManagedObjectContext *managedObjectContext;
-	
 }
-
-@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
-
-- (NSString *)applicationSupportDirectory;
-- (NSManagedObjectContext *)managedObjectContext;
-- (NSManagedObjectModel *)managedObjectModel;
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
-- (void)save;
 
 - (IBAction)addCardToLibraryAddTable:(id)sender;
 - (IBAction)addToLibrary:(id)sender;
@@ -89,17 +75,5 @@
 - (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
 - (void)updateDeckEditingAltImageWithCard:(NSManagedObject *)card;
 - (void)updateLibraryAddAltImageWithCard:(NSManagedObject *)card;
-
-- (SIYMetaCard *)metaCardWithCardName:(NSString *)cardName inDeck:(NSManagedObject *)deck;
-- (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inCollection:(NSSet *)collection;
-- (NSManagedObject *)deckWithName:(NSString *)deckName;
-- (NSManagedObject *)managedObjectWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName;
-
-- (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card;
-- (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card;
-- (NSManagedObject *)insertTempCollectionCardFromCard:(NSManagedObject *)card;
-- (void)copyCard:(NSManagedObject *)sourceCard toCard:(NSManagedObject *)destinationCard;
-
-- (void)incrementQuantityForCard:(NSManagedObject *)card withIncrement:(int)increment;
 
 @end

@@ -4,8 +4,8 @@
 @implementation SIYController
 
 - (void)awakeFromNib
-{	
-	imageManager = [[[SIYCardImageManager alloc] initWithApplicationSupportDirectory:[self applicationSupportDirectory]] retain];	
+{
+	imageManager = [[[SIYCardImageManager alloc] initWithApplicationSupportDirectory:[cardManager applicationSupportDirectory]] retain];
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification
@@ -18,100 +18,9 @@
 	}
 }
 
-- (NSString *)applicationSupportDirectory 
+- (NSManagedObjectContext *)managedObjectContext
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
-    return [basePath stringByAppendingPathComponent:@"Yawgmoth"];
-}
-
-- (NSManagedObjectContext *)managedObjectContext 
-{
-    if (managedObjectContext) return managedObjectContext;
-	
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (!coordinator) {
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [dict setValue:@"Failed to initialize the store" forKey:NSLocalizedDescriptionKey];
-        [dict setValue:@"There was an error building up the data file." forKey:NSLocalizedFailureReasonErrorKey];
-        NSError *error = [NSError errorWithDomain:@"com.scarredions.yawgmoth" code:9999 userInfo:dict];
-        [[NSApplication sharedApplication] presentError:error];
-        return nil;
-    }
-    managedObjectContext = [[NSManagedObjectContext alloc] init];
-    [managedObjectContext setPersistentStoreCoordinator: coordinator];
-	
-    return managedObjectContext;
-}
-
-- (NSManagedObjectModel *)managedObjectModel
-{	
-    if (managedObjectModel) return managedObjectModel;
-	
-    managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
-    return managedObjectModel;
-}
-
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
-{
-    if (persistentStoreCoordinator) return persistentStoreCoordinator;
-	
-    NSManagedObjectModel *mom = [self managedObjectModel];
-    if (!mom) {
-        NSAssert(NO, @"Managed object model is nil");
-        NSLog(@"%@:%s No model to generate a store from", [self class], _cmd);
-        return nil;
-    }
-
-	
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *applicationSupportDirectory = [self applicationSupportDirectory];
-    NSError *error = nil;
-    
-    if ( ![fileManager fileExistsAtPath:applicationSupportDirectory isDirectory:NULL] ) {
-		if (![fileManager createDirectoryAtPath:applicationSupportDirectory withIntermediateDirectories:NO attributes:nil error:&error]) {
-            NSAssert(NO, ([NSString stringWithFormat:@"Failed to create App Support directory %@ : %@", applicationSupportDirectory,error]));
-            NSLog(@"Error creating application support directory at %@ : %@",applicationSupportDirectory,error);
-            return nil;
-		}
-	}
-
-	NSString *storeDataPath = [applicationSupportDirectory stringByAppendingPathComponent:@"storedata"];
-	
-	if (![fileManager fileExistsAtPath:storeDataPath]) {
-		NSString *seedStoreDataPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"storedata"];
-		if (![fileManager copyItemAtPath:seedStoreDataPath toPath:storeDataPath error:&error]) {
-			NSLog(@"Error copying seed store data to application support directory");
-			return nil;
-		}
-	}
-    
-    NSURL *url = [NSURL fileURLWithPath:storeDataPath];
-    persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: mom];
-    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType 
-												  configuration:nil 
-															URL:url 
-														options:nil 
-														  error:&error]){
-        [[NSApplication sharedApplication] presentError:error];
-        [persistentStoreCoordinator release], persistentStoreCoordinator = nil;
-        return nil;
-    }    
-	
-    return persistentStoreCoordinator;
-}
-
-- (void)save
-{
-    NSError *error;
-    
-    if (![[self managedObjectContext] commitEditing]) {
-        NSLog(@"%@:%s unable to commit editing before saving", [self class], _cmd);
-    }
-	
-    if (![[self managedObjectContext] save:&error]) {
-        [[NSApplication sharedApplication] presentError:error];
-    }	
+	return [cardManager managedObjectContext];
 }
 
 - (IBAction)addCardToLibraryAddTable:(id)sender
@@ -123,14 +32,14 @@
 	
 	for (i = 0; i < [array count]; i++) {
 		fullCard = [array objectAtIndex:i];
-		tempCard = [self managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@) AND (set == %@)", fullCard.name, fullCard.set] 
+		tempCard = [cardManager managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@) AND (set == %@)", fullCard.name, fullCard.set] 
 								   inEntityWithName:@"TempCollectionCard"];
 		
 		if (tempCard == nil) {
-			tempCard = [self insertTempCollectionCardFromCard:fullCard];
+			tempCard = [cardManager insertTempCollectionCardFromCard:fullCard];
 		}
 		
-		[self incrementQuantityForCard:tempCard withIncrement:1];
+		[cardManager incrementQuantityForCard:tempCard withIncrement:1];
 	}
 }
 
@@ -144,27 +53,27 @@
 	
 	for (i = 0; i < [array count]; i++) {
 		tempCard = [array objectAtIndex:i];
-        metaCard = [self metaCardWithCardName:tempCard.name inDeck:nil];
+        metaCard = [cardManager metaCardWithCardName:tempCard.name inDeck:nil];
         if (metaCard == nil) {
-            metaCard = [self insertMetaCardFromCard:tempCard];
-            libraryCard = [self insertCollectionCardFromCard:tempCard];
+            metaCard = [cardManager insertMetaCardFromCard:tempCard];
+            libraryCard = [cardManager insertCollectionCardFromCard:tempCard];
             [metaCard addCardsObject:libraryCard];
             libraryCard.quantity = tempCard.quantity;
         } else {
-            libraryCard = [self collectionCardWithCardName:tempCard.name withSet:tempCard.set inCollection:metaCard.cards];
+            libraryCard = [cardManager collectionCardWithCardName:tempCard.name withSet:tempCard.set inCollection:metaCard.cards];
             if (libraryCard == nil) {
-                libraryCard = [self insertCollectionCardFromCard:tempCard];
+                libraryCard = [cardManager insertCollectionCardFromCard:tempCard];
                 [metaCard addCardsObject:libraryCard];
                 libraryCard.quantity = tempCard.quantity;
             } else {
-				[self incrementQuantityForCard:libraryCard withIncrement:[tempCard.quantity intValue]];
+				[cardManager incrementQuantityForCard:libraryCard withIncrement:[tempCard.quantity intValue]];
             }
         }
         
-        [[self managedObjectContext] deleteObject:tempCard];
+        [[cardManager managedObjectContext] deleteObject:tempCard];
     }
     
-    [self save];
+    [cardManager save];
 	[libraryAddingWindow close];
 	[NSApp endSheet:libraryAddingWindow];
 }
@@ -189,9 +98,9 @@
 	for (i = 0; i < [array count]; i++) {
         tempCollectionCard = [array objectAtIndex:i];
 		if ([tempCollectionCard.quantity intValue] == 1) {
-			[[self managedObjectContext] deleteObject:tempCollectionCard];
+			[[cardManager managedObjectContext] deleteObject:tempCollectionCard];
 		} else {
-			[self incrementQuantityForCard:tempCollectionCard withIncrement:-1];
+			[cardManager incrementQuantityForCard:tempCollectionCard withIncrement:-1];
 		}
 	}
     
@@ -207,11 +116,11 @@
 {
 	if (sender == newDeckCreateButton) {
 		NSString *deckName = [newDeckNameField stringValue];
-		NSManagedObject *deck = [self deckWithName:deckName];
+		NSManagedObject *deck = [cardManager deckWithName:deckName];
 		if (deck == nil) {
-			deck = [NSEntityDescription insertNewObjectForEntityForName:@"Deck" inManagedObjectContext:[self managedObjectContext]];
+			deck = [NSEntityDescription insertNewObjectForEntityForName:@"Deck" inManagedObjectContext:[cardManager managedObjectContext]];
 			deck.name = deckName;
-			[self save];
+			[cardManager save];
 		}
 	}
 	
@@ -234,29 +143,29 @@
     NSManagedObject *libraryCollectionCard;
 
 	while ((deckMetaCard = [deckEnumerator nextObject]) != nil) {
-        libraryMetaCard = [self metaCardWithCardName:deckMetaCard.name inDeck:nil];
+        libraryMetaCard = [cardManager metaCardWithCardName:deckMetaCard.name inDeck:nil];
 		if (libraryMetaCard == nil) {
-			libraryMetaCard = [self insertMetaCardFromCard:deckMetaCard];
+			libraryMetaCard = [cardManager insertMetaCardFromCard:deckMetaCard];
 		}
         metaCardEnumerator = [deckMetaCard.cards objectEnumerator];
         while ((deckCollectionCard = [metaCardEnumerator nextObject]) != nil) {
-            libraryCollectionCard = [self collectionCardWithCardName:deckCollectionCard.name withSet:deckCollectionCard.set inCollection:libraryMetaCard.cards];
+            libraryCollectionCard = [cardManager collectionCardWithCardName:deckCollectionCard.name withSet:deckCollectionCard.set inCollection:libraryMetaCard.cards];
             if (libraryCollectionCard == nil) {
-                libraryCollectionCard = [self insertCollectionCardFromCard:deckCollectionCard];
+                libraryCollectionCard = [cardManager insertCollectionCardFromCard:deckCollectionCard];
                 [libraryMetaCard addCardsObject:libraryCollectionCard];
 				libraryCollectionCard.metaCard = libraryMetaCard;
             }
 			
-			[self incrementQuantityForCard:libraryCollectionCard withIncrement:[deckCollectionCard.quantity intValue]];
+			[cardManager incrementQuantityForCard:libraryCollectionCard withIncrement:[deckCollectionCard.quantity intValue]];
 			[deckCollectionCard removeObserver:deckMetaCard forKeyPath:@"quantity"];
-			[[self managedObjectContext] deleteObject:deckCollectionCard];
+			[[cardManager managedObjectContext] deleteObject:deckCollectionCard];
         }
         
-        [[self managedObjectContext] deleteObject:deckMetaCard];
+        [[cardManager managedObjectContext] deleteObject:deckMetaCard];
     }
     
-    [[self managedObjectContext] deleteObject:deck];
-    [self save];
+    [[cardManager managedObjectContext] deleteObject:deck];
+    [cardManager save];
 }
 
 - (IBAction)moveToDeck:(id)sender
@@ -275,25 +184,25 @@
 	
 	for (i = 0; i < [array count]; i++) {
         libraryMetaCard = [array objectAtIndex:i];
-        deckMetaCard = [self metaCardWithCardName:libraryMetaCard.name inDeck:deck];
+        deckMetaCard = [cardManager metaCardWithCardName:libraryMetaCard.name inDeck:deck];
         if (deckMetaCard == nil) {
-            deckMetaCard = [self insertMetaCardFromCard:libraryMetaCard];
+            deckMetaCard = [cardManager insertMetaCardFromCard:libraryMetaCard];
             [deck addMetaCardsObject:deckMetaCard];
         }
         
         libraryCollectionCard = [libraryMetaCard.cards anyObject];
-        deckCollectionCard = [self collectionCardWithCardName:libraryCollectionCard.name withSet:libraryCollectionCard.set inCollection:deckMetaCard.cards];
+        deckCollectionCard = [cardManager collectionCardWithCardName:libraryCollectionCard.name withSet:libraryCollectionCard.set inCollection:deckMetaCard.cards];
         if (deckCollectionCard == nil) {
-            deckCollectionCard = [self insertCollectionCardFromCard:libraryCollectionCard];
+            deckCollectionCard = [cardManager insertCollectionCardFromCard:libraryCollectionCard];
             [deckMetaCard addCardsObject:deckCollectionCard];
-            [[self managedObjectContext] refreshObject:deckMetaCard mergeChanges:YES];
+            [[cardManager managedObjectContext] refreshObject:deckMetaCard mergeChanges:YES];
         }
 
-        [self incrementQuantityForCard:deckCollectionCard withIncrement:1];
-		[self incrementQuantityForCard:libraryCollectionCard withIncrement:-1];
+        [cardManager incrementQuantityForCard:deckCollectionCard withIncrement:1];
+		[cardManager incrementQuantityForCard:libraryCollectionCard withIncrement:-1];
 	}
 	
-	[self save];
+	[cardManager save];
 	[array release];
 }
 
@@ -308,24 +217,24 @@
 	
 	for (i = 0; i < [array count]; i++) {
         deckMetaCard = [array objectAtIndex:i];
-        libraryMetaCard = [self metaCardWithCardName:deckMetaCard.name inDeck:nil];
+        libraryMetaCard = [cardManager metaCardWithCardName:deckMetaCard.name inDeck:nil];
 		if (libraryMetaCard == nil) {
-			libraryMetaCard = [self insertMetaCardFromCard:deckMetaCard];
+			libraryMetaCard = [cardManager insertMetaCardFromCard:deckMetaCard];
 		}
         
         deckCollectionCard = [deckMetaCard.cards anyObject];
-        libraryCollectionCard = [self collectionCardWithCardName:deckCollectionCard.name withSet:deckCollectionCard.set inCollection:libraryMetaCard.cards];
+        libraryCollectionCard = [cardManager collectionCardWithCardName:deckCollectionCard.name withSet:deckCollectionCard.set inCollection:libraryMetaCard.cards];
         if (libraryCollectionCard == nil) {
-            libraryCollectionCard = [self insertCollectionCardFromCard:deckCollectionCard];
+            libraryCollectionCard = [cardManager insertCollectionCardFromCard:deckCollectionCard];
             [libraryMetaCard addCardsObject:libraryCollectionCard];
-            [[self managedObjectContext] refreshObject:libraryMetaCard mergeChanges:YES];
+            [[cardManager managedObjectContext] refreshObject:libraryMetaCard mergeChanges:YES];
         }
         
-		[self incrementQuantityForCard:libraryCollectionCard withIncrement:1];
-		[self incrementQuantityForCard:deckCollectionCard withIncrement:-1];
+		[cardManager incrementQuantityForCard:libraryCollectionCard withIncrement:1];
+		[cardManager incrementQuantityForCard:deckCollectionCard withIncrement:-1];
 	}
 	
-	[self save];
+	[cardManager save];
 	[array release];
 }
 
@@ -339,11 +248,11 @@
 	for (i = 0; i < [array count]; i++) {
         libraryMetaCard = [array objectAtIndex:i];
         libraryCollectionCard = [libraryMetaCard.cards anyObject];
-		[self incrementQuantityForCard:libraryCollectionCard withIncrement:-1];
+		[cardManager incrementQuantityForCard:libraryCollectionCard withIncrement:-1];
 	}
 	
 	[array release];
-	[self save];
+	[cardManager save];
 }
 
 - (IBAction)toggleDeckData:(id)sender
@@ -531,106 +440,6 @@
 	[libraryAddingRarityTextField setHidden:NO];
 	[libraryAddingPTTextField setHidden:NO];
 	[libraryAddingTextScrollView setHidden:NO];
-}
-
-- (SIYMetaCard *)metaCardWithCardName:(NSString *)cardName inDeck:(NSManagedObject *)deck
-{
-    return (SIYMetaCard *)[self managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@) AND (deck == %@)", cardName, deck] 
-                           inEntityWithName:@"MetaCard"];
-}
-
-- (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inCollection:(NSSet *)collection
-{
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name == %@) AND (set == %@)", cardName, set];
-    
-    NSSet *filteredSet = [collection filteredSetUsingPredicate:predicate];
-    if ([filteredSet count] > 0) {
-        return (NSManagedObject *) [filteredSet anyObject];
-    }
-    
-    return nil;
-}
-
-- (NSManagedObject *)deckWithName:(NSString *)deckName
-{
-    return [self managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@)", deckName] inEntityWithName:@"Deck"];
-}
-
-- (NSManagedObject *)managedObjectWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName
-{
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:[self managedObjectContext]];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    [fetchRequest setEntity:entityDescription];
-    [fetchRequest setPredicate:predicate];
-    
-    NSError *error;
-    NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-    [fetchRequest release];
-    if (results == nil) {
-        // TODO: error
-        return nil;
-    }
-	
-    if ([results count] > 0) {
-        return (NSManagedObject *) [results objectAtIndex:0];
-    }
-    
-    return nil;
-}
-
-- (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card
-{
-    SIYMetaCard *metaCard = [NSEntityDescription insertNewObjectForEntityForName:@"MetaCard" inManagedObjectContext:[self managedObjectContext]];
-    [self copyCard:card toCard:metaCard];
-    return metaCard;
-}
-
-- (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card
-{
-    NSManagedObject *collectionCard = [NSEntityDescription insertNewObjectForEntityForName:@"CollectionCard" inManagedObjectContext:[self managedObjectContext]];
-    [self copyCard:card toCard:collectionCard];
-    collectionCard.set = card.set;
-    collectionCard.quantity = [NSNumber numberWithInt:0];
-    return collectionCard;
-}
-
-- (NSManagedObject *)insertTempCollectionCardFromCard:(NSManagedObject *)card
-{
-	NSManagedObject *tempCollectionCard = [NSEntityDescription insertNewObjectForEntityForName:@"TempCollectionCard" inManagedObjectContext:[self managedObjectContext]];
-	[self copyCard:card toCard:tempCollectionCard];
-	tempCollectionCard.set = card.set;
-	tempCollectionCard.quantity = [NSNumber numberWithInt:0];
-	return tempCollectionCard;
-}
-
-- (void)copyCard:(NSManagedObject *)sourceCard toCard:(NSManagedObject *)destinationCard
-{
-    destinationCard.convertedManaCost = sourceCard.convertedManaCost;
-    destinationCard.imageUrl = sourceCard.imageUrl;
-    destinationCard.manaCost = sourceCard.manaCost;
-    destinationCard.rarity = sourceCard.rarity;
-    destinationCard.text = sourceCard.text;
-    destinationCard.name = sourceCard.name;
-    
-    destinationCard.power = sourceCard.power;
-    destinationCard.toughness = sourceCard.toughness;
-    
-    destinationCard.superType = sourceCard.superType;
-    destinationCard.type = sourceCard.type;
-}
-
-- (void)incrementQuantityForCard:(NSManagedObject *)card withIncrement:(int)increment
-{
-	card.quantity = [NSNumber numberWithInt:[card.quantity intValue]+increment];
-	
-	if ([card.quantity intValue] <= 0) {
-		NSManagedObject *metaCard = card.metaCard;
-		if ([card.metaCard.cards count] == 1) {
-			[[self managedObjectContext] deleteObject:metaCard];
-		}
-		[card removeObserver:metaCard forKeyPath:@"quantity"];
-		[[self managedObjectContext] deleteObject:card];
-	}
 }
 
 @end
