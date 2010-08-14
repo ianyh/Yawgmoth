@@ -83,7 +83,7 @@ def download(options)
         power = 0
         toughness = 0
         unless pt == ''
-          if power =~ /\//
+          if pt =~ /\//
             power = pt[/^\d+/] || power
           end
           toughness = pt[/\d+$/] || toughness
@@ -100,38 +100,18 @@ def download(options)
         csv << card
       end
     end
-  end
-
-  if options[:image_url]
-    page = agent.get options[:image_url]
-    page.search('img').each do |img|
-      next unless img
-      name = img['alt']
-      next unless name
-      
-      if options[:url] and options[:set] and downloaded_names.include? name or options[:image_url]
-        url = img['src']
-        url = 'http://gatherer.wizards.com/' + url.gsub('../', '')
-        options[:image_map][filename_from_name(name)] = url
-      end
-    end
-    write_image_map(options[:image_map])
-  end
-  
+  end  
 end
 
 if __FILE__ == $0
   options = {}
   opts = OptionParser.new do |opts|
     opts.banner = "Usage: #{File.basename(__FILE__)} [options]"
-    opts.on('-s', '--set', String, 'set name to be downloaded') do |s|
+    opts.on('-sMANDATORY', '--set', 'set name to be downloaded') do |s|
       options[:set] = s
     end
-    opts.on('-u', '--spoiler-url', String, 'url to grab card information from') do |u|
+    opts.on('-uMANDATORY', '--spoiler-url', String, 'url to grab card information from') do |u|
       options[:url] = u
-    end
-    opts.on('-i', '--images-url URL', String, 'url to grab card image urls from') do |s|
-      options[:image_url] = s
     end
     opts.on_tail('-h', '--help', 'show this message') do
       puts opts
@@ -141,13 +121,10 @@ if __FILE__ == $0
 
   opts.parse!(ARGV)
   
-  unless options[:image_url]
-    puts 'no image url'
-    unless (options[:url] and options[:set])
-      puts opts
-      exit
-    end
+  unless (options[:url] and options[:set])
+    puts opts
+    exit
   end
 
-  download(options.merge({:image_map => load_image_map}))
+  download(options)
 end
