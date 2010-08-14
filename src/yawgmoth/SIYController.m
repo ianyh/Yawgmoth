@@ -166,16 +166,18 @@
     
     [self save];
 	[libraryAddingWindow close];
+	[NSApp endSheet:libraryAddingWindow];
 }
 
 - (IBAction)cancelAddToLibrary:(id)sender
 {
-	[libraryAddingWindow close];
+	[libraryAddingWindow close];	
+	[NSApp endSheet:libraryAddingWindow];
 }
 
 - (IBAction)openAddToLibraryWindow:(id)sender
-{	
-	[libraryAddingWindow makeKeyAndOrderFront:self];
+{
+	[NSApp beginSheet:libraryAddingWindow modalForWindow:deckEditingWindow modalDelegate:self didEndSelector:nil contextInfo:nil];
 }
 
 - (IBAction)removeCardFromLibraryAddTable:(id)sender
