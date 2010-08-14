@@ -221,12 +221,12 @@
 
 - (IBAction)deleteDeck:(id)sender
 {
-	NSManagedObject *deck = [self deckWithName:[[deckSelectionButton selectedItem] title]];
-	if (deck == nil) {
+	NSArray *deckArray = [deckController selectedObjects];
+	if ([deckArray count] == 0) {
 		return;
 	}
-	
-	NSEnumerator *deckEnumerator = [deck.cards objectEnumerator];
+	NSManagedObject *deck = [deckArray objectAtIndex:0];
+	NSEnumerator *deckEnumerator = [deck.metaCards objectEnumerator];
     NSEnumerator *metaCardEnumerator;
 	SIYMetaCard *deckMetaCard;    
     SIYMetaCard *libraryMetaCard;
@@ -235,24 +235,23 @@
 
 	while ((deckMetaCard = [deckEnumerator nextObject]) != nil) {
         libraryMetaCard = [self metaCardWithCardName:deckMetaCard.name inDeck:nil];
+		if (libraryMetaCard == nil) {
+			libraryMetaCard = [self insertMetaCardFromCard:deckMetaCard];
+		}
         metaCardEnumerator = [deckMetaCard.cards objectEnumerator];
         while ((deckCollectionCard = [metaCardEnumerator nextObject]) != nil) {
             libraryCollectionCard = [self collectionCardWithCardName:deckCollectionCard.name withSet:deckCollectionCard.set inCollection:libraryMetaCard.cards];
             if (libraryCollectionCard == nil) {
                 libraryCollectionCard = [self insertCollectionCardFromCard:deckCollectionCard];
                 [libraryMetaCard addCardsObject:libraryCollectionCard];
-                [[self managedObjectContext] refreshObject:libraryMetaCard mergeChanges:YES];
+				libraryCollectionCard.metaCard = libraryMetaCard;
             }
-			[self incrementQuantityForCard:libraryCollectionCard withIncrement:[deckCollectionCard.quantity intValue]];            
+			
+			[self incrementQuantityForCard:libraryCollectionCard withIncrement:[deckCollectionCard.quantity intValue]];
+			[deckCollectionCard removeObserver:deckMetaCard forKeyPath:@"quantity"];
+			[[self managedObjectContext] deleteObject:deckCollectionCard];
         }
         
-		NSSet *cards = deckMetaCard.cards;
-		NSEnumerator *enumerator = [cards objectEnumerator];
-		NSManagedObject *card;
-		while ((card = [enumerator nextObject]) != nil) {
-			[card removeObserver:deckMetaCard forKeyPath:@"quantity"];
-			[[self managedObjectContext] deleteObject:card];
-		}
         [[self managedObjectContext] deleteObject:deckMetaCard];
     }
     
@@ -262,10 +261,11 @@
 
 - (IBAction)moveToDeck:(id)sender
 {
-	NSManagedObject *deck = [self deckWithName:[[deckSelectionButton selectedItem] title]];
-	if (deck == nil) {
+	NSArray *deckArray = [deckController selectedObjects];
+	if ([deckArray count] == 0) {
 		return;
 	}
+	NSManagedObject *deck = [deckArray objectAtIndex:0];
 	NSArray *array = [[libraryController selectedObjects] copy];
     SIYMetaCard *libraryMetaCard;
     SIYMetaCard *deckMetaCard;

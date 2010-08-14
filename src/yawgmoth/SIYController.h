@@ -14,6 +14,7 @@
 	IBOutlet NSArrayController *libraryController;
 	IBOutlet NSArrayController *deckCardsController;
 	IBOutlet NSArrayController *tempCardsController;
+	IBOutlet NSArrayController *deckController;
 	
 	IBOutlet NSWindow *deckEditingWindow;
 	IBOutlet NSTableView *libraryTableView;
