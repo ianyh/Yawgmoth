@@ -11,11 +11,12 @@
 			<string key="com.snowmint.ib3plugin.SM2DGraphView">1</string>
 		</dictionary>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
+			<integer value="116"/>
+			<integer value="1078"/>
+			<integer value="1024"/>
 			<integer value="192"/>
 			<integer value="649"/>
 			<integer value="1291"/>
-			<integer value="116"/>
-			<integer value="1024"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.snowmint.ib3plugin.SM2DGraphView</string>
@@ -3016,29 +3017,30 @@
 			<object class="NSWindowTemplate" id="867899740">
 				<int key="NSWindowStyleMask">1</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{162, 398}, {268, 81}}</string>
+				<string key="NSWindowRect">{{162, 373}, {268, 106}}</string>
 				<int key="NSWTFlags">-1267204096</int>
 				<string key="NSWindowTitle">Updating...</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
 				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<object class="NSView" key="NSWindowView" id="950365209">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSProgressIndicator" id="983673488">
 							<reference key="NSNextResponder" ref="950365209"/>
 							<int key="NSvFlags">1292</int>
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
-							<string key="NSFrame">{{18, 41}, {232, 20}}</string>
+							<string key="NSFrame">{{18, 66}, {232, 20}}</string>
 							<reference key="NSSuperview" ref="950365209"/>
-							<int key="NSpiFlags">16392</int>
+							<bool key="NSViewCanDrawConcurrently">YES</bool>
+							<int key="NSpiFlags">16394</int>
 							<double key="NSMaxValue">100</double>
 						</object>
 						<object class="NSTextField" id="976808885">
 							<reference key="NSNextResponder" ref="950365209"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{17, 20}, {234, 17}}</string>
+							<string key="NSFrame">{{17, 45}, {234, 17}}</string>
 							<reference key="NSSuperview" ref="950365209"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="496472049">
@@ -3051,8 +3053,25 @@
 								<reference key="NSTextColor" ref="173462953"/>
 							</object>
 						</object>
+						<object class="NSTextField" id="285574854">
+							<reference key="NSNextResponder" ref="950365209"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{17, 20}, {234, 17}}</string>
+							<reference key="NSSuperview" ref="950365209"/>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSTextFieldCell" key="NSCell" id="124170646">
+								<int key="NSCellFlags">68288064</int>
+								<int key="NSCellFlags2">272630784</int>
+								<string key="NSContents"/>
+								<reference key="NSSupport" ref="465319721"/>
+								<reference key="NSControlView" ref="285574854"/>
+								<reference key="NSBackgroundColor" ref="745973202"/>
+								<reference key="NSTextColor" ref="173462953"/>
+							</object>
+						</object>
 					</array>
-					<string key="NSFrameSize">{268, 81}</string>
+					<string key="NSFrameSize">{268, 106}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
@@ -4428,6 +4447,22 @@
 					</object>
 					<int key="connectionID">1329</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">deckEditingWindow</string>
+						<reference key="source" ref="192675890"/>
+						<reference key="destination" ref="234478896"/>
+					</object>
+					<int key="connectionID">1330</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">progressDetail</string>
+						<reference key="source" ref="192675890"/>
+						<reference key="destination" ref="285574854"/>
+					</object>
+					<int key="connectionID">1333</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -5393,6 +5428,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="983673488"/>
 							<reference ref="976808885"/>
+							<reference ref="285574854"/>
 						</array>
 						<reference key="parent" ref="867899740"/>
 					</object>
@@ -6018,6 +6054,19 @@
 						<reference key="object" ref="314880145"/>
 						<reference key="parent" ref="0"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1331</int>
+						<reference key="object" ref="285574854"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="124170646"/>
+						</array>
+						<reference key="parent" ref="950365209"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1332</int>
+						<reference key="object" ref="124170646"/>
+						<reference key="parent" ref="285574854"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -6046,9 +6095,9 @@
 				<string key="1068.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1069.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1075.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1077.IBEditorWindowLastContentRect">{{330, 770}, {268, 81}}</string>
+				<string key="1077.IBEditorWindowLastContentRect">{{330, 745}, {268, 106}}</string>
 				<string key="1077.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1077.IBWindowTemplateEditedContentRect">{{330, 770}, {268, 81}}</string>
+				<string key="1077.IBWindowTemplateEditedContentRect">{{330, 745}, {268, 106}}</string>
 				<boolean value="NO" key="1077.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="1078.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1079.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6145,6 +6194,8 @@
 				<string key="1315.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1316.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1323.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1331.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1332.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="191.IBEditorWindowLastContentRect">{{426, 105}, {886, 643}}</string>
 				<string key="191.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="191.IBWindowTemplateEditedContentRect">{{426, 105}, {886, 643}}</string>
@@ -6309,7 +6360,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1329</int>
+			<int key="maxID">1333</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -6622,6 +6673,8 @@
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="cardManager">SIYCardManager</string>
+						<string key="deckEditingWindow">NSWindow</string>
+						<string key="progressDetail">NSTextField</string>
 						<string key="progressIndicator">NSProgressIndicator</string>
 						<string key="progressLabel">NSTextField</string>
 						<string key="updatePanel">NSPanel</string>
@@ -6630,6 +6683,14 @@
 						<object class="IBToOneOutletInfo" key="cardManager">
 							<string key="name">cardManager</string>
 							<string key="candidateClassName">SIYCardManager</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="deckEditingWindow">
+							<string key="name">deckEditingWindow</string>
+							<string key="candidateClassName">NSWindow</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="progressDetail">
+							<string key="name">progressDetail</string>
+							<string key="candidateClassName">NSTextField</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="progressIndicator">
 							<string key="name">progressIndicator</string>

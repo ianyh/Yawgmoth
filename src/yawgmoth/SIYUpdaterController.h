@@ -1,16 +1,19 @@
 #import <Cocoa/Cocoa.h>
 #import "SIYCardManager.h"
 
-#define UPDATE_COUNT 2
 
 @interface SIYUpdaterController : NSObject {
 	IBOutlet SIYCardManager *cardManager;
 	
+	IBOutlet NSWindow *deckEditingWindow;
 	IBOutlet NSPanel *updatePanel;
 	IBOutlet NSProgressIndicator *progressIndicator;
 	IBOutlet NSTextField *progressLabel;
+	IBOutlet NSTextField *progressDetail;
 	
 	NSModalSession modalSession;
+
+	int updateCount;
 }
 
 - (NSArray *)csvRowsFromString:(NSString *)fileString;
@@ -20,7 +23,6 @@
 - (void)endUpdate;
 - (NSString *)loadUpdateMarker;
 - (void)writeUpdateMarker;
-- (void)incrementProgress:(double)increment;
 
 - (void)update07;
 - (void)update071;

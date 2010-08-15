@@ -112,14 +112,17 @@
 											 @"update071", @"0.7.1",
 											 nil];
 	NSArray *versions = [versionToUpdateSelector allKeys];
-	NSString *updateMarker = [self loadUpdateMarker];	
+	NSString *updateMarker = [self loadUpdateMarker];
 	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF > %@", updateMarker];
 	int i;
 	
-	versions = [versions filteredArrayUsingPredicate:predicate];
-	if ([versions count] == 0) {
-		return;
+	if (updateMarker != nil) {
+		versions = [versions filteredArrayUsingPredicate:predicate];
+		if ([versions count] == 0) {
+			return;
+		}
 	}
+	updateCount = [versions count];
 	
 	[self startUpdate];
 	
@@ -135,11 +138,14 @@
 
 - (void)startUpdate
 {
+	[progressIndicator setUsesThreadedAnimation:YES];
 	modalSession = [NSApp beginModalSessionForWindow:updatePanel];
+	[progressIndicator startAnimation:self];
 }
 
 - (void)endUpdate
 {
+	[progressIndicator stopAnimation:self];
 	[NSApp endModalSession:modalSession];
 	[updatePanel close];
 }
@@ -147,6 +153,9 @@
 - (NSString *)loadUpdateMarker
 {
 	NSString *updateMarkerPath = [[cardManager applicationSupportDirectory] stringByAppendingPathComponent:@"umarker"];
+	if (![[NSFileManager defaultManager] fileExistsAtPath:updateMarkerPath]) {
+		return nil;
+	}
 	return [NSString stringWithContentsOfFile:updateMarkerPath encoding:NSASCIIStringEncoding error:nil];
 }
 
@@ -159,7 +168,7 @@
 
 - (void)incrementProgress:(double)increment
 {
-	[progressIndicator incrementBy:increment/UPDATE_COUNT];
+//	[progressIndicator incrementBy:increment/updateCount];
 	[NSApp runModalSession:modalSession];
 }
 
@@ -169,10 +178,11 @@
 	
 	// add AEther Burst
 	[progressLabel setStringValue:@"Adding missing cards..."];
-	[NSApp runModalSession:modalSession];
 	NSManagedObject *card;
 	card = [cardManager managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"name = %@", @"AEther Burst"] inEntityWithName:@"FullCard"];
 	if (card == nil) {
+		[progressDetail setStringValue:@"AEther Burst"];
+		[NSApp runModalSession:modalSession];
 		card = [NSEntityDescription insertNewObjectForEntityForName:@"FullCard" inManagedObjectContext:[cardManager managedObjectContext]];
 		card.convertedManaCost = [NSNumber numberWithInt:2];
 		card.manaCost = @"1U";
@@ -190,7 +200,8 @@
 	
 	// fix Creeping Tar Pit
 	[progressLabel setStringValue:@"Fixing existing cards..."];
-	[self incrementProgress:increment];
+	[progressDetail setStringValue:@"Creeping Tar Pit"];
+	[NSApp runModalSession:modalSession];
 	NSArray *cards;
 	int i;
 	
@@ -206,31 +217,40 @@
 		card.name = @"Creeping Tar Pit";
 	}
 	
+	cards = [cardManager managedObjectsWithPredicate:[NSPredicate predicateWithFormat:@"name = %@", @"Creeping Tar Pits"] inEntityWithName:@"CollectionCard"];
+	for (i = 0; i < [cards count]; i++) {
+		card = [cards objectAtIndex:i];
+		card.name = @"Creeping Tar Pit";
+	}
+	
 	[cardManager save];
-
-	[self incrementProgress:increment];
 }
 
 - (void)update071
 {
-	double increment = 100.0 / 3.0;
-	
 	// nullify power/toughness for non-creatures
 	// nullify (converted)manaCost for lands
+	// M2010/M2011 -> Magic 2010/Magic 2011
 	[progressLabel setStringValue:@"Fixing existing cards..."];
 	[NSApp runModalSession:modalSession];
 	
-	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"superType != %@ AND superType != %@",
-							  @"Creature", @"Artifact Creature"];
+	NSPredicate *nonCreaturePredicate = [NSPredicate predicateWithFormat:@"superType != %@ AND superType != %@",
+										 @"Creature", @"Artifact Creature"];
+	NSPredicate *magic2010Predicate = [NSPredicate predicateWithFormat:@"set = %@", @"M2010"];
+	NSPredicate *magic2011Predicate = [NSPredicate predicateWithFormat:@"set = %@", @"M2011"];
 	NSArray *entities = [NSArray arrayWithObjects:@"FullCard", @"MetaCard", @"CollectionCard", nil];
 	NSArray *cards;
 	NSManagedObject *card;
 	int i, j;
 	
 	for (i = 0; i < [entities count]; i++) {
-		cards = [cardManager managedObjectsWithPredicate:predicate inEntityWithName:[entities objectAtIndex:i]];
+		// nullify power/toughness for non-creatures
+		cards = [cardManager managedObjectsWithPredicate:nonCreaturePredicate inEntityWithName:[entities objectAtIndex:i]];
+		[progressLabel setStringValue:@"Fixing non-creature attributes..."];
 		for (j = 0; j < [cards count]; j++) {
 			card = [cards objectAtIndex:j];
+			[progressDetail setStringValue:card.name];
+			[NSApp runModalSession:modalSession];
 			card.power = nil;
 			card.toughness = nil;
 			
@@ -238,8 +258,61 @@
 				card.convertedManaCost = nil;
 				card.manaCost = nil;
 			}
-			
-			[self incrementProgress:(increment / [cards count])];
+		}
+		
+		// M2010 -> Magic 2010
+		cards = [cardManager managedObjectsWithPredicate:magic2010Predicate inEntityWithName:[entities objectAtIndex:i]];
+		[progressLabel setStringValue:@"Renaming M2010"];
+		for (j = 0; j < [cards count]; j++) {
+			card = [cards objectAtIndex:j];
+			[progressDetail setStringValue:card.name];
+			[NSApp runModalSession:modalSession];
+			card.set = @"Magic 2010";
+		}
+		
+		// M2011 -> Magic 2011
+		cards = [cardManager managedObjectsWithPredicate:magic2011Predicate inEntityWithName:[entities objectAtIndex:i]];
+		for (j = 0; j < [cards count]; j++) {
+			card = [cards objectAtIndex:j];
+			[progressDetail setStringValue:card.name];
+			[NSApp runModalSession:modalSession];			
+			card.set = @"Magic 2011";
+		}
+	}
+	
+	// fix creature powers
+	NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
+	NSArray *fileNames = [NSArray arrayWithObjects:@"Shards of Alara.csv", @"Conflux.csv", @"Alara Reborn.csv", @"Magic 2010.csv",
+						  @"Zendikar.csv", @"Worldwake.csv", @"Rise of the Eldrazi.csv", @"Magic 2011.csv", nil];
+	NSEnumerator *enumerator = [fileNames objectEnumerator];
+	NSString *fileName;
+	
+	[progressLabel setStringValue:@"Fixing creature powers..."];
+	
+	while ((fileName = [enumerator nextObject]) != nil) {
+		NSString *setName = [[fileName componentsSeparatedByString:@"."] objectAtIndex:0];
+		NSString *fileString = [NSString stringWithContentsOfFile:[resourcePath stringByAppendingPathComponent:fileName] 
+														 encoding:NSASCIIStringEncoding 
+															error:nil];
+		NSArray *setRows = [self csvRowsFromString:fileString];
+		NSArray *row;
+		for (i = 0; i < [setRows count]; i++) {
+			row = [setRows objectAtIndex:i];			
+			card = [cardManager managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"set = %@ AND name = %@", setName, [row objectAtIndex:0]] 
+										  inEntityWithName:@"FullCard"];
+			if ([card.superType isEqualToString:@"Creature"] || [card.superType isEqualToString:@"Artifact Creature"]) {
+				[progressDetail setStringValue:[NSString stringWithFormat:@"%@ - %@", setName, [row objectAtIndex:0]]];
+				[NSApp runModalSession:modalSession];
+				card.power = [row objectAtIndex:3];
+				cards = [cardManager managedObjectsWithPredicate:[NSPredicate predicateWithFormat:@"set = %@ AND name = %@", setName, [row objectAtIndex:0]] 
+												inEntityWithName:@"CollectionCard"];
+				for (j = 0; j < [cards count]; j++) {
+					card = [cards objectAtIndex:j];
+					card.power = [row objectAtIndex:3];
+					card.metaCard.power = card.power;
+				}
+				[cardManager save];
+			}
 		}
 	}
 }

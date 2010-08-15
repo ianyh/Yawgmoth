@@ -33,6 +33,14 @@
 		3C50B3351210A7DC00AA4C68 /* SM2DGraphView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3C50B3451210AAA000AA4C68 /* SIYDeckDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */; };
 		3C50B3461210AAA000AA4C68 /* SIYDeckDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */; };
+		3C545B91121816200005183D /* Alara Reborn.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C545B89121816200005183D /* Alara Reborn.csv */; };
+		3C545B92121816200005183D /* Conflux.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C545B8A121816200005183D /* Conflux.csv */; };
+		3C545B93121816200005183D /* Magic 2010.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C545B8B121816200005183D /* Magic 2010.csv */; };
+		3C545B94121816200005183D /* Magic 2011.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C545B8C121816200005183D /* Magic 2011.csv */; };
+		3C545B95121816200005183D /* Rise of the Eldrazi.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C545B8D121816200005183D /* Rise of the Eldrazi.csv */; };
+		3C545B96121816200005183D /* Shards of Alara.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C545B8E121816200005183D /* Shards of Alara.csv */; };
+		3C545B97121816200005183D /* Worldwake.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C545B8F121816200005183D /* Worldwake.csv */; };
+		3C545B98121816200005183D /* Zendikar.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3C545B90121816200005183D /* Zendikar.csv */; };
 		3CBD2D3B11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
 		3CBD2D3C11FE2E5300DE9543 /* SIYCardImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD2D3A11FE2E5300DE9543 /* SIYCardImageManager.m */; };
 		3CC680941213D13800181E02 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC680931213D13800181E02 /* Sparkle.framework */; };
@@ -140,6 +148,14 @@
 		3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SM2DGraphView.framework; path = Library/Frameworks/SM2DGraphView.framework; sourceTree = SDKROOT; };
 		3C50B3431210AAA000AA4C68 /* SIYDeckDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDeckDataSource.h; path = src/yawgmoth/SIYDeckDataSource.h; sourceTree = "<group>"; };
 		3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYDeckDataSource.m; path = src/yawgmoth/SIYDeckDataSource.m; sourceTree = "<group>"; };
+		3C545B89121816200005183D /* Alara Reborn.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Alara Reborn.csv"; path = "res/sets/Alara Reborn.csv"; sourceTree = "<group>"; };
+		3C545B8A121816200005183D /* Conflux.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Conflux.csv; path = res/sets/Conflux.csv; sourceTree = "<group>"; };
+		3C545B8B121816200005183D /* Magic 2010.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Magic 2010.csv"; path = "res/sets/Magic 2010.csv"; sourceTree = "<group>"; };
+		3C545B8C121816200005183D /* Magic 2011.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Magic 2011.csv"; path = "res/sets/Magic 2011.csv"; sourceTree = "<group>"; };
+		3C545B8D121816200005183D /* Rise of the Eldrazi.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Rise of the Eldrazi.csv"; path = "res/sets/Rise of the Eldrazi.csv"; sourceTree = "<group>"; };
+		3C545B8E121816200005183D /* Shards of Alara.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Shards of Alara.csv"; path = "res/sets/Shards of Alara.csv"; sourceTree = "<group>"; };
+		3C545B8F121816200005183D /* Worldwake.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Worldwake.csv; path = res/sets/Worldwake.csv; sourceTree = "<group>"; };
+		3C545B90121816200005183D /* Zendikar.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Zendikar.csv; path = res/sets/Zendikar.csv; sourceTree = "<group>"; };
 		3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDataModelManagedObjects.h; path = src/yawgmoth/SIYDataModelManagedObjects.h; sourceTree = "<group>"; };
 		3CBD2D3911FE2E5300DE9543 /* SIYCardImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYCardImageManager.h; path = src/yawgmoth/SIYCardImageManager.h; sourceTree = "<group>"; };
@@ -273,6 +289,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3C545B88121815FB0005183D /* Sets */,
 				3CC681051213E0C400181E02 /* update */,
 				3CC6809B1213D43B00181E02 /* dsa_pub.pem */,
 				3CE3033F120D63FF0093FD1E /* card-image-map */,
@@ -345,6 +362,21 @@
 				3C0A8A8611FFF7820032CEDB /* SIYImportController.m */,
 			);
 			name = "Importer Classes";
+			sourceTree = "<group>";
+		};
+		3C545B88121815FB0005183D /* Sets */ = {
+			isa = PBXGroup;
+			children = (
+				3C545B89121816200005183D /* Alara Reborn.csv */,
+				3C545B8A121816200005183D /* Conflux.csv */,
+				3C545B8B121816200005183D /* Magic 2010.csv */,
+				3C545B8C121816200005183D /* Magic 2011.csv */,
+				3C545B8D121816200005183D /* Rise of the Eldrazi.csv */,
+				3C545B8E121816200005183D /* Shards of Alara.csv */,
+				3C545B8F121816200005183D /* Worldwake.csv */,
+				3C545B90121816200005183D /* Zendikar.csv */,
+			);
+			name = Sets;
 			sourceTree = "<group>";
 		};
 		3C9586B711FB7DE200E0F11E /* Models */ = {
@@ -483,6 +515,14 @@
 				3CC680EA1213DFA400181E02 /* dsa_pub.pem in Resources */,
 				3CC680EB1213DFA400181E02 /* Yawgmoth.xib in Resources */,
 				3CC681061213E0C400181E02 /* update in Resources */,
+				3C545B91121816200005183D /* Alara Reborn.csv in Resources */,
+				3C545B92121816200005183D /* Conflux.csv in Resources */,
+				3C545B93121816200005183D /* Magic 2010.csv in Resources */,
+				3C545B94121816200005183D /* Magic 2011.csv in Resources */,
+				3C545B95121816200005183D /* Rise of the Eldrazi.csv in Resources */,
+				3C545B96121816200005183D /* Shards of Alara.csv in Resources */,
+				3C545B97121816200005183D /* Worldwake.csv in Resources */,
+				3C545B98121816200005183D /* Zendikar.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

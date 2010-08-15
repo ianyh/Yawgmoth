@@ -1,0 +1,460 @@
+Akrasan Squire,W,1,1,1,C,Creature - Human Soldier,"Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)"
+Angel's Herald,W,1,1,1,U,Creature - Human Cleric,"2W, T, Sacrifice a green creature, a white creature, and a blue creature: Search your library for a card named Empyrial Archangel and put it into play. Then shuffle your library."
+Angelic Benediction,3W,4,0,0,U,Enchantment,"Exalted (Whenever a creature you control attacks alone, it gets +1/+1 until end of turn.)
+
+Whenever a creature you control attacks alone, you may tap target creature."
+Angelsong,1W,2,0,0,C,Instant,"Prevent all combat damage that would be dealt this turn.
+
+Cycling 2"
+Bant Battlemage,2W,3,2,2,U,Creature - Human Wizard,"G, T: Target creature gains trample until end of turn.
+U, T: Target creature gains flying until end of turn."
+Battlegrace Angel,3WW,5,4,4,R,Creature - Angel,"Flying
+
+Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)
+
+Whenever a creature you control attacks alone, it gains lifelink until end of turn."
+Cradle of Vitality,3W,4,0,0,R,Enchantment,"Whenever you gain life, you may pay 1W. If you do, put a +1/+1 counter on target creature for each 1 life you gained."
+Dispeller's Capsule,W,1,0,0,C,Artifact,"2W, T, Sacrifice Dispeller's Capsule: Destroy target artifact or enchantment."
+"Elspeth, Knight Errant",2WW,4,0,4,M,Planeswalker - Elspeth,"[+1]: Put a 1/1 white Soldier creature token into play.
+
+[+1]: Target creature gets +3/+3 and gains flying until end of turn.
+
+[-8]: For the rest of the game, artifacts, creatures, enchantments, and lands you control are indestructible."
+Ethersworn Canonist,1W,2,2,2,R,Artifact Creature - Human Cleric,Each player who has played a nonartifact spell this turn can't play additional nonartifact spells.
+Excommunicate,2W,3,0,0,C,Sorcery,Put target creature on top of its owner's library.
+Guardians of Akrasa,2W,3,0,4,C,Creature - Human Soldier,"Defender
+
+Exalted (Whenever a creature you control attacks alone, it gets +1/+1 until end of turn.)"
+Gustrider Exuberant,2W,3,1,2,C,Creature - Human Wizard,"Flying
+
+Sacrifice Gustrider Exuberant: Creatures you control with power 5 or greater gain flying until end or turn."
+Invincible Hymn,6WW,8,0,0,R,Sorcery,Count the number of cards in your library. Your life total becomes that number.
+Knight of the Skyward Eye,1W,2,2,2,C,Creature - Human Knight,3G: Knight of the Skyward Eye gets +3/+3 until end of turn. Play this ability only once each turn.
+Knight of the White Orchid,WW,2,2,2,R,Creature - Human Knight,"First strike
+
+When Knight of the White Orchid comes into play, if an opponent controls more lands than you, you may search your library for a Plains card, put it into play, then shuffle your library."
+Knight-Captain of Eos,4W,5,2,2,R,Creature - Human Knight,"When Knight-Captain of Eos comes into play, put two 1/1 white Soldier creature tokens into play.
+W, Sacrifice a Soldier: Prevent all combat damage that would be dealt this turn."
+Marble Chalice,2W,3,0,0,C,Artifact,T: You gain 1 life.
+Metallurgeon,1W,2,1,2,U,Artifact Creature - Human Artificer,"W, T: Regenerate target artifact."
+Oblivion Ring,2W,3,0,0,C,Enchantment,"Oblivion Ring
+
+When Oblivion Ring comes into play, remove another target nonland permanent from the game.
+
+When Oblivion Ring leaves play, return the removed card to play under its owner's control."
+Ranger of Eos,3W,4,3,2,R,Creature - Human Soldier,"When Ranger of Eos comes into play, you may search your library for up to two creature cards with converted mana cost 1 or less, reveal them, and put them into your hand. If you do, shuffle your library."
+Resounding Silence,3W,4,0,0,C,Instant,"Remove target attacking creature from the game.
+
+Cycling 5GWU
+
+When you cycle Resounding Silence, remove up to two target attacking creatures from the game."
+Rockcaster Platoon,5WW,7,5,7,U,Creature - Rhino Soldier,4G: Rockcaster Platoon deals 2 damage to each creature with flying and each player.
+Sanctum Gargoyle,3W,4,2,3,C,Artifact Creature - Gargoyle,"Flying
+
+When Sanctum Gargoyle comes into play, return target artifact card from your graveyard to your hand."
+Scourglass,3WW,5,0,0,R,Artifact,"T, Sacrifice Scourglass: Destroy all permanents except for artifacts and lands. Play this ability only during your upkeep."
+Sighted-Caste Sorcerer,1W,2,1,1,C,Creature - Human Wizard,"Exalted
+U: Sighted-Caste Sorcerer gains shroud until end of turn."
+Sigiled Paladin,WW,2,2,2,U,Creature - Human Knight,"First strike
+
+Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)"
+Soul's Grace,1W,2,0,0,C,Instant,You gain life equal to target creature's power.
+Sunseed Nurturer,2W,3,1,1,U,Creature - Human Druid Wizard,"At the end of your turn, if you control a creature with power 5 or greater, you may gain 2 life.
+T: Add 1 to your mana pool."
+Welkin Guide,4W,5,2,2,C,Creature - Bird Cleric,"Flying
+
+When Welkin Guide comes into play, target creature gets +2/+2 and gains flying until end of turn."
+Yoked Plowbeast,5WW,7,5,5,C,Creature - Beast,Cycling 2
+Call to Heel,1U,2,0,0,C,Instant,Return target creature to its owner's hand. Its controller draws a card.
+Cancel,1UU,3,0,0,C,Instant,Counter target spell.
+Cathartic Adept,U,1,1,1,C,Creature - Human Wizard,T: Target player puts the top card of his or her library into his or her graveyard.
+Cloudheath Drake,4U,5,3,3,C,Artifact Creature - Drake,"Flying
+1W: Cloudheath Drake gains vigilance until end of turn."
+Coma Veil,4U,5,0,0,C,Enchantment - Aura,"Enchant artifact or creature
+
+Enchanted permanent doesn't untap during its controller's untap step."
+Courier's Capsule,1U,2,0,0,C,Artifact,"1U, T, Sacrifice Courier's Capsule: Draw two cards."
+Covenant of Minds,4U,5,0,0,R,Sorcery,"Reveal the top three cards of your library. Target opponent may choose to put those cards into your hand. If he or she doesn't, put those cards into your graveyard and draw five cards."
+Dawnray Archer,2U,3,1,1,U,Creature - Human Archer,"Exalted
+W, T: Dawnray Archer deals 1 damage to target attacking or blocking creature."
+Esper Battlemage,2U,3,2,2,U,Artifact  Creature - Human Wizard,"W, T: Prevent the next 2 damage that would be dealt to you this turn.
+B, T: Target creature gets -1/-1 until end of turn."
+Etherium Astrolabe,2U,3,0,0,U,Artifact,"Flash
+B, T, Sacrifice an artifact: Draw a card."
+Etherium Sculptor,1U,2,1,2,C,Artifact Creature - Vedalken Artificer,Artifact spells you play cost 1 less to play.
+Fatestitcher,3U,4,1,2,U,Creature - Zombie Wizard,"T: You may tap or untap another target permanent.
+
+Unearth U"
+Filigree Sages,3U,4,2,3,U,Artifact Creature - Vedalken Wizard,2U: Untap target artifact.
+Gather Specimens,3UUU,6,0,0,R,Instant,"If a creature would come into play under an opponent's control this turn, it comes into play under your control instead."
+Jhessian Lookout,1U,2,0,0,C,Creature - Human Scout,""
+Kathari Screecher,2U,3,2,2,C,Creature - Bird Soldier,"Flying
+
+Unearth 2U"
+Kederekt Leviathan,6UU,8,5,5,R,Creature - Levitathan,"When Kederekt Leviathan comes into play, return all other nonland permanents to their owners' hands.
+
+Unearth 6U"
+Master of Etherium,2U,3,0,0,R,Artifact Creature - Vedalken Wizard,"Master of Etherium's power and toughness are each equal to the number of artifacts you control.
+
+Other artifact creatures you control get +1/+1."
+Memory Erosion,1UU,3,0,0,R,Enchantment,"Whenever an opponent plays a spell, that player puts the top two cards of his or her library into his or her graveyard."
+Mindlock Orb,3U,4,0,0,R,Artifact,Players can't search libraries.
+Outrider of Jhess,3U,4,2,2,C,Creature - Human Knight,Exalted
+Protomatter Powder,2U,3,0,0,U,Artifact,"4W, T, Sacrifice Protomatter Powder: Return target artifact card from your graveyard to play."
+Resounding Wave,2U,3,0,0,C,Instant,"Return target permanent to its owner's hand.
+
+Cycling 5WUB
+
+When you cycle Resounding Wave, return up to two target permanents to their owners' hands."
+Sharding Sphinx,4UU,6,4,4,R,Artifact Creature - Sphinx,"Flying
+
+Whenever an artifact creature you control deals combat damage to a player, you may put a 1/1 blue Thopter artifact creature token with flying into play."
+Skill Borrower,2U,3,1,3,R,Artifact Creature - Human Wizard,"Play with the top card of your library revealed.
+
+As long as the top card of your library is an artifact or creature card, Skill Borrower has all activated abilities of that card. (If any of the abilities use that card's name, use this creature's name instead.)"
+Spell Snip,2U,3,0,0,C,Instant,"Counter target spell unless its controller pays 1.
+
+Cycling 2"
+Sphinx's Herald,U,1,1,1,U,Artifact Creature - Vedalken Wizard,"2U, T, Sacrifice a white creature, a blue creature, and a black creature: Search your library for a card named Sphinx Sovereign and put it into play. Then shuffle your library."
+Steelclad Serpent,5U,6,4,5,C,Artifact Creature - Serpent,Steelclad Serpent can't attack unless you control another artifact.
+Tezzeret the Seeker,3UU,5,0,4,M,Planeswalker - Tezzeret,"[+1]: Untap up to two target artifacts.
+
+[-X]: Search your library for an artifact card with converted mana cost X or less and put it into play. Then shuffle your library.
+
+[-5]: Artifacts you control become 5/5 artifact creatures until end of turn."
+Tortoise Formation,3U,4,0,0,C,Instant,Creatures you control gain shroud until end of turn.
+Vectis Silencers,2U,3,1,2,C,Artifact Creature - Human Rogue,2B: Vectis Silencers gains deathtouch until end of turn.
+Ad Nauseam,3BB,5,0,0,R,Instant,Reveal the top card of your library and put that card into your hand. You lose life equal to its converted mana cost. You may repeat this process any number of times.
+Archdemon of Unx,5BB,7,6,6,R,Creature - Demon,"Flying, trample
+
+At the beginning of your upkeep, sacrifice a non-Zombie creature, then put a 2/2 black Zombie creature token into play."
+Banewasp Affliction,1B,2,0,0,C,Enchantment - Aura,"Enchant creature
+
+When enchanted creature is put into a graveyard, that creature's controller loses life equal to its toughness."
+Blister Beetle,1B,2,1,1,C,Creature - Insect,"When Blister Beetle comes into play, target creature gets -1/-1 until end of turn."
+Bone Splinters,B,1,0,0,C,Sorcery,"As an aditional cost to play Bone Splinters, sacrifice a creature.
+
+Destroy target creature."
+Corpse Connoisseur,4B,5,3,3,U,Creature - Zombie Wizard,"When Corpse Connoisseur comes into play, you may search your library for a creature card and put that card into your graveyard. If you do, shuffle your library.
+
+Unearth 3B(3B: Return this card from your graveyard to play. It gains haste. Remove it from the game at end of turn or if it would leave play. Unearth only as a sorcery.)"
+Cunning Lethemancer,2B,3,2,2,R,Creature - Human Wizard,"At the beginning of your upkeep, each player discards a card."
+Death Baron,1BB,3,2,2,R,Creature - Zombie Wizard,Skeleton creatures you control and other Zombie creatures you control get +1/+1 and have deathtouch.
+Deathgreeter,B,1,1,1,C,Creature - Human Shaman,"Whenever another creature is put into a graveyard from play, you may gain 1 life."
+Demon's Herald,B,1,1,1,U,Creature - Human Wizard,"2B, T, Sacrifice a blue creature, a black creature, and a red creature: Search your library for a card named Prince of Thralls and put it into play. Then shuffle your library."
+Dreg Reaver,4B,5,4,3,C,Creature - Zombie Beast,""
+Dregscape Zombie,1B,2,2,1,C,Creature - Zombie,Unearth B
+Executioner's Capsule,B,1,0,0,C,Artifact,"1B, T, Sacrifice Executioner's Capsule: Destroy target nonblack creature."
+Fleshbag Marauder,2B,3,3,1,U,Creature - Zombie Warrior,"When Fleshbag Marauder comes into play, each player sacrifices a creature."
+Glaze Fiend,1B,2,0,1,C,Artifact Creature - Illusion,"Flying
+
+Whenever another artifact comes into play under your control, Glaze Fiend gets +2/+2 until end of turn."
+Grixis Battlemage,2B,3,2,2,U,Creature - Human Wizard,"U, T: Draw a card, then discard a card.
+R, T: Target creature can't block this turn."
+Immortal Coil,2BB,4,0,0,R,Artifact,"T, Remove two cards in your graveyard from the game: Draw a card.
+
+If damage would be dealt to you, prevent that damage. Remove a card in your graveyard from the game for each 1 damage prevented this way.
+
+When there are no cards in your graveyard, you lose the game."
+Infest,1BB,3,0,0,U,Sorcery,All creatures get -2/-2 until end of turn.
+Onyx Goblet,2B,3,0,0,C,Artifact,T: Target player loses 1 life.
+Puppet Conjurer,1B,2,1,2,U,Artifact Creature - Human Wizard,"U, T: Put a 0/1 blue Homunculus artifact creature token into play.
+
+At the beginning of your upkeep, sacrifice a Homunculus."
+Resounding Scream,2B,3,0,0,C,Sorcery,"Target player discards a card at random.
+
+Cycling 5UBR
+
+When you cycle Resounding Scream, target player discards two cards at random."
+Salvage Titan,4BB,6,6,4,R,Artifact Creature - Golem,"You may sacrifice three artifacts rather than pay Salvage Titan's mana cost.
+
+Remove three artifact cards in your graveyard from the game: Return Salvage Titan from your graveyard to hand."
+Scavenger Drake,3B,4,1,1,U,Creature - Drake,"Flying
+
+Whenever another creature is put into a graveyard from play, you may put a +1/+1 counter on Scavenger Drake."
+Shadowfeed,B,1,0,0,C,Instant,Remove target card in a graveyard from the game. You gain 3 life.
+Shore Snapper,2B,3,2,2,C,Creature - Beast,U: Shore Snapper gains islandwalk until end of turn.
+Skeletal Kathari,4B,5,3,2,C,Creature - Bird Skeleton,"Flying
+B, Sacrifice a creature: Regenerate Skeletal Kathari."
+Tar Fiend,5B,6,4,4,R,Creature - Elemental,"Devour 2
+
+When Tar Fiend comes into play, target player discards a card for each creature it devoured."
+Undead Leotau,5B,6,3,4,C,Creature - Zombie Cat,"R: Undead Leotau gets +1/-1 until end of turn.
+
+Unearth 2B"
+Vein Drinker,4BB,6,4,4,R,Creature - Vampire,"Flying
+R, T: Vein Drinker deals damage equal to its power to target creature. That creature deals damage equal to its power to Vein Drinker.
+
+Whenever a creature dealt damage by Vein Drinker this turn is put into a graveyard, put a +1/+1 counter on Vein Drinker."
+Viscera Dragger,3B,4,3,3,C,Creature - Zombie Ogre Warrior,"Cycling 2
+
+Unearth 1B"
+Bloodpyre Elemental,4R,5,4,1,C,Creature - Elemental,Sacrifice Bloodpyre Elemental: Bloodpyre Elemental deals 4 damage to target creature. Play this ability only any time you could play a sorcery.
+Bloodthorn Taunter,1R,2,1,1,C,Creature - Human Scout,"Haste
+T: Target creature with power 5 or greater gains haste until end of turn."
+Caldera Hellion,3RR,5,3,3,R,Creature - Hellion,"Devour 1 (As this comes into play, you may sacrifice any number of creatures. This creature comes into play with that many +1/+1 counters on it.)
+
+When Caldera Hellion comes into play, it deals 3 damage to each creature."
+Crucible of Fire,3R,4,0,0,R,Enchantment,Dragon creatures you control get +3/+3.
+Dragon Fodder,1R,2,0,0,C,Sorcery,Put two 1/1 red Goblin creature tokens into play.
+Dragon's Herald,R,1,1,1,U,Creature - Goblin Shaman,"2R, T, Sacrifice a black creature, a red creature, and a green creature: Search your library for a card named Hellkite Overlord and put it into play. Then shuffle your library."
+Exuberant Firestoker,2R,3,1,1,U,Creature - Human Druid Shaman,"At the end of your turn, if you control a creature with power 5 or greater, you may have Exuberant Firestoker deal 2 damage to target player.
+T: Add 1 to your mana pool."
+Flameblast Dragon,4RR,6,5,5,R,Creature - Dragon,"Flying
+
+Whenever Flameblast Dragon attacks, you may pay XR. If you do, Flameblast Dragon deals X damage to target creature or player."
+Goblin Assault,2R,3,0,0,R,Enchantment,"At the beginning of your upkeep, put a 1/1 red Goblin creature token with haste into play.
+
+Goblin creatures attack each turn if able."
+Goblin Mountaineer,R,1,0,0,C,Creature - Goblin Scout,Mountainwalk
+Hell's Thunder,1RR,3,4,4,R,Creature - Elemental,"Flying, haste
+
+At end of turn, sacrifice Hell's Thunder.
+
+Unearth 4R"
+Hissing Iguanar,2R,3,3,1,C,Creature - Lizard,"Whenever another creature is put into a graveyard from play, you may have Hissing Iguanar deal 1 damage to target player."
+Incurable Ogre,3R,4,5,1,C,Creature - Ogre Mutant,""
+Jund Battlemage,2R,3,2,2,U,Creature - Human Shaman,"B, T: Target player loses 1 life.
+G, T: Put a 1/1 green Saproling creature token into play."
+Lightning Talons,2R,3,0,0,C,Enchantment - Aura,"Enchant creature
+
+Enchanted creature gets +3/+0 and has first strike."
+Magma Spray,R,1,0,0,C,Instant,"Magma Spray deals 2 damage to target creature. If that creature would be put into a graveyard this turn, remove it from the game instead."
+Predator Dragon,3RRR,6,4,4,R,Creature - Dragon,"Devour 2 (As this comes into play, you may sacrifice any number of creatures. This creature comes into play with twice that many +1/+1 counters on it.)
+
+Flying, haste"
+Resounding Thunder,2R,3,0,0,C,Instant,"Resounding Thunder deals 3 damage to target creature or player.
+
+Cycling 5BRG
+
+When you cycle Resounding Thunder, it deals 6 damage to target creature or player."
+Ridge Rannet,5RR,7,6,4,C,Creature - Beast,Cycling 2
+Rockslide Elemental,2R,3,1,1,U,Creature - Elemental,"First strike
+
+Whenever another creature is put into a graveyard from play, put a +1/+1 counter on Rockslide Elemental."
+Scourge Devil,4R,5,3,3,U,Creature - Devil,"When Scourge Devil comes into play, creatures you control get +1/+0 until end of turn.
+
+Unearth 2R"
+Skeletonize,4R,5,0,0,U,Instant,"Skeletonize deals 3 damage to target creature. When a creature dealt damage this way is put into a graveyard this turn, put a 1/1 black Skeleton creature token into play with ""B: Regenerate this creature."""
+Soul's Fire,2R,3,0,0,C,Instant,Target creature you control in play deals damage equal to its power to target creature or player.
+Thorn-Thrash Viashino,3R,4,2,2,C,Creature - Viashino Warrior,"Devour 2
+G: Thorn-Thrash Viashino gains trample until end of turn."
+Thunder-Thrash Elder,2R,3,1,1,U,Creature - Viashino Warrior,Devour 3
+Viashino Skeleton,3R,4,2,1,C,Creature - Viashino Skeleton,"1B, Discard a card: Regenerate Viashino Skeleton."
+Vicious Shadows,6R,7,0,0,R,Enchantment,"Whenever a creature is put into a graveyard from play, you may have Vicious Shadows deal damage to target player equal to the number of cards in that player's hand."
+Vithian Stinger,2R,3,0,1,C,Creature - Human Shaman,"T: Vithian Stinger deals 1 damage to target creature or player.
+
+Unearth 1R"
+Volcani Submersion,4R,5,0,0,C,Sorcery,"Destroy target artifact or land.
+
+Cycling 2"
+Where Ancients Tread,4R,5,0,0,R,Enchantment,"Whenever a creature with power 5 or greater comes into play under your control, you may have Where Ancients Tread deal 5 damage to target creature or player."
+Algae Gharial,3G,4,1,1,U,Creature - Crocodile,"Shroud
+
+Whenever another creature is put into a graveyard from play, you may put a +1/+1 counter on Algae Gharial."
+Behemoth's Herald,G,1,1,1,U,Creature - Elf Shaman,"2G, T, Sacrifice a red creature, a green creature, and a white creature: Search your library for a card named Godsire and put it into play. Then shuffle your library."
+Cavern Thoctar,5G,6,5,5,C,Creature - Beast,1R: Cavern Thoctar gets +1/+0 until end of turn.
+Court Archers,2G,3,1,3,C,Creature - Human Archer,"Reach
+
+Exalted"
+Cylian Elf,1G,2,2,2,C,Creature - Elf Scout,""
+Druid of the Anima,1G,2,1,1,C,Creature - Elf Druid,"T: Add R, G, or W to your mana pool."
+Drumhunter,3G,4,2,2,U,Creature - Human Druid Warrior,"At the end of your turn, if you control a creature with power 5 or greater, you may draw a card.
+T: Add 1 to your mana pool."
+Elvish Visionary,1G,2,1,1,C,Creature - Elf Shaman,"When Elvish Visionary comes into play, draw a card."
+Feral Hydra,XG,2,0,0,R,Creature - Beast Hydra,"Feral Hydra comes into play with X +1/+1 counters on it.
+3: Put a +1/+1 counter on Feral Hydra. Any player may play this ability."
+Gift of the Gargantuan,2G,3,0,0,C,Sorcery,Look at the top four cards of your library. You may reveal a creature card and/or a land card from among them and put the revealed cards into your hand. Put the rest on the bottom of your library in any order.
+Godtoucher,3G,4,2,2,C,Creature - Elf Cleric,"1W, T: Prevent all damage that would be dealt to target creature with power 5 or greater this turn."
+Jungle Weaver,5GG,7,5,6,C,Creature - Spider,"Reach
+
+Cycling 2"
+Keeper of Progenitus,3G,4,1,3,R,Creature - Elf Druid,"Whenever a player taps a Mountain, Forest, or Plains for mana, that player adds one mana to his or her mana pool of any type that land produced."
+Lush Growth,G,1,0,0,C,Enchantment - Aura,"Enchant land
+
+Enchanted land is a Mountain, Forest, and Plains."
+Manaplasm,2G,3,1,1,R,Creature - Ooze,"Whenever you play a spell, Manaplasm gets +X/+X until end of turn, where X is that spell's converted mana cost."
+Mighty Emergence,2G,3,0,0,U,Enchantment,"Whenever a creature with power 5 or greater comes into play under your control, you may put two +1/+1 counters on it."
+Mosstodon,4G,5,5,3,C,Creature - Plant Elephant,1: Target creature with power 5 or greater gains trample until end of turn.
+Mycoloth,3GG,5,4,4,R,Creature - Fungus,"Devour 2 (As this comes into play, you may sacrifice any number of creatures. This creature comes into play with twice that many +1/+1 counters on it.)
+
+At the beginning of your upkeep, put a 1/1 green Saproling creature token into play for each +1/+1 counter on Mycoloth."
+Naturalize,1G,2,0,0,C,Instant,Destroy target artifact or enchantment.
+Naya Battlemage,2G,3,2,2,U,Creature - Human Shaman,"R, T: Target creature gets +2/+0 until end of turn.
+W, T: Tap target creature."
+Ooze Garden,1G,2,0,0,R,Enchantment,"1G, Sacrifice a non-Ooze creature: Put an X/X green Ooze creature token into play, where X is the sacrificed creature's power. Play this ability only any time you could play a sorcery."
+Resounding Roar,1G,2,0,0,C,Instant,"Target creature gets +3/+3 until end of turn.
+
+Cycling 5RGW
+
+When you cycle Resounding Roar, target creature gets +6/+6 until end of turn."
+Rhox Charger,3G,4,3,3,U,Creature - Rhino Soldier,"Trample
+
+Exalted"
+Sacellum Godspeaker,2G,3,2,2,R,Creature - Elf Druid,T: Reveal any number of creature cards with power 5 or greater from your hand. Add G to your mana pool for each card revealed this way.
+Savage Hunger,2G,3,0,0,C,Enchantment - Aura,"Enchant creature
+
+Enchanted creature gets +1/+0 and has trample.
+
+Cycling 2"
+Skullmulcher,4G,5,3,3,R,Creature - Elemental,"Devour 1
+
+When Skullmulcher comes into play, draw a card for each creature it devoured."
+Soul's Might,4G,5,0,0,C,Sorcery,"Put X +1/+1 counters on target creature, where X is that creature's power."
+Spearbreaker Behemoth,5GG,7,0,0,R,Creature - Beast,"Spearbreaker Behemoth is indestructible.
+1: Target creature with power 5 or greater is indestructible this turn."
+Topan Ascetic,2G,3,0,0,U,Creature - Human Monk,Tap an untapped creature you control: Topan Ascetic gets +1/+1 until end of turn.
+Wild Nacatl,G,1,1,1,C,Creature - Cat Warrior,"Wild Nacatl gets +1/+1 as long as you control a Mountain.
+
+Wild Nacatl gets +1/+1 as long as you control a Plains."
+Agony Warp,UB,2,0,0,C,Instant,"Target creature gets -3/-0 until end of turn.
+
+Target creature gets -0/-3 until end of turn."
+Ajani Vengeant,2RW,4,0,3,M,Planeswalker - Ajani,"[+1]: Target permanent doesn't untap during its controller's next untap step.
+
+[-2]: Ajani Vengeant deals 3 damage to target creature or player and you gain 3 life.
+
+[-7]: Destroy all lands target player controls."
+Bant Charm,GWU,3,0,0,U,Instant,Choose one -- Destroy target artifact; or put target creature on the bottom of its owner's library; or counter target instant spell.
+Blightning,1BR,3,0,0,C,Sorcery,Blightning deals 3 damage to target player. That player discards two cards.
+Blood Cultist,1BR,3,0,0,U,Creature - Human Wizard,"T: Blood Cultist deals 1 damage to target creature.
+
+Whenever a creature dealt damage by Blood Cultist this turn is put into a graveyard, put a +1/+1 counter on Blood Cultist."
+Branching Bolt,1RG,3,0,0,C,Instant,Choose one or both -- Branching Bolt deals 3 damage to target creature with flying; and/or Branching Bolt deals 3 damage to target creature without flying.
+Brilliant Ultimatum,WWUUUBB,7,0,0,R,Sorcery,Remove the top five cards of your library from the game. An opponent separates those cards into two piles. You may play any number of cards from one of those piles without paying their mana costs.
+Broodmate Dragon,3BRG,6,4,4,R,Creature - Dragon,"Flying
+
+When Broodmate Dragon comes into play, put a 4/4 red Dragon creature token with flying into play."
+Bull Cerodon,4RW,6,0,0,U,Creature - Beast,"Vigilance, haste"
+Carrion Thrash,2BRG,5,4,4,C,Creature - Viashino Warrior,"When Carrion Thrash is put into a graveyard from play, you may pay 2. If you do, return another target creature card from your graveyard to your hand."
+Clarion Ultimatum,GGWWWUU,7,0,0,R,Sorcery,"Choose five permanents you control. For each of those permanents, you may search your library for a card with the same name as that permanent. Put those cards into play tapped, then shuffle your library."
+Cruel Ultimatum,UUBBBRR,7,0,0,R,Sorcery,"Target opponent sacrifices a creature, discards three cards, then loses 5 life. You return a creature card from your graveyard to your hand, draw three cards, then gain 5 life."
+Deft Duelist,WU,2,2,1,C,Creature - Human Rogue,"First strike
+
+Shroud (This creature can't be the target of spells or abilities.)"
+Empyrial Archangel,4GWWU,8,5,8,M,Creature - Angel,"Flying, shroud
+
+All damage that would be dealt to you is dealt to Empyrial Archangel instead."
+Esper Charm,WUB,3,0,0,U,Instant,Choose one -- Destroy target enchantment; or target player draws two cards; or target player discards two cards.
+Fire-Field Ogre,1UBR,4,4,2,U,Creature - Ogre Mutant,"First strike
+
+Unearth UBR"
+Goblin Deathraiders,BR,2,3,1,C,Creature - Goblin Warrior,Trample
+Godsire,4RGGW,8,8,8,M,Creature - Beast,"Vigilance
+T: Put an 8/8 Beast creature token into play that's red, green, and white."
+Grixis Charm,UBR,3,0,0,U,Instant,Choose one -- Return target permanent to its owner's hand; or target creature gets -4/-4 until end of turn; or creatures you control get +2/+0 until end of turn.
+Hellkite Overlord,4BRRG,8,8,8,M,Creature - Dragon,"Flying, trample, haste
+R: Hellkite Overlord gets +1/+0 until end of turn.
+BG: Regenerate Hellkite Overlord."
+Hindering Light,WU,2,0,0,C,Instant,"Counter target spell that targets you or a permanent you control.
+
+Draw a card."
+Jhessian Infiltrator,GU,2,2,2,U,Creature - Human Rogue,Jhessian Infiltrator is unblockable.
+Jund Charm,BRG,3,0,0,U,Instant,Choose one -- Remove target player's graveyard from the game; or Jund Charm deals 2 damage to each creature; or put two +1/+1 counters on target creature.
+Kederekt Creeper,UBR,3,2,3,C,Creature - Horror,"Deathtouch
+
+Kederekt Creeper can't be blocked except by two or more creatures."
+Kiss of the Amesha,4WU,6,0,0,U,Sorcery,Target player gains 7 life and draws two cards.
+Kresh the Bloodbraided,2BRG,5,3,3,M,Legendary Creature - Human Warrior,"Whenever another creature is put into a graveyard from play, you may put X +1/+1 counters on Kresh the Bloodbraided, where X is that creature's power."
+Mayael the Anima,RGW,3,2,3,M,Legendary Creature - Elf Shaman,"3RGW, T: Reveal the top five cards of your library. You may put a creature card with power 5 or greater from among them into play. Then put the rest of the cards revealed this way on the bottom of your library in any order."
+Naya Charm,RGW,3,0,0,U,Instant,Choose one -- Naya Charm deals 3 damage to target creature; return target card in a graveyard to its owner's hand; or tap all creatures target player controls.
+Necrogenesis,BG,2,0,0,U,Enchantment,2: Remove target creature card in a graveyard from the game. Put a 1/1 green Saproling creature token into play.
+Prince of Thralls,4UBBR,8,7,7,M,Creature - Demon,"Whenever a permanent is put into an opponent's graveyard, return it to play under your control unless that opponent pays 3 life."
+Punish Ignorance,WUUB,4,0,0,R,Instant,Counter target spell. Its controller loses 3 life and you gain 3 life.
+Qasali Ambusher,1GW,3,2,3,U,Creature - Cat Warrior,"Reach
+
+If a creature is attacking you and you control a Forest and a Plains, you may play Qasali Ambusher without paying its mana cost and as though it had flash."
+Rafiq of the Many,1GWU,4,3,3,M,Legendary Creature - Human Knight,"Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)
+
+Whenever a creature you control attacks alone, it gains double strike until end of turn."
+Rakeclaw Gargantuan,2RGW,5,0,0,C,Creature - Beast,1: Target creature with power 5 or greater gains first strike until end of turn.
+Realm Razer,3RGW,6,0,0,R,Creature - Beast,"When Realm Razer comes into play, remove all lands from the game.
+
+When Realm Razer leaves play, return the removed cards to played tapped under their owners' control."
+Rhox War Monk,GWU,3,3,4,U,Creature - Rhino Monk,Lifelink
+Rip-Clan Crasher,RG,2,2,2,C,Creature - Human Warrior,Haste
+Sangrite Surge,4RG,6,0,0,U,Sorcery,Target creature gets +3/+3 and gains double strike until end of turn.
+Sarkhan Vol,2RG,4,0,4,M,Planeswalker - Sarkhan,"[+1]: Creatures you control get +1/+1 and gain haste until end of turn.
+
+[-2]: Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn.
+
+[-6]: Put five 4/4 red Dragon creature tokens with flying into play."
+Sedraxis Specter,UBR,3,3,2,R,Creature - Specter,"Flying
+
+Whenever Sedraxis Specter deals combat damage to a player, that player discards a card.
+
+Unearth 1B(1B: Return this card from your graveyard to play. It gains haste. Remove it from the game at end of turn or if it would leave play. Unearth only as a sorcery.)"
+"Sedris, the Traitor King",3UBR,6,5,5,M,Legendary Creature - Zombie Warrior,Each creature card in your graveyard has unearth 2B.
+Sharuum the Hegemon,3WUB,6,5,5,M,Legendary Artifact Creature - Sphinx,"Flying
+
+When Sharuum the Hegemon comes into play, return target artifact card from your graveyard to play."
+Sigil Blessing,GW,2,0,0,C,Instant,"Until end of turn, target creature you control gets +3/+3 and other creatures you control get +1/+1."
+Sphinx Sovereign,4WUUB,8,0,0,M,Artifact Creature - Sphinx,"Flying
+
+At the end of your turn, you gain 3 life if Sphinx Sovereign is untapped. Otherwise, each opponent loses 3 life."
+Sprouting Thrinax,BRG,3,0,0,U,Creature - Lizard,"When Sprouting Thrinax is put into a graveyard to play, put three 1/1 green Saproling creature tokens into play."
+Steward of Valeron,GW,2,2,2,C,Creature - Human Druid Knight,"Vigilance
+T: Add G to your mana pool."
+Stoic Angel,1GWU,4,3,4,R,Creature - Angel,"Flying, vigilance
+
+Players can't untap more than one creature during their untap steps."
+Swerve,UR,2,0,0,U,Instant,Change the target of target spell with a single target.
+Thoughcutter Agent,UB,2,1,1,U,Artifact Creature - Human Rogue,"UB, T: Target player loses 1 life and reveals his or her hand."
+Tidehollow Sculler,WB,2,2,2,U,Artifact Creature - Zombie,"When Tidehollow Sculler comes into play, target opponent reveals his or her hand and you choose a nonland card from it. Remove that card from the game.
+
+When Tidehollow Sculler leaves play, return the removed card to its owner's hand."
+Tidehollow Strix,UB,2,2,1,C,Artifact Creature - Bird,"Flying, deathtouch"
+Titanic Ultimatum,RRGGGWW,7,0,0,R,Sorcery,"Until end of turn, creatures you control get +5/+5 and gain first strike, lifelink, and trample."
+Tower Gargoyle,1WUB,4,4,4,U,Artifact Creature - Gargoyle,Flying
+Violent Ultimatum,BBRRRGG,7,0,0,R,Sorcery,Destroy three target permanents
+Waveskimmer Aven,2GWU,5,2,4,C,Creature - Bird Soldier,"Flying
+
+Exalted (Whenever a creature you control attacks alone, it gets +1/+1 until end of turn.)"
+Windwright Mage,WUB,3,0,0,C,Artifact Creature - Human Wizard,"Lifelink
+
+Windwright Mage has flying as long as an artifact card is in your graveyard."
+Woolly Thoctar,RGW,3,0,0,U,Creature - Beast,""
+Lich's Mirror,5,5,0,0,M,Artifact,"If you would lose the game, instead shuffle your hand, your graveyard, and all permanents you own into your library, then draw seven cards and your life total becomes 20."
+Minion Reflector,5,5,0,0,R,Artifact,"Whenever a nontoken creature comes into play under your control, you may pay 2. If you do, put a token into play that's a copy of that creature. That token has haste and ""At end of turn, sacrifice this permanent."""
+Obelisk of Bant,3,3,0,0,C,Artifact,"T: Add G,W, or U to your mana pool."
+Obelisk of Esper,3,3,0,0,C,Artifact,"T: Add W,U, or B to your mana pool."
+Obelisk of Grixis,3,3,0,0,C,Artifact,"T: Add U,B, or R to your mana pool."
+Obelisk of Jund,3,3,0,0,C,Artifact,"T: Add B,R, or G to your mana pool."
+Obelisk of Naya,3,3,0,0,C,Artifact,"T: Add R,G, or W to your mana pool."
+Quietus Spike,3,3,0,0,R,Artifact - Equipment,"Equipped creature has deathtouch.
+
+Whenever equipped creature deals combat damage to a player, that player loses half his or her life, rounded up.
+
+Equip 3"
+Relic of Progenitus,1,1,0,0,C,Artifact,"T: Target player removes a card in his or her graveyard from the game.
+1, Remove Relic of Progenitus from the game: Remove all graveyards from the game. Draw a card."
+Sigil of Distinction,X,1,0,0,R,Artifact - Equipment,"Sigil of Distinction comes into play with X charge counters on it.
+
+Equipped creature gets +1/+1 for each charge counter on Sigil of Distinction.
+
+Equip - Remove a charge counter from Sigil of Distinction."
+Arcane Sanctum,"",0,0,0,U,Land,"Arcane Sanctum comes into play tapped.
+T: Add W, U, or B mana to your mana pool."
+Bant Panorama,"",0,0,0,C,Land,"T: Add 1 to your mana pool.
+1, T, Sacrifice Bant Panorama: Search your library for a basic Forest, Plains, or Island card and put it into play tapped. Then shuffle your library."
+Crumbling Necropolis,"",0,0,0,U,Land,"Crumbling Necropolis comes into play tapped.
+T: Add U, B or R to your mana pool."
+Esper Panorama,"",0,0,0,C,Land,"T: Add 1 to your mana pool.
+1, T, Sacrifice Esper Panorama: Search your library for a basic Plains, Island, or Swamp card and put it into play tapped. Then shuffle your library."
+Grixis Panorama,"",0,0,0,C,Land,"T: Add 1 to your mana pool.
+1, T, Sacrifice Grixis Panorama: Search your library for a basic Island, Swamp, or  Mountain card and put it into play tapped. Then shuffle your library."
+Jund Panorama,"",0,0,0,C,Land,"T: Add 1 to your mana pool.
+1, T, Sacrifice Jund Panorama: Search your library for a basic Swamp, Mountain, or Forest card and put it into play tapped. Then shuffle your library."
+Jungle Shrine,"",0,0,0,U,Land,"Jungle Shrine comes into play tapped.
+T: Add R, G, or W mana to your mana pool."
+Naya Panorama,"",0,0,0,C,Land,"T: Add 1 to your mana pool.
+1, T, Sacrifice Naya Panorama: Search your library for a basic Mountain, Forest, or Plains card and put it into play tapped. Then shuffle your library."
+Savage Lands,"",0,0,0,U,Land,"Savage Lands comes into play tapped.
+T: Add B, R, or G mana to your mana pool."
+Seaside Citadel,"",0,0,0,U,Land,"Seaside Citadel comes into play tapped.
+T: Add G, W, or U mana to your mana pool."
+Plains,"",0,0,0,L,Basic Land - Plains,""
+Island,"",0,0,0,L,Basic Land - Island,""
+Swamp,"",0,0,0,L,Basic Land - Swamp,""
+Mountain,"",0,0,0,L,Basic Land - Mountain,""
+Forest,"",0,0,0,L,Basic Land - Forest,""
