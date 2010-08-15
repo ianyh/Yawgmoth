@@ -140,7 +140,6 @@
 		3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SM2DGraphView.framework; path = Library/Frameworks/SM2DGraphView.framework; sourceTree = SDKROOT; };
 		3C50B3431210AAA000AA4C68 /* SIYDeckDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDeckDataSource.h; path = src/yawgmoth/SIYDeckDataSource.h; sourceTree = "<group>"; };
 		3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYDeckDataSource.m; path = src/yawgmoth/SIYDeckDataSource.m; sourceTree = "<group>"; };
-		3C56565D1217ADBC00EBFB59 /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info copy.plist"; path = "res/Info copy.plist"; sourceTree = "<group>"; };
 		3C8CA05F11F254B6009A1443 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3C9587B911FBAC2200E0F11E /* SIYDataModelManagedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDataModelManagedObjects.h; path = src/yawgmoth/SIYDataModelManagedObjects.h; sourceTree = "<group>"; };
 		3CBD2D3911FE2E5300DE9543 /* SIYCardImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYCardImageManager.h; path = src/yawgmoth/SIYCardImageManager.h; sourceTree = "<group>"; };
@@ -310,7 +309,6 @@
 				3C0A8A9911FFF8720032CEDB /* Info-importer.plist */,
 				3C0A8A9511FFF8580032CEDB /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				3C56565D1217ADBC00EBFB59 /* Info copy.plist */,
 			);
 			name = Infos;
 			sourceTree = "<group>";

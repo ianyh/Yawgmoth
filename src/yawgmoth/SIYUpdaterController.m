@@ -110,6 +110,7 @@
 	[self startUpdate];
 	
 	[self update07];
+	[self update071];
 	[NSApp runModalSession:modalSession];
 
 	[self endUpdate];
@@ -179,6 +180,40 @@
 	[cardManager save];
 
 	[self incrementProgress:increment];
+}
+
+- (void)update071
+{
+	double increment = 100.0 / 3.0;
+	
+	// nullify power/toughness for non-creatures
+	// nullify (converted)manaCost for lands
+	// TODO: find a way to skip this if it's already been done
+	[progressLabel setStringValue:@"Fixing existing cards..."];
+	[NSApp runModalSession:modalSession];
+	
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"superType != %@ AND superType != %@",
+							  @"Creature", @"Artifact Creature"];
+	NSArray *entities = [NSArray arrayWithObjects:@"FullCard", @"MetaCard", @"CollectionCard", nil];
+	NSArray *cards;
+	NSManagedObject *card;
+	int i, j;
+	
+	for (i = 0; i < [entities count]; i++) {
+		cards = [cardManager managedObjectsWithPredicate:predicate inEntityWithName:[entities objectAtIndex:i]];
+		for (j = 0; j < [cards count]; j++) {
+			card = [cards objectAtIndex:j];
+			card.power = nil;
+			card.toughness = nil;
+			
+			if ([card.superType isEqualToString:@"Land"]) {
+				card.convertedManaCost = nil;
+				card.manaCost = nil;
+			}
+			
+			[self incrementProgress:(increment / [cards count])];
+		}
+	}
 }
 
 @end
