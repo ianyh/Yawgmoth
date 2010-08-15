@@ -109,10 +109,37 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	[self startUpdate];
 	
+	[self update07];
+	[NSApp runModalSession:modalSession];
+
+	[self endUpdate];
+	[pool release];
+}
+
+- (void)startUpdate
+{
+	modalSession = [NSApp beginModalSessionForWindow:updatePanel];
+}
+
+- (void)endUpdate
+{
+	[NSApp endModalSession:modalSession];
+	[updatePanel close];
+}
+
+- (void)incrementProgress:(double)increment
+{
+	[progressIndicator incrementBy:increment/UPDATE_COUNT];
+	[NSApp runModalSession:modalSession];
+}
+
+- (void)update07
+{
 	double increment = 50.0;
 	
+	// add AEther Burst
 	[progressLabel setStringValue:@"Adding missing cards..."];
-	
+	[NSApp runModalSession:modalSession];
 	NSManagedObject *card;
 	card = [cardManager managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"name = %@", @"AEther Burst"] inEntityWithName:@"FullCard"];
 	if (card == nil) {
@@ -131,12 +158,11 @@
 		[cardManager save];
 	}
 	
-	[progressIndicator incrementBy:increment];
-	[NSApp runModalSession:modalSession];
-	
+	// fix Creeping Tar Pit
 	[progressLabel setStringValue:@"Fixing existing cards..."];
-	int i;
+	[self incrementProgress:increment];
 	NSArray *cards;
+	int i;
 	
 	cards = [cardManager managedObjectsWithPredicate:[NSPredicate predicateWithFormat:@"name = %@", @"Creeping Tar Pits"] inEntityWithName:@"FullCard"];
 	for (i = 0; i < [cards count]; i++) {
@@ -151,23 +177,8 @@
 	}
 	
 	[cardManager save];
-	
-	[progressIndicator incrementBy:increment];
-	[NSApp runModalSession:modalSession];
 
-	[self endUpdate];
-	[pool release];
-}
-
-- (void)startUpdate
-{
-	modalSession = [NSApp beginModalSessionForWindow:updatePanel];
-}
-
-- (void)endUpdate
-{
-	[NSApp endModalSession:modalSession];
-	[updatePanel close];
+	[self incrementProgress:increment];
 }
 
 @end

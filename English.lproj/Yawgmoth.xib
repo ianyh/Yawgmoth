@@ -11,11 +11,11 @@
 			<string key="com.snowmint.ib3plugin.SM2DGraphView">1</string>
 		</dictionary>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="649"/>
-			<integer value="116"/>
 			<integer value="192"/>
-			<integer value="1024"/>
+			<integer value="649"/>
 			<integer value="1291"/>
+			<integer value="116"/>
+			<integer value="1024"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.snowmint.ib3plugin.SM2DGraphView</string>
@@ -384,30 +384,6 @@
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
-						<object class="NSImageView" id="639797843">
-							<reference key="NSNextResponder" ref="421791908"/>
-							<int key="NSvFlags">261</int>
-							<set class="NSMutableSet" key="NSDragTypes">
-								<string>Apple PDF pasteboard type</string>
-								<string>Apple PICT pasteboard type</string>
-								<string>Apple PNG pasteboard type</string>
-								<string>NSFilenamesPboardType</string>
-								<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
-								<string>NeXT TIFF v4.0 pasteboard type</string>
-							</set>
-							<string key="NSFrame">{{343, 228}, {200, 285}}</string>
-							<reference key="NSSuperview" ref="421791908"/>
-							<bool key="NSEnabled">YES</bool>
-							<object class="NSImageCell" key="NSCell" id="178316192">
-								<int key="NSCellFlags">654848</int>
-								<int key="NSCellFlags2">33554432</int>
-								<int key="NSAlign">0</int>
-								<int key="NSScale">3</int>
-								<int key="NSStyle">0</int>
-								<bool key="NSAnimates">NO</bool>
-							</object>
-							<bool key="NSEditable">YES</bool>
-						</object>
 						<object class="NSBox" id="937099974">
 							<reference key="NSNextResponder" ref="421791908"/>
 							<int key="NSvFlags">278</int>
@@ -1190,6 +1166,30 @@
 							<reference key="NSVScroller" ref="926140949"/>
 							<reference key="NSHScroller" ref="881412171"/>
 							<reference key="NSContentView" ref="987078510"/>
+						</object>
+						<object class="NSImageView" id="639797843">
+							<reference key="NSNextResponder" ref="421791908"/>
+							<int key="NSvFlags">261</int>
+							<set class="NSMutableSet" key="NSDragTypes">
+								<string>Apple PDF pasteboard type</string>
+								<string>Apple PICT pasteboard type</string>
+								<string>Apple PNG pasteboard type</string>
+								<string>NSFilenamesPboardType</string>
+								<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
+								<string>NeXT TIFF v4.0 pasteboard type</string>
+							</set>
+							<string key="NSFrame">{{343, 228}, {200, 285}}</string>
+							<reference key="NSSuperview" ref="421791908"/>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSImageCell" key="NSCell" id="178316192">
+								<int key="NSCellFlags">654848</int>
+								<int key="NSCellFlags2">33554432</int>
+								<int key="NSAlign">0</int>
+								<int key="NSScale">3</int>
+								<int key="NSStyle">0</int>
+								<bool key="NSAnimates">NO</bool>
+							</object>
+							<bool key="NSEditable">YES</bool>
 						</object>
 					</array>
 					<string key="NSFrameSize">{886, 643}</string>
@@ -6145,7 +6145,6 @@
 				<string key="1315.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1316.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1323.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1327.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="191.IBEditorWindowLastContentRect">{{426, 105}, {886, 643}}</string>
 				<string key="191.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="191.IBWindowTemplateEditedContentRect">{{426, 105}, {886, 643}}</string>

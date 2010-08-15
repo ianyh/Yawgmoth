@@ -1,6 +1,7 @@
 #import <Cocoa/Cocoa.h>
 #import "SIYCardManager.h"
 
+#define UPDATE_COUNT 1
 
 @interface SIYUpdaterController : NSObject {
 	IBOutlet SIYCardManager *cardManager;
@@ -17,5 +18,8 @@
 - (void)update;
 - (void)startUpdate;
 - (void)endUpdate;
+- (void)incrementProgress:(double)increment;
+
+- (void)update07;
 
 @end
