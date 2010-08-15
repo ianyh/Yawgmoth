@@ -18,6 +18,8 @@
 - (void)update;
 - (void)startUpdate;
 - (void)endUpdate;
+- (NSString *)loadUpdateMarker;
+- (void)writeUpdateMarker;
 - (void)incrementProgress:(double)increment;
 
 - (void)update07;

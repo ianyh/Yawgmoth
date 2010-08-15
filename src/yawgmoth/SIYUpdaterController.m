@@ -107,13 +107,29 @@
 - (void)update
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	NSDictionary *versionToUpdateSelector = [NSDictionary dictionaryWithObjectsAndKeys:
+											 @"update07", @"0.7",
+											 @"update071", @"0.7.1",
+											 nil];
+	NSArray *versions = [versionToUpdateSelector allKeys];
+	NSString *updateMarker = [self loadUpdateMarker];	
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF > %@", updateMarker];
+	int i;
+	
+	versions = [versions filteredArrayUsingPredicate:predicate];
+	if ([versions count] == 0) {
+		return;
+	}
+	
 	[self startUpdate];
 	
-	[self update07];
-	[self update071];
-	[NSApp runModalSession:modalSession];
+	for (i = 0; i < [versions count]; i++) {
+		[self performSelector:NSSelectorFromString([versionToUpdateSelector objectForKey:[versions objectAtIndex:i]])];
+	}
 
 	[self endUpdate];
+
+	[self writeUpdateMarker];
 	[pool release];
 }
 
@@ -126,6 +142,19 @@
 {
 	[NSApp endModalSession:modalSession];
 	[updatePanel close];
+}
+
+- (NSString *)loadUpdateMarker
+{
+	NSString *updateMarkerPath = [[cardManager applicationSupportDirectory] stringByAppendingPathComponent:@"umarker"];
+	return [NSString stringWithContentsOfFile:updateMarkerPath encoding:NSASCIIStringEncoding error:nil];
+}
+
+- (void)writeUpdateMarker
+{
+	NSString *updateMarkerPath = [[cardManager applicationSupportDirectory] stringByAppendingPathComponent:@"umarker"];
+	NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+	[version writeToFile:updateMarkerPath atomically:YES encoding:NSASCIIStringEncoding error:nil];
 }
 
 - (void)incrementProgress:(double)increment
@@ -188,7 +217,6 @@
 	
 	// nullify power/toughness for non-creatures
 	// nullify (converted)manaCost for lands
-	// TODO: find a way to skip this if it's already been done
 	[progressLabel setStringValue:@"Fixing existing cards..."];
 	[NSApp runModalSession:modalSession];
 	
