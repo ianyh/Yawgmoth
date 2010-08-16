@@ -12,8 +12,6 @@
 	IBOutlet NSTextField *progressDetail;
 	
 	NSModalSession modalSession;
-
-	int updateCount;
 }
 
 - (NSArray *)csvRowsFromString:(NSString *)fileString;

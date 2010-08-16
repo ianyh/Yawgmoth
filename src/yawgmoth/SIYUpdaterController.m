@@ -122,7 +122,6 @@
 			return;
 		}
 	}
-	updateCount = [versions count];
 	
 	[self startUpdate];
 	
@@ -168,14 +167,11 @@
 
 - (void)incrementProgress:(double)increment
 {
-//	[progressIndicator incrementBy:increment/updateCount];
 	[NSApp runModalSession:modalSession];
 }
 
 - (void)update07
 {
-	double increment = 50.0;
-	
 	// add AEther Burst
 	[progressLabel setStringValue:@"Adding missing cards..."];
 	NSManagedObject *card;
