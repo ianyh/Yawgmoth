@@ -50,6 +50,8 @@
 	IBOutlet NSPanel *deckDataPanel;
 }
 
+- (SIYCardManager *)cardManager;
+
 - (IBAction)addCardToLibraryAddTable:(id)sender;
 - (IBAction)addToLibrary:(id)sender;
 - (IBAction)cancelAddToLibrary:(id)sender;

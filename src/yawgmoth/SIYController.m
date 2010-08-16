@@ -18,6 +18,11 @@
 	}
 }
 
+- (SIYCardManager *)cardManager
+{
+	return cardManager;
+}
+
 - (NSManagedObjectContext *)managedObjectContext
 {
 	return [cardManager managedObjectContext];
