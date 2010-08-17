@@ -128,36 +128,9 @@
 		return;
 	}
 	NSManagedObject *deck = [deckArray objectAtIndex:0];
-	NSEnumerator *deckEnumerator = [deck.metaCards objectEnumerator];
-    NSEnumerator *metaCardEnumerator;
-	SIYMetaCard *deckMetaCard;    
-    SIYMetaCard *libraryMetaCard;
-    NSManagedObject *deckCollectionCard;
-    NSManagedObject *libraryCollectionCard;
-
-	while ((deckMetaCard = [deckEnumerator nextObject]) != nil) {
-        libraryMetaCard = [cardManager metaCardWithCardName:deckMetaCard.name inDeck:nil];
-		if (libraryMetaCard == nil) {
-			libraryMetaCard = [cardManager insertMetaCardFromCard:deckMetaCard];
-		}
-        metaCardEnumerator = [deckMetaCard.cards objectEnumerator];
-        while ((deckCollectionCard = [metaCardEnumerator nextObject]) != nil) {
-            libraryCollectionCard = [cardManager collectionCardWithCardName:deckCollectionCard.name withSet:deckCollectionCard.set inCollection:libraryMetaCard.cards];
-            if (libraryCollectionCard == nil) {
-                libraryCollectionCard = [cardManager insertCollectionCardFromCard:deckCollectionCard];
-                [libraryMetaCard addCardsObject:libraryCollectionCard];
-				libraryCollectionCard.metaCard = libraryMetaCard;
-            }
-			
-			[cardManager incrementQuantityForCard:libraryCollectionCard withIncrement:[deckCollectionCard.quantity intValue]];
-			[deckCollectionCard removeObserver:deckMetaCard forKeyPath:@"quantity"];
-			[[cardManager managedObjectContext] deleteObject:deckCollectionCard];
-        }
-        
-        [[cardManager managedObjectContext] deleteObject:deckMetaCard];
-    }
-    
-    [[cardManager managedObjectContext] deleteObject:deck];
+	
+	[cardManager deleteDeck:deck];
+	
     [cardManager save];
 }
 
@@ -167,6 +140,7 @@
 	if ([deckArray count] == 0) {
 		return;
 	}
+	
 	NSManagedObject *deck = [deckArray objectAtIndex:0];
 	NSArray *array = [[libraryController selectedObjects] copy];
 	NSManagedObject *card;

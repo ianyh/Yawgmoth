@@ -16,6 +16,41 @@
 	[self incrementQuantityForCard:card withIncrement:-1];
 }
 
+- (void)moveCard:(NSManagedObject *)card toDeck:(NSManagedObject *)deck
+{
+	NSManagedObject *newCard;
+	SIYMetaCard *oldMetaCard;
+	
+	newCard = [self collectionCardWithCardName:card.name withSet:card.set inDeck:deck];
+	if (newCard == nil) {
+		newCard = [self insertCollectionCardFromCard:card inDeck:deck];
+	}
+	
+	newCard.quantity = [NSNumber numberWithInt:[card.quantity intValue]];
+	
+	oldMetaCard = card.metaCard;
+	[oldMetaCard removeCardsObject:card];
+	card.metaCard = nil;
+	
+	if ([oldMetaCard.cards count] == 0) {
+		[[self managedObjectContext] deleteObject:oldMetaCard];
+	}
+	[[self managedObjectContext] deleteObject:card];
+}
+
+- (void)deleteDeck:(NSManagedObject *)deck
+{
+	NSManagedObject *card;
+	NSSet *cards = [deck valueForKeyPath:@"metaCards.@distinctUnionOfSets.cards"];
+	NSEnumerator *enumerator = [cards objectEnumerator];
+	
+	while ((card = [enumerator nextObject]) != nil) {
+		[self moveCard:card toDeck:deck];
+	}
+	
+	[[self managedObjectContext] deleteObject:deck];
+}
+
 - (NSString *)applicationSupportDirectory
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
@@ -124,12 +159,12 @@
 	NSPredicate *predicate;
 	NSSet *cards;
 	
-	predicate = [NSPredicate predicateWithFormat:@"(name == %@) AND (set == %@)", cardName, set];
 	metaCard = [self metaCardWithCardName:cardName inDeck:deck];
 	if (metaCard == nil) {
 		return nil;
 	}
 	
+	predicate = [NSPredicate predicateWithFormat:@"(name == %@) AND (set == %@)", cardName, set];	
 	cards = [metaCard.cards filteredSetUsingPredicate:predicate];
 	if ([cards count] > 0) {
 		return (NSManagedObject *) [cards anyObject];

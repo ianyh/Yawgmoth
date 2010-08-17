@@ -9,6 +9,8 @@
 }
 
 - (void)moveSingleCard:(NSManagedObject *)card toDeck:(NSManagedObject *)deck;
+- (void)moveCard:(NSManagedObject *)card toDeck:(NSManagedObject *)deck;
+- (void)deleteDeck:(NSManagedObject *)deck;
 
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
