@@ -14,6 +14,9 @@
 	
 	[self incrementQuantityForCard:newCard withIncrement:1];
 	[self incrementQuantityForCard:card withIncrement:-1];
+	
+	[[self managedObjectContext] refreshObject:newCard mergeChanges:YES];
+	[[self managedObjectContext] refreshObject:card mergeChanges:YES];
 }
 
 - (void)moveCard:(NSManagedObject *)card toDeck:(NSManagedObject *)deck
@@ -74,6 +77,7 @@
     managedObjectContext = [[NSManagedObjectContext alloc] init];
     [managedObjectContext setPersistentStoreCoordinator: coordinator];
 	[managedObjectContext setUndoManager:nil];
+	[managedObjectContext setRetainsRegisteredObjects:NO];
 	
     return managedObjectContext;
 }

@@ -52,7 +52,11 @@
 	} else if ([keyPath isEqualToString:@"quantity"]) {
 		[self reloadData];
 	} else if ([keyPath isEqualToString:@"metaCards"]) {
-		[self registerObserverForDeck:deck];
+		if ([[change objectForKey:NSKeyValueChangeKindKey] intValue] == NSKeyValueChangeRemoval) {
+			[[[change objectForKey:NSKeyValueChangeOldKey] anyObject] removeObserver:self forKeyPath:@"quantity"];
+		} else {
+			[[[change objectForKey:NSKeyValueChangeNewKey] anyObject] addObserver:self forKeyPath:@"quantity" options:0 context:nil];
+		}
 		[self reloadData];
 	} else {
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -61,7 +65,7 @@
 
 - (void)registerObserverForDeck:(NSManagedObject *)observedDeck
 {
-	[deck addObserver:self forKeyPath:@"metaCards" options:0 context:nil];
+	[deck addObserver:self forKeyPath:@"metaCards" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
 	
 	NSSet *metaCards = deck.metaCards;
 	NSEnumerator *enumerator = [metaCards objectEnumerator];
