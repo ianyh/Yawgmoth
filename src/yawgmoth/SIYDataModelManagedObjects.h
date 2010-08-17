@@ -1,4 +1,5 @@
 #import <Cocoa/Cocoa.h>
+#import "SIYMetaCard.h"
 
 @interface NSManagedObject (Card)
 
@@ -20,7 +21,7 @@
 @interface NSManagedObject (CollectionCard)
 
 @property (nonatomic, retain) NSNumber * quantity;
-@property (nonatomic, retain) NSManagedObject * metaCard;
+@property (nonatomic, retain) SIYMetaCard * metaCard;
 
 @end
 

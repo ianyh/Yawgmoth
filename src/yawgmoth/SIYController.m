@@ -53,28 +53,16 @@
 	NSArray *array = [[tempCardsController arrangedObjects] copy];
 	NSManagedObject *tempCard;
 	NSManagedObject *libraryCard;
-    SIYMetaCard *metaCard;
 	int i;
 	
 	for (i = 0; i < [array count]; i++) {
 		tempCard = [array objectAtIndex:i];
-        metaCard = [cardManager metaCardWithCardName:tempCard.name inDeck:nil];
-        if (metaCard == nil) {
-            metaCard = [cardManager insertMetaCardFromCard:tempCard];
-            libraryCard = [cardManager insertCollectionCardFromCard:tempCard];
-            [metaCard addCardsObject:libraryCard];
-            libraryCard.quantity = tempCard.quantity;
-        } else {
-            libraryCard = [cardManager collectionCardWithCardName:tempCard.name withSet:tempCard.set inCollection:metaCard.cards];
-            if (libraryCard == nil) {
-                libraryCard = [cardManager insertCollectionCardFromCard:tempCard];
-                [metaCard addCardsObject:libraryCard];
-                libraryCard.quantity = tempCard.quantity;
-            } else {
-				[cardManager incrementQuantityForCard:libraryCard withIncrement:[tempCard.quantity intValue]];
-            }
-        }
-        
+		libraryCard = [cardManager collectionCardWithCardName:tempCard.name withSet:tempCard.set inDeck:nil];
+		if (libraryCard == nil) {
+			libraryCard = [cardManager insertCollectionCardFromCard:tempCard inDeck:nil];
+		}
+		
+		[cardManager incrementQuantityForCard:libraryCard withIncrement:[tempCard.quantity intValue]];
         [[cardManager managedObjectContext] deleteObject:tempCard];
     }
     
@@ -181,30 +169,12 @@
 	}
 	NSManagedObject *deck = [deckArray objectAtIndex:0];
 	NSArray *array = [[libraryController selectedObjects] copy];
-    SIYMetaCard *libraryMetaCard;
-    SIYMetaCard *deckMetaCard;
-    NSManagedObject *libraryCollectionCard;
-    NSManagedObject *deckCollectionCard;
+	NSManagedObject *card;
 	int i;
 	
 	for (i = 0; i < [array count]; i++) {
-        libraryMetaCard = [array objectAtIndex:i];
-        deckMetaCard = [cardManager metaCardWithCardName:libraryMetaCard.name inDeck:deck];
-        if (deckMetaCard == nil) {
-            deckMetaCard = [cardManager insertMetaCardFromCard:libraryMetaCard];
-            [deck addMetaCardsObject:deckMetaCard];
-        }
-        
-        libraryCollectionCard = [libraryMetaCard.cards anyObject];
-        deckCollectionCard = [cardManager collectionCardWithCardName:libraryCollectionCard.name withSet:libraryCollectionCard.set inCollection:deckMetaCard.cards];
-        if (deckCollectionCard == nil) {
-            deckCollectionCard = [cardManager insertCollectionCardFromCard:libraryCollectionCard];
-            [deckMetaCard addCardsObject:deckCollectionCard];
-            [[cardManager managedObjectContext] refreshObject:deckMetaCard mergeChanges:YES];
-        }
-
-        [cardManager incrementQuantityForCard:deckCollectionCard withIncrement:1];
-		[cardManager incrementQuantityForCard:libraryCollectionCard withIncrement:-1];
+		card = [[[array objectAtIndex:i] cards] anyObject];
+		[cardManager moveSingleCard:card toDeck:deck];
 	}
 	
 	[cardManager save];
@@ -214,29 +184,12 @@
 - (IBAction)moveToLibrary:(id)sender
 {
 	NSArray *array = [[deckCardsController selectedObjects] copy];
-    SIYMetaCard *deckMetaCard;
-    NSManagedObject *deckCollectionCard;
-    SIYMetaCard *libraryMetaCard;
-    NSManagedObject *libraryCollectionCard;
+	NSManagedObject *card;
 	int i;
 	
 	for (i = 0; i < [array count]; i++) {
-        deckMetaCard = [array objectAtIndex:i];
-        libraryMetaCard = [cardManager metaCardWithCardName:deckMetaCard.name inDeck:nil];
-		if (libraryMetaCard == nil) {
-			libraryMetaCard = [cardManager insertMetaCardFromCard:deckMetaCard];
-		}
-        
-        deckCollectionCard = [deckMetaCard.cards anyObject];
-        libraryCollectionCard = [cardManager collectionCardWithCardName:deckCollectionCard.name withSet:deckCollectionCard.set inCollection:libraryMetaCard.cards];
-        if (libraryCollectionCard == nil) {
-            libraryCollectionCard = [cardManager insertCollectionCardFromCard:deckCollectionCard];
-            [libraryMetaCard addCardsObject:libraryCollectionCard];
-            [[cardManager managedObjectContext] refreshObject:libraryMetaCard mergeChanges:YES];
-        }
-        
-		[cardManager incrementQuantityForCard:libraryCollectionCard withIncrement:1];
-		[cardManager incrementQuantityForCard:deckCollectionCard withIncrement:-1];
+		card = [[[array objectAtIndex:i] cards] anyObject];
+		[cardManager moveSingleCard:card toDeck:nil];
 	}
 	
 	[cardManager save];

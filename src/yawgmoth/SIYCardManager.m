@@ -3,6 +3,19 @@
 
 @implementation SIYCardManager
 
+- (void)moveSingleCard:(NSManagedObject *)card toDeck:(NSManagedObject *)deck
+{
+	NSManagedObject *newCard;
+
+	newCard = [self collectionCardWithCardName:card.name withSet:card.set inDeck:deck];
+	if (newCard == nil) {
+		newCard = [self insertCollectionCardFromCard:card inDeck:deck];
+		[self incrementQuantityForCard:newCard withIncrement:1];
+	}
+	
+	[self incrementQuantityForCard:card withIncrement:-1];
+}
+
 - (NSString *)applicationSupportDirectory
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
@@ -105,16 +118,24 @@
 										  inEntityWithName:@"MetaCard"];
 }
 
-- (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inCollection:(NSSet *)collection
+- (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inDeck:(NSManagedObject *)deck
 {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name == %@) AND (set == %@)", cardName, set];
-    
-    NSSet *filteredSet = [collection filteredSetUsingPredicate:predicate];
-    if ([filteredSet count] > 0) {
-        return (NSManagedObject *) [filteredSet anyObject];
-    }
-    
-    return nil;
+	SIYMetaCard *metaCard;
+	NSPredicate *predicate;
+	NSSet *cards;
+	
+	predicate = [NSPredicate predicateWithFormat:@"(name == %@) AND (set == %@)", cardName, set];
+	metaCard = [self metaCardWithCardName:cardName inDeck:deck];
+	if (metaCard == nil) {
+		return nil;
+	}
+	
+	cards = [metaCard.cards filteredSetUsingPredicate:predicate];
+	if ([cards count] > 0) {
+		return (NSManagedObject *) [cards anyObject];
+	}
+	
+	return nil;
 }
 
 - (NSManagedObject *)deckWithName:(NSString *)deckName
@@ -151,20 +172,35 @@
 	return results;
 }
 
-- (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card
+- (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card inDeck:(NSManagedObject *)deck
 {
     SIYMetaCard *metaCard = [NSEntityDescription insertNewObjectForEntityForName:@"MetaCard" inManagedObjectContext:[self managedObjectContext]];
     [self copyCard:card toCard:metaCard];
+	
+	[deck addMetaCardsObject:metaCard];
+	
     return metaCard;
 }
 
-- (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card
+- (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card inDeck:(NSManagedObject *)deck
 {
-    NSManagedObject *collectionCard = [NSEntityDescription insertNewObjectForEntityForName:@"CollectionCard" inManagedObjectContext:[self managedObjectContext]];
-    [self copyCard:card toCard:collectionCard];
-    collectionCard.set = card.set;
-    collectionCard.quantity = [NSNumber numberWithInt:0];
-    return collectionCard;
+	NSManagedObject *newCard;
+	SIYMetaCard *metaCard;
+	
+	metaCard = [self metaCardWithCardName:card.name inDeck:deck];
+	if (metaCard == nil) {
+		metaCard = [self insertMetaCardFromCard:card inDeck:deck];
+	}
+	
+	newCard = [NSEntityDescription insertNewObjectForEntityForName:@"CollectionCard" inManagedObjectContext:[self managedObjectContext]];
+	[self copyCard:card toCard:newCard];
+	newCard.set = card.set;
+	newCard.quantity = [NSNumber numberWithInt:0];
+	
+	[metaCard addCardsObject:newCard];
+	newCard.metaCard = metaCard;
+	
+	return newCard;
 }
 
 - (NSManagedObject *)insertTempCollectionCardFromCard:(NSManagedObject *)card
@@ -197,12 +233,16 @@
 	card.quantity = [NSNumber numberWithInt:[card.quantity intValue]+increment];
 	
 	if ([card.quantity intValue] <= 0) {
-		NSManagedObject *metaCard = card.metaCard;
-		if ([card.metaCard.cards count] == 1) {
+		SIYMetaCard *metaCard = card.metaCard;
+		[metaCard removeCardsObject:card];
+		[card removeObserver:metaCard forKeyPath:@"quantity"];
+		card.metaCard = nil;
+		
+		[[self managedObjectContext] deleteObject:card];
+		
+		if ([metaCard.cards count] == 0) {
 			[[self managedObjectContext] deleteObject:metaCard];
 		}
-		[card removeObserver:metaCard forKeyPath:@"quantity"];
-		[[self managedObjectContext] deleteObject:card];
 	}
 }
 

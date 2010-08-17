@@ -8,6 +8,8 @@
     NSManagedObjectContext *managedObjectContext;
 }
 
+- (void)moveSingleCard:(NSManagedObject *)card toDeck:(NSManagedObject *)deck;
+
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
@@ -19,13 +21,12 @@
 - (void)save;
 
 - (SIYMetaCard *)metaCardWithCardName:(NSString *)cardName inDeck:(NSManagedObject *)deck;
-- (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inCollection:(NSSet *)collection;
+- (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inDeck:(NSManagedObject *)deck;
 - (NSManagedObject *)deckWithName:(NSString *)deckName;
 - (NSManagedObject *)managedObjectWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName;
 - (NSArray *)managedObjectsWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName;
 
-- (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card;
-- (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card;
+- (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card inDeck:(NSManagedObject *)deck;
 - (NSManagedObject *)insertTempCollectionCardFromCard:(NSManagedObject *)card;
 - (void)copyCard:(NSManagedObject *)sourceCard toCard:(NSManagedObject *)destinationCard;
 

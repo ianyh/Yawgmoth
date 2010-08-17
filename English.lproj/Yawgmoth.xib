@@ -11,12 +11,12 @@
 			<string key="com.snowmint.ib3plugin.SM2DGraphView">1</string>
 		</dictionary>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="116"/>
-			<integer value="1078"/>
-			<integer value="1024"/>
-			<integer value="192"/>
 			<integer value="649"/>
 			<integer value="1291"/>
+			<integer value="192"/>
+			<integer value="1078"/>
+			<integer value="116"/>
+			<integer value="1024"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.snowmint.ib3plugin.SM2DGraphView</string>
@@ -4361,14 +4361,6 @@
 						<reference key="destination" ref="324599541"/>
 					</object>
 					<int key="connectionID">1310</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">deleteDeck:</string>
-						<reference key="source" ref="900151345"/>
-						<reference key="destination" ref="420372177"/>
-					</object>
-					<int key="connectionID">1311</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
