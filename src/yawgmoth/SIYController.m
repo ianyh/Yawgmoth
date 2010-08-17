@@ -46,6 +46,8 @@
 		
 		[cardManager incrementQuantityForCard:tempCard withIncrement:1];
 	}
+	
+	[array release];
 }
 
 - (IBAction)addToLibrary:(id)sender
@@ -69,6 +71,8 @@
     [cardManager save];
 	[libraryAddingWindow close];
 	[NSApp endSheet:libraryAddingWindow];
+	
+	[array release];
 }
 
 - (IBAction)cancelAddToLibrary:(id)sender

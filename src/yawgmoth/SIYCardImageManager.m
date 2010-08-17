@@ -109,7 +109,7 @@
 	if ([self cardNameIsDownloading:cardName]) {
 		return nil;
 	} else if ([fileManager fileExistsAtPath:filePath]) {
-		return [[NSImage alloc] initWithContentsOfFile:filePath];
+		return [[[NSImage alloc] initWithContentsOfFile:filePath] autorelease];
 	} else if (shouldDownload) {
 		downloadFinishAction = action;
 		downloadFinishTarget = target;
