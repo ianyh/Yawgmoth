@@ -178,6 +178,12 @@
 	return nil;
 }
 
+- (NSManagedObject *)tempCardWithName:(NSString *)cardName withSet:(NSString *)set
+{
+	return [self managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@) AND (set == %@)", cardName, set] 
+						   inEntityWithName:@"TempCollectionCard"];
+}
+
 - (NSManagedObject *)deckWithName:(NSString *)deckName
 {
     return [self managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@)", deckName] inEntityWithName:@"Deck"];
@@ -250,6 +256,16 @@
 	tempCollectionCard.set = card.set;
 	tempCollectionCard.quantity = [NSNumber numberWithInt:0];
 	return tempCollectionCard;
+}
+
+- (NSManagedObject *)insertDeck:(NSString *)deckName
+{
+	NSManagedObject *deck;
+	
+	deck = [NSEntityDescription insertNewObjectForEntityForName:@"Deck" inManagedObjectContext:[self managedObjectContext]];
+	deck.name = deckName;
+	
+	return deck;
 }
 
 - (void)copyCard:(NSManagedObject *)sourceCard toCard:(NSManagedObject *)destinationCard

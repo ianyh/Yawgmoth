@@ -24,12 +24,15 @@
 
 - (SIYMetaCard *)metaCardWithCardName:(NSString *)cardName inDeck:(NSManagedObject *)deck;
 - (NSManagedObject *)collectionCardWithCardName:(NSString *)cardName withSet:(NSString *)set inDeck:(NSManagedObject *)deck;
+- (NSManagedObject *)tempCardWithName:(NSString *)cardName withSet:(NSString *)set;
 - (NSManagedObject *)deckWithName:(NSString *)deckName;
 - (NSManagedObject *)managedObjectWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName;
 - (NSArray *)managedObjectsWithPredicate:(NSPredicate *)predicate inEntityWithName:(NSString *)entityName;
 
+- (SIYMetaCard *)insertMetaCardFromCard:(NSManagedObject *)card inDeck:(NSManagedObject *)deck;
 - (NSManagedObject *)insertCollectionCardFromCard:(NSManagedObject *)card inDeck:(NSManagedObject *)deck;
 - (NSManagedObject *)insertTempCollectionCardFromCard:(NSManagedObject *)card;
+- (NSManagedObject *)insertDeck:(NSString *)deckName;
 - (void)copyCard:(NSManagedObject *)sourceCard toCard:(NSManagedObject *)destinationCard;
 
 - (void)incrementQuantityForCard:(NSManagedObject *)card withIncrement:(int)increment;

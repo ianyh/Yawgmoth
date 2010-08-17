@@ -37,8 +37,7 @@
 	
 	for (i = 0; i < [array count]; i++) {
 		fullCard = [array objectAtIndex:i];
-		tempCard = [cardManager managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"(name == %@) AND (set == %@)", fullCard.name, fullCard.set] 
-								   inEntityWithName:@"TempCollectionCard"];
+		tempCard = [cardManager tempCardWithName:fullCard.name withSet:fullCard.set];
 		
 		if (tempCard == nil) {
 			tempCard = [cardManager insertTempCollectionCardFromCard:fullCard];
@@ -115,8 +114,7 @@
 		NSString *deckName = [newDeckNameField stringValue];
 		NSManagedObject *deck = [cardManager deckWithName:deckName];
 		if (deck == nil) {
-			deck = [NSEntityDescription insertNewObjectForEntityForName:@"Deck" inManagedObjectContext:[cardManager managedObjectContext]];
-			deck.name = deckName;
+			deck = [cardManager insertDeck:deckName];
 			[cardManager save];
 		}
 	}
