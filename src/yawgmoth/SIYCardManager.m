@@ -10,9 +10,9 @@
 	newCard = [self collectionCardWithCardName:card.name withSet:card.set inDeck:deck];
 	if (newCard == nil) {
 		newCard = [self insertCollectionCardFromCard:card inDeck:deck];
-		[self incrementQuantityForCard:newCard withIncrement:1];
 	}
 	
+	[self incrementQuantityForCard:newCard withIncrement:1];
 	[self incrementQuantityForCard:card withIncrement:-1];
 }
 
