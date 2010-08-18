@@ -3,9 +3,13 @@
 
 
 @interface SIYCardManagerTest : SenTestCase {
-
+	SIYCardManager *cardManager;
+	NSManagedObject *fullCard;
 }
 
-- (void)testCardFetchAndInsert;
+- (void)testTempCardInsertAndFetch;
+- (void)testCollectionCardInsertAndFetch;
+- (void)testDeckInsertAndFetch;
+- (void)testCardIncrement;
 
 @end
