@@ -33,6 +33,7 @@
 	
 	oldMetaCard = card.metaCard;
 	[oldMetaCard removeCardsObject:card];
+	[card removeObserver:oldMetaCard forKeyPath:@"quantity"];
 	card.metaCard = nil;
 	
 	if ([oldMetaCard.cards count] == 0) {
@@ -48,7 +49,7 @@
 	NSEnumerator *enumerator = [cards objectEnumerator];
 	
 	while ((card = [enumerator nextObject]) != nil) {
-		[self moveCard:card toDeck:deck];
+		[self moveCard:card toDeck:nil];
 	}
 	
 	[[self managedObjectContext] deleteObject:deck];
