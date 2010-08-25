@@ -376,4 +376,9 @@
 	[libraryAddingTextScrollView setHidden:NO];
 }
 
+- (BOOL)isAddingCards
+{
+	return [libraryAddingWindow isVisible];
+}
+
 @end

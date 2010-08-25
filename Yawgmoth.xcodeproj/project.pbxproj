@@ -28,6 +28,7 @@
 		3C0F865611FD00300043D7DD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		3C1E539A11F620F9001FB0BF /* SIYController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539811F620F9001FB0BF /* SIYController.m */; };
 		3C1E539D11F6212E001FB0BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E539C11F6212E001FB0BF /* main.m */; };
+		3C2622CA1224BFFD00429011 /* SM2DGraphView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3C50B32B1210A7A700AA4C68 /* SM2DGraphView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3C50B32F1210A7C800AA4C68 /* SM2DGraphView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3C50B3351210A7DC00AA4C68 /* SM2DGraphView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
@@ -67,7 +68,6 @@
 		3CC680F31213DFB900181E02 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC680931213D13800181E02 /* Sparkle.framework */; };
 		3CC680F41213DFCD00181E02 /* SM2DGraphView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3CC680F61213DFF100181E02 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CC680931213D13800181E02 /* Sparkle.framework */; };
-		3CC680F71213DFF100181E02 /* SM2DGraphView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3CC681061213E0C400181E02 /* update in Resources */ = {isa = PBXBuildFile; fileRef = 3CC681051213E0C400181E02 /* update */; };
 		3CC681201213E46E00181E02 /* SM2DGraphView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */; };
 		3CE302BE120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */; };
@@ -120,8 +120,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3C2622CA1224BFFD00429011 /* SM2DGraphView.framework in CopyFiles */,
 				3CC680F61213DFF100181E02 /* Sparkle.framework in CopyFiles */,
-				3CC680F71213DFF100181E02 /* SM2DGraphView.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +156,7 @@
 		3C1E539711F620F9001FB0BF /* SIYController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYController.h; path = src/yawgmoth/SIYController.h; sourceTree = "<group>"; };
 		3C1E539811F620F9001FB0BF /* SIYController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYController.m; path = src/yawgmoth/SIYController.m; sourceTree = "<group>"; };
 		3C1E539C11F6212E001FB0BF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/yawgmoth/main.m; sourceTree = "<group>"; };
-		3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SM2DGraphView.framework; path = Library/Frameworks/SM2DGraphView.framework; sourceTree = SDKROOT; };
+		3C50B32A1210A7A600AA4C68 /* SM2DGraphView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = SM2DGraphView.framework; path = Library/Frameworks/SM2DGraphView.framework; sourceTree = SDKROOT; };
 		3C50B3431210AAA000AA4C68 /* SIYDeckDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYDeckDataSource.h; path = src/yawgmoth/SIYDeckDataSource.h; sourceTree = "<group>"; };
 		3C50B3441210AAA000AA4C68 /* SIYDeckDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYDeckDataSource.m; path = src/yawgmoth/SIYDeckDataSource.m; sourceTree = "<group>"; };
 		3C545B89121816200005183D /* Alara Reborn.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Alara Reborn.csv"; path = "res/sets/Alara Reborn.csv"; sourceTree = "<group>"; };

@@ -48,6 +48,9 @@
 	IBOutlet NSButton *newDeckCreateButton;
 	
 	IBOutlet NSPanel *deckDataPanel;
+	
+	IBOutlet NSMenu *mainMenu;
+	IBOutlet NSMenuItem *searchAllMenuItem;
 }
 
 - (SIYCardManager *)cardManager;
@@ -57,6 +60,7 @@
 - (IBAction)cancelAddToLibrary:(id)sender;
 - (IBAction)openAddToLibraryWindow:(id)sender;
 - (IBAction)removeCardFromLibraryAddTable:(id)sender;
+- (BOOL)isAddingCards;
 
 - (IBAction)createNewDeck:(id)sender;
 - (IBAction)createNewDeckDidEnd:(id)sender;
@@ -77,5 +81,7 @@
 - (void)updateLibraryAddImage:(NSImage *)cardImage forCardWithName:(NSString *)cardName;
 - (void)updateDeckEditingAltImageWithCard:(NSManagedObject *)card;
 - (void)updateLibraryAddAltImageWithCard:(NSManagedObject *)card;
+
+- (BOOL)isAddingCards;
 
 @end
