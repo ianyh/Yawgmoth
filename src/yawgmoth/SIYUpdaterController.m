@@ -112,7 +112,11 @@
 											 @"update071", @"0.7.1",
 											 @"update072", @"0.7.2",
 											 nil];
-	NSArray *versions = [versionToUpdateSelector allKeys];
+	NSArray *versions = [NSArray arrayWithObjects:
+						 @"0.7",
+						 @"0.7.1",
+						 @"0.7.2",
+						 nil];
 	NSString *updateMarker = [self loadUpdateMarker];
 	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF > %@", updateMarker];
 	int i;
@@ -335,7 +339,7 @@
 		card = [cardManager managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"set = %@ AND name = %@", setName, [row objectAtIndex:0]] 
 									  inEntityWithName:@"FullCard"];
 		if (card == nil) {
-			[progressLabel setStringValue:[NSString stringWithFormat:@"%@", [row objectAtIndex:0]]];
+			[progressDetail setStringValue:[NSString stringWithFormat:@"%@", [row objectAtIndex:0]]];
 			[NSApp runModalSession:modalSession];
 			
 			card = [NSEntityDescription insertNewObjectForEntityForName:@"FullCard" inManagedObjectContext:[cardManager managedObjectContext]];
