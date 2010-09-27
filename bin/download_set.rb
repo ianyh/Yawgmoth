@@ -8,6 +8,13 @@ require 'set'
 require 'pp'
 require 'fastercsv'
 
+def load_image_map
+  image_map_file = '../res/card-image-map'
+  FasterCSV.read(image_map_file, :col_sep => "\t").inject({}) do |img_map, pair|
+    img_map.merge({ pair[0] => pair[1] })
+  end
+end
+
 def write_image_map(image_map)
   image_map_file = '../res/card-image-map'
   FasterCSV.open(image_map_file, File::WRONLY, :col_sep => "\t") do |tsv|

@@ -1,0 +1,383 @@
+Abuna Acolyte,1W,2,1,1,U,Creature - Cat Cleric,"{T}: Prevent the next 1 damage that would be dealt to target creature or player this turn.
+{T}: Prevent the next 2 damage that would be dealt to target artifact creature this turn."
+Accorder's Shield,0,0,,,C,Artifact - Equipment,"Equipped creature gets +0/+3 and has vigilance.
+Equip {3}"
+Acid Web Spider,3GG,5,3,5,U,Creature - Spider,"Reach
+When Acid Web Spider enters the battlefield, you may destroy target Equipment."
+Alpha Tyrranax,4GG,6,6,5,C,Creature - Beast,
+Arc Trail,1R,2,,,U,Sorcery,Arc Trail deals 2 damage to target creature or player and 1 damage to another target creature or player.
+Argent Sphinx,2UU,4,4,3,R,Creature - Sphinx,"Flying
+Metalcraft - {U}: Exile Argent Sphinx. Return it to the battlefield under your control at the beginning of the next end step. Activate this ability only if you control three or more artifacts."
+Argentum Armor,6,6,,,R,Artifact - Equipment,"Equipped creature gets +6/+6.
+Whenever equipped creature attacks, destroy target permanent.
+Equip {6}"
+Arrest,2W,3,,,U,Enchantment - Aura,"Enchant creature
+Enchanted creature can't attack or block, and its activated abilities can't be activated."
+Asceticism,3GG,5,,,R,Enchantment,"Creatures you control can't be the targets of spells or abilities your opponents control.
+{1}{G}: Regenerate target creature."
+Assault Strobe,R,1,,,C,Sorcery,Target creature gains double strike until end of turn. (It deals both first-strike and regular combat damage.)
+Auriok Edgewright,WW,2,2,2,U,Creature - Human Soldier,Metalcraft - Auriok Edgewright has double strike as long as you control three or more artifacts.
+Auriok Replica,3,3,2,2,C,Artifact Creature - Cleric,"{W}, Sacrifice Auriok Replica: Prevent all damage a source of your choice would deal to you this turn."
+Auriok Sunchaser,1W,2,1,1,C,Creature - Human Soldier,"Metalcraft - As long as you control three or more artifacts, Auriok Sunchaser gets +2/+2 and has flying."
+Barbed Battlegear,3,3,,,U,Artifact - Equipment,"Equipped creature gets +4/-1.
+Equip {2}"
+Barrage Ogre,3RR,5,3,3,U,Creature - Ogre Warrior,"{T}, Sacrifice an artifact: Barrage Ogre deals 2 damage to target creature or player."
+Bellowing Tanglewurm,3GG,5,4,4,U,Creature - Wurm,"Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.)
+Other green creatures you control have intimidate."
+Blackcleave Cliffs,,0,,,R,Land,"Blackcleave Cliffs enters the battlefield tapped unless you control two or fewer other lands.
+{T}: Add {B} or {R} to your mana pool."
+Blackcleave Goblin,3B,4,2,1,C,Creature - Goblin Zombie,"Haste
+Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)"
+Bladed Pinions,2,2,,,C,Artifact - Equipment,"Equipped creature has flying and first strike.
+Equip {2}"
+Blade-Tribe Berserkers,3R,4,3,3,C,Creature - Human Berserker,"Metalcraft - When Blade-Tribe Berserkers enters the battlefield, if you control three or more artifacts, Blade-Tribe Berserkers gets +3/+3 and gains haste until end of turn."
+Bleak Coven Vampires,3BB,5,4,3,C,Creature - Vampire Warrior,"Metalcraft - When Bleak Coven Vampires enters the battlefield, if you control three or more artifacts, target player loses 4 life and you gain 4 life."
+Blight Mamba,1G,2,1,1,C,Creature - Snake,"Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+{1}{G}: Regenerate Blight Mamba."
+Blistergrub,2B,3,2,2,C,Creature - Horror,"Swampwalk
+When Blistergrub is put into a graveyard from the battlefield, each opponent loses 2 life."
+Bloodshot Trainee,3R,4,2,3,U,Creature - Goblin Warrior,{T}: Bloodshot Trainee deals 4 damage to target creature. Activate this ability only if Bloodshot Trainee's power is 4 or greater.
+Blunt the Assault,3G,4,,,C,Instant,You gain 1 life for each creature on the battlefield. Prevent all combat damage that would be dealt this turn.
+Bonds of Quicksilver,3U,4,,,C,Enchantment - Aura,"Flash (You may cast this spell any time you could cast an instant.)
+Enchant creature
+Enchanted creature doesn't untap during its controller's untap step."
+Carapace Forger,1G,2,2,2,C,Creature - Elf Artificer,Metalcraft - Carapace Forger gets +2/+2 as long as you control three or more artifacts.
+Carnifex Demon,4BB,6,6,6,R,Creature - Demon,"Flying
+Carnifex Demon enters the battlefield with two -1/-1 counters on it.
+{B}, Remove a -1/-1 counter from Carnifex Demon: Put a -1/-1 counter on each other creature."
+Carrion Call,3G,4,,,U,Instant,Put two 1/1 green Insect creature tokens with infect onto the battlefield. (They deal damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+Cerebral Eruption,2RR,4,,,R,Sorcery,"Target opponent reveals the top card of his or her library. Cerebral Eruption deals damage equal to the revealed card's converted mana cost to that player and each creature he or she controls. If a land card is revealed this way, return Cerebral Eruption to its owner's hand."
+Chimeric Mass,X,0,,,R,Artifact,"Chimeric Mass enters the battlefield with X charge counters on it.
+{1}: Until end of turn, Chimeric Mass becomes a Construct artifact creature with ""This creature's power and toughness are each equal to the number of charge counters on it."""
+Chrome Steed,4,4,2,2,C,Artifact Creature - Horse,Metalcraft - Chrome Steed gets +2/+2 as long as you control three or more artifacts.
+Clone Shell,5,5,2,2,U,Artifact Creature - Shapeshifter,"Imprint - When Clone Shell enters the battlefield, look at the top four cards of your library, exile one face down, then put the rest on the bottom of your library in any order.
+When Clone Shell is put into a graveyard from the battlefield, turn the exiled card face up. If it's a creature card, put it onto the battlefield under your control."
+Contagion Clasp,2,2,,,U,Artifact,"When Contagion Clasp enters the battlefield, put a -1/-1 counter on target creature.
+{4}, {T}: Proliferate. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there.)"
+Contagion Engine,6,6,,,R,Artifact,"When Contagion Engine enters the battlefield, put a -1/-1 counter on each creature target player controls.
+{4}, {T}: Proliferate, then proliferate again. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there. Then do it again.)"
+Contagious Nim,2B,3,2,2,C,Creature - Zombie,Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+Copper Myr,2,2,1,1,C,Artifact Creature - Myr,{T}: Add {G} to your mana pool.
+Copperhorn Scout,G,1,1,1,C,Creature - Elf Scout,"Whenever Copperhorn Scout attacks, untap each other creature you control."
+Copperline Gorge,,0,,,R,Land,"Copperline Gorge enters the battlefield tapped unless you control two or fewer other lands.
+{T}: Add {R} or {G} to your mana pool."
+Corpse Cur,4,4,2,2,C,Artifact Creature - Hound,"Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+When Corpse Cur enters the battlefield, you may return target creature card with infect from your graveyard to your hand."
+Corrupted Harvester,4BB,6,6,3,U,Creature - Horror,"{B}, Sacrifice a creature: Regenerate Corrupted Harvester."
+Culling Dais,2,2,,,U,Artifact,"{T}, Sacrifice a creature: Put a charge counter on Culling Dais.
+{1}, Sacrifice Culling Dais: Draw a card for each charge counter on Culling Dais."
+Cystbearer,2G,3,2,3,C,Creature - Beast,Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+Darkslick Drake,2UU,4,2,4,U,Creature - Drake,"Flying
+When Darkslick Drake is put into a graveyard from the battlefield, draw a card."
+Darkslick Shores,,0,,,R,Land,"Darkslick Shores enters the battlefield tapped unless you control two or fewer other lands.
+{T}: Add {U} or {B} to your mana pool."
+Darksteel Axe,1,1,,,U,Artifact - Equipment,"Darksteel Axe is indestructible. (Effects that say ""destroy"" don't destroy it.)
+Equipped creature gets +2/+0.
+Equip {2}"
+Darksteel Juggernaut,5,5,*,*,R,Artifact Creature - Juggernaut,"Darksteel Juggernaut's power and toughness are each equal to the number of artifacts you control.
+Darksteel Juggernaut is indestructible and attacks each turn if able."
+Darksteel Myr,3,3,0,1,U,Artifact Creature - Myr,"Darksteel Myr is indestructible. (Lethal damage and effects that say ""destroy"" don't destroy it. If its toughness is 0 or less, it's still put into its owner's graveyard.)"
+Darksteel Sentinel,6,6,3,3,U,Artifact Creature - Golem,"Flash (You may cast this spell any time you could cast an instant.)
+Vigilance
+Darksteel Sentinel is indestructible. (Lethal damage and effects that say ""destroy"" don't destroy it. If its toughness is 0 or less, it's still put into its owner's graveyard.)"
+Dispense Justice,2W,3,,,U,Instant,"Target player sacrifices an attacking creature.
+Metalcraft - That player sacrifices two attacking creatures instead if you control three or more artifacts."
+Disperse,1U,2,,,C,Instant,Return target nonland permanent to its owner's hand.
+Dissipation Field,2UU,4,,,R,Enchantment,"Whenever a permanent deals damage to you, return it to its owner's hand."
+Dross Hopper,1B,2,2,1,C,Creature - Insect Horror,Sacrifice a creature: Dross Hopper gains flying until end of turn.
+Echo Circlet,2,2,,,C,Artifact - Equipment,"Equipped creature can block an additional creature.
+Equip {1}"
+Elspeth Tirel,3WW,5,,4,M,Planeswalker - Elspeth,"+2: You gain 1 life for each creature you control.
+-2: Put three 1/1 white Soldier creature tokens onto the battlefield.
+-5: Destroy all other permanents except
+for lands and tokens."
+Embersmith,1R,2,2,1,U,Creature - Human Artificer,"Whenever you cast an artifact spell, you may pay {1}. If you do, Embersmith deals 1 damage to target creature or player."
+Engulfing Slagwurm,5GG,7,7,7,R,Creature - Wurm,"Whenever Engulfing Slagwurm blocks or becomes blocked by a creature, destroy that creature. You gain life equal to that creature's toughness."
+Etched Champion,3,3,2,2,R,Artifact Creature - Soldier,Metalcraft - Etched Champion has protection from all colors as long as you control three or more artifacts.
+Exsanguinate,XBB,2,,,U,Sorcery,Each opponent loses X life. You gain life equal to the life lost this way.
+"Ezuri, Renegade Leader",1GG,3,2,2,R,Legendary Creature - Elf Warrior,"{G}: Regenerate another target Elf.
+{2}{G}{G}{G}: Elf creatures you control get +3/+3 and gain trample until end of turn."
+Ezuri's Archers,G,1,1,2,C,Creature - Elf Archer,"Reach (This creature can block creatures with flying.)
+Whenever Ezuri's Archers blocks a creature with flying, Ezuri's Archers gets +3/+0 until end of turn."
+Ezuri's Brigade,2GG,4,4,4,R,Creature - Elf Warrior,"Metalcraft - As long as you control three or more artifacts, Ezuri's Brigade gets +4/+4 and has trample."
+Ferrovore,2R,3,2,2,C,Creature - Beast,"{R}, Sacrifice an artifact: Ferrovore gets +3/+0 until end of turn."
+Flameborn Hellion,5R,6,5,4,C,Creature - Hellion,"Haste
+Flameborn Hellion attacks each turn if able."
+Flesh Allergy,2BB,4,,,U,Sorcery,"As an additional cost to cast Flesh Allergy, sacrifice a creature.
+Destroy target creature. Its controller loses life equal to the number of creatures put into all graveyards from the battlefield this turn."
+Flight Spellbomb,1,1,,,C,Artifact,"{T}, Sacrifice Flight Spellbomb: Target creature gains flying until end of turn.
+When Flight Spellbomb is put into a graveyard from the battlefield, you may pay {U}. If you do, draw a card."
+Forest,,0,,,C,Basic Land - Forest,G
+Fulgent Distraction,2W,3,,,C,Instant,"Choose two target creatures. Tap those creatures, then unattach all Equipment from them."
+Fume Spitter,B,1,1,1,C,Creature - Horror,Sacrifice Fume Spitter: Put a -1/-1 counter on target creature.
+Furnace Celebration,1RR,3,,,U,Enchantment,"Whenever you sacrifice another permanent, you may pay {2}. If you do, Furnace Celebration deals 2 damage to target creature or player."
+Galvanic Blast,R,1,,,C,Instant,"Galvanic Blast deals 2 damage to target creature or player.
+Metalcraft - Galvanic Blast deals 4 damage to that creature or player instead if you control three or more artifacts."
+Genesis Wave,XGGG,3,,,R,Sorcery,Reveal the top X cards of your library. You may put any number of permanent cards with converted mana cost X or less from among them onto the battlefield. Then put all cards revealed this way that weren't put onto the battlefield into your graveyard.
+"Geth, Lord of the Vault",4BB,6,5,5,M,Legendary Creature - Zombie,"Intimidate
+{X}{B}: Put target artifact or creature card with converted mana cost X from an opponent's graveyard onto the battlefield under your control tapped. Then that player puts the top X cards of his or her library into his or her graveyard."
+Ghalma's Warden,3W,4,2,4,C,Creature - Elephant Soldier,Metalcraft - Ghalma's Warden gets +2/+2 as long as you control three or more artifacts.
+Glimmerpoint Stag,2WW,4,3,3,U,Creature - Elk,"Vigilance
+When Glimmerpoint Stag enters the battlefield, exile another target permanent. Return that card to the battlefield under its owner's control at the beginning of the next end step."
+Glimmerpost,,0,,,C,Land - Locus,"When Glimmerpost enters the battlefield, you gain 1 life for each Locus on the battlefield.
+{T}: Add {1} to your mana pool."
+Glint Hawk,W,1,2,2,C,Creature - Bird,"Flying
+When Glint Hawk enters the battlefield, sacrifice it unless you return an artifact you control to its owner's hand."
+Glint Hawk Idol,2,2,,,C,Artifact,"Whenever another artifact enters the battlefield under your control, you may have Glint Hawk Idol become a 2/2 Bird artifact creature with flying until end of turn.
+{W}: Glint Hawk Idol becomes a 2/2 Bird artifact creature with flying until end of turn."
+Goblin Gaveleer,R,1,1,1,C,Creature - Goblin Warrior,"Trample
+Goblin Gaveleer gets +2/+0 for each Equipment attached to it."
+Gold Myr,2,2,1,1,C,Artifact Creature - Myr,{T}: Add {W} to your mana pool.
+Golden Urn,1,1,,,C,Artifact,"At the beginning of your upkeep, you may put a charge counter on Golden Urn.
+{T}, Sacrifice Golden Urn: You gain life equal to the number of charge counters on Golden Urn."
+Golem Artisan,5,5,3,3,U,Artifact Creature - Golem,"{2}: Target artifact creature gets +1/+1 until end of turn.
+{2}: Target artifact creature gains your choice of flying, trample, or haste until end of turn."
+Golem Foundry,3,3,,,C,Artifact,"Whenever you cast an artifact spell, you may put a charge counter on Golem Foundry.
+Remove three charge counters from Golem Foundry: Put a 3/3 colorless Golem artifact creature token onto the battlefield."
+Golem's Heart,2,2,,,U,Artifact,"Whenever a player casts an artifact spell, you may gain 1 life."
+Grafted Exoskeleton,4,4,,,U,Artifact - Equipment,"Equipped creature gets +2/+2 and has infect. (It deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+Whenever Grafted Exoskeleton becomes unattached from a permanent, sacrifice that permanent.
+Equip {2}"
+Grand Architect,1UU,3,1,3,R,Creature - Vedalken Artificer,"Other blue creatures you control get +1/+1.
+{U}: Target artifact creature becomes blue until end of turn.
+Tap an untapped blue creature you control: Add {2} to your mana pool. Spend this mana only to cast artifact spells or activate abilities of artifacts."
+Grasp of Darkness,BB,2,,,C,Instant,Target creature gets -4/-4 until end of turn.
+Grindclock,2,2,,,R,Artifact,"{T}: Put a charge counter on Grindclock.
+{T}: Target player puts the top X cards of his or her library into his or her graveyard, where X is the number of charge counters on Grindclock."
+Halt Order,2U,3,,,U,Instant,"Counter target artifact spell.
+Draw a card."
+Hand of the Praetors,3B,4,3,2,R,Creature - Zombie,"Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+Other creatures you control with infect get +1/+1.
+Whenever you cast a creature spell with infect, target player gets a poison counter."
+Heavy Arbalest,3,3,,,U,Artifact - Equipment,"Equipped creature doesn't untap during its controller's untap step.
+Equipped creature has ""{T}: This creature deals 2 damage to target creature or player.""
+Equip {4}"
+Hoard-Smelter Dragon,4RR,6,5,5,R,Creature - Dragon,"Flying
+{3}{R}: Destroy target artifact. Hoard-Smelter Dragon gets +X/+0 until end of turn, where X is that artifact's converted mana cost."
+Horizon Spellbomb,1,1,,,C,Artifact,"{2}, {T}, Sacrifice Horizon Spellbomb: Search your library for a basic land card, reveal it, and put it into your hand. Then shuffle your library.
+When Horizon Spellbomb is put into a graveyard from the battlefield, you may pay {G}. If you do, draw a card."
+Ichor Rats,1BB,3,2,1,U,Creature - Rat,"Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+When Ichor Rats enters the battlefield, each player gets a poison counter."
+Ichorclaw Myr,2,2,1,1,C,Artifact Creature - Myr,"Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+Whenever Ichorclaw Myr becomes blocked, it gets +2/+2 until end of turn."
+Indomitable Archangel,2WW,4,4,4,M,Creature - Angel,"Flying
+Metalcraft - Artifacts you control have shroud as long as you control three or more artifacts."
+Inexorable Tide,3UU,5,,,R,Enchantment,"Whenever you cast a spell, proliferate. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there.)"
+Infiltration Lens,1,1,,,U,Artifact - Equipment,"Whenever equipped creature becomes blocked by a creature, you may draw two cards.
+Equip {1}"
+Instill Infection,3B,4,,,C,Instant,"Put a -1/-1 counter on target creature.
+Draw a card."
+Iron Myr,2,2,1,1,C,Artifact Creature - Myr,{T}: Add {R} to your mana pool.
+Island,,0,,,C,Basic Land - Island,U
+"Kemba, Kha Regent",1WW,3,2,4,R,Legendary Creature - Cat Cleric,"At the beginning of your upkeep, put a 2/2 white Cat creature token onto the battlefield for each Equipment attached to Kemba, Kha Regent."
+Kemba's Skyguard,1WW,3,2,2,C,Creature - Cat Knight,"Flying
+When Kemba's Skyguard enters the battlefield, you gain 2 life."
+Koth of the Hammer,2RR,4,,3,M,Planeswalker - Koth,"+1: Untap target Mountain. It becomes a 4/4 red Elemental creature until end of turn. It's still a land.
+-2: Add {R} to your mana pool for each Mountain you control.
+-5: You get an emblem with ""Mountains you control have ‘{T}: This land deals 1 damage to target creature or player.'"""
+Kuldotha Forgemaster,5,5,3,5,R,Artifact Creature - Construct,"{T}, Sacrifice three artifacts: Search your library for an artifact card and put it onto the battlefield. Then shuffle your library."
+Kuldotha Phoenix,2RRR,5,4,4,R,Creature - Phoenix,"Flying, haste
+Metalcraft - {4}: Return Kuldotha Phoenix from your graveyard to the battlefield. Activate this ability only during your upkeep and only if you control three or more artifacts."
+Kuldotha Rebirth,R,1,,,C,Sorcery,"As an additional cost to cast Kuldotha Rebirth, sacrifice an artifact.
+Put three 1/1 red Goblin creature tokens onto the battlefield."
+Leaden Myr,2,2,1,1,C,Artifact Creature - Myr,{T}: Add {B} to your mana pool.
+Leonin Arbiter,1W,2,2,2,R,Creature - Cat Cleric,Players can't search libraries. Any player may pay {2} for that player to ignore this effect until end of turn.
+Liege of the Tangle,6GG,8,8,8,M,Creature - Elemental,"Trample
+Whenever Liege of the Tangle deals combat damage to a player, you may choose any number of target lands you control and put an awakening counter on each of them. Each of those lands is an 8/8 green Elemental creature for as long as it has an awakening counter on it. They're still lands."
+Lifesmith,1G,2,2,1,U,Creature - Human Artificer,"Whenever you cast an artifact spell, you may pay {1}. If you do, you gain 3 life."
+Liquimetal Coating,2,2,,,U,Artifact,{T}: Target permanent becomes an artifact in addition to its other types until end of turn.
+Livewire Lash,2,2,,,R,Artifact - Equipment,"Equipped creature gets +2/+0 and has ""Whenever this creature becomes the target of a spell, this creature deals 2 damage to target creature or player.""
+Equip {2}"
+Loxodon Wayfarer,2W,3,1,5,C,Creature - Elephant Monk,
+Lumengrid Drake,3U,4,2,2,C,Creature - Drake,"Flying
+Metalcraft - When Lumengrid Drake enters the battlefield, if you control three or more artifacts, return target creature to its owner's hand."
+Lux Cannon,4,4,,,M,Artifact,"{T}: Put a charge counter on Lux Cannon.
+{T}, Remove three charge counters from Lux Cannon: Destroy target permanent."
+Melt Terrain,2RR,4,,,C,Sorcery,Destroy target land. Melt Terrain deals 2 damage to that land's controller.
+Memnite,0,0,1,1,U,Artifact Creature - Construct,
+Memoricide,3B,4,,,R,Sorcery,"Name a nonland card. Search target player's graveyard, hand, and library for any number of cards with that name and exile them. Then that player shuffles his or her library."
+Mimic Vat,3,3,,,R,Artifact,"Imprint - Whenever a nontoken creature is put into a graveyard from the battlefield, you may exile that card. If you do, return each other card exiled with Mimic Vat to its owner's graveyard.
+{3}, {T}: Put a token onto the battlefield that's a copy of the exiled card. It gains haste. Exile it at the beginning of the next end step."
+Mindslaver,6,6,,,M,Legendary Artifact,"{4}, {T}, Sacrifice Mindslaver: You control target player during that player's next turn. (You see all cards that player could see and make all decisions for the player.)"
+Molder Beast,4G,5,5,3,C,Creature - Beast,"Trample
+Whenever an artifact is put into a graveyard from the battlefield, Molder Beast gets +2/+0 until end of turn."
+Molten Psyche,1RR,3,,,R,Sorcery,"Each player shuffles the cards from his or her hand into his or her library, then draws that many cards.
+Metalcraft - If you control three or more artifacts, Molten Psyche deals damage to each opponent equal to the number of cards that player has drawn this turn."
+Molten-Tail Masticore,4,4,4,4,M,Artifact Creature - Masticore,"At the beginning of your upkeep, sacrifice Molten-Tail Masticore unless you discard a card.
+{4}, Exile a creature card from your graveyard: Molten-Tail Masticore deals 4 damage to target creature or player.
+{2}: Regenerate Molten-Tail Masticore."
+Moriok Reaver,2B,3,3,2,C,Creature - Human Warrior,
+Moriok Replica,3,3,2,2,C,Artifact Creature - Warrior,"{1}{B}, Sacrifice Moriok Replica: You draw two cards and lose 2 life."
+Mountain,,0,,,C,Basic Land - Mountain,R
+Mox Opal,0,0,,,M,Legendary Artifact,Metalcraft - {T}: Add one mana of any color to your mana pool. Activate this ability only if you control three or more artifacts.
+Myr Battlesphere,7,7,4,7,R,Artifact Creature - Myr Construct,"When Myr Battlesphere enters the battlefield, put four 1/1 colorless Myr artifact creature tokens onto the battlefield.
+Whenever Myr Battlesphere attacks, you may tap X untapped Myr you control. If you do, Myr Battlesphere gets +X/+0 until end of turn and deals X damage to defending player."
+Myr Galvanizer,3,3,2,2,U,Artifact Creature - Myr,"Other Myr creatures you control get +1/+1.
+{1}, {T}: Untap each other Myr you control."
+Myr Propagator,3,3,1,1,R,Artifact Creature - Myr,"{3}, {T}: Put a token that's a copy of Myr Propagator onto the battlefield."
+Myr Reservoir,3,3,,,R,Artifact,"{T}: Add {2} to your mana pool. Spend this mana only to cast Myr spells or activate abilities of Myr.
+{3}, {T}: Return target Myr card from your graveyard to your hand."
+Myrsmith,1W,2,2,1,U,Creature - Human Artificer,"Whenever you cast an artifact spell, you may pay {1}. If you do, put a 1/1 colorless Myr artifact creature token onto the battlefield."
+Necrogen Censer,3,3,,,C,Artifact,"Necrogen Censer enters the battlefield with two charge counters on it.
+{T}, Remove a charge counter from Necrogen Censer: Target player loses 2 life."
+Necrogen Scudder,2B,3,3,3,U,Creature - Horror,"Flying
+When Necrogen Scudder enters the battlefield, you lose 3 life."
+Necropede,2,2,1,1,U,Artifact Creature - Insect,"Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+When Necropede is put into a graveyard from the battlefield, you may put a -1/-1 counter on target creature."
+Necrotic Ooze,2BB,4,4,3,R,Creature - Ooze,"As long as Necrotic Ooze is on the battlefield, it has all activated abilities of all creature cards in all graveyards."
+Neurok Invisimancer,1UU,3,2,1,C,Creature - Human Wizard,"Neurok Invisimancer is unblockable.
+When Neurok Invisimancer enters the battlefield, target creature is unblockable this turn."
+Neurok Replica,3,3,1,4,C,Artifact Creature - Wizard,"{1}{U}, Sacrifice Neurok Replica: Return target creature to its owner's hand."
+Nihil Spellbomb,1,1,,,C,Artifact,"{T}, Sacrifice Nihil Spellbomb: Exile all cards from target player's graveyard.
+When Nihil Spellbomb is put into a graveyard from the battlefield, you may pay {B}. If you do, draw a card."
+Nim Deathmantle,2,2,,,R,Artifact - Equipment,"Equipped creature gets +2/+2, has intimidate, and is a black Zombie.
+Whenever a nontoken creature is put into your graveyard from the battlefield, you may pay {4}. If you do, return that card to the battlefield and attach Nim Deathmantle to it.
+Equip {4}"
+Ogre Geargrabber,4RR,6,4,4,U,Creature - Ogre Warrior,"Whenever Ogre Geargrabber attacks, gain control of target Equipment an opponent controls until end of turn. Attach it to Ogre Geargrabber. When you lose control of that Equipment, unattach it."
+Origin Spellbomb,1,1,,,C,Artifact,"{1}, {T}, Sacrifice Origin Spellbomb: Put a 1/1 colorless Myr artifact creature token onto the battlefield.
+When Origin Spellbomb is put into a graveyard from the battlefield, you may pay {W}. If you do, draw a card."
+Oxidda Daredevil,1R,2,2,1,C,Creature - Goblin Artificer,Sacrifice an artifact: Oxidda Daredevil gains haste until end of turn.
+Oxidda Scrapmelter,3R,4,3,3,U,Creature - Beast,"When Oxidda Scrapmelter enters the battlefield, destroy target artifact."
+Painful Quandary,3BB,5,,,R,Enchantment,"Whenever an opponent casts a spell, that player loses 5 life unless he or she discards a card."
+Painsmith,1B,2,2,1,U,Creature - Human Artificer,"Whenever you cast an artifact spell, you may have target creature get +2/+0 and gain deathtouch until end of turn."
+Palladium Myr,3,3,2,2,U,Artifact Creature - Myr,{T}: Add {2} to your mana pool.
+Panic Spellbomb,1,1,,,C,Artifact,"{T}, Sacrifice Panic Spellbomb: Target creature can't block this turn.
+When Panic Spellbomb is put into a graveyard from the battlefield, you may pay {R}. If you do, draw a card."
+Perilous Myr,2,2,1,1,C,Artifact Creature - Myr,"When Perilous Myr is put into a graveyard from the battlefield, it deals 2 damage to target creature or player."
+Plague Stinger,1B,2,1,1,C,Creature - Insect Horror,"Flying
+Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)"
+Plains,,0,,,C,Basic Land - Plains,W
+Plated Seastrider,UU,2,1,4,C,Creature - Beast,
+Platinum Emperion,8,8,8,8,M,Artifact Creature - Golem,Your life total can't change. (You can't gain or lose life. You can't pay any amount of life except 0.)
+Precursor Golem,5,5,3,3,R,Artifact Creature - Golem,"When Precursor Golem enters the battlefield, put two 3/3 colorless Golem artifact creature tokens onto the battlefield.
+Whenever a player casts an instant or sorcery spell that targets only a single Golem, that player copies that spell for each other Golem that spell could target. Each copy targets a different one of those Golems."
+Prototype Portal,4,4,,,R,Artifact,"Imprint - When Prototype Portal enters the battlefield, you may exile an artifact card from your hand.
+{X}, {T}: Put a token that's a copy of the exiled card onto the battlefield. X is the converted mana cost of that card."
+Psychic Miasma,1B,2,,,C,Sorcery,"Target player discards a card. If a land card is discarded this way, return Psychic Miasma to its owner's hand."
+Putrefax,3GG,5,5,3,R,Creature - Horror,"Trample, haste
+Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+At the beginning of the end step, sacrifice Putrefax."
+Quicksilver Gargantuan,5UU,7,7,7,M,Creature - Shapeshifter,"You may have Quicksilver Gargantuan enter the battlefield as a copy of any creature on the battlefield, except it's still 7/7."
+Ratchet Bomb,2,2,,,R,Artifact,"{T}: Put a charge counter on Ratchet Bomb.
+{T}, Sacrifice Ratchet Bomb: Destroy each nonland permanent with converted mana cost equal to the number of charge counters on Ratchet Bomb."
+Razor Hippogriff,3WW,5,3,3,U,Creature - Hippogriff,"Flying
+When Razor Hippogriff enters the battlefield, return target artifact card from your graveyard to your hand. You gain life equal to that card's converted mana cost."
+Razorfield Thresher,7,7,6,4,C,Artifact Creature - Construct,
+Razorverge Thicket,,0,,,R,Land,"Razorverge Thicket enters the battlefield tapped unless you control two or fewer other lands.
+{T}: Add {G} or {W} to your mana pool."
+Relic Putrescence,2B,3,,,C,Enchantment - Aura,"Enchant artifact
+Whenever enchanted artifact becomes tapped, its controller gets a poison counter."
+Revoke Existence,1W,2,,,C,Sorcery,Exile target artifact or enchantment.
+Riddlesmith,1U,2,2,1,U,Creature - Human Artificer,"Whenever you cast an artifact spell, you may draw a card. If you do, discard a card."
+Rust Tick,3,3,1,3,U,Artifact Creature - Insect,"You may choose not to untap Rust Tick during your untap step.
+{1}, {T}: Tap target artifact. It doesn't untap during its controller's untap step for as long as Rust Tick remains tapped."
+Rusted Relic,4,4,,,U,Artifact,Metalcraft - Rusted Relic is a 5/5 Golem artifact creature as long as you control three or more artifacts.
+Saberclaw Golem,5,5,4,2,C,Artifact Creature - Golem,{R}: Saberclaw Golem gains first strike until end of turn.
+Salvage Scout,W,1,1,1,C,Creature - Human Scout,"{W}, Sacrifice Salvage Scout: Return target artifact card from your graveyard to your hand."
+Scoria Elemental,4R,5,6,1,C,Creature - Elemental,
+Scrapdiver Serpent,5UU,7,5,5,C,Creature - Serpent,Scrapdiver Serpent is unblockable as long as defending player controls an artifact.
+Screeching Silcaw,1U,2,1,2,C,Creature - Bird,"Flying
+Metalcraft - Whenever Screeching Silcaw deals combat damage to a player, if you control three or more artifacts, that player puts the top four cards of his or her library into his or her graveyard."
+Seachrome Coast,,0,,,R,Land,"Seachrome Coast enters the battlefield tapped unless you control two or fewer other lands.
+{T}: Add {W} or {U} to your mana pool."
+Seize the Initiative,W,1,,,C,Instant,Target creature gets +1/+1 and gains first strike until end of turn.
+Semblance Anvil,3,3,,,R,Artifact,"Imprint - When Semblance Anvil enters the battlefield, you may exile a nonland card from your hand.
+Spells you cast that share a card type with the exiled card cost {2} less to cast."
+Shape Anew,3U,4,,,R,Sorcery,"The controller of target artifact sacrifices it, then reveals cards from the top of his or her library until he or she reveals an artifact card. That player puts that card onto the battlefield, then shuffles all other cards revealed this way into his or her library."
+Shatter,1R,2,,,C,Instant,Destroy target artifact.
+Silver Myr,2,2,1,1,C,Artifact Creature - Myr,{T}: Add {U} to your mana pool.
+Skinrender,2BB,4,3,3,U,Creature - Zombie,"When Skinrender enters the battlefield, put three -1/-1 counters on target creature."
+"Skithiryx, the Blight Dragon",3BB,5,4,4,M,Legendary Creature - Dragon Skeleton,"Flying
+Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+{B}: Skithiryx, the Blight Dragon gains haste until end of turn.
+{B}{B}: Regenerate Skithiryx."
+Sky-Eel School,3UU,5,3,3,C,Creature - Fish,"Flying
+When Sky-Eel School enters the battlefield, draw a card, then discard a card."
+Slice in Twain,2GG,4,,,U,Instant,"Destroy target artifact or enchantment.
+Draw a card."
+Snapsail Glider,3,3,2,2,C,Artifact Creature - Construct,Metalcraft - Snapsail Glider has flying as long as you control three or more artifacts.
+Soliton,5,5,3,4,C,Artifact Creature - Construct,{U}: Untap Soliton.
+Soul Parry,1W,2,,,C,Instant,Prevent all damage one or two target creatures would deal this turn.
+Spikeshot Elder,R,1,1,1,R,Creature - Goblin Shaman,{1}{R}{R}: Spikeshot Elder deals damage equal to its power to target creature or player.
+Steady Progress,2U,3,,,C,Instant,"Proliferate. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there.)
+Draw a card."
+Steel Hellkite,6,6,5,5,R,Artifact Creature - Dragon,"Flying
+{2}: Steel Hellkite gets +1/+0 until end of turn.
+{X}: Destroy each nonland permanent with converted mana cost X whose controller was dealt combat damage by Steel Hellkite this turn. Activate this ability only once each turn."
+Stoic Rebuttal,1UU,3,,,C,Instant,"Metalcraft - Stoic Rebuttal costs {1} less to cast if you control three or more artifacts.
+Counter target spell."
+Strata Scythe,3,3,,,R,Artifact - Equipment,"Imprint - When Strata Scythe enters the battlefield, search your library for a land card, exile it, then shuffle your library.
+Equipped creature gets +1/+1 for each land on the battlefield with the same name as the exiled card.
+Equip {3}"
+Strider Harness,3,3,,,C,Artifact - Equipment,"Equipped creature gets +1/+1 and has haste.
+Equip {1}"
+Sunblast Angel,4WW,6,4,5,R,Creature - Angel,"Flying
+When Sunblast Angel enters the battlefield, destroy all tapped creatures."
+Sunspear Shikari,1W,2,2,2,C,Creature - Cat Soldier,"As long as Sunspear Shikari is equipped, it has first strike and lifelink."
+Swamp,,0,,,C,Basic Land - Swamp,B
+Sword of Body and Mind,3,3,,,M,Artifact - Equipment,"Equipped creature gets +2/+2 and has protection from green and from blue.
+Whenever equipped creature deals combat damage to a player, you put a 2/2 green Wolf creature token onto the battlefield and that player puts the top ten cards of his or her library into his or her graveyard.
+Equip {2}"
+Sylvok Lifestaff,1,1,,,C,Artifact - Equipment,"Equipped creature gets +1/+0.
+Whenever equipped creature is put into a graveyard, you gain 3 life.
+Equip {1}"
+Sylvok Replica,3,3,1,3,C,Artifact Creature - Shaman,"{G}, Sacrifice Sylvok Replica: Destroy target artifact or enchantment."
+Tainted Strike,B,1,,,C,Instant,Target creature gets +1/+0 and gains infect until end of turn. (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+Tangle Angler,3G,4,1,5,U,Creature - Horror,"Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+{G}: Target creature blocks Tangle Angler this turn if able."
+Tel-Jilad Defiance,1G,2,,,C,Instant,"Target creature gains protection from artifacts until end of turn.
+Draw a card."
+Tel-Jilad Fallen,2GG,4,3,1,C,Creature - Elf Warrior,"Protection from artifacts
+Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)"
+Tempered Steel,1WW,3,,,R,Enchantment,Artifact creatures you control get +2/+2.
+Throne of Geth,2,2,,,U,Artifact,"{T}, Sacrifice an artifact: Proliferate. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there.)"
+Thrummingbird,1U,2,1,1,U,Creature - Bird Horror,"Flying
+Whenever Thrummingbird deals combat damage to a player, proliferate. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there.)"
+Tower of Calamities,4,4,,,R,Artifact,"{8}, {T}: Tower of Calamities deals 12 damage to target creature."
+Trigon of Corruption,4,4,,,U,Artifact,"Trigon of Corruption enters the battlefield with three charge counters on it.
+{B}{B}, {T}: Put a charge counter on Trigon of Corruption.
+{2}, {T}, Remove a charge counter from Trigon of Corruption: Put a -1/-1 counter on target creature."
+Trigon of Infestation,4,4,,,U,Artifact,"Trigon of Infestation enters the battlefield with three charge counters on it.
+{G}{G}, {T}: Put a charge counter on Trigon of Infestation.
+{2}, {T}, Remove a charge counter from Trigon of Infestation: Put a 1/1 green Insect creature token with infect onto the battlefield."
+Trigon of Mending,2,2,,,U,Artifact,"Trigon of Mending enters the battlefield with three charge counters on it.
+{W}{W}, {T}: Put a charge counter on Trigon of Mending.
+{2}, {T}, Remove a charge counter from Trigon of Mending: Target player gains 3 life."
+Trigon of Rage,2,2,,,U,Artifact,"Trigon of Rage enters the battlefield with three charge counters on it.
+{R}{R}, {T}: Put a charge counter on Trigon of Rage.
+{2}, {T}, Remove a charge counter from Trigon of Rage: Target creature gets +3/+0 until end of turn."
+Trigon of Thought,5,5,,,U,Artifact,"Trigon of Thought enters the battlefield with three charge counters on it.
+{U}{U}, {T}: Put a charge counter on Trigon of Thought.
+{2}, {T}, Remove a charge counter from Trigon of Thought: Draw a card."
+Trinket Mage,2U,3,2,2,U,Creature - Human Wizard,"When Trinket Mage enters the battlefield, you may search your library for an artifact card with converted mana cost 1 or less, reveal that card, and put it into your hand. If you do, shuffle your library."
+True Conviction,3WWW,6,,,R,Enchantment,Creatures you control have double strike and lifelink.
+Tumble Magnet,3,3,,,C,Artifact,"Tumble Magnet enters the battlefield with three charge counters on it.
+{T}, Remove a charge counter from Tumble Magnet: Tap target artifact or creature."
+Tunnel Ignus,1R,2,2,1,R,Creature - Elemental,"Whenever a land enters the battlefield under an opponent's control, if that player had another land enter the battlefield under his or her control this turn, Tunnel Ignus deals 3 damage to that player."
+Turn Aside,U,1,,,C,Instant,Counter target spell that targets a permanent you control.
+Turn to Slag,3RR,5,,,C,Sorcery,Turn to Slag deals 5 damage to target creature. Destroy all Equipment attached to that creature.
+Twisted Image,U,1,,,U,Instant,"Switch target creature's power and toughness until end of turn.
+Draw a card."
+Untamed Might,XG,1,,,C,Instant,Target creature gets +X/+X until end of turn.
+Vault Skyward,U,1,,,C,Instant,Target creature gains flying until end of turn. Untap it.
+Vector Asp,1,1,1,1,C,Artifact Creature - Snake,{B}: Vector Asp gains infect until end of turn. (It deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+Vedalken Certarch,U,1,1,1,C,Creature - Vedalken Wizard,"Metalcraft - {T}: Tap target artifact, creature, or land. Activate this ability only if you control three or more artifacts."
+"Venser, the Sojourner",3WU,5,,3,M,Planeswalker - Venser,"+2: Exile target permanent you own. Return it to the battlefield under your control at the beginning of the next end step.
+-1: Creatures are unblockable this turn.
+-8: You get an emblem with ""Whenever you cast a spell, exile target permanent."""
+Venser's Journal,5,5,,,R,Artifact,"You have no maximum hand size.
+At the beginning of your upkeep, you gain 1 life for each card in your hand."
+Vigil for the Lost,3W,4,,,U,Enchantment,"Whenever a creature you control is put into a graveyard from the battlefield, you may pay {X}. If you do, you gain X life."
+Viridian Revel,1GG,3,,,U,Enchantment,"Whenever an artifact is put into an opponent's graveyard from the battlefield, you may draw a card."
+Volition Reins,3UUU,6,,,U,Enchantment - Aura,"Enchant permanent
+When Volition Reins enters the battlefield, if enchanted permanent is tapped, untap it.
+You control enchanted permanent."
+Vulshok Heartstoker,2R,3,2,2,C,Creature - Human Shaman,"When Vulshok Heartstoker enters the battlefield, target creature gets +2/+0 until end of turn."
+Vulshok Replica,3,3,3,1,C,Artifact Creature - Berserker,"{1}{R}, Sacrifice Vulshok Replica: Vulshok Replica deals 3 damage to target player."
+Wall of Tanglecord,2,2,0,6,C,Artifact Creature - Wall,"Defender
+{G}: Wall of Tanglecord gains reach until end of turn. (It can block creatures with flying.)"
+Whitesun's Passage,1W,2,,,C,Instant,You gain 5 life.
+Wing Puncture,G,1,,,C,Instant,Target creature you control deals damage equal to its power to target creature with flying.
+Withstand Death,G,1,,,C,Instant,"Target creature is indestructible this turn. (Lethal damage and effects that say ""destroy"" don't destroy it. If its toughness is 0 or less, it's still put into its owner's graveyard.)"
+Wurmcoil Engine,6,6,6,6,M,Artifact Creature - Wurm,"Deathtouch, lifelink
+When Wurmcoil Engine is put into a graveyard from the battlefield, put a 3/3 colorless Wurm artifact creature token with deathtouch and a 3/3 colorless Wurm artifact creature token with lifelink onto the battlefield."

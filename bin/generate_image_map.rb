@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'rubygems'
 require 'mechanize'
 require 'fastercsv'
@@ -97,9 +99,11 @@ SETS = ['Unglued',
         'Zendikar',
         'Worldwake',
         'Rise of the Eldrazi',
-        'Magic 2011']
+        'Magic 2011',
+        'Scars of Mirrodin']
 
 SET_CONVERSION = {
+  'Scars of Mirrodin' => 'som',
   'Rise of the Eldrazi' => 'roe',
   'Worldwake' => 'wwk',
   'Zendikar' => 'zen',
