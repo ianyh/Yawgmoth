@@ -75,6 +75,9 @@
 		3CE302C0120BFA730093FD1E /* SIYDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */; };
 		3CE30340120D63FF0093FD1E /* card-image-map in Resources */ = {isa = PBXBuildFile; fileRef = 3CE3033F120D63FF0093FD1E /* card-image-map */; };
 		3CE30341120D63FF0093FD1E /* card-image-map in Resources */ = {isa = PBXBuildFile; fileRef = 3CE3033F120D63FF0093FD1E /* card-image-map */; };
+		3CF989E7124FC42E0058A648 /* Scars of Mirrodin.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3CF989E6124FC42E0058A648 /* Scars of Mirrodin.csv */; };
+		3CF989E8124FC42E0058A648 /* Scars of Mirrodin.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3CF989E6124FC42E0058A648 /* Scars of Mirrodin.csv */; };
+		3CF989E9124FC42E0058A648 /* Scars of Mirrodin.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3CF989E6124FC42E0058A648 /* Scars of Mirrodin.csv */; };
 		3CFE865F120DA5CD0096E65B /* SIYMetaCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE865E120DA5CD0096E65B /* SIYMetaCard.m */; };
 		3CFE8660120DA5CD0096E65B /* SIYMetaCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE865E120DA5CD0096E65B /* SIYMetaCard.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -182,6 +185,7 @@
 		3CC681051213E0C400181E02 /* update */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = update; path = res/update; sourceTree = "<group>"; };
 		3CE302BD120BFA730093FD1E /* SIYDataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = SIYDataModel.xcdatamodel; path = src/yawgmoth/SIYDataModel.xcdatamodel; sourceTree = "<group>"; };
 		3CE3033F120D63FF0093FD1E /* card-image-map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "card-image-map"; path = "res/card-image-map"; sourceTree = "<group>"; };
+		3CF989E6124FC42E0058A648 /* Scars of Mirrodin.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Scars of Mirrodin.csv"; path = "res/sets/Scars of Mirrodin.csv"; sourceTree = "<group>"; };
 		3CFE865D120DA5CD0096E65B /* SIYMetaCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIYMetaCard.h; path = src/yawgmoth/SIYMetaCard.h; sourceTree = "<group>"; };
 		3CFE865E120DA5CD0096E65B /* SIYMetaCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIYMetaCard.m; path = src/yawgmoth/SIYMetaCard.m; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Yawgmoth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawgmoth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -392,6 +396,7 @@
 		3C545B88121815FB0005183D /* Sets */ = {
 			isa = PBXGroup;
 			children = (
+				3CF989E6124FC42E0058A648 /* Scars of Mirrodin.csv */,
 				3C545B89121816200005183D /* Alara Reborn.csv */,
 				3C545B8A121816200005183D /* Conflux.csv */,
 				3C545B8B121816200005183D /* Magic 2010.csv */,
@@ -556,6 +561,7 @@
 				3CE30340120D63FF0093FD1E /* card-image-map in Resources */,
 				3CC6809C1213D43B00181E02 /* dsa_pub.pem in Resources */,
 				3CC680CD1213DE0100181E02 /* Yawgmoth.xib in Resources */,
+				3CF989E9124FC42E0058A648 /* Scars of Mirrodin.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +590,7 @@
 				3C545B96121816200005183D /* Shards of Alara.csv in Resources */,
 				3C545B97121816200005183D /* Worldwake.csv in Resources */,
 				3C545B98121816200005183D /* Zendikar.csv in Resources */,
+				3CF989E7124FC42E0058A648 /* Scars of Mirrodin.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +603,7 @@
 				3CE30341120D63FF0093FD1E /* card-image-map in Resources */,
 				3CC6809D1213D43B00181E02 /* dsa_pub.pem in Resources */,
 				3CC680CC1213DE0100181E02 /* Yawgmoth.xib in Resources */,
+				3CF989E8124FC42E0058A648 /* Scars of Mirrodin.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

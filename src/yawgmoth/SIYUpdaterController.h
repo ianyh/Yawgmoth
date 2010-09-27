@@ -24,5 +24,6 @@
 
 - (void)update07;
 - (void)update071;
+- (void)update072;
 
 @end

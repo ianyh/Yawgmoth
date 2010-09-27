@@ -110,6 +110,7 @@
 	NSDictionary *versionToUpdateSelector = [NSDictionary dictionaryWithObjectsAndKeys:
 											 @"update07", @"0.7",
 											 @"update071", @"0.7.1",
+											 @"update072", @"0.7.2",
 											 nil];
 	NSArray *versions = [versionToUpdateSelector allKeys];
 	NSString *updateMarker = [self loadUpdateMarker];
@@ -311,6 +312,55 @@
 			}
 		}
 	}
+}
+
+// add scars of mirrodin
+- (void)update072
+{
+	NSString *setName = @"Scars of Mirrodin";
+	NSString *fileName = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Scars of Mirrodin.csv"];
+	NSArray *setRows = [self csvRowsFromString:[NSString stringWithContentsOfFile:fileName 
+																		 encoding:NSASCIIStringEncoding 
+																			error:nil]];
+	NSArray *row;
+	NSEnumerator *rowEnumerator = [setRows objectEnumerator];
+	NSManagedObject *card;
+	NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+	[formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+	
+	[progressLabel setStringValue:@"Adding Scars of Mirrodin..."];
+	[NSApp runModalSession:modalSession];
+	
+	while ((row = [rowEnumerator nextObject]) != nil) {
+		card = [cardManager managedObjectWithPredicate:[NSPredicate predicateWithFormat:@"set = %@ AND name = %@", setName, [row objectAtIndex:0]] 
+									  inEntityWithName:@"FullCard"];
+		if (card == nil) {
+			[progressLabel setStringValue:[NSString stringWithFormat:@"%@", [row objectAtIndex:0]]];
+			[NSApp runModalSession:modalSession];
+			
+			card = [NSEntityDescription insertNewObjectForEntityForName:@"FullCard" inManagedObjectContext:[cardManager managedObjectContext]];
+			
+			card.name = [row objectAtIndex:0];
+			card.manaCost = [row objectAtIndex:1];
+			card.convertedManaCost = [formatter numberFromString:[row objectAtIndex:2]];
+			card.power = [row objectAtIndex:3];
+			card.toughness = [row objectAtIndex:4];
+			card.rarity = [row objectAtIndex:5];
+			card.superType = [self superTypeFromType:[row objectAtIndex:6]];
+			card.type = [row objectAtIndex:6];
+			if ([row count] == 8) {
+				card.text = [row objectAtIndex:7];
+			} else {
+				card.text = @"";
+			}
+			
+			card.set = setName;
+			
+			[cardManager save];
+		}
+	}
+	
+	[formatter release];
 }
 
 @end
